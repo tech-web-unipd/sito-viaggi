@@ -13,7 +13,7 @@ Per inserire gli assets creare all'interno della cartella un altra cartella con 
 Dentro le cartelle create creare nuovamente le cartelle images e texts. Dentro la cartella activities creare una sottocartella per ogni attività (il cui nome è il nome dell'attività).
 
 Esempio:
-
+```
 ── assets
    └── mwanza-tanzania
        ├── activities
@@ -49,3 +49,4 @@ Esempio:
        └── texts
            ├── dates-price.txt
            └── description.txt
+```
