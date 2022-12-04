@@ -17,7 +17,6 @@ Dentro le cartelle immagini scegliere un'immagine che farà da cover e chiamarla
 Nella cartella texts degli hotel aggiungere il file link.txt contenente il link al sito dell'hotel.
 
 Esempio organizzazione:
-
 ```
 ── assets
    └── mwanza-tanzania
