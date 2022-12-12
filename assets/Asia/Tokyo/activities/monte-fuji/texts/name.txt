@@ -1,1 +1,1 @@
-Escursione Monte Fuji
+Escursione Monte <span lang="ja">Fuji</span>

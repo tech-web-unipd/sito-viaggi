@@ -1,1 +1,1 @@
-Tokyo Sky Tree
+Tokyo <span lang="en">Sky Tree</span>
