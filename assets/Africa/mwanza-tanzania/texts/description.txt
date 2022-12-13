@@ -1,1 +1,8 @@
-Situata sulle sponde del Lago Vittoria e circondata da colline cosparse di massi giganteschi, Mwanza, la seconda città della Tanzania per dimensioni, è il fulcro economico di questa regione. Oltre a distinguersi per la forte presenza indiana, è un importante centro industriale, con un porto per il quale transita gran parte del cotone, del tè e del caffè coltivati nella fertile regione occidentale del paese. Eppure, nonostante le sue dimensioni, Mwanza riesce a mantenere in parte l’atmosfera di un villaggio. Oltre a essere un ottimo punto di partenza per visitare il Rubondo Island National Park, la città è anche una comoda base per i safari nel Ngorongoro e nel Serengeti, che, se si aggiunge il Lake Natron, idealmente costituiscono un percorso ad anello.
+<p>Situata sulle sponde del <strong>Lago Vittoria</strong> e circondata da colline cosparse di massi giganteschi, <strong>Mwanza</strong>, la seconda città della <strong>Tanzania</strong> per dimensioni, è il fulcro economico di questa regione.</p>
+<p>Oltre a distinguersi per la forte presenza indiana, è un importante centro industriale, con un porto per il quale transita:
+    <ul>
+        <li>gran parte del cotone;</li> <li>del tè;</li>  <li>del caffè;</li>
+    </ul>
+coltivati nella fertile regione occidentale del paese.
+Eppure, nonostante le sue dimensioni, Mwanza riesce a mantenere in parte l’atmosfera di un villaggio.</p>
+<p>Oltre a essere un ottimo punto di partenza per visitare il Rubondo <span lang="en">Island National Park</span>, la città è anche una comoda base per i safari nel Ngorongoro e nel Serengeti, che, se si aggiunge il <span lang="en">Lake</span> Natron, idealmente costituiscono un percorso ad anello.</p>
