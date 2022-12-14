@@ -1,7 +1,12 @@
-Pittoresca e affascinante, specie al tramonto, la spiaggia di Cala d’Hort si trova lungo la costa sud occidentale di Ibiza e si specchia sulla magnetica isola di Es Vedra e su Es Vedranell. 
-
+<p>
+Pittoresca e affascinante, specie al tramonto, la spiaggia di <span lang="es">Cala d’Hort</span> si trova lungo la costa sud occidentale di <span lang="es">Ibiza</span> e si specchia sulla magnetica isola di <span lang="es">Es Vedra</span> e su <span lang="es">Es Vedranell</span>. 
+</p>
+<p>
 La spiaggia di sabbia chiara finissima, e in alcuni punti rocciosa, è lunga 150 metri e larga 20 e in estate è spesso affollata soprattutto perché i tramonti che si possono ammirare da qui sono tra i più belli e suggestivi dell’isola. Alle spalle della spiaggia si trovano delle basse scogliere. 
-
-Da provare i 3 rinomati ristoranti, di cui 2 sulla spiaggia, che servono Cala d’Hort. 
-
-Cala d’Hort si trova a metà strada tra i borghi di Sant Josep de sa Talaia e Cala Vadella.
+</p>
+<p>
+Da provare i 3 rinomati ristoranti, di cui 2 sulla spiaggia, che servono <span lang="es">Cala d’Hort</span>. 
+</p>
+<p>
+<span lang="es">Cala d’Hort</span> si trova a metà strada tra i borghi di <span lang="es">Sant Josep de sa Talaia</span> e <span lang="es">Cala Vadella</span>.
+</p>

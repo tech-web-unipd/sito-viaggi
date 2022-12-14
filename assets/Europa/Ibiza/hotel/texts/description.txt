@@ -1,3 +1,9 @@
-Il nord di Ibiza ha sempre attratto gli spiriti liberi, attratti dalla bellezza, dalla luce e dal ritmo naturale. La visione della destinazione Six Senses Ibiza è quella di catturare questa autentica esperienza di comunità, spiritualità e celebrazione. Situato a soli 35 minuti dall'aeroporto, il resort è nascosto nella tranquilla e riservata punta settentrionale dell'isola.
-
-(Non molto) più lontano, pagaia intorno alla punta fino alle capanne dei pescatori sbiancate dal sole a Cala Xuclar, fai acquisti al mercato dell'artigianato domenicale locale nella bohémien San Juan, pranza a La Paloma, senti il ​​magnetismo del mistico Es Vedra e immergiti nel tamburo al tramonto nella baia di Benirras a forma di ferro di cavallo.
+<p>
+Il nord di <span lang="es">Ibiza</span> ha sempre attratto gli spiriti liberi, attratti dalla bellezza, dalla luce e dal ritmo naturale. La visione della destinazione <span lang ="en">Six Senses</span> <span lang="es">Ibiza</span> è quella di catturare questa autentica esperienza di comunità, spiritualità e celebrazione. 
+</p>
+<p>
+Situato a soli 35 minuti dall'aeroporto, il <span lang="en">resort</span> è nascosto nella tranquilla e riservata punta settentrionale dell'isola.
+</p>
+<p>
+(Non molto) più lontano, pagaia intorno alla punta fino alle capanne dei pescatori sbiancate dal sole a <span lang="es">Cala Xuclar</span>, fai acquisti al mercato dell'artigianato domenicale locale nella <span lang="es">bohémien San Juan</span>, pranza a <span lang="es">La Paloma</span>, senti il ​​magnetismo del mistico <span lang="es">Es Vedra</span> e immergiti nel tamburo al tramonto nella baia di <span lang="es">Benirras</span> a forma di ferro di cavallo.
+</p>

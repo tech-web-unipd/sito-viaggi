@@ -1,9 +1,15 @@
-Prenotando questa esperienza in moto d'acqua a Ibiza, potrai scegliere fra i seguenti 4 itinerari. Gli istruttori vi spiegheranno il funzionamento della moto e vi daranno assistenza durante l'attività.
-
-Tour di 30 minuti: un tour di Cala Salada da 30 intensi minuti, con soste a Cala Salada o Cala Conta per fare un bagno o fare foto.
-
-Tour a Es Vedrá (1 ora): raggiungi Es Vedrá, un'isola ricca di misteri, miti e leggende.
-
-Tour a Isla Margarita (1 ora): caratterizzata da una forma decisamente peculiare, si tratta dell'isola più interessante che visiteremo.
-
-Tour "Atlantis" (1,5 ore): in questo tour visiteremo il luogo in cui fu estratta la roccia per le mura di Dalt Vila, un paesaggio decisamente paparazzato.
+<p>
+Prenotando questa esperienza in moto d'acqua a <span lang="es">Ibiza</span>, potrai scegliere fra i seguenti 4 itinerari. Gli istruttori vi spiegheranno il funzionamento della moto e vi daranno assistenza durante l'attività.
+</p>
+<p>
+Tour di 30 minuti: un tour di <span lang="es">Cala Salada</span> da 30 intensi minuti, con soste a <span lang="es">Cala Salada</span> o <span lang="es">Cala Conta</span> per fare un bagno o fare foto.
+</p>
+<p>
+Tour a <span lang="es">Es Vedrá</span> (1 ora): raggiungi <span lang="es">Es Vedrá</span>, un'isola ricca di misteri, miti e leggende.
+</p>
+<p>
+Tour a <span lang="es">Isla Margarita</span> (1 ora): caratterizzata da una forma decisamente peculiare, si tratta dell'isola più interessante che visiteremo.
+</p>
+<p>
+Tour <span lang="es">"Atlantis"</span>(1,5 ore): in questo tour visiteremo il luogo in cui fu estratta la roccia per le mura di <span lang="es">Dalt Vila</span>, un paesaggio decisamente paparazzato.
+</p>
