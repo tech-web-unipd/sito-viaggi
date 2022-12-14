@@ -1,1 +1,1 @@
-Via dello shopping di Myeongdong
+Via dello <span lang="en">shopping</span> di <span lang="ko">Myeongdong</span>
