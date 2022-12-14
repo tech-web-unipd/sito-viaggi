@@ -10,3 +10,4 @@ Da provare i 3 rinomati ristoranti, di cui 2 sulla spiaggia, che servono <span l
 <p>
 <span lang="es">Cala d’Hort</span> si trova a metà strada tra i borghi di <span lang="es">Sant Josep de sa Talaia</span> e <span lang="es">Cala Vadella</span>.
 </p>
+

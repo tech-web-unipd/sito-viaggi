@@ -1,5 +1,5 @@
 <p>
-<span lang="es">Dalt Vila</span>, dal 1999 Patrimonio dell’Umanità UNESCO, è un compendio perfetto di quella doppia anima di <span lang="es">Ibiza</span>.
+<span lang="es">Dalt Vila</span>, dal 1999 Patrimonio dell’Umanità <span lang="en"><abbr title="United Nations Educational, Scientific and Cultural Organization">UNESCO</abbr></span>, è un compendio perfetto di quella doppia anima di <span lang="es">Ibiza</span>.
 </p>
 <p>
 Si tratta, infatti, di un grande museo a cielo aperto che però nel periodo estivo viene letteralmente invaso da turisti a passeggio per il dedalo di viuzze strette della zona. Ovviamente non mancano bar, ristoranti e negozi, così come non mancano artisti di strada e personaggi vestiti in maniera eccentrica che a Ibiza, in verità, abbondano. Davvero tante le cose da vedere.
@@ -7,3 +7,4 @@ Si tratta, infatti, di un grande museo a cielo aperto che però nel periodo esti
 <p>
 Situata in una graziosa collina nella città di <span lang="es">Ibiza (Eivissa)</span>, l'area fortificata di <span lang="es">Dalt Vila</span> è stata occupata sin dai tempi dei fenici. Dietro le sue massicce mura difensive e i bastioni del sedicesimo secolo si trova un labirinto di strade acciottolate che si inerpicano fino alla cattedrale in cima, dove attendono vedute della costa scintillante.
 </p>
+
