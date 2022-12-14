@@ -1,6 +1,3 @@
+<p>Questo <span lang="en">tour</span> tra le attrazioni di <strong><span lang="en">Vancouver</span></strong> ti offre un modo personalizzato per ammirare il meglio di questa splendida città sulla costa ovest del Canada.</p>
 
-Questo <span lang="en">tour</span> tra le attrazioni di Vancouver ti offre un modo personalizzato per ammirare il meglio di questa splendida città sulla costa ovest del Canada.
-
-
-
-In compagnia di una guida professionista e autorizzata, ti fermerai presso diversi siti di Vancouver, tra cui lo Stanley Park, Granville Island, Gastown, Chinatown, Robson Street e la English Bay presso il Vancouver Harbour. Esplora l'arte, le attrazioni storiche e le aree dello shopping della città.
+<p>In compagnia di una guida professionista e autorizzata, ti fermerai presso diversi siti di <span lang="en">Vancouver</span>, tra cui:<ul><li>lo <span lang="en">Stanley Park</span></li><li><span lang="en">Granville Island</span></li><li><span lang="en">Gastown</span></li><li><span lang="en">Chinatown</span></li><li><span lang="en">Robson Street</span></li><li>la <span lang="en">English Bay</span> presso il <span lang="en">Vancouver Harbour</span></li></ul>Esplora l'arte, le attrazioni storiche e le aree dello shopping della città.</p>

@@ -1,7 +1,7 @@
-Hotel boutique nel cuore del centro di Vancouver, di fronte al BC Place, il Georgian Court Hotel, BW Premier Collection offre un ristorante e il WiFi gratuito. Il Queen Elizabeth Theatre è raggiungibile con una passeggiata di 4 minuti.
+<p>Hotel <span lang="fr">boutique</span> nel cuore del centro di <span lang="en">Vancouver</span>, di fronte al <strong><span lang="en"><abbr title="British Columbia">BC</abbr> Place</span></strong>, il <strong><span lang="en">Georgian Court Hotel, <abbr title="Best Western">BW</abbr> Premier Collection</span></strong> offre un ristorante e il <span lang="en">WiFi</span> gratuito. Il <strong><span lang="en">Queen Elizabeth Theatre</span></strong> è raggiungibile con una passeggiata di 4 minuti.</p>
 
-Tutte le camere del Georgian Court Hotel sono dotate di TV a schermo piatto da 37 pollici, macchinetta del caffè e set di cortesia Beekman 1802.
+<p>Tutte le camere del <span lang="en">Georgian Court Hotel</span> sono dotate di <abbr title="televisione">TV</abbr> a schermo piatto da 37 pollici, macchinetta del caffè e set di cortesia <span lang="en">Beekman</span> 1802.</p>
 
-Il Georgian Court Hotel vanta un centro fitness completamente attrezzato, una vasca idromassaggio e una sauna a infrarossi. Tra gli informali punti ristoro figurano il Frankie’s Italian Kitchen e il Frankie’s Bar.
+<p>Il <span lang="en">Georgian Court Hotel</span> vanta:<ul><li>un centro fitness completamente attrezzato</li><li>una vasca idromassaggio</li><li>una sauna a infrarossi</li></ul> Tra gli informali punti ristoro figurano il <span lang="en">Frankie’s Italian Kitchen</span> e il <span lang="en">Frankie’s Bar</span>.</p>
 
-I negozi di Robson Street distano 12 minuti a piedi.
+<p>I negozi di Robson Street distano 12 minuti a piedi.</p>
