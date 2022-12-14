@@ -1,91 +1,78 @@
-Pensando a Manhattan, ti verranno subito in mente gli altissimi grattacieli, i taxi gialli e una città dal carattere internazionale. Osserva tutto questo e molto altro mentre un pilota esperto ti fa volare sopra New York grazie a un tour in elicottero di 15 o 20 minuti. Sorvola la Statua della Libertà, Central Park, il Ponte di Brooklyn e il Madison Square Garden.
+<p>Pensando a <strong><span lang="en">Manhattan</span></strong>, ti verranno subito in mente gli altissimi grattacieli, i taxi gialli e una città dal carattere internazionale. Osserva tutto questo e molto altro mentre un pilota esperto ti fa volare sopra <strong><span lang="en">New York</span></strong> grazie a un <strong><span lang="en">tour</span> in elicottero</strong> di 15 o 20 minuti. Sorvola la Statua della Libertà, <span lang="en">Central Park</span>, il Ponte di <span lang=en">Brooklyn</span> e il <span lang="en">Madison Square Garden</span>.</p>
 
-Dopo il decollo dal Downtown Heliport, supera Lower Manhattan per vedere lo skyline e le strade sottostanti. Scendi in picchiata su Battery Park per ammirare Wall Street e il suo labirinto di strade. 
+<p>Dopo il decollo dal <strong><span lang="en">Downtown Heliport</span></strong>, supera <span lang="en">Lower Manhattan</span> per vedere lo <span lang="en">skyline</span> e le strade sottostanti. Scendi in picchiata su <span lang="en">Battery Park</span> per ammirare <span lang="en">Wall Street</span> e il suo labirinto di strade.</p>
 
+<p>Poi dirigiti verso <span lang="en">Governor's Island</span>, un'isola un tempo riservata solo ai dignitari della città che ora ospita concerti estivi e arte pubblica. Quindi, sorvola <span lang="en">Ellis Island</span> e guarda <span lang="en">Lady Liberty</span> brillare in lontananza. Ti troverai all'altezza dei suoi occhi, per avere una nuova prospettiva della Statua della Libertà.</p>
 
+<p>Goditi questa splendida esperienza prima di risalire l'<span lang="en">Hudson</span> oltre i moli di <span lang="en">Chelsea</span> e le luci di <span lang="en">Broadway</span>. Durante il volo di ritorno al molo, volerai sopra l'<span lang="en">Empire State Building</span>, il Ponte di <span lang="en">Brooklyn</span> e infine <span lang="en">Ground Zero</span>, dove potrai ammirare gli straordinari lavori in corso.</p> 
 
-Poi dirigiti verso Governor's Island, un'isola un tempo riservata solo ai dignitari della città che ora ospita concerti estivi e arte pubblica. Quindi, sorvola Ellis Island e guarda Lady Liberty brillare in lontananza. Ti troverai all'altezza dei suoi occhi, per avere una nuova prospettiva della Statua della Libertà. 
+<p>Prosegui oltre il <span lang="en">Madison Square Garden</span> e l'<span lang="en">Intrepid Air and Space Museum</span>. Ammira <span lang="en">Central Park</span> mentre fai il giro per tornare all'eliporto.</p>
 
+<p>Attrazioni incluse nel <span lang="en">tour</span> di 15 minuti:
+<ul>
+<li>Statua della Libertà</li>
 
+<li><span lang="en">Ellis Island</span></li>
 
-Goditi questa splendida esperienza prima di risalire l'Hudson oltre i moli di Chelsea e le luci di Broadway. Durante il volo di ritorno al molo, volerai sopra l'Empire State Building, il Ponte di Brooklyn e infine Ground Zero, dove potrai ammirare gli straordinari lavori in corso. 
+<li><span lang="en">One World Trade Center</span></li>
 
+<li>Memoriale dell'11 settembre</li>
 
+<li>Ponte di <span lang="en">Brooklyn</span></li>
 
-Prosegui oltre il Madison Square Garden e l'Intrepid Air and Space Museum. Ammira Central Park mentre fai il giro per tornare all'eliporto.
+<li><span lang="en">Battery Park</span></li>
 
+<li><span lang="en">Wall Street/Financial District</span></li>
 
+<li><span lang="en">Empire State Building</span></li>
 
-Attrazioni incluse nel tour di 15 minuti:
+<li><span lang="en">Chrysler Building</span></li>
 
+<li><span lang="en">Madison Square Garden</span></li>
 
+<li><span lang="en">Times Square</span></li>
 
-Statua della Libertà
+<li><span lang="en">Intrepid Sea, Air, and Space Museum</span></li>
 
-Ellis Island
+<li>Central Park</li>
+</ul></p>
+<p>Attrazioni incluse nel <span lang="en">tour</span> di 20 minuti:
+<ul>
+<li>Ponte di <span lang="en">Brooklyn</span></li>
 
-One World Trade Center
+<li><span lang="en">Battery Park</span></li>
 
-Memoriale dell'11 settembre
+<li><span lang="en">Wall Street</span></li>
 
-Ponte di Brooklyn
+<li>Statua della Libertà</li>
 
-Battery Park
+<li><span lang="en">Ellis Island</span></li>
 
-Wall Street/Financial District
+<li><span lang="en">One World Trade Center</span></li>
 
-Empire State Building
+<li>Memoriale dell'11 settembre</li>
 
-Chrysler Building
+<li><span lang="en">Empire State Building</span></li>
 
-Madison Square Garden
+<li><span lang="en">Chrysler Building</span></li>
 
-Times Square
+<li><span lang="en">Madison Square Garden</span></li>
 
-Intrepid Sea, Air, and Space Museum
+<li><span lang="en">Intrepid Sea, Air, and Space Museum</span></li>
 
-Central Park
+<li><span lang="en">Times Square</span></li>
 
+<li><span lang="en">Central Park</span></li>
 
+<li><span lang="en">Grant’s Tomb</span> (tomba del generale Ulysses Grant)</li>
 
-Attrazioni incluse nel tour di 20 minuti:
+<li>Ponte <span lang="en">George Washington</span></li>
 
+<li><span lang="en">Harlem</span> e il fiume <span lang="en">Harlem</span></li>
 
+<li>Il Bronx e lo <span lang="en">Yankee Stadium</span></li>
 
-Ponte di Brooklyn
+<li><span lang="en">The Palisades</span></li>
 
-Battery Park
-
-Wall Street
-
-Statua della Libertà
-
-Ellis Island
-
-One World Trade Center
-
-Memoriale dell'11 settembre
-
-Empire State Building
-
-Chrysler Building
-
-Madison Square Garden
-
-Intrepid Sea, Air, and Space Museum
-
-Times Square
-
-Central Park
-
-Grant’s Tomb (tomba del generale Ulysses Grant)
-
-Ponte George Washington
-
-Harlem e il fiume Harlem
-
-Il Bronx e lo Yankee Stadium
-
-The Palisades
-
-Spuyten Duyvil Bridge
+<li><span lang="en">Spuyten Duyvil Bridge</span></li>
+</ul></p>

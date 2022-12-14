@@ -1,5 +1,5 @@
 
-Questo tour tra le attrazioni di Vancouver ti offre un modo personalizzato per ammirare il meglio di questa splendida città sulla costa ovest del Canada.
+Questo <span lang="en">tour</span> tra le attrazioni di Vancouver ti offre un modo personalizzato per ammirare il meglio di questa splendida città sulla costa ovest del Canada.
 
 
 

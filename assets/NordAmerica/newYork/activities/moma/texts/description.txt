@@ -1,7 +1,7 @@
-Il MoMA (Museum of Modern Art) si trova a New York all’11 West 53rd street, tra la Fifth Avenuee la Sixth Avenue o Avenue of the Americas.
+<p>Il <strong><span lang="en"><abbr title="Museum of modern art">Moma</abbr></span></strong> si trova a <strong><span lang="en">New York</span></strong> all’11 <span lang="en">West <abbr title="fifty-third">53rd</abbr> street</span>, tra la <span lang="en">Fifth Avenuee</span> la <span lang="en">Sixth Avenue</span> o <span lang="en">Avenue of the Americas</span>.</p>
 
-Questo polo museale ha avuto un ruolo decisivo per la promozione dell’Arte Moderna nel mondo ed è universalmente riconosciuto come uno dei più importanti del pianeta.
+<p>Questo polo museale ha avuto un ruolo decisivo per la promozione dell’<strong>Arte Moderna</strong> nel mondo ed è universalmente riconosciuto come uno dei più importanti del pianeta.</p>
 
-La collezione conservata all’interno del MoMA è un’ineguagliabile antologia d’Arte moderna e Contemporanea e spazia dall'architettura alla fotografia, passando per serigrafia, design, arte multimediale e gli immancabili dipinti e sculture realizzati dalla fine del XIX secolo ad oggi.
+<p>La collezione conservata all’interno del <span lang="en"><abbr title="Museum of modern art">Moma</abbr></span> è un’ineguagliabile antologia d’Arte moderna e Contemporanea e spazia dall'architettura alla fotografia, passando per:<ul><li>serigrafia</li><li>design</li><li>arte multimediale</li><li>gli immancabili dipinti e sculture realizzati dalla fine del XIX secolo ad oggi</li></ul></p>
 
-Tutti gli amanti dell’Arte sognano di poterlo visitare in quanto ospita alcuni tra i dipinti più famosi della storia come Il Ponte giapponese di Claude Monet, Le demoiselles d’Avignon di Pablo Picasso, La notte stellata di Van Gogh, La città che sale di Umberto Boccioni e tanti altri.
+<p>Tutti gli amanti dell’Arte sognano di poterlo visitare in quanto ospita alcuni tra i dipinti più famosi della storia come:<ul><li><em>Il Ponte giapponese</em> di <span lang="fr">Claude Monet</span></li><li><em><span lang="fr">Le demoiselles d’Avignon</span></em> di Pablo Picasso</li><li><em>La notte stellata</em> di Van Gogh</li><li><em>La città che sale</em> di Umberto Boccioni</li></ul> e tanti altri.</p>

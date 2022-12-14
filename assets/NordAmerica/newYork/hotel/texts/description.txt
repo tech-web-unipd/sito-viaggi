@@ -1,7 +1,7 @@
-Situato a 400 metri dal ristorante Row di New York, il Pod Times Square dispone di un ristorante, di un bar e della connessione WiFi gratuita in tutti gli ambienti.
+<p>Situato a 400 metri dal ristorante <span lang="en">Row</span> di <strong><span lang="en">New York</span></strong>, il <strong><span lang="en">Pod Times Square</span></strong> dispone di:<ul><li>un ristorante</li><li>di un bar</li><li>della connessione <span lang="en">WiFi</span> gratuita in tutti gli ambienti</li></ul></p>
 
-Alcune camere includono un'area salotto, perfetta per i vostri momenti di relax, mentre tutte sono dotate di una TV a schermo piatto e di un bagno privato con doccia, set di cortesia e asciugacapelli.
+<p>Alcune camere includono un'area salotto, perfetta per i vostri momenti di relax, mentre tutte sono dotate di:<ul><li>una <abbr title="televisore">TV</abbr> a schermo piatto</li><li>di un bagno privato con:<ul><li>doccia</li><li>set di cortesia</li><li>asciugacapelli</li></ul></li></ul></p>
 
-La reception in loco è operativa 24 ore su 24.
+<p>La <span lang="en">reception</span> in loco è operativa 24 ore su 24.</p>
 
-Il Pod Times Square dista 600 metri da Times Square, 800 metri dal Jacob K. Javits Convention Center e 10 km dall'Aeroporto di New York-LaGuardia, il più vicino alla struttura.
+<p>Il <span lang="en">Pod Times Square</span> dista:<ul><li>600 metri da <span lang="en">Times Square</span></li><li>800 metri dal <span lang="en">Jacob K. Javits Convention Center</span></li><li>10 <abbr title="chilometri">km</abbr> dall'Aeroporto di <span lang="en">New York</span>-LaGuardia, il più vicino alla struttura</li></ul></p>

@@ -4,6 +4,6 @@
 
 <p>Il ristorante con caminetto propone una colazione con piatti caldi e freddi e specialità della tradizionale cucina africana, da gustare anche sulla terrazza con vista sul laghetto con fontana. Durante il soggiorno approfittate anche del bar e del barbecue <span lang="af">braai</span> comune.</p>
 
-<p>La struttura vanta zone ombreggiate ideali per rilassarsi e una reception attiva 24 ore su 24, il cui personale sarà lieto di darvi informazioni sulle attrazioni e le attività della zona. L'Arebbusch Travel Lodge si trova a 8 minuti a piedi dallo stadio nazionale di rugby e a meno di 5 minuti in auto da:<ul><li>un bowling</li><li>un campo da golf</li><li>un centro sportivo</li></ul></p>
+<p>La struttura vanta zone ombreggiate ideali per rilassarsi e una <span lang="en">reception</span> attiva 24 ore su 24, il cui personale sarà lieto di darvi informazioni sulle attrazioni e le attività della zona. L'Arebbusch Travel Lodge si trova a 8 minuti a piedi dallo stadio nazionale di rugby e a meno di 5 minuti in auto da:<ul><li>un bowling</li><li>un campo da golf</li><li>un centro sportivo</li></ul></p>
 
 <p>L'Arebbusch Travel Lodge dista 5 minuti in auto dall'Aeroporto nazionale Eros e 50 <abbr title="chilometri">km</abbr> dall'Aeroporto internazionale di Windhoek.</p>

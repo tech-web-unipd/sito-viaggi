@@ -1,4 +1,4 @@
-<p>Situato a <strong>Mwanza</strong>, a 600 metri dalla stazione ferroviaria, l'<strong>Hotel Tilapia</strong> offre:<ul> <li>ristorante;</li> <li>parcheggio privato gratuito;</li> <li>piscina all'aperto</li> <li>area bar;</li> <li>connessione <span lang="en">WiFi</span> gratuita;</li> <li>un giardino e una terrazza</li> <li>reception aperta 24 ore su 24;</li> <li>servizio in camera</li> <li>>cambio valuta.</li></ul></p>
+<p>Situato a <strong>Mwanza</strong>, a 600 metri dalla stazione ferroviaria, l'<strong>Hotel Tilapia</strong> offre:<ul> <li>ristorante;</li> <li>parcheggio privato gratuito;</li> <li>piscina all'aperto</li> <li>area bar;</li> <li>connessione <span lang="en">WiFi</span> gratuita;</li> <li>un giardino e una terrazza</li> <li><span lang="en">reception</span> aperta 24 ore su 24;</li> <li>servizio in camera</li> <li>>cambio valuta.</li></ul></p>
 
 <p>Inoltre al mattino verrà servita una colazione continentale. La struttura ospita un parrucchiere e un centro business.</p>
 

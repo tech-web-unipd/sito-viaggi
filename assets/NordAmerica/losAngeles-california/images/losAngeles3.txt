@@ -1,1 +1,1 @@
-Alcuni grattacieli di Los Angeles.
+Alcuni grattacieli di <span lang="en">Los Angeles</span>.
