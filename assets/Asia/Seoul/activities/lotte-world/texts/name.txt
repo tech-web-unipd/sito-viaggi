@@ -1,1 +1,1 @@
-Lotte World
+Lotte <span lang="en">World</span>

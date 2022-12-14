@@ -1,1 +1,1 @@
-Hotel Sunroute Plaza
+<span lang="en">Hotel Sunroute Plaza</span>
