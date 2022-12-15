@@ -1,1 +1,1 @@
-Tour di Manhattan in elicottero
+Tour di <span lang="en">Manhattan</span> in elicottero

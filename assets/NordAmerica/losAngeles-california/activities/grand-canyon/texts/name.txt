@@ -1,1 +1,1 @@
-Grand Canyon
+<span lang="en">Grand Canyon</span>
