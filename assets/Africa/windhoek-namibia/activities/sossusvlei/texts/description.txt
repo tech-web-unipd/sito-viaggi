@@ -1,5 +1,5 @@
-<p>Il deserto di <strong>Sossusvlei</strong> e di <strong>Deadvlei</strong> è uno dei posti più belli della <strong>Namibia</strong>. Si trova nel cuore del <span lang="af">Namib-Naukluft</span> <span lang="en">Park</span>, nel centro dello stato, e fa parte del deserto della Namibia, uno dei più estesi e più belli al mondo.</p>
+<p>Il deserto di <strong><span lang="af">Sossusvlei</span></strong> e di <strong><span lang="af">Deadvlei</span></strong> è uno dei posti più belli della <strong>Namibia</strong>. Si trova nel cuore del <span lang="af">Namib-Naukluft</span> <span lang="en">Park</span>, nel centro dello stato, e fa parte del deserto della Namibia, uno dei più estesi e più belli al mondo.</p>
 
 <p>Non si tratta di un normale deserto, poiché le sue alte dune sono di colore rosso e sono inconfondibili. La colorazione è dovuta all’alta percentuale di ferro contenuta nella sabbia.</p>
 
-<p>Ma lo spettacolo più bello è offerto da Deadvlei, un’area dove potrete ammirare un contrasto di colori incredibili! Il rosso della sabbia, il nero di alcuni alberi secchi e il bianco formato da uno stato di bicarbonato di calcio sulla sabbia. Questa sostanza è la responsabile della morte di questi alberi.</p>
+<p>Ma lo spettacolo più bello è offerto da <span lang="af">Deadvlei</span>, un’area dove potrete ammirare un contrasto di colori incredibili! Il rosso della sabbia, il nero di alcuni alberi secchi e il bianco formato da uno stato di bicarbonato di calcio sulla sabbia. Questa sostanza è la responsabile della morte di questi alberi.</p>

@@ -1,1 +1,1 @@
-Logo del Madame Tussauds di Hollywood.
+Logo del Madame Tussauds di <span lang="en">Hollywood</span>.

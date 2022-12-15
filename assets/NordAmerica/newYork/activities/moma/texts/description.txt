@@ -2,6 +2,6 @@
 
 <p>Questo polo museale ha avuto un ruolo decisivo per la promozione dell’<strong>Arte Moderna</strong> nel mondo ed è universalmente riconosciuto come uno dei più importanti del pianeta.</p>
 
-<p>La collezione conservata all’interno del <span lang="en"><abbr title="Museum of modern art">Moma</abbr></span> è un’ineguagliabile antologia d’Arte moderna e Contemporanea e spazia dall'architettura alla fotografia, passando per:<ul><li>serigrafia</li><li>design</li><li>arte multimediale</li><li>gli immancabili dipinti e sculture realizzati dalla fine del XIX secolo ad oggi</li></ul></p>
+<p>La collezione conservata all’interno del <span lang="en"><abbr title="Museum of modern art">Moma</abbr></span> è un’ineguagliabile antologia d’Arte moderna e Contemporanea e spazia dall'architettura alla fotografia, passando per:<ul><li>serigrafia</li><li>design</li><li>arte multimediale</li><li>gli immancabili dipinti e sculture realizzati dalla fine del <abbr title="diciannovesimo">XIX</abbr> secolo ad oggi</li></ul></p>
 
 <p>Tutti gli amanti dell’Arte sognano di poterlo visitare in quanto ospita alcuni tra i dipinti più famosi della storia come:<ul><li><em>Il Ponte giapponese</em> di <span lang="fr">Claude Monet</span></li><li><em><span lang="fr">Le demoiselles d’Avignon</span></em> di Pablo Picasso</li><li><em>La notte stellata</em> di Van Gogh</li><li><em>La città che sale</em> di Umberto Boccioni</li></ul> e tanti altri.</p>

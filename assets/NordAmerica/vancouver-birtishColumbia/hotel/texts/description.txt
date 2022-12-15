@@ -4,4 +4,4 @@
 
 <p>Il <span lang="en">Georgian Court Hotel</span> vanta:<ul><li>un centro fitness completamente attrezzato</li><li>una vasca idromassaggio</li><li>una sauna a infrarossi</li></ul> Tra gli informali punti ristoro figurano il <span lang="en">Frankie’s Italian Kitchen</span> e il <span lang="en">Frankie’s Bar</span>.</p>
 
-<p>I negozi di Robson Street distano 12 minuti a piedi.</p>
+<p>I negozi di <span lang="en">Robson Street</span> distano 12 minuti a piedi.</p>
