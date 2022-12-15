@@ -1,1 +1,1 @@
-Visita al Madame Tussauds di Los Angeles
+Visita al <span lang="fr">Madame Tussauds</span> di <span lang="en">Los Angeles</span>

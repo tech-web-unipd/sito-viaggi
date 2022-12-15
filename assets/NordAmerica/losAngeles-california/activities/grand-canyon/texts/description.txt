@@ -1,3 +1,3 @@
-A catturare l’attenzione è soprattutto la sua straordinaria immensità, poi si notano i tormentati strati di roccia che invitano a dare un’occhiata da vicino. Infine un tocco artistico di Madre Natura: aspri altopiani, pinnacoli che si sgretolano, creste color porpora che ammaliano e incantano man mano che le ombre si allungano sulle rocce.
+<p>A catturare l’attenzione è soprattutto la sua straordinaria immensità, poi si notano i tormentati strati di roccia che invitano a dare un’occhiata da vicino. Infine un tocco artistico di Madre Natura:<ul><li>aspri altopiani</li><li>pinnacoli che si sgretolano</li><li>creste color porpora che ammaliano e incantano man mano che le ombre si allungano sulle rocce</li></ul></p>
 
-Ci avventureremo su un percorso a ridosso del South Rim. Benvenuti al Grand Canyon!
+<p>Ci avventureremo su un percorso a ridosso del <span lang="en">South Rim</span>. Benvenuti al <strong><span lang="en">Grand Canyon</span></strong>!</p>
