@@ -1,1 +1,21 @@
-Ospitato in un edificio in stile Art decò, lo Hyatt Regency Nice Palais de la Méditerranée è un cinque stelle che si affaccia direttamente sulla Promenade des Anglais. Le camere dell’hotel Hyatt Regency Nice Palais de la Méditerranée offrono TV, rete Wi-Fi, minibar, bagno in marmo con asciugacapelli e kit di cortesia. Le sistemazioni di categoria superiore hanno balcone arredato e macchina per il caffè. Le suite vantano inoltre una zona salotto. La struttura comprende una piscina interna e una all'aperto, bagno turco, sauna, palestra, terrazza con vista panoramica e casinò. La reception è attiva 24 ore su 24. Ogni mattina l’hotel Hyatt Regency Nice Palais de la Méditerranée propone una colazione continentale a buffet. L’albergo ospita un lounge bar e il ristorante Le 3e, che serve piatti della cucina mediterranea preparati con prodotti stagionali del territorio. L’hotel Hyatt Regency Nice Palais de la Méditerranée dista un minuto a piedi dalla spiaggia e sei minuti da Villa Masséna. LaCattedrale di Santa Reparata è a 1,3 km, il Musée du Palais Lascaris a 1,4 km e il Musée National Marc Chagall a 2,2 km.
+<p>
+Ospitato in un edificio in stile <span lang="en">Art</span> <span lang="fr">decò</span>, lo <span lang="en">Hyatt Regency Nice</span> <span lang="fr">Palais de la Méditerranée</span> è un cinque stelle che si affaccia direttamente sulla <span lang="fr">Promenade des Anglais</span>. 
+</p>
+<p>
+Le camere dell’hotel offrono TV, rete <span lang="en">Wi-Fi</span>, minibar, bagno in marmo con asciugacapelli e kit di cortesia. 
+</p>
+<p>
+Le sistemazioni di categoria superiore hanno balcone arredato e macchina per il caffè. Le <span lang="en">suite</span> vantano inoltre una zona salotto. 
+</p>
+<p>
+La struttura comprende una piscina interna e una all'aperto, bagno turco, sauna, palestra, terrazza con vista panoramica e casinò. 
+</p>
+<p>
+La <span lang="en">reception</span> è attiva 24 ore su 24. 
+</p>
+<p>
+Ogni mattina l’hotel <span lang="en">Hyatt Regency Nice</span> <span lang="fr">Palais de la Méditerranée</span> propone una colazione continentale a <span lang="fr">buffet</span>. L’albergo ospita un lounge bar e il ristorante Le 3e, che serve piatti della cucina mediterranea preparati con prodotti stagionali del territorio. 
+</p>
+<p>
+L’hotel  <span lang="en">Hyatt Regency Nice</span> <span lang="fr">Palais de la Méditerranée</span> dista un minuto a piedi dalla spiaggia e sei minuti da Villa Massena. La Cattedrale di Santa Reparata è a 1,3 km, il <span lang="fr">Musée du Palais Lascaris</span> a 1,4 km e il <span lang="fr">Musée</span> <span lang="en">National</span> <span lang="fr">Marc Chagall</span> a 2,2 km.
+</p>
