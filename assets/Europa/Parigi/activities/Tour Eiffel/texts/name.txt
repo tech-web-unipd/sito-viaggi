@@ -1,1 +1,1 @@
-Tour Eiffel
+<span lang="fr">Tour Eiffel</span>

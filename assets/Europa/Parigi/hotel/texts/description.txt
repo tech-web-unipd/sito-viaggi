@@ -1,18 +1,25 @@
-Completamente rinnovato nel 2019, l'hotel Saint-Charles vi offre tutto il fascino di un hotel 3 stelle tipicamente parigino.
-
-Dopo un'accoglienza personalizzata, l'intero team dell'hotel Saint-Charles farà tutto il possibile per rendere il vostro soggiorno il più piacevole possibile.
-
-Hotel completamente climatizzato
-Connessione Wi-Fi gratuita
-Soggiorno e ampio salone di rappresentanza
-Bar
-Terrazza, Giardino privato
-Colazione a buffet o vassoio servito in camera
-Ascensore
-Riscaldatore
-Reception aperta 24 ore su 24
-Concierge
-Casseforti
-Registrazione e pagamento rapidi
-Deposito bagagli
-Attrezzature per mobilità ridotta
+<p>
+Completamente rinnovato nel 2019, l'hotel <span lang="fr">Saint-Charles</span> vi offre tutto il fascino di un hotel 3 stelle tipicamente parigino.
+</p>
+<p>
+Dopo un'accoglienza personalizzata, l'intero team dell'hotel <span lang="fr">Saint-Charles</span> farà tutto il possibile per rendere il vostro soggiorno il più piacevole possibile.
+</p>
+<p>
+L'hotel e ogni camera dispone di:
+</p>
+<ul>
+    <li>Hotel completamente climatizzato</li>
+    <li>Connessione Wi-Fi gratuita</li>
+    <li>Soggiorno e ampio salone di rappresentanza</li>
+    <li>Bar</li>
+    <li>Terrazza, Giardino privato</li>
+    <li>Colazione a buffet o vassoio servito in camera</li>
+    <li>Ascensore</li>
+    <li>Riscaldatore</li>
+    <li>Reception aperta 24 ore su 24</li>
+    <li>Concierge</li>
+    <li>Casseforti</li>
+    <li>Registrazione e pagamento rapidi</li>
+    <li>Deposito bagagli</li>
+    <li>Attrezzature per mobilità ridotta</li>
+</ul>

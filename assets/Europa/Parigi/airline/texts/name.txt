@@ -1,1 +1,1 @@
-Lufthansa
+<span lang="de">Lufthansa</span>

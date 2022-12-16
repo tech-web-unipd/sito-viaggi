@@ -1,7 +1,12 @@
-Piccole stradine con il pavé (la pavimentazione con i sampietrini!), casette ricoperte di edera, graziosi caffè e pittori squattrinati che provano a guadagnarsi da vivere con la loro arte. Questa è (o meglio era per alcuni aspetti) Montmartre!
-
-Parigi è una città composta soprattutto da grandi piazze, grandi boulevard e grandi palazzi, e forse Montmartre è speciale proprio perché è diversa dal resto della capitale francese.
-
+<p>
+Piccole stradine con il <span lang="fr">pavé</span> (la pavimentazione con i sampietrini!), casette ricoperte di edera, graziosi caffè e pittori squattrinati che provano a guadagnarsi da vivere con la loro arte. Questa è <span lang="fr">Montmartre</span>!
+</p>
+<p>
+Parigi è una città composta soprattutto da grandi piazze, grandi boulevard e grandi palazzi, e forse <span lang="fr">Montmartre</span> è speciale proprio perché è diversa dal resto della capitale francese.
+</p>
+<p>
 Sembra un paradosso, ma il quartiere più famoso di Parigi è forse quello meno rappresentativo del resto della città.
-
-Questo spiega perché, in un viaggio a Parigi, una tappa a Montmartre non dovrebbe mai mancare: perdetevi fra le sue viuzze, godetevi gli scorci sul Sacro Cuore, prendete una crêpe in uno dei suoni tanti café, molto meglio se in compagnia di una persona speciale, e vi ricorderete di quei momenti per il resto della vostra vita.
+</p>
+<p>
+Questo spiega perché, in un viaggio a Parigi, una tappa a <span lang="fr">Montmartre</span> non dovrebbe mai mancare: perdetevi fra le sue viuzze, godetevi gli scorci sul Sacro Cuore, prendete una <span lang="fr">crêpe</span> in uno dei suoni tanti café, molto meglio se in compagnia di una persona speciale, e vi ricorderete di quei momenti per il resto della vostra vita.
+</p>

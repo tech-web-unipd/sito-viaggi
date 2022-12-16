@@ -1,3 +1,9 @@
-Il Louvre raccoglie una collezione straordinaria e si consiglia di visitare in più occasioni il museo per percorre tranquillamente tutte le sue sale. Qui gli appassionati d’arte vivranno un’esperienza più che formativa e non potranno lasciarsi scappare l'occasione di trascorrere varie ore in questo straordinario tempio dell'Arte.
-
+<p>
+Il <span lang="fr">Louvre</span> raccoglie una collezione straordinaria e si consiglia di visitare in più occasioni il museo per percorre tranquillamente tutte le sue sale. 
+</p>
+<p>
+Qui gli appassionati d’arte vivranno un’esperienza più che formativa e non potranno lasciarsi scappare l'occasione di trascorrere varie ore in questo straordinario tempio dell'Arte.
+</p>
+<p>
 Chi non ha troppo tempo a disposizione, dovrà dedicare al museo almeno una mattina, per poter percorrere tutte le sale e vedere le opere più importanti.
+</p>
