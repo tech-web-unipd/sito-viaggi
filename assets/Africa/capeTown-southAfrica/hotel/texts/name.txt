@@ -1,1 +1,1 @@
-President Hotel
+<span lang="en">President Hotel</span>
