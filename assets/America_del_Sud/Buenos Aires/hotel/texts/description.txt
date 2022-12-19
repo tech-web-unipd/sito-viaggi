@@ -1,16 +1,19 @@
-L’hotel 5 stelle NH Buenos Aires City, precedentemente noto come NH City Buenos Aires, si trova nel centro storico della città. La sua facciata degli anni Trenta in stile Art Déco si integra alla perfezione con il vicino palazzo del Cabildo e la centrale Plaza de Mayo. A breve distanza si trovano anche le stradine acciottolate di San Telmo.
-
-Vicino al lungomare di Puerto Madero
-A due passi dai negozi di via Florida
-Trasporti pubblici per ogni punto della città
-Le camere dell'hotel si distinguono per l'originale design e la scelta dei colori, con combinazioni che vanno dal rosso e nero al bianco e marrone. Ogni camera sfoggia pavimenti in parquet e grandi finestre, che inondano l'ambiente di luce naturale.
-
-Camere comunicanti per le famiglie
-Camere d'angolo con vista sui principali simboli della città
-Camere insonorizzate
-La piscina alla moda, situata sul tetto dell'hotel, è la sua attrattiva più popolare. Da qui è possibile ammirare una vista panoramica della città. Al piano inferiore troverai il ristorante, arredato in stile classico, che serve specialità nazionali con un tocco gourmet.
-
-Moderno lounge bar aperto 24 ore su 24
-Ampia palestra a uso gratuito
-Piscina sul tetto con elegante solarium, aperta in estate
-Se stai programmando di soggiornare con noi durante il fine settimana, prenota direttamente su nh-hotels.it, iscriviti a NH DISCOVERY e usufruisci del "Lazy Sundays" con late check-out gratuito (entro le 15:00).
+<p>
+L’hotel 5 stelle <span lang="en">NH</span> <span lang="es">Buenos Aires</span> <span lang="en">City</span>, precedentemente noto come <span lang="en">NH City</span> <span lang="es">Buenos Aires</span>, si trova nel centro storico della città. 
+</p>
+<p>
+La sua facciata degli anni Trenta in stile <span lang="en">Art</span> <span lang="fr">Déco</span> si integra alla perfezione con il vicino palazzo del Cabildo e la centrale <span lang="es">Plaza de Mayo</span>. A breve distanza si trovano anche le stradine acciottolate di San Telmo.
+</p>
+<ul>
+    <li>Vicino al lungomare di <span lang="es">Puerto Madero</span>;</li>
+    <li>A due passi dai negozi di via Florida;</li>
+    <li>Trasporti pubblici per ogni punto della città;</li>
+    <li>Le camere dell'hotel si distinguono per l'originale <span lang="en">design</span> e la scelta dei colori, con combinazioni che vanno dal rosso e nero al bianco e marrone. Ogni camera sfoggia pavimenti in <span lang="fr">parquet</span> e grandi finestre, che inondano l'ambiente di luce naturale;</li>
+    <li>Camere comunicanti per le famiglie;</li>
+    <li>Camere d'angolo con vista sui principali simboli della città;</li>
+    <li>Camere insonorizzate;</li>
+    <li>La piscina alla moda, situata sul tetto dell'hotel, è la sua attrattiva più popolare. Da qui è possibile ammirare una vista panoramica della città. Al piano inferiore troverai il ristorante, arredato in stile classico, che serve specialità nazionali con un tocco <span lang="fr">gourmet</span>;</li>
+    <li>Moderno <span lang="en">lounge</span> bar aperto 24 ore su 24;</li>
+    <li>Ampia palestra a uso gratuito;</li>
+    <li>Piscina sul tetto con elegante solarium, aperta in estate;</li>
+</ul>

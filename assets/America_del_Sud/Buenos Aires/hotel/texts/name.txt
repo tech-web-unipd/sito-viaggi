@@ -1,1 +1,1 @@
-NH Buenos Aires City
+NH <span lang="es">Buenos Aires</span> <span lang="en">City</span>

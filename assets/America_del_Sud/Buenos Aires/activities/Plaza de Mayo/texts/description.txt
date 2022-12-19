@@ -1,4 +1,6 @@
-Situata nel Microcentro (quartiere di Monserrat), nel luogo in cui avvenne la fondazione di Buenos Aires, la Plaza de Mayo è la piazza pubblica più antica e importante della città.
-
-Il nome della piazza è in memoria della Rivoluzione del 25 maggio 1810, data in cui i cittadini si riunirono proprio qui per espulsare il Viceré e formare un governo creolo. Da allora, la piazza ha assistito agli avvenimenti politici e sociali più importanti del paese.
-
+<p>
+Situata nel Microcentro (quartiere di <span lang="es">Monserrat</span>), nel luogo in cui avvenne la fondazione di Buenos Aires, la <span lang="es">Plaza de Mayo</span> è la piazza pubblica più antica e importante della città.
+</p>
+<p>
+Il nome della piazza è in memoria della Rivoluzione del 25 maggio 1810, data in cui i cittadini si riunirono proprio qui per espulsare il <span lang="es">Viceré</span> e formare un governo creolo. Da allora, la piazza ha assistito agli avvenimenti politici e sociali più importanti del paese.
+</p>

@@ -1,1 +1,1 @@
-Plaza de Mayo
+<span lang="es">Plaza de Mayo</span>
