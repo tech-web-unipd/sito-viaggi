@@ -1,12 +1,12 @@
-Riconnettiti con la natura e ammira paesaggi memorabili in questo viaggio di trekking a El Chalten e alla Laguna de los Tres, pranzo incluso. Ammira lo scenario e i paesaggi locali durante l'escursione, comprese le viste su Fit Roy Mountain.
-
-Il viaggio inizia con il prelievo dagli hotel al mattino. Prendi la mitica Strada 40 che costeggia il Lago Argentino e intraprendi un viaggio nella città di El Chalten, a 220 km da El Calafate.
-
-Una volta a Chalten, fermati a Rancho Grande (bar e rifugio alpino) per utilizzare il bagno, ricevere la tua mappa e imparare l'uso di bastoncini e ramponi se necessario. Goditi caffè e snack gratuiti per ricaricarti sia prima che dopo il trekking.
-Durante il trekking, avventurati all'interno di una parte della foresta andina. Se sei fortunato, vedrai alcuni degli animali che vivono lì. Sorprenditi con tutti i paesaggi che attraverserai lungo il tuo cammino. Presto scoprirai che questo è un luogo naturale da sogno.
-
-Il percorso che viene utilizzato è il Fitz Roy. Partendo e finendo nello stesso posto, sono 10 km all'andata e 10 km indietro. Per i primi due chilometri il percorso è impegnativo. Durante i chilometri da 8 a 9, il percorso è anche molto impegnativo.
-
-
-Dopo aver goduto della vista impressionante del Cerro Fitz Roy e della Laguna de los Tres e aver riempito la magia del luogo, tornerai a El Chalten attraverso un sentiero ben segnalato. Il personale ti aspetterà in anticipo al punto di incontro fisso per il viaggio di ritorno a El Calafate.
-A seconda delle condizioni meteorologiche, il percorso o le attrazioni viste possono variare. Altri luoghi da visitare sono il Camping Poicenot, Laguna Capri e Sendero Torre.
+<p>
+Riconnettiti con la natura e ammira paesaggi memorabili in questo viaggio di <span lang="en">trekking</span> a <span lang="es">El Chalten</span> e alla <span lang="es">Laguna de los Tres</span>, pranzo incluso. Ammira lo scenario e i paesaggi locali durante l'escursione, comprese le viste su <span lang="en">Fit Roy Mountain</span>.
+</p>
+<p>
+Il viaggio inizia con il prelievo dagli hotel al mattino. Prendi la mitica Strada 40 che costeggia il Lago Argentino e intraprendi un viaggio nella città di <span lang="es">El Chalten</span>, a 220 km da <span lang="es">El Calafate</span>.
+</p>
+<p>
+Una volta a <span lang="es">Chalten</span>, fermati a <span lang="es">Rancho Grande</span> (bar e rifugio alpino) per utilizzare il bagno, ricevere la tua mappa e imparare l'uso di bastoncini e ramponi se necessario. Goditi caffè e snack gratuiti per ricaricarti sia prima che dopo il <span lang="en">trekking</span>.
+</p>
+<p>
+Durante il <span lang="en">trekking</span>, avventurati all'interno di una parte della foresta andina. Se sei fortunato, vedrai alcuni degli animali che vivono lì. Sorprenditi con tutti i paesaggi che attraverserai lungo il tuo cammino. Presto scoprirai che questo è un luogo naturale da sogno.
+</p>

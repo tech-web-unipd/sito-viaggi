@@ -1,7 +1,15 @@
-Situato a El Calafate, a 200 metri dal centro della città, l'Hotel Kosten Aike si trova in un imponente edificio in stile alpino, e offre una spa, un centro fitness e camere con WiFi gratuito. Durante il soggiorno potrete gustare una colazione a buffet ogni mattina e rilassarvi nel profumato giardino della struttura.
-
+<p>
+Situato a <span lang="es">El Calafate</span>, a 200 metri dal centro della città, l'Hotel <span lang="nl">Kosten Aike</span> si trova in un imponente edificio in stile alpino, e offre una spa, un centro <span lang="en">fitness</span> e camere con WiFi gratuito. 
+</p>
+<p>
+Durante il soggiorno potrete gustare una colazione a <span lang="en">buffet</span> ogni mattina e rilassarvi nel profumato giardino della struttura.
+</p>
+<p>
 Caratterizzate da arredi eleganti, le luminose e spaziose sistemazioni sono dotate di TV via cavo, minibar, cassaforte, riscaldamento, scrivania, telefono e bagno privato con set di cortesia e asciugacapelli. Come ospiti della struttura avrete a disposizione una navetta aeroportuale a un costo aggiuntivo.
-
-Presso l'hotel troverete strutture benessere quali una vasca idromassaggio, una sauna, una doccia scozzese e una sala massaggi, una sala per i giochi con biliardo, un tavolo da ping-pong, un salone per eventi e un centro business fornito di computer.
-
-L'Hotel Kosten Aike è provvisto di un parcheggio gratuito in loco, e dista 8 km dal Museo del Ghiaccio Glaciarium e 20 km dall'Aeroporto Comandante Armando Tola.
+</p>
+<p>
+Presso l'hotel troverete strutture benessere quali una vasca idromassaggio, una sauna, una doccia scozzese e una sala massaggi, una sala per i giochi con biliardo, un tavolo da ping-pong, un salone per eventi e un centro <span lang="en">business</span> fornito di <span lang="en">computer</span>.
+</p>
+<p>
+L'Hotel <span lang="nl">Kosten Aike</span> è provvisto di un parcheggio gratuito in loco, e dista 8 km dal Museo del Ghiaccio <span lang="la">Glaciarium</span> e 20 km dall'Aeroporto Comandante Armando Tola.
+</p>

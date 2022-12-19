@@ -1,6 +1,12 @@
-
-Parti dal porticciolo turistico locale e sali a bordo di un'imbarcazione moderna e confortevole. Salpa e attraversa l'ampia baia di Ushuaia, fino ad arrivare al canale di Beagle attraverso Paso Chico. Naviga intorno all'Isla de los Pájaros, dove potrai apprezzare le varie specie di uccelli marini della Terra del Fuoco, come lo stercorario, l'albatro sopracciglio nero, l'anatra vaporiera, l'oca di Magellano e il gabbiano grigio.
-
-Raggiungi l'Isla de los Lobos, che appartiene all'arcipelago Bridges ed è abitata da 2 diverse specie di leoni marini. Dirigiti verso il faro Les Éclaireurs (Gli illuminatori), dove troverai colonie di cormorani imperiali e cormorani di Magellano. Ascolta la storia del transatlantico Monte Cervantes, affondato nel 1930.
-
-Prosegui quindi con la navigazione verso est, in direzione del meraviglioso paesaggio del canale di Beagle, circondato da splendide catene montuose. Ammira Puerto Almanza sulla costa argentina e la base navale di Puerto Williams sulla costa cilena. Continua per l'Isla Martillo, conosciuta anche con il nome di Penguin Island, dove avrai la possibilità di osservare una colonia di pinguini Papua e di Magellano nel loro habitat naturale. Successivamente intraprendi il viaggio di ritorno al molo, punto di conclusione del tour. 
+<p>
+Parti dal porticciolo turistico locale e sali a bordo di un'imbarcazione moderna e confortevole. 
+</p>
+<p>
+Salpa e attraversa l'ampia baia di <span lang="es">Ushuaia</span>, fino ad arrivare al canale di <span lang="en">Beagle</span> attraverso <span lang="es">Paso Chico</span>. Naviga intorno all'<span lang="es">Isla de los Pájaros</span>, dove potrai apprezzare le varie specie di uccelli marini della Terra del Fuoco, come lo stercorario, l'albatro sopracciglio nero, l'anatra vaporiera, l'oca di Magellano e il gabbiano grigio.
+</p>
+<p>
+Raggiungi l'<span lang="es">Isla de los Lobos</span>, che appartiene all'arcipelago <span lang="en">Bridges</span> ed è abitata da 2 diverse specie di leoni marini. Dirigiti verso il faro <span lang="es">Les Éclaireurs</span> (Gli illuminatori), dove troverai colonie di cormorani imperiali e cormorani di Magellano. Ascolta la storia del transatlantico Monte <span lang="es">Cervantes</span>, affondato nel 1930.
+</p>
+<p>
+Prosegui quindi con la navigazione verso est, in direzione del meraviglioso paesaggio del canale di <span lang="en">Beagle</span>, circondato da splendide catene montuose. Ammira <span lang="es">Puerto Almanza</span> sulla costa argentina e la base navale di <span lang="es">Puerto</span> <span lang="en">Williams</span> sulla costa cilena. Continua per l'<span lang="es">Isla Martillo</span>, conosciuta anche con il nome di <span lang="en">Penguin Island</span>, dove avrai la possibilità di osservare una colonia di pinguini <span lang="es">Papua</span> e di Magellano nel loro habitat naturale. Successivamente intraprendi il viaggio di ritorno al molo, punto di conclusione del <span lang="en">tour</span>. 
+</p>

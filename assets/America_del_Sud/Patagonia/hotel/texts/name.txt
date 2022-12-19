@@ -1,1 +1,1 @@
-Hotel Kosten Aike
+Hotel <span lang="nl">Kosten Aike</span>
