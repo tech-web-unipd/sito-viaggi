@@ -1,5 +1,5 @@
-Spesso considerata una delle città più vivibili del mondo, Vancouver è stata classificata anche come la migliore città in cui vivere in Nord America. Anche famosa per i suoi paesaggi mozzafiato sulla costa pacifica, riserva una scena culturale vibrante con appuntamenti fissi dal respiro internazionale. D'altronde la sua esuberanza culturale è data dal fatto che Vancouver è una delle città più etnicamente variegate del Canada, tanto che il 52% dei residenti non è madrelingua inglese. 
+<p>Spesso considerata una delle città più vivibili del mondo, <strong><span lang="en">Vancouver</span></strong> è stata classificata anche come la migliore città in cui vivere in Nord America. Anche famosa per i suoi paesaggi mozzafiato sulla costa pacifica, riserva una scena culturale vibrante con appuntamenti fissi dal respiro internazionale. D'altronde la sua esuberanza culturale è data dal fatto che <span lang="en">Vancouver</span> è una delle città più etnicamente variegate del <strong>Canada</strong>, tanto che il 52% dei residenti non è madrelingua inglese.</p>
 
-Con le montagne alle spalle e infiniti litorali, Vancouver è una città perfetta per sciare in inverno e andare al mare in estate. 
+<p>Con le montagne alle spalle e infiniti litorali, <span lang="en">Vancouver</span> è una città perfetta per sciare in inverno e andare al mare in estate.</p> 
 
-Il periodo più indicato per visitare Vancouver è comunque tra giugno e ottobre quando le temperature sono miti ed è più raro che piova. 
+<p>Il periodo più indicato per visitare <span lang="en">Vancouver</span> è comunque tra giugno e ottobre quando le temperature sono miti ed è più raro che piova.</p> 

@@ -1,9 +1,9 @@
-Situato a 3 minuti a piedi dalla Queen’s Beach, il President Hotel offre una piscina a sfioro, un bar con terrazza e vista panoramica sul monte Testa di Leone e sull'Oceano Atlantico, e una prima colazione all'inglese.
+<p>Situato a 3 minuti a piedi dalla <span lang="en">Queen’s Beach</span>, il <strong><span lang="en">President Hotel</span></strong> offre una piscina a sfioro, un bar con terrazza e vista panoramica sul monte Testa di Leone e sull'Oceano Atlantico, e una prima colazione all'inglese.</p>
 
-Arredate in stile contemporaneo, tutte le camere sono dotate di aria condizionata, TV a schermo piatto e angolo cottura semi-indipendente con set per la preparazione di tè e caffè, frigobar e forno a microonde.
+<p>Arredate in stile contemporaneo, tutte le camere sono dotate di aria condizionata, <abbr title="televisione">TV</abbr> a schermo piatto e angolo cottura semi-indipendente con set per la preparazione di tè e caffè, frigobar e forno a microonde.</p>
 
-L’Island Restaurant propone menù a buffet e à la carte in un ambiente informale, mentre il Senate Bar vi attende con cocktail e altre bevande.
+<p>L’<span lang="en">Island Restaurant</span> propone <span lang="en">menù</span> a buffet e <span lang="fr">à la carte</span> in un ambiente informale, mentre il <span lang="en">Senate Bar</span> vi attende con <span lang="en">cocktail</span> e altre bevande.</p>
 
-Troverete una fermata dell’autobus proprio davanti all’hotel, e presso il banco escursioni potrete acquistare i biglietti degli autobus con formula hop-on hop-off.
+<p>Troverete una fermata dell’autobus proprio davanti all’hotel, e presso il banco escursioni potrete acquistare i biglietti degli autobus con formula <span lang="en">hop-on hop-off</span>.</p>
 
-Il President Hotel dista 6 km dal Cape Town Stadium e dai negozi e dalle attrazioni del V&A Waterfront, e circa 30 minuti d’auto dall’Aeroporto Internazionale di Città del Capo.
+<p>Il <span lang="en">President Hotel</span> dista 6 <abbr title="chilometri">km</abbr> dal <span lang="en">Cape Town Stadium</span> e dai negozi e dalle attrazioni del <span lang="en">V&A Waterfront</span>, e circa 30 minuti d’auto dall’Aeroporto Internazionale di Città del Capo.</p>

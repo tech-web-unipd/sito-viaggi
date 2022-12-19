@@ -1,1 +1,1 @@
-Tour in idrovolante di Vancouver
+Tour in idrovolante di <span lang="en">Vancouver</span>

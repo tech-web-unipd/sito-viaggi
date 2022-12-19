@@ -1,7 +1,5 @@
-Situato a Mwanza, a 600 metri dalla stazione ferroviaria, l'Hotel Tilapia offre un ristorante, un parcheggio privato gratuito, una piscina all'aperto e un bar. Questo hotel a 3 stelle offre la connessione WiFi gratuita, un giardino e una terrazza. La struttura offre una reception aperta 24 ore su 24, il servizio in camera e il cambio valuta.
+<p>Situato a <strong><span lang="af">Mwanza</span></strong>, a 600 metri dalla stazione ferroviaria, l'<strong>Hotel Tilapia</strong> offre:<ul> <li>ristorante;</li> <li>parcheggio privato gratuito;</li> <li>piscina all'aperto</li> <li>area bar;</li> <li>connessione <span lang="en">WiFi</span> gratuita;</li> <li>un giardino e una terrazza</li> <li><span lang="en">reception</span> aperta 24 ore su 24;</li> <li>servizio in camera</li> <li>>cambio valuta.</li></ul></p>
 
-Al mattino vi attende una colazione continentale.
+<p>Inoltre al mattino verrà servita una colazione continentale. La struttura ospita un parrucchiere e un centro business.</p>
 
-La struttura ospita un parrucchiere e un centro business.
-
-L'Hotel Tilapia dista 1,1 km dal Parco Nazionale dell'Isola di Saanane e 3,4 km dallo stadio CCM Kirumba. La struttura dista 11 km dall'Aeroporto di Mwanza, lo scalo più vicino, e fornisce un servizio di navetta aeroportuale a pagamento.
+<p>L'Hotel Tilapia dista 1,1 <abbr title="chilometri">km</abbr> dal Parco Nazionale dell'Isola di Saanane e 3,4 <abbr title="chilometri">km</abbr> dallo stadio Kirumba. La struttura dista 11 <abbr title="chilometri">km</abbr> dall'Aeroporto di <span lang="af">Mwanza</span>, lo scalo più vicino, e fornisce un servizio di navetta aeroportuale a pagamento.</p>
