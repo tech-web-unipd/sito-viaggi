@@ -1,9 +1,15 @@
+<p>
 In questa isola vulcanica, avremo la possibilità di osservare le colonie di fregate, gabbiani e sula piediazzurri e, se coincideremo con la stagione degli amori, potremo assistere alle loro curiose danze.
-
-Grazie al suo clima, in alcune parti dell'isola crescono cactus e salvadora persica, oltre molti alberi di palosanto, che gli antichi sciamani usavano a scopi terapeutici. Tra la sua fauna incontreremo l'iguana autoctona delle Galápagos. 
-
+</p>
+<p>
+Grazie al suo clima, in alcune parti dell'isola crescono cactus e salvadora persica, oltre molti alberi di palosanto, che gli antichi sciamani usavano a scopi terapeutici. Tra la sua fauna incontreremo l'iguana autoctona delle <span lang="es">Galápagos</span>. 
+</p>
+<p>
 Spostandoci verso la parte opposta dell'isola, scorgeremo decine di leoni marini che giocano e nuotano tra le onde, e più tardi, assaporeremo un pranzo tradizionale nel quale non mancheranno riso e pesce.
-
-Dopo aver ricaricato le pile, faremo ritorno al puerto Ayora di Isla Santa Cruz, dove concluderemo l'esperienza verso le 14:30. 
-
-Unisciti a noi per un'escursione all'Isola Seymour, e vieni a visitare questo luogo straordinario nell'arcipelago delle Galapagos. Andiamo? 
+</p>
+<p>
+Dopo aver ricaricato le pile, faremo ritorno al <span lang="es">puerto Ayora de Isla Santa Cruz</span>, dove concluderemo l'esperienza verso le 14:30. 
+</p>
+<p>
+Unisciti a noi per un'escursione all'Isola <span lang="es">Seymour</span>, e vieni a visitare questo luogo straordinario nell'arcipelago delle <span lang="es">Galápagos</span>. Andiamo? 
+</p>

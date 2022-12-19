@@ -1,1 +1,1 @@
-Isola Seymour
+Isola <span lang="es">Seymour</span>

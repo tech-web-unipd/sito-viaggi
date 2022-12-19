@@ -1,5 +1,12 @@
-Una casa familiare restaurata situata nel cuore di Puerto Ayora, sull'isola di Santa Cruz, ospita ora il moderno Acacia Galapagos Boutique Hotel con 8 camere. Con le sue installazioni eleganti e le bellissime camere, l'hotel offre ai suoi ospiti un ottimo livello di comfort.
-
-Il team dedicato ed esperto di Acacia fornisce un servizio clienti personalizzato e di alto livello.
-
-Oltre a una piscina all'aperto, una jacuzzi e una sala colazione e lettura, l'Acacia Galapagos Boutique Hotel offre ai suoi ospiti anche una terrazza panoramica e una sala spa/yoga.
+<p>
+Una casa familiare restaurata situata nel cuore di <span lang="es">Puerto Ayora</span>, sull'isola di <span lang="es">Santa Cruz</span>, ospita ora il moderno  <span lang="es">Acacia Galapagos</span> <span lang="fr">Boutique</span> Hotel con 8 camere. 
+</p>
+<p>
+Con le sue installazioni eleganti e le bellissime camere, l'hotel offre ai suoi ospiti un ottimo livello di comfort.
+</p>
+<p>
+Il team dedicato ed esperto di <span lang="es">Acacia</span> fornisce un servizio clienti personalizzato e di alto livello.
+</p>
+<p>
+Oltre a una piscina all'aperto, una <span lang="en">jacuzzi</span> e una sala colazione e lettura, l'<span lang="es">Acacia Galapagos</span> <span lang="fr">Boutique</span> Hotel offre ai suoi ospiti anche una terrazza panoramica e una sala spa/<span lang="en">yoga</span>.
+</p>
