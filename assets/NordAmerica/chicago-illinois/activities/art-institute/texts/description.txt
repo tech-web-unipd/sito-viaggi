@@ -1,20 +1,11 @@
-Prenota il biglietto in anticipo e salta la fila per entrare nel rinomato Art Institute of Chicago.
+<p>Prenota il biglietto in anticipo e salta la fila per entrare nel rinomato <strong><span lang="en">Art Institute of Chicago</span></strong>.</p>
 
+<p>Scopri la vasta collezione del museo che copre 5.000 anni di arte da tutto il mondo. Ammira opere iconiche come "Una domenica pomeriggio sull'isola della <span lang="fr">Grande-Jatte</span>" di <span lang="fr">Seurat</span>, "Sulla terrazza (due sorelle)" di <span lang="fr">Renoir</span>, diversi lavori di <span lang="nl">Van Gogh</span> e oltre 25 dipinti di <span lang="fr">Claude Monet</span>. </p>
 
-Scopri la vasta collezione del museo che copre 5.000 anni di arte da tutto il mondo. Ammira opere iconiche come "Una domenica pomeriggio sull'isola della Grande-Jatte" di Seurat, "Sulla terrazza (due sorelle)" di Renoir, diversi lavori di Van Gogh e oltre 25 dipinti di Claude Monet. 
+<p>Tra le opere imperdibili figurano dipinti come "I nottambuli" di <span lang="en">Edward Hopper</span> e "<span lang="en">American Gothic</span>" di <span lang="en">Grant Wood</span>, oltre a opere indimenticabili di <span lang="en">Georgia O’Keeffe</span>, <span lang="es">Pablo Picasso</span>, <span lang="fr">Henri Matisse</span>, <span lang="es">Salvador Dalí</span>, <span lang="en">Andy Warhol</span>, <span lang="en">Alma Thomas</span>, <span lang="en">Cindy Sherman</span> e <span lang="en">Kerry James Marshall</span>. </p>
 
+<p>Prosegui il tuo viaggio intorno al mondo e attraverso i secoli con la straordinaria collezione di opere del museo che include oggetti dell'Antico Egitto, 5.000 anni di arte asiatica, una ricca selezione di opere dall'Africa e un ampio patrimonio di arti dell'Europa e delle Americhe.</p>
 
+<p>Se sei con la famiglia, non perderti la collezione dei cavalieri e delle armature o le meraviglie delle 68 stanze in miniatura di <span lang="en">Thorne</span>. Fai anche una sosta al <span lang="en">Ryan Learning Center</span> del museo, che offre attività artistiche e la possibilità di creare un <span lang="en">tour</span> personalizzato e avventuroso delle gallerie con il <span lang="en">JourneyMaker</span> interattivo.</p>
 
-Tra le opere imperdibili figurano dipinti come "I nottambuli" di Edward Hopper e "American Gothic" di Grant Wood, oltre a opere indimenticabili di Georgia O’Keeffe, Pablo Picasso, Henri Matisse, Salvador Dalí, Andy Warhol, Alma Thomas, Cindy Sherman e Kerry James Marshall. 
-
-
-
-Prosegui il tuo viaggio intorno al mondo e attraverso i secoli con la straordinaria collezione di opere del museo che include oggetti dell'Antico Egitto, 5.000 anni di arte asiatica, una ricca selezione di opere dall'Africa e un ampio patrimonio di arti dell'Europa e delle Americhe.
-
-
-
-Se sei con la famiglia, non perderti la collezione dei cavalieri e delle armature o le meraviglie delle 68 stanze in miniatura di Thorne. Fai anche una sosta al Ryan Learning Center del museo, che offre attività artistiche e la possibilità di creare un <span lang="en">tour</span> personalizzato e avventuroso delle gallerie con il JourneyMaker interattivo.
-
-
-
-Goditi un'esperienza guidata del museo partecipando a uno dei <span lang="en">tour</span> gratuiti disponibili ogni giorno, oppure visitalo al tuo ritmo con i coinvolgenti audio<span lang="en">tour</span> disponibili sull'app gratuita del museo.
+<p>Goditi un'esperienza guidata del museo partecipando a uno dei <span lang="en">tour</span> gratuiti disponibili ogni giorno, oppure visitalo al tuo ritmo con i coinvolgenti audio<span lang="en">tour</span> disponibili sull'<abbr title="applicazione">app</abbr> gratuita del museo.</p>

@@ -1,1 +1,1 @@
-Crociera guidata sul fiume Chicago
+Crociera guidata sul fiume <span lang="en">Chicago</span>
