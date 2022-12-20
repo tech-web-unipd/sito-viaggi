@@ -1,1 +1,1 @@
-Acme Hotel Chicago
+<span lang="en">Acme Hotel Chicago</span>

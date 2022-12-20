@@ -1,5 +1,5 @@
-Chicago, una città dell'Illinois sul Lago Michigan, è una delle metropoli più grandi degli Stati Uniti. 
+<p><span lang="en">Chicago</span>, una città dell'<span lang="en">Illinois</span> sul Lago <span lang="en">Michigan</span>, è una delle metropoli più grandi degli Stati Uniti. </p>
 
-Famosa per l'audace architettura, è costellata di grattacieli, come i famosi John Hancock Center, la Willis Tower, alta 1451 piedi e precedentemente chiamata Sears Tower, e la neogotica Tribune Tower. 
+<p>Famosa per l'audace architettura, è costellata di grattacieli, come i famosi <span lang="en">John Hancock Center</span>, la <span lang="en">Willis Tower</span>, alta 1451 piedi e precedentemente chiamata <span lang="en">Sears Tower</span>, e la neogotica <span lang="en">Tribune Tower</span>. </p>
 
-La città è conosciuta anche per i musei, fra cui l'Art Institute of Chicago, che ospita rinomate opere impressioniste e post-impressioniste.
+<p>La città è conosciuta anche per i musei, fra cui l'<span lang="en">Art Institute of Chicago</span>, che ospita rinomate opere impressioniste e post-impressioniste.</p>

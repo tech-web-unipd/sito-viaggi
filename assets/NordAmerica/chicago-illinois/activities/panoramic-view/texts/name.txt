@@ -1,1 +1,1 @@
-Vista panoramica Chicago
+Vista panoramica <span lang="en">Chicago</span>
