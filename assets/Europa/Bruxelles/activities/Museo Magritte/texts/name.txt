@@ -1,1 +1,1 @@
-Museo Magritte
+Museo <span lang="en">Magritte</span>

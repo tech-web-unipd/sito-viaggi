@@ -1,1 +1,1 @@
-Hilton Brussels Grand Place
+<span lang="fr">Hilton Brussels Grand Place</span>
