@@ -30,12 +30,6 @@ class DatabaseLayer {
         $this->db_connection = null;
     }
 
-    public function __destruct() {
-        if ($this->db_connection) {
-            $this->db_connection->close();
-        }
-    }
-
     public function __toString() {
         return "EntityOfDatabaseLayer";
     }
