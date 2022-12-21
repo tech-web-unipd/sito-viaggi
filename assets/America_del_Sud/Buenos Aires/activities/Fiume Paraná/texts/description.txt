@@ -1,0 +1,11 @@
+<p>
+Sali a bordo e divertiti mentre il tuo capitano ti porta attraverso le acque del <span lang="es">Río de La Plata</span> durante il tuo giro in barca di 1 ora e 50 minuti. 
+</p>
+<ul>
+    <li>Naviga attraverso le acque del <span lang="es">Río de la Plata</span> e del delta del fiume in una moderna crociera panoramica sulla strada per Tigre;</li>
+    <li>Ammira viste panoramiche della costa di Buenos Aires dal ponte di osservazione;</li>
+    <li>Esplora le isole della Tigre e del Delta;</li>
+</ul>
+<p>
+Dopo aver attraversato i quartieri di <span lang="es">Nuñez, Olivos, Martinez e San Isidro</span>, la crociera attraverserà il fiume San Antonio fino al delta del fiume Paraná.
+</p>

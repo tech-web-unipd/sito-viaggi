@@ -1,0 +1,1 @@
+Hotel <span lang="fr">Saint-Charles</span>

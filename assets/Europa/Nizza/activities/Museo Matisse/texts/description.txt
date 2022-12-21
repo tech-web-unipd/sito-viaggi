@@ -1,0 +1,12 @@
+<p>
+Il Museo <span lang="fr">Matisse</span> di Nizza è dedicato all’opera del pittore francese <span lang="fr">Henri Matisse</span>. 
+</p>
+<p>
+Riunisce una delle più grandi collezioni al mondo delle sue opere, che ci permette di ripercorrere il suo viaggio artistico e i suoi sviluppi dai suoi inizi ai suoi ultimi lavori. 
+</p>
+<p>
+Ospitato nella Villa <span lang="fr">des Arenes</span>, una villa genovese del diciasettesimo secolo nella zona di <span lang="fr">Cimiez</span>, il museo ha aperto i battenti nel 1963.
+</p>
+<p>
+Classificato come <span lang="fr">“Musée de France”</span>, il <span lang="fr">Musée Matisse</span> copre una superficie totale di 2.800 m2, di cui 1.200 m2 di spazi espositivi abbracciano la villa e l’ampliamento. 
+</p>
