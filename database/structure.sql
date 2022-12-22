@@ -92,8 +92,14 @@ CREATE TABLE Purchase(
     moment timestamp not null,
     username varchar(50) not null,
     card varchar(16) not null,
+    destination int not null,
+    start_date DATE not null,
+    end_date DATE not null,
     FOREIGN KEY(username) REFERENCES User(username) ON DELETE NO ACTION, 
-    FOREIGN KEY(card) REFERENCES Payment_Method(card_number) ON DELETE NO ACTION
+    FOREIGN KEY(card) REFERENCES Payment_Method(card_number) ON DELETE NO ACTION,
+    FOREIGN KEY(destination) REFERENCES Travel(destination) ON DELETE NO ACTION,
+    FOREIGN KEY(start_date) REFERENCES Travel(start_date) ON DELETE NO ACTION,
+    FOREIGN KEY(end_date) REFERENCES Travel(end_date) ON DELETE NO ACTION
 );
 ALTER TABLE Purchase AUTO_INCREMENT=00001;
 
