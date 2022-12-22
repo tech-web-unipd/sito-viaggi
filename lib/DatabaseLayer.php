@@ -31,7 +31,7 @@ class DatabaseLayer {
     }
 
     public function __toString() {
-        return "EntityOfDatabaseLayer";
+        return "Database $this->database on $this->host:$this->port";
     }
 
     /**
