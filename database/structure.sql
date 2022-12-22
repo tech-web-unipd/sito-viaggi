@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Travel;
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Payment_Method;
 DROP TABLE IF EXISTS Purchase;
-DROP TABLE IF EXISTS Turist;
+DROP TABLE IF EXISTS Partecipant;
 DROP TABLE IF EXISTS Image_Activity;
 DROP TABLE IF EXISTS Image_Destination;
 DROP TABLE IF EXISTS Image_Airline;
@@ -71,13 +71,12 @@ CREATE TABLE User(
     username varchar(50) PRIMARY KEY,
     name varchar(100) not null,
     surname varchar(100) not null,
-    gender char not null CHECK (gender IN ("U","D","A"));,
+    gender ENUM('M','W','U') DEFAULT 'U' not null,
     date_of_birth DATE not null,
     pw_hash varchar(100) not null, 
     email varchar(100) not null,
     numero varchar(20) not null,
-    admin boolean not null
-    /*img VARCHAR(256) NOT NULL DEFAULT '<rootFolder />/img/utenti/def1.png' PER METTERE L'IMMAGINE DI DEFAULT*/
+    permission ENUM('user','admin') DEFAULT 'user' not null
 );
 
 CREATE TABLE Payment_Method(
@@ -98,15 +97,17 @@ CREATE TABLE Purchase(
 );
 ALTER TABLE Purchase AUTO_INCREMENT=00001;
 
-CREATE TABLE Turist(
-    fiscal_code varchar(16) PRIMARY KEY, 
+CREATE TABLE Partecipant(
+    document_type varchar(50),
+    document_number varchar(50), 
     name varchar(100) not null,
     surname varchar(100) not null,
-    gender char not null CHECK (gender IN ("U","D","A"));,
+    gender ENUM('M','W','U') DEFAULT 'U' not null,
     date_of_birth DATE not null,
     email varchar(100) not null,
     numero varchar(20) not null.
     purchase int not null,
+    PRIMARY KEY(document_type, document_number),
     FOREIGN KEY(purchase) REFERENCES Purchase(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
