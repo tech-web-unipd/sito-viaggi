@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS Airline;
 DROP TABLE IF EXISTS Flight;
 DROP TABLE IF EXISTS Hotel;
 DROP TABLE IF EXISTS Travel;
-DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS UserProfile;
 DROP TABLE IF EXISTS Payment_Method;
 DROP TABLE IF EXISTS Purchase;
 DROP TABLE IF EXISTS Partecipant;
@@ -67,7 +67,7 @@ CREATE TABLE Travel(
     FOREIGN KEY(destination) REFERENCES Destination(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE User(
+CREATE TABLE UserProfile(
     username varchar(50) PRIMARY KEY,
     name varchar(100) not null,
     surname varchar(100) not null,
@@ -82,9 +82,11 @@ CREATE TABLE User(
 CREATE TABLE Payment_Method(
     card_number varchar(16) PRIMARY KEY,
     cvc varchar(3) not null,
-    expiration
+    expiration date not null,
     name varchar(100) not null,
     surname varchar(100) not null,
+    username varchar(50) not null,
+    FOREIGN KEY(username) REFERENCES UserProfile(username) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Purchase(
@@ -95,11 +97,9 @@ CREATE TABLE Purchase(
     destination int not null,
     start_date DATE not null,
     end_date DATE not null,
-    FOREIGN KEY(username) REFERENCES User(username) ON DELETE NO ACTION, 
-    FOREIGN KEY(card) REFERENCES Payment_Method(card_number) ON DELETE NO ACTION,
-    FOREIGN KEY(destination) REFERENCES Travel(destination) ON DELETE NO ACTION,
-    FOREIGN KEY(start_date) REFERENCES Travel(start_date) ON DELETE NO ACTION,
-    FOREIGN KEY(end_date) REFERENCES Travel(end_date) ON DELETE NO ACTION
+    FOREIGN KEY(username) REFERENCES UserProfile(username) ON DELETE NO ACTION ON UPDATE NO ACTION, 
+    FOREIGN KEY(card) REFERENCES Payment_Method(card_number) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY(destination, start_date, end_date) REFERENCES Travel(destination, start_date, end_date) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 ALTER TABLE Purchase AUTO_INCREMENT=00001;
 
@@ -111,7 +111,7 @@ CREATE TABLE Partecipant(
     gender ENUM('M','W','U') DEFAULT 'U' not null,
     date_of_birth DATE not null,
     email varchar(100) not null,
-    numero varchar(20) not null.
+    numero varchar(20) not null,
     purchase int not null,
     PRIMARY KEY(document_type, document_number),
     FOREIGN KEY(purchase) REFERENCES Purchase(id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -141,7 +141,7 @@ CREATE TABLE Image_Airline(
     id int AUTO_INCREMENT,
     path varchar(100) not null,
     alt varchar(100) not null,
-    airline int,
+    airline varchar(100),
     PRIMARY KEY(id,airline),
     FOREIGN KEY(airline) REFERENCES Airline(name) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -149,7 +149,7 @@ ALTER TABLE Image_Airline AUTO_INCREMENT=00001;
 
 CREATE TABLE Image_Hotel(
     id int AUTO_INCREMENT,
-    path varchar(10 0) not null,
+    path varchar(100) not null,
     alt varchar(100) not null,
     hotel int,
     PRIMARY KEY(id,hotel),
