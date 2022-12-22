@@ -1,5 +1,19 @@
 # Sito viaggi
 
+## Nomenclatura PHP e JS
+
+Per la nomenclatura dei linguaggi di programmazione procediamo come segue:
+- **Variabili**: snake_case
+- **Funzioni**: camelCase
+- **Classi**: PascalCase
+- **Costanti**: CAPS_LOCK
+Ad esempio in PHP:
+```php
+$this_is_my_variable;
+public function thisIsAFunction() {};
+class ThisIsAClass {};
+```
+
 ## Organizzazione cartella assets
 
 Per inserire gli assets creare all'interno della cartella un altra cartella con il nome della destinazione, all'interno di essa creare le cartelle:
