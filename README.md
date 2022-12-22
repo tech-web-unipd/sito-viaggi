@@ -7,6 +7,7 @@ Per la nomenclatura dei linguaggi di programmazione procediamo come segue:
 - **Funzioni**: camelCase
 - **Classi**: PascalCase
 - **Costanti**: CAPS_LOCK
+
 Ad esempio in PHP:
 ```php
 $this_is_my_variable;
