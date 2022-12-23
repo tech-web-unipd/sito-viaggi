@@ -6,13 +6,15 @@ class DestinationNotFound extends Exception {
 }
 class Destination extends AbstractComponent
 {
+    private const IMAGE_TABLE = "image_destination";
+    private const IMAGE_FOREIGN_KEY = "destination";
     private ?string $continent;
     private ?string $state;
 
     public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null) {
         $this->continent = $continent;
         $this->state = $state;
-        parent::__construct("image_destination", "destination", $id, $name, $description, $images, $cover);
+        parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
     }
 
     public function __toString()

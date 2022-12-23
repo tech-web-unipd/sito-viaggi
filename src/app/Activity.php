@@ -12,12 +12,14 @@ class ActivityNotFound extends Exception
 
 class Activity extends AbstractComponent
 {
+    private const IMAGE_TABLE = "image_activity";
+    private const IMAGE_FOREIGN_KEY = "activity";
     private ?int $price;
 
     public function __construct(string $id = null, string $name = null, int $price = null, string $description = null, array $images = null, Image $cover = null)
     {
         $this->price = $price;
-        parent::__construct("image_activity", "activity", $id, $name, $description, $images, $cover);
+        parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
     }
 
     public function __toString()
