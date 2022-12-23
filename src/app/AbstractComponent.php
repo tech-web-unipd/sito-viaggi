@@ -86,7 +86,7 @@ abstract class AbstractComponent
                 $this->images[0]->is_cover = true;
             }
             foreach ($this->images as $image) {
-                $db->executeStatement("INSERT INTO " . $this->image_table . " (path, alt, is_cover, " . $this->image_foreign_key . ") VALUES (?, ?, ?, ?)", [$image->path, $image->alt, $image->is_cover, $this->id]);
+                $db->executeStatement("INSERT INTO " . $this->image_table . " (path, alt, is_cover, " . $this->image_foreign_key . ") VALUES (?, ?, ?, ?)", [$image->getPath(), $image->getAlt(), $image->is_cover ? 1 : 0, $this->id]);
             }
         } else {
             throw new UndefinedField();
