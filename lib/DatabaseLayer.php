@@ -96,7 +96,7 @@ class DatabaseLayer {
                 throw new Exception("Could not execute query: " . $this->connection()->error);
             }
 
-            $result_array = $result->fetch_all();
+            $result_array = $result->fetch_all(MYSQLI_ASSOC);
             $result->free();
             $stmt->close();
             $this->closeConnection();
