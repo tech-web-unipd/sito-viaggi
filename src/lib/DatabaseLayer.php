@@ -73,7 +73,8 @@ class DatabaseLayer {
     /**
      * @param string $statement contains the SQL statement with 0 or more "?" placeholders for parameters
      * @param array $params contains the parameters to be bound to the statement
-     * @return array containing the result rows
+     * @return array containing the result rows of a query
+     * @return bool true if the statement was executed successfully
      * @throws Exception
      */
     public function executeStatement(string $statement, array $params = array()): array | bool
