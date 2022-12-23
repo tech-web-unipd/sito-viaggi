@@ -8,10 +8,10 @@ class WrongParamType extends Exception {
 class DatabaseLayer {
 
     private array $type_conversion = [
-            'integer' => 'i',
-            'double' => 'd',
-            'string' => 's',
-        ];
+        'integer' => 'i',
+        'double' => 'd',
+        'string' => 's',
+    ];
 
     private string $host;
     private string $user;
@@ -53,6 +53,7 @@ class DatabaseLayer {
     private function closeConnection() {
         if ($this->db_connection != null) {
             $this->db_connection->close();
+            $this->db_connection = null;
         }
     }
 
@@ -75,7 +76,7 @@ class DatabaseLayer {
      * @return array containing the result rows
      * @throws Exception
      */
-    public function executeStatement(string $statement, array $params = array()): array
+    public function executeStatement(string $statement, array $params = array()): array | bool
     {
         $this->connection();
         $stmt = $this->db_connection->prepare($statement);
@@ -96,11 +97,17 @@ class DatabaseLayer {
                 throw new Exception("Could not execute query: " . $this->connection()->error);
             }
 
-            $result_array = $result->fetch_all(MYSQLI_ASSOC);
-            $result->free();
+            if(!(gettype($result) == "boolean")) {
+                $result_array = $result->fetch_all(MYSQLI_ASSOC);
+                $result->free();
+                $stmt->close();
+                $this->closeConnection();
+                return $result_array;
+            }
+
             $stmt->close();
             $this->closeConnection();
-            return $result_array;
+            return $result;
         } else {
             $this->closeConnection();
             throw new Exception("Failed to execute query: " . $statement . " (" . $this->db_connection->errno . ") " . $this->db_connection->error);
