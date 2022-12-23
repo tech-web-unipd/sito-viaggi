@@ -15,6 +15,11 @@ class Destination extends AbstractComponent
         parent::__construct("image_destination", "destination", $id, $name, $description, $images, $cover);
     }
 
+    public function __toString()
+    {
+        return "Destination with id: $this->id named $this->name";
+    }
+
     /**
      * @throws DestinationNotFound if the destination is not in the database
      * @throws IdNotDefined if the id value is null
@@ -55,6 +60,30 @@ class Destination extends AbstractComponent
             $this->insertImagesIntoDatabase($db);
         } else {
             throw new UndefinedField();
+        }
+    }
+
+    /**
+     * @throws FieldNotLoaded if continent value is null
+     */
+    public function getContinent(): string
+    {
+        if ($this->continent != null) {
+            return $this->continent;
+        } else {
+            throw new FieldNotLoaded('continent');
+        }
+    }
+
+    /**
+     * @throws FieldNotLoaded if state value is null
+     */
+    public function getState(): string
+    {
+        if ($this->state != null) {
+            return $this->state;
+        } else {
+            throw new FieldNotLoaded('state');
         }
     }
 }
