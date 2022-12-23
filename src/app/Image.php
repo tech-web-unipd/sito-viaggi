@@ -19,4 +19,14 @@ class Image
     {
         return "<img src=\"$this->path\" alt=\"$this->alt\">";
     }
+
+    public function getPath(): string
+    {
+        return $this->path;
+    }
+
+    public function getAlt(): string
+    {
+        return $this->alt;
+    }
 }
