@@ -1,21 +1,31 @@
 <?php
-require_once './lib/DatabaseLayer.php';
-require_once './app/Image.php';
-class IdNotDefined extends Exception {
-    public function __construct() {
+require_once './src/lib/DatabaseLayer.php';
+require_once './src/app/Image.php';
+
+class IdNotDefined extends Exception
+{
+    public function __construct()
+    {
         parent::__construct("Id not defined");
     }
 }
-class FieldNotLoaded extends Exception {
-    public function __construct($field) {
+
+class FieldNotLoaded extends Exception
+{
+    public function __construct($field)
+    {
         parent::__construct("Field $field not loaded");
     }
 }
-class UndefinedField extends Exception {
-    public function __construct() {
+
+class UndefinedField extends Exception
+{
+    public function __construct()
+    {
         parent::__construct("There are on or more fields not defined");
     }
 }
+
 abstract class AbstractComponent
 {
     protected ?string $id;
@@ -45,16 +55,17 @@ abstract class AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    protected function loadImages(DatabaseLayer $db): void {
-        if($this->id === null) {
+    protected function loadImages(DatabaseLayer $db): void
+    {
+        if ($this->id === null) {
             throw new IdNotDefined();
         }
         $this->images = array();
-        $results = $db->executeStatement("SELECT * FROM ".$this->image_table." WHERE ".$this->image_foreign_key." = ?", [$this->id]);
+        $results = $db->executeStatement("SELECT * FROM " . $this->image_table . " WHERE " . $this->image_foreign_key . " = ?", [$this->id]);
         foreach ($results as $row) {
             $image = new Image($row['path'], $row['alt'], $row['is_cover']);
             $this->images[] = $image;
-            if($image->is_cover) {
+            if ($image->is_cover) {
                 $this->cover = $image;
             }
         }
@@ -64,17 +75,18 @@ abstract class AbstractComponent
      * @throws UndefinedField if there are on or more fields not defined
      * @throws Exception in case of errors with database communication
      */
-    protected function insertImagesIntoDatabase(DatabaseLayer $db): void {
+    protected function insertImagesIntoDatabase(DatabaseLayer $db): void
+    {
         if (!($this->images == null)) {
-            if($this->id === null) {
+            if ($this->id === null) {
                 throw new IdNotDefined();
             }
-            if($this->cover == null) {
+            if ($this->cover == null) {
                 $this->cover = $this->images[0];
                 $this->images[0]->is_cover = true;
             }
             foreach ($this->images as $image) {
-                $db->executeStatement("INSERT INTO ".$this->image_table." (path, alt, is_cover, ".$this->image_foreign_key.") VALUES (?, ?, ?, ?)", [$image->path, $image->alt, $image->is_cover, $this->id]);
+                $db->executeStatement("INSERT INTO " . $this->image_table . " (path, alt, is_cover, " . $this->image_foreign_key . ") VALUES (?, ?, ?, ?)", [$image->path, $image->alt, $image->is_cover, $this->id]);
             }
         } else {
             throw new UndefinedField();
@@ -84,8 +96,9 @@ abstract class AbstractComponent
     /**
      * @throws FieldNotLoaded if name value is null
      */
-    public function getName(): string {
-        if($this->name != null) {
+    public function getName(): string
+    {
+        if ($this->name != null) {
             return $this->name;
         } else {
             throw new FieldNotLoaded('name');
@@ -95,7 +108,8 @@ abstract class AbstractComponent
     /**
      * @throws FieldNotLoaded if description value is null
      */
-    public function getDescription(): string {
+    public function getDescription(): string
+    {
         if ($this->description != null) {
             return $this->description;
         } else {
@@ -106,7 +120,8 @@ abstract class AbstractComponent
     /**
      * @throws FieldNotLoaded if images value is null
      */
-    public function getImages(): array {
+    public function getImages(): array
+    {
         if ($this->images != null) {
             return $this->images;
         } else {
@@ -117,7 +132,8 @@ abstract class AbstractComponent
     /**
      * @throws FieldNotLoaded if cover value is null
      */
-    public function getCover(): Image {
+    public function getCover(): Image
+    {
         if ($this->cover != null) {
             return $this->cover;
         } else {

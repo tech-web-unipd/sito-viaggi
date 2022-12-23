@@ -1,12 +1,15 @@
 <?php
-require_once './lib/DatabaseLayer.php';
-require_once './app/AbstractComponent.php';
+require_once './src/lib/DatabaseLayer.php';
+require_once './src/app/AbstractComponent.php';
 
-class ActivityNotFound extends Exception {
-    public function __construct($id) {
+class ActivityNotFound extends Exception
+{
+    public function __construct($id)
+    {
         parent::__construct("Activity with id: $id not found");
     }
 }
+
 class Activity extends AbstractComponent
 {
     private ?int $price;
@@ -27,7 +30,8 @@ class Activity extends AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    public function loadFromDatabase(DatabaseLayer $db): void {
+    public function loadFromDatabase(DatabaseLayer $db): void
+    {
         if ($this->id != null) {
             $result = $db->executeStatement("SELECT * FROM activity WHERE id = ?", [$this->id]);
 
@@ -48,9 +52,10 @@ class Activity extends AbstractComponent
      * @throws UndefinedField if one or more fields are not defined
      * @throws Exception in case of errors with database communication
      */
-    public function insertIntoDatabase(DatabaseLayer $db): void {
+    public function insertIntoDatabase(DatabaseLayer $db): void
+    {
         if (!($this->name == null || $this->price == null || $this->description == null || $this->images == null)) {
-            if($this->id == null) {
+            if ($this->id == null) {
                 $last_id = $db->executeStatement("SELECT MAX(id) AS last_id FROM activity");
                 $this->id = $last_id[0]['last_id'] + 1;
             }
@@ -65,8 +70,9 @@ class Activity extends AbstractComponent
     /**
      * @throws FieldNotLoaded if price value is null
      */
-    public function getPrice(): int {
-        if($this->price != null) {
+    public function getPrice(): int
+    {
+        if ($this->price != null) {
             return $this->price;
         } else {
             throw new FieldNotLoaded('price');
