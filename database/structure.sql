@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS Activity;
 DROP TABLE IF EXISTS Destination;
-DROP TABLE IF EXISTS Do;
+DROP TABLE IF EXISTS Offers;
 DROP TABLE IF EXISTS Airline;
 DROP TABLE IF EXISTS Flight;
 DROP TABLE IF EXISTS Hotel;
@@ -26,11 +26,12 @@ CREATE TABLE Destination(
     id int PRIMARY KEY AUTO_INCREMENT,
     name varchar(100) not null,
     continent varchar(50) not null,
+    state varchar(50) not null,
     description TEXT not null
 );
 ALTER TABLE Destination AUTO_INCREMENT=00001;
 
-CREATE TABLE Do(
+CREATE TABLE Offers(
     destination int,
     activity int,
     PRIMARY KEY(destination, activity),
@@ -91,7 +92,7 @@ CREATE TABLE Payment_Method(
 
 CREATE TABLE Purchase(
     id int PRIMARY KEY AUTO_INCREMENT,
-    moment timestamp not null,
+    moment timestamp not null DEFAULT current_timestamp() ON UPDATE current_timestamp(),
     username varchar(50) not null,
     card varchar(16) not null,
     destination int not null,
@@ -122,6 +123,7 @@ CREATE TABLE Image_Activity(
     path varchar(100) not null,
     alt varchar(100) not null,
     activity int,
+    is_cover tinyint(1) not null,
     PRIMARY KEY(id,activity),
     FOREIGN KEY(activity) REFERENCES Activity(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -132,6 +134,7 @@ CREATE TABLE Image_Destination(
     path varchar(100) not null,
     alt varchar(100) not null,
     destination int,
+    is_cover tinyint(1) not null,
     PRIMARY KEY(id,destination),
     FOREIGN KEY(destination) REFERENCES Destination(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -142,6 +145,7 @@ CREATE TABLE Image_Airline(
     path varchar(100) not null,
     alt varchar(100) not null,
     airline varchar(100),
+    is_cover tinyint(1) not null,
     PRIMARY KEY(id,airline),
     FOREIGN KEY(airline) REFERENCES Airline(name) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -152,6 +156,7 @@ CREATE TABLE Image_Hotel(
     path varchar(100) not null,
     alt varchar(100) not null,
     hotel int,
+    is_cover tinyint(1) not null,
     PRIMARY KEY(id,hotel),
     FOREIGN KEY(hotel) REFERENCES Hotel(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
