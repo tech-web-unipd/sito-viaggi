@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 24, 2022 alle 11:15
--- Versione del server: 10.9.4-MariaDB
--- Versione PHP: 8.1.10
+-- Creato il: Dic 30, 2022 alle 17:09
+-- Versione del server: 10.4.25-MariaDB
+-- Versione PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `activity` (
   `name` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `price` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -42,7 +42,7 @@ CREATE TABLE `activity` (
 
 CREATE TABLE `airline` (
   `name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -56,7 +56,7 @@ CREATE TABLE `destination` (
   `continent` varchar(50) NOT NULL,
   `state` varchar(50) NOT NULL,
   `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE `destination` (
 CREATE TABLE `flight` (
   `destination` int(11) NOT NULL,
   `airline` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -79,8 +79,9 @@ CREATE TABLE `hotel` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `link` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `link` varchar(100) DEFAULT NULL,
+  `destination` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -92,9 +93,9 @@ CREATE TABLE `image_activity` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
   `alt` varchar(100) NOT NULL,
-  `is_cover` tinyint(1) NOT NULL DEFAULT 0,
-  `activity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `activity` int(11) NOT NULL,
+  `is_cover` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -106,9 +107,9 @@ CREATE TABLE `image_airline` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
   `alt` varchar(100) NOT NULL,
-  `is_cover` tinyint(1) NOT NULL DEFAULT 0,
-  `airline` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `airline` varchar(100) NOT NULL,
+  `is_cover` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -120,9 +121,9 @@ CREATE TABLE `image_destination` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
   `alt` varchar(100) NOT NULL,
-  `is_cover` tinyint(1) NOT NULL DEFAULT 0,
-  `destination` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `destination` int(11) NOT NULL,
+  `is_cover` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -134,9 +135,9 @@ CREATE TABLE `image_hotel` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
   `alt` varchar(100) NOT NULL,
-  `is_cover` tinyint(1) NOT NULL DEFAULT 0,
-  `hotel` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `hotel` int(11) NOT NULL,
+  `is_cover` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -147,7 +148,7 @@ CREATE TABLE `image_hotel` (
 CREATE TABLE `offers` (
   `destination` int(11) NOT NULL,
   `activity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -165,7 +166,7 @@ CREATE TABLE `partecipant` (
   `email` varchar(100) NOT NULL,
   `numero` varchar(20) NOT NULL,
   `purchase` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -180,7 +181,7 @@ CREATE TABLE `payment_method` (
   `name` varchar(100) NOT NULL,
   `surname` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -196,7 +197,7 @@ CREATE TABLE `purchase` (
   `destination` int(11) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -209,7 +210,7 @@ CREATE TABLE `travel` (
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `price` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -227,7 +228,7 @@ CREATE TABLE `userprofile` (
   `email` varchar(100) NOT NULL,
   `numero` varchar(20) NOT NULL,
   `permission` enum('user','admin') NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indici per le tabelle scaricate
@@ -262,7 +263,8 @@ ALTER TABLE `flight`
 -- Indici per le tabelle `hotel`
 --
 ALTER TABLE `hotel`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `destination` (`destination`);
 
 --
 -- Indici per le tabelle `image_activity`
@@ -396,6 +398,12 @@ ALTER TABLE `purchase`
 ALTER TABLE `flight`
   ADD CONSTRAINT `flight_ibfk_1` FOREIGN KEY (`destination`) REFERENCES `destination` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `flight_ibfk_2` FOREIGN KEY (`airline`) REFERENCES `airline` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limiti per la tabella `hotel`
+--
+ALTER TABLE `hotel`
+  ADD CONSTRAINT `hotel_ibfk_1` FOREIGN KEY (`destination`) REFERENCES `destination` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `image_activity`

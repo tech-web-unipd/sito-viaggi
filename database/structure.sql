@@ -55,7 +55,10 @@ CREATE TABLE Hotel(
     id int PRIMARY KEY AUTO_INCREMENT,
     name varchar(100) not null,
     description TEXT not null,
-    link varchar(100)
+    link varchar(100),
+    destination int not null,
+    FOREIGN KEY(destination) REFERENCES Destination(id) ON DELETE CASCADE ON UPDATE CASCADE
+
 );
 ALTER TABLE Hotel AUTO_INCREMENT=00001;
 
