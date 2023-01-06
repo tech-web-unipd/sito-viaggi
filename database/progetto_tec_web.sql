@@ -120,7 +120,7 @@ CREATE TABLE `image_airline` (
 CREATE TABLE `image_destination` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
-  `alt` varchar(100) NOT NULL,
+  `alt` varchar(200) NOT NULL,
   `destination` int(11) NOT NULL,
   `is_cover` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
