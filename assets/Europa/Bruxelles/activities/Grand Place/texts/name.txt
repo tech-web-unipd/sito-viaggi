@@ -1,1 +1,1 @@
-<span lang="fr">La Grande Piazza - Visita</span>
+La <span lang="fr">Grand Place</span> - Visita

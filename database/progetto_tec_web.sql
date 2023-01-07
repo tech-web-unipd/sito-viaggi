@@ -92,7 +92,7 @@ CREATE TABLE `hotel` (
 CREATE TABLE `image_activity` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
-  `alt` varchar(100) NOT NULL,
+  `alt` varchar(300) NOT NULL,
   `activity` int(11) NOT NULL,
   `is_cover` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -106,7 +106,7 @@ CREATE TABLE `image_activity` (
 CREATE TABLE `image_airline` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
-  `alt` varchar(100) NOT NULL,
+  `alt` varchar(300) NOT NULL,
   `airline` varchar(100) NOT NULL,
   `is_cover` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -120,7 +120,7 @@ CREATE TABLE `image_airline` (
 CREATE TABLE `image_destination` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
-  `alt` varchar(200) NOT NULL,
+  `alt` varchar(300) NOT NULL,
   `destination` int(11) NOT NULL,
   `is_cover` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -134,7 +134,7 @@ CREATE TABLE `image_destination` (
 CREATE TABLE `image_hotel` (
   `id` int(11) NOT NULL,
   `path` varchar(100) NOT NULL,
-  `alt` varchar(100) NOT NULL,
+  `alt` varchar(300) NOT NULL,
   `hotel` int(11) NOT NULL,
   `is_cover` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
