@@ -1,0 +1,692 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Class AbstractComponent |  API</title>
+	<link rel="stylesheet" href="assets/main.css">
+	<script src="assets/main.js" defer></script>
+</head>
+
+<body class="layout">
+	<div class="layout-aside">
+	<div class="menu">
+			<div class="menu-section">
+				<h3>Namespaces</h3>
+	<ul>
+			<li class="menuGroup-item active">
+				<a href="namespace-none.html">none</a>
+			</li>
+	</ul>
+			</div>
+
+		<div class="menu-section">
+			<h3>Classes</h3>
+			<ul>
+					<li class="active">
+						<a href="AbstractComponent.html">
+							AbstractComponent
+						</a>
+					</li>
+					<li>
+						<a href="Activity.html">
+							Activity
+						</a>
+					</li>
+					<li>
+						<a href="Airline.html">
+							Airline
+						</a>
+					</li>
+					<li>
+						<a href="DatabaseLayer.html">
+							DatabaseLayer
+						</a>
+					</li>
+					<li>
+						<a href="Destination.html">
+							Destination
+						</a>
+					</li>
+					<li>
+						<a href="Hotel.html">
+							Hotel
+						</a>
+					</li>
+					<li>
+						<a href="Image.html">
+							Image
+						</a>
+					</li>
+					<li>
+						<a href="Template.html">
+							Template
+						</a>
+					</li>
+			</ul>
+		</div>
+
+
+
+
+		<div class="menu-section">
+			<h3>Exceptions</h3>
+			<ul>
+					<li>
+						<a href="ActivityNotFound.html">
+							ActivityNotFound
+						</a>
+					</li>
+					<li>
+						<a href="AirlineNotFound.html">
+							AirlineNotFound
+						</a>
+					</li>
+					<li>
+						<a href="ComponentNotFound.html">
+							ComponentNotFound
+						</a>
+					</li>
+					<li>
+						<a href="DestinationNotFound.html">
+							DestinationNotFound
+						</a>
+					</li>
+					<li>
+						<a href="FieldNotLoaded.html">
+							FieldNotLoaded
+						</a>
+					</li>
+					<li>
+						<a href="HotelNotFound.html">
+							HotelNotFound
+						</a>
+					</li>
+					<li>
+						<a href="IdNotDefined.html">
+							IdNotDefined
+						</a>
+					</li>
+					<li>
+						<a href="NameNotDefined.html">
+							NameNotDefined
+						</a>
+					</li>
+					<li>
+						<a href="RepeatedComponent.html">
+							RepeatedComponent
+						</a>
+					</li>
+					<li>
+						<a href="UndefinedField.html">
+							UndefinedField
+						</a>
+					</li>
+					<li>
+						<a href="UnreplacedComponent.html">
+							UnreplacedComponent
+						</a>
+					</li>
+					<li>
+						<a href="WrongParamType.html">
+							WrongParamType
+						</a>
+					</li>
+			</ul>
+		</div>
+
+	</div>
+	</div>
+
+	<div class="layout-main">
+		<div class="layout-navbar">
+	<nav class="navbar">
+		<div class="navbar-left">
+			<ul class="navbar-links">
+				<li>
+					<a href="index.html">Overview</a>
+				</li>
+				<li>
+					
+						<a href="namespace-none.html">Namespace</a>
+					
+				</li>
+<li class="active"><a href="AbstractComponent.html">Class</a></li>				<li>
+					<a href="tree.html">Tree</a>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-right">
+	<div class="search" data-elements="assets/elements.js">
+		<input class="search-input" placeholder="Search class, function or namespace" autofocus>
+		<ul class="search-results"></ul>
+	</div>
+		</div>
+	</nav>
+		</div>
+
+		<div class="layout-content">
+		<h1>
+			Class <a href="AbstractComponent.html">AbstractComponent</a>
+		</h1>
+
+
+	<table class="classLikeSignatureTable">
+			<tr><th><code>abstract</code></th></tr>
+
+
+
+	</table>
+
+			<div class="classLikeSection">
+	<ul class="classTree">
+	<li>
+<b><span class="active">AbstractComponent</span></b>
+
+
+	<ul class="classTree">
+	<li>
+<a href="Activity.html"><span>Activity</span></a>
+
+
+	</li>
+	<li>
+<a href="Destination.html"><span>Destination</span></a>
+
+
+	</li>
+	<li>
+<a href="Hotel.html"><span>Hotel</span></a>
+
+
+	</li>
+	</ul>
+	</li>
+	</ul>
+			</div>
+
+		<div class="classLikeSection">
+			<b>Located at</b> <a href="source-app.AbstractComponent.html#29" title="Go to source code">app/AbstractComponent.php</a><br>
+		</div>
+
+
+		<table class="table" id="methods">
+			<tr>
+				<th class="table-heading sortable" colspan="3" title="Switch between natural and alphabetical order">Methods</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="__construct" id="___construct">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.AbstractComponent.html#39-48" title="Go to source code">__construct</a>(
+	<span>string <var>$image_table</var></span>,
+	<span>string <var>$image_foreign_key</var></span>,
+	<span>string <var>$id</var> = <span class="php-kw">null</span></span>,
+	<span>string <var>$name</var> = <span class="php-kw">null</span></span>,
+	<span>string <var>$description</var> = <span class="php-kw">null</span></span>,
+	<span>array <var>$images</var> = <span class="php-kw">null</span></span>,
+	<span><a href="Image.html"><span title="Image">Image</span></a> <var>$cover</var> = <span class="php-kw">null</span></span>,
+)</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+
+		<h4>Overriden by</h4>
+		<ul>
+				<li>
+<a href="Activity.html#___construct">						<code>Activity::__construct()</code></a>				</li>
+				<li>
+<a href="Destination.html#___construct">						<code>Destination::__construct()</code></a>				</li>
+				<li>
+<a href="Hotel.html#___construct">						<code>Hotel::__construct()</code></a>				</li>
+		</ul>
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#___construct">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="loadFromDatabase" id="_loadFromDatabase">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					abstract
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.AbstractComponent.html#50" title="Go to source code">loadFromDatabase</a>(<span><a href="DatabaseLayer.html"><span title="DatabaseLayer">DatabaseLayer</span></a> <var>$db</var></span>): void</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+
+		<h4>Implemented by</h4>
+		<ul>
+				<li>
+<a href="Activity.html#_loadFromDatabase">						<code>Activity::loadFromDatabase()</code></a>				</li>
+				<li>
+<a href="Destination.html#_loadFromDatabase">						<code>Destination::loadFromDatabase()</code></a>				</li>
+				<li>
+<a href="Hotel.html#_loadFromDatabase">						<code>Hotel::loadFromDatabase()</code></a>				</li>
+		</ul>
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_loadFromDatabase">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="insertIntoDatabase" id="_insertIntoDatabase">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					abstract
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.AbstractComponent.html#52" title="Go to source code">insertIntoDatabase</a>(<span><a href="DatabaseLayer.html"><span title="DatabaseLayer">DatabaseLayer</span></a> <var>$db</var></span>): void</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+
+		<h4>Implemented by</h4>
+		<ul>
+				<li>
+<a href="Activity.html#_insertIntoDatabase">						<code>Activity::insertIntoDatabase()</code></a>				</li>
+				<li>
+<a href="Destination.html#_insertIntoDatabase">						<code>Destination::insertIntoDatabase()</code></a>				</li>
+				<li>
+<a href="Hotel.html#_insertIntoDatabase">						<code>Hotel::insertIntoDatabase()</code></a>				</li>
+		</ul>
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_insertIntoDatabase">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="loadImages" id="_loadImages">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.AbstractComponent.html#54-72" title="Go to source code">loadImages</a>(<span><a href="DatabaseLayer.html"><span title="DatabaseLayer">DatabaseLayer</span></a> <var>$db</var></span>): void</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="IdNotDefined.html"><span>IdNotDefined</span></a></code>&nbsp;</td>
+										<td><p>if the id value is null</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Exception.html"><span>Exception</span></a></code>&nbsp;</td>
+										<td><p>in case of errors with database communication</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_loadImages">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="insertImagesIntoDatabase" id="_insertImagesIntoDatabase">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.AbstractComponent.html#74-94" title="Go to source code">insertImagesIntoDatabase</a>(<span><a href="DatabaseLayer.html"><span title="DatabaseLayer">DatabaseLayer</span></a> <var>$db</var></span>): void</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="UndefinedField.html"><span>UndefinedField</span></a></code>&nbsp;</td>
+										<td><p>if there are on or more fields not defined</p>
+</td>
+									</tr>
+									<tr>
+										<td><code><a href="Exception.html"><span>Exception</span></a></code>&nbsp;</td>
+										<td><p>in case of errors with database communication</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_insertImagesIntoDatabase">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getName" id="_getName">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.AbstractComponent.html#96-106" title="Go to source code">getName</a>(): string</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="FieldNotLoaded.html"><span>FieldNotLoaded</span></a></code>&nbsp;</td>
+										<td><p>if name value is null</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getName">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getDescription" id="_getDescription">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.AbstractComponent.html#108-118" title="Go to source code">getDescription</a>(): string</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="FieldNotLoaded.html"><span>FieldNotLoaded</span></a></code>&nbsp;</td>
+										<td><p>if description value is null</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getDescription">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getImages" id="_getImages">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.AbstractComponent.html#120-130" title="Go to source code">getImages</a>(): array</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="FieldNotLoaded.html"><span>FieldNotLoaded</span></a></code>&nbsp;</td>
+										<td><p>if images value is null</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getImages">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="getCover" id="_getCover">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.AbstractComponent.html#132-142" title="Go to source code">getCover</a>(): <a href="Image.html"><span title="Image">Image</span></a></code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="FieldNotLoaded.html"><span>FieldNotLoaded</span></a></code>&nbsp;</td>
+										<td><p>if cover value is null</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_getCover">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+
+
+
+
+		<table class="table" id="properties">
+			<tr>
+				<th class="table-heading sortable" colspan="4" title="Switch between natural and alphabetical order">Properties</th>
+			</tr>
+
+	<tr class="expandable collapsed" data-order="id" id="$id">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap">?string</code>
+			</td>
+
+			<td class="table-cell">
+<code><var><a href="source-app.AbstractComponent.html#31" title="Go to source code">$id</a></var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$id">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="name" id="$name">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap">?string</code>
+			</td>
+
+			<td class="table-cell">
+<code><var><a href="source-app.AbstractComponent.html#32" title="Go to source code">$name</a></var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$name">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="description" id="$description">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap">?string</code>
+			</td>
+
+			<td class="table-cell">
+<code><var><a href="source-app.AbstractComponent.html#33" title="Go to source code">$description</a></var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$description">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="images" id="$images">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap">?array</code>
+			</td>
+
+			<td class="table-cell">
+<code><var><a href="source-app.AbstractComponent.html#36" title="Go to source code">$images</a></var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$images">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="cover" id="$cover">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+	protected
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell table-shrink">
+				<code class="nowrap">?<a href="Image.html"><span title="Image">Image</span></a></code>
+			</td>
+
+			<td class="table-cell">
+<code><var><a href="source-app.AbstractComponent.html#37" title="Go to source code">$cover</a></var></code>
+				
+
+	<div class="expandable-expandedView">
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#$cover">#</a>
+		</td>
+	</tr>
+		</table>
+
+
+		</div>
+
+		<div class="layout-footer">
+			 API documentation generated by <a href="https://www.apigen.org">ApiGen v7.0.0-alpha.3</a>
+		</div>
+	</div>
+
+	<div class="layout-rest">
+		<div class="navbar"></div>
+	</div>
+</body>
+</html>
