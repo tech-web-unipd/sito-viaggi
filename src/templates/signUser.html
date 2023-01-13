@@ -5,7 +5,7 @@
         <title>
             GoTo - Sign In
         </title>
-        <meta name="description" content=""> <!---descrizione ---->
+        <meta name="description" content="In questa pagina del nostro sito di viaggi potrai effettuare la registrazione e creare il tuo account personale."> <!---descrizione ---->
         <meta name="keyword" content="Viaggi, Viaggiare, Vacanze"> <!--- aggiungere keywords ---->
         <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
         <link rel="stylesheet" href="style-grid.css" media="screen">
@@ -25,9 +25,24 @@
         <main>
             <h1>Crea account</h1>
             <p>Registrati e crea il tuo account per iniziare a viaggiare per il mondo e prenotare tutte le avventure che desideri.</p>
-            <component>userProfile</component>
+            <!--<component>userProfile</component>-->
+            <label>Nome<span>*</span>:</label><input name="name" maxlength="100" placeholder="Nome" required/>
+            <label>Cognome<span>*</span>: </label><input name="surname" maxlength="100" placeholder="Cognome" required/>
+            <label>Username<span>*</span>:</label><input name="username" maxlength="50" placeholder="Username" required/>
+            <label>Genere<span>*</span>:</label>
+            <select name="gender">
+                <option value="M">Maschio</option>
+                <option value="W">Femmina</option>
+                <option value="U">Altro</option>
+            </select>
+            <label>Data di nascita<span>*</span>:</label><input type="date" name="date_of_birth" required/>
+            <label>E-mail<span>*</span>:</label><input type="email" name="email" maxlength="100" placeholder="E-mail" required/>
+            <label>Numero di telefono<span>*</span>:</label><input type="tel" name="numero" maxlenght="20" placeholder="Numero" required/>
+            <label>Password<span>*</span>:</label><input type="password" name="pw_hash" placeholder="Password" required/>
+            <label>Ripeti password<span>*</span>:</label><input type="password" name="pw_hash" placeholder="Password" required/>
+            <input type="submit" name="submit" value="Registrati"/>
+            <input type="reset" name="undo" value="Annulla"/>
         </main>
-
         
         <component>footer</component>
     </body>

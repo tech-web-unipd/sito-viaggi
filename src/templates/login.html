@@ -5,7 +5,7 @@
         <title>
             GoTo - Login
         </title>
-        <meta name="description" content=""> <!---descrizione ---->
+        <meta name="description" content="In questa pagina del nostro sito di viaggi potrai accedere al tuo account per entrare nella tua area personale."> <!---descrizione ---->
         <meta name="keyword" content="Viaggi, Viaggiare, Vacanze"> <!--- aggiungere keywords ---->
         <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
         <link rel="stylesheet" href="style-grid.css" media="screen">
@@ -24,7 +24,10 @@
         
         <main>
             <h1>Accedi al tuo account</h1>
-            <component>login</component>
+            <!--<component>login</component>-->
+            <label>Username:</label><input type="text" name="username" maxlength="30" placeholder="Username"/>
+            <label>Password:</label><input type="password" name="pw_hash" placeholder="Password"/>
+            <input type="submit" name="submit" value="Login"/>
         </main>
 
         
