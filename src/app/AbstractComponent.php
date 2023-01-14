@@ -2,6 +2,8 @@
 namespace components;
 use Exception;
 
+require_once "Image.php";
+
 class IdNotDefined extends Exception
 {
     public function __construct()

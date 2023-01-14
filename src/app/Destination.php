@@ -1,6 +1,9 @@
 <?php
 namespace components;
 use Exception;
+use utilities\WrongParamType;
+
+require_once 'AbstractComponent.php';
 
 class DestinationNotFound extends Exception {
     public function __construct($id) {
@@ -17,7 +20,7 @@ class Destination extends AbstractComponent
 
     public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null)
     {
-        parent::__construct($id, $name, $description, $images, $cover);
+        parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
         $this->continent = $continent;
         $this->state = $state;
         $this->activities = $activities;
@@ -26,6 +29,23 @@ class Destination extends AbstractComponent
     public function __toString()
     {
         return "Destination with id: $this->id named $this->name";
+    }
+
+    /**
+     * @throws Exception if there are some errors with database communication
+     */
+    static public function  getAllDestinations(\utilities\DatabaseLayer $db): array {
+        $destinations = [];
+        $query = "SELECT * FROM destination";
+        $result = $db->executeStatement($query);
+        foreach ($result as $row) {
+            $destination = new Destination($row['id'], $row['name'], $row['description'], null, null, $row['continent'], $row['state'], null);
+            $destination->loadImages($db);
+
+            $destinations[] = $destination;
+        }
+
+        return $destinations;
     }
 
     /**
