@@ -1,4 +1,7 @@
 <?php
+namespace components;
+use Exception;
+
 class DestinationNotFound extends Exception {
     public function __construct($id) {
         parent::__construct("Destination with id: $id not found");
@@ -29,7 +32,7 @@ class Destination extends AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception
      */
-    private function  loadActivities(DatabaseLayer $db): void {
+    private function  loadActivities(\utilities\DatabaseLayer $db): void {
         if ($this->id === null) {
             throw new IdNotDefined();
         }
@@ -49,7 +52,7 @@ class Destination extends AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    public function loadFromDatabase(DatabaseLayer $db): void
+    public function loadFromDatabase(\utilities\DatabaseLayer $db): void
     {
         if ($this->id != null) {
             $result = $db->executeStatement("SELECT * FROM destination WHERE id = ?", [$this->id]);
@@ -72,7 +75,7 @@ class Destination extends AbstractComponent
      * @throws UndefinedField if one or more fields are not defined
      * @throws Exception in case of errors with database communication
      */
-    public function insertIntoDatabase(DatabaseLayer $db): void
+    public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
     {
         if (!($this->name == null || $this->continent == null || $this->state == null || $this->description == null || $this->images == null)) {
             if ($this->id == null) {

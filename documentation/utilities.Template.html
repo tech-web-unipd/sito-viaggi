@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Class Template |  API</title>
+	<title>Class utilities\Template |  API</title>
 	<link rel="stylesheet" href="assets/main.css">
 	<script src="assets/main.js" defer></script>
 </head>
@@ -15,8 +15,11 @@
 			<div class="menu-section">
 				<h3>Namespaces</h3>
 	<ul>
+			<li class="menuGroup-item">
+				<a href="namespace-components.html">components</a>
+			</li>
 			<li class="menuGroup-item active">
-				<a href="namespace-none.html">none</a>
+				<a href="namespace-utilities.html">utilities</a>
 			</li>
 	</ul>
 			</div>
@@ -25,42 +28,12 @@
 			<h3>Classes</h3>
 			<ul>
 					<li>
-						<a href="AbstractComponent.html">
-							AbstractComponent
-						</a>
-					</li>
-					<li>
-						<a href="Activity.html">
-							Activity
-						</a>
-					</li>
-					<li>
-						<a href="Airline.html">
-							Airline
-						</a>
-					</li>
-					<li>
-						<a href="DatabaseLayer.html">
+						<a href="utilities.DatabaseLayer.html">
 							DatabaseLayer
 						</a>
 					</li>
-					<li>
-						<a href="Destination.html">
-							Destination
-						</a>
-					</li>
-					<li>
-						<a href="Hotel.html">
-							Hotel
-						</a>
-					</li>
-					<li>
-						<a href="Image.html">
-							Image
-						</a>
-					</li>
 					<li class="active">
-						<a href="Template.html">
+						<a href="utilities.Template.html">
 							Template
 						</a>
 					</li>
@@ -74,62 +47,22 @@
 			<h3>Exceptions</h3>
 			<ul>
 					<li>
-						<a href="ActivityNotFound.html">
-							ActivityNotFound
-						</a>
-					</li>
-					<li>
-						<a href="AirlineNotFound.html">
-							AirlineNotFound
-						</a>
-					</li>
-					<li>
-						<a href="ComponentNotFound.html">
+						<a href="utilities.ComponentNotFound.html">
 							ComponentNotFound
 						</a>
 					</li>
 					<li>
-						<a href="DestinationNotFound.html">
-							DestinationNotFound
-						</a>
-					</li>
-					<li>
-						<a href="FieldNotLoaded.html">
-							FieldNotLoaded
-						</a>
-					</li>
-					<li>
-						<a href="HotelNotFound.html">
-							HotelNotFound
-						</a>
-					</li>
-					<li>
-						<a href="IdNotDefined.html">
-							IdNotDefined
-						</a>
-					</li>
-					<li>
-						<a href="NameNotDefined.html">
-							NameNotDefined
-						</a>
-					</li>
-					<li>
-						<a href="RepeatedComponent.html">
+						<a href="utilities.RepeatedComponent.html">
 							RepeatedComponent
 						</a>
 					</li>
 					<li>
-						<a href="UndefinedField.html">
-							UndefinedField
-						</a>
-					</li>
-					<li>
-						<a href="UnreplacedComponent.html">
+						<a href="utilities.UnreplacedComponent.html">
 							UnreplacedComponent
 						</a>
 					</li>
 					<li>
-						<a href="WrongParamType.html">
+						<a href="utilities.WrongParamType.html">
 							WrongParamType
 						</a>
 					</li>
@@ -149,10 +82,10 @@
 				</li>
 				<li>
 					
-						<a href="namespace-none.html">Namespace</a>
+						<a href="namespace-utilities.html">Namespace</a>
 					
 				</li>
-<li class="active"><a href="Template.html">Class</a></li>				<li>
+<li class="active"><a href="utilities.Template.html">Class</a></li>				<li>
 					<a href="tree.html">Tree</a>
 				</li>
 			</ul>
@@ -168,7 +101,7 @@
 
 		<div class="layout-content">
 		<h1>
-			Class <a href="Template.html">Template</a>
+			Class <a href="namespace-utilities.html">utilities</a>\<a href="utilities.Template.html">Template</a>
 		</h1>
 
 
@@ -181,7 +114,7 @@
 
 
 		<div class="classLikeSection">
-			<b>Located at</b> <a href="source-lib.Template.html#17" title="Go to source code">lib/Template.php</a><br>
+			<b>Located at</b> <a href="source-lib.Template.html#20" title="Go to source code">lib/Template.php</a><br>
 		</div>
 
 
@@ -201,7 +134,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-lib.Template.html#24-35" title="Go to source code">__construct</a>(<span>string <var>$file_name</var></span>)</code>
+				<code><a href="source-lib.Template.html#27-38" title="Go to source code">__construct</a>(<span>string <var>$file_name</var></span>)</code>
 
 
 
@@ -243,7 +176,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-lib.Template.html#37-54" title="Go to source code">replaceComponent</a>(<span>string <var>$component_name</var></span>, <span>string <var>$component_content</var></span>): void</code>
+				<code><a href="source-lib.Template.html#40-57" title="Go to source code">replaceComponent</a>(<span>string <var>$component_name</var></span>, <span>string <var>$component_content</var></span>): void</code>
 
 
 
@@ -267,11 +200,11 @@
 							<h4>Throws</h4>
 							<table>
 									<tr>
-										<td><code><a href="ComponentNotFound.html"><span>ComponentNotFound</span></a></code>&nbsp;</td>
+										<td><code><a href="utilities.ComponentNotFound.html"><span>utilities\ComponentNotFound</span></a></code>&nbsp;</td>
 										<td></td>
 									</tr>
 									<tr>
-										<td><code><a href="RepeatedComponent.html"><span>RepeatedComponent</span></a></code>&nbsp;</td>
+										<td><code><a href="utilities.RepeatedComponent.html"><span>utilities\RepeatedComponent</span></a></code>&nbsp;</td>
 										<td></td>
 									</tr>
 							</table>
@@ -293,7 +226,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-lib.Template.html#66-86" title="Go to source code">build</a>(<span>array <var>$components</var> = []</span>): string</code>
+				<code><a href="source-lib.Template.html#69-89" title="Go to source code">build</a>(<span>array <var>$components</var> = []</span>): string</code>
 
 
 
@@ -316,7 +249,7 @@ name and values represent the content to replace the component with</p>
 							<h4>Throws</h4>
 							<table>
 									<tr>
-										<td><code><a href="UnreplacedComponent.html"><span>UnreplacedComponent</span></a></code>&nbsp;</td>
+										<td><code><a href="utilities.UnreplacedComponent.html"><span>utilities\UnreplacedComponent</span></a></code>&nbsp;</td>
 										<td><p>if there are components that have not been replaced</p>
 </td>
 									</tr>

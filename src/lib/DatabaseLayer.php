@@ -1,4 +1,8 @@
 <?php
+namespace utilities;
+use Exception;
+use mysqli;
+
 class WrongParamType extends Exception {
     public function __construct($param) {
         parent::__construct("Wrong type for parameter $param, expected int, float or string, got ".gettype($param));
@@ -50,7 +54,8 @@ class DatabaseLayer {
         return $this->db_connection;
     }
 
-    private function closeConnection() {
+    private function closeConnection(): void
+    {
         if ($this->db_connection != null) {
             $this->db_connection->close();
             $this->db_connection = null;
@@ -73,9 +78,9 @@ class DatabaseLayer {
     /**
      * @param string $statement contains the SQL statement with 0 or more "?" placeholders for parameters
      * @param array $params contains the parameters to be bound to the statement
-     * @return array containing the result rows of a query
-     * @return bool true if the statement was executed successfully
-     * @throws Exception
+     * @return array|bool containing the result rows of a query or true if the statement was executed successfully
+     * @throws WrongParamType if one or more parameters are not of type int, float or string
+     * @throws Exception in case of errors with database communication
      */
     public function executeStatement(string $statement, array $params = array()): array | bool
     {

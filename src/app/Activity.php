@@ -1,6 +1,6 @@
 <?php
-require_once './src/lib/DatabaseLayer.php';
-require_once './src/app/AbstractComponent.php';
+namespace components;
+use Exception;
 
 class ActivityNotFound extends Exception
 {
@@ -32,7 +32,7 @@ class Activity extends AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    public function loadFromDatabase(DatabaseLayer $db): void
+    public function loadFromDatabase(\utilities\DatabaseLayer $db): void
     {
         if ($this->id != null) {
             $result = $db->executeStatement("SELECT * FROM activity WHERE id = ?", [$this->id]);
@@ -54,7 +54,7 @@ class Activity extends AbstractComponent
      * @throws UndefinedField if one or more fields are not defined
      * @throws Exception in case of errors with database communication
      */
-    public function insertIntoDatabase(DatabaseLayer $db): void
+    public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
     {
         if (!($this->name == null || $this->price == null || $this->description == null || $this->images == null)) {
             if ($this->id == null) {
