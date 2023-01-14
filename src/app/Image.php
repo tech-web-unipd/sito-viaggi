@@ -1,4 +1,6 @@
 <?php
+namespace components;
+
 class Image
 {
     private string $path;

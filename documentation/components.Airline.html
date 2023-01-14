@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Class DatabaseLayer |  API</title>
+	<title>Class components\Airline |  API</title>
 	<link rel="stylesheet" href="assets/main.css">
 	<script src="assets/main.js" defer></script>
 </head>
@@ -16,7 +16,10 @@
 				<h3>Namespaces</h3>
 	<ul>
 			<li class="menuGroup-item active">
-				<a href="namespace-none.html">none</a>
+				<a href="namespace-components.html">components</a>
+			</li>
+			<li class="menuGroup-item">
+				<a href="namespace-utilities.html">utilities</a>
 			</li>
 	</ul>
 			</div>
@@ -25,43 +28,33 @@
 			<h3>Classes</h3>
 			<ul>
 					<li>
-						<a href="AbstractComponent.html">
+						<a href="components.AbstractComponent.html">
 							AbstractComponent
 						</a>
 					</li>
 					<li>
-						<a href="Activity.html">
+						<a href="components.Activity.html">
 							Activity
 						</a>
 					</li>
-					<li>
-						<a href="Airline.html">
+					<li class="active">
+						<a href="components.Airline.html">
 							Airline
 						</a>
 					</li>
-					<li class="active">
-						<a href="DatabaseLayer.html">
-							DatabaseLayer
-						</a>
-					</li>
 					<li>
-						<a href="Destination.html">
+						<a href="components.Destination.html">
 							Destination
 						</a>
 					</li>
 					<li>
-						<a href="Hotel.html">
+						<a href="components.Hotel.html">
 							Hotel
 						</a>
 					</li>
 					<li>
-						<a href="Image.html">
+						<a href="components.Image.html">
 							Image
-						</a>
-					</li>
-					<li>
-						<a href="Template.html">
-							Template
 						</a>
 					</li>
 			</ul>
@@ -74,63 +67,43 @@
 			<h3>Exceptions</h3>
 			<ul>
 					<li>
-						<a href="ActivityNotFound.html">
+						<a href="components.ActivityNotFound.html">
 							ActivityNotFound
 						</a>
 					</li>
 					<li>
-						<a href="AirlineNotFound.html">
+						<a href="components.AirlineNotFound.html">
 							AirlineNotFound
 						</a>
 					</li>
 					<li>
-						<a href="ComponentNotFound.html">
-							ComponentNotFound
-						</a>
-					</li>
-					<li>
-						<a href="DestinationNotFound.html">
+						<a href="components.DestinationNotFound.html">
 							DestinationNotFound
 						</a>
 					</li>
 					<li>
-						<a href="FieldNotLoaded.html">
+						<a href="components.FieldNotLoaded.html">
 							FieldNotLoaded
 						</a>
 					</li>
 					<li>
-						<a href="HotelNotFound.html">
+						<a href="components.HotelNotFound.html">
 							HotelNotFound
 						</a>
 					</li>
 					<li>
-						<a href="IdNotDefined.html">
+						<a href="components.IdNotDefined.html">
 							IdNotDefined
 						</a>
 					</li>
 					<li>
-						<a href="NameNotDefined.html">
+						<a href="components.NameNotDefined.html">
 							NameNotDefined
 						</a>
 					</li>
 					<li>
-						<a href="RepeatedComponent.html">
-							RepeatedComponent
-						</a>
-					</li>
-					<li>
-						<a href="UndefinedField.html">
+						<a href="components.UndefinedField.html">
 							UndefinedField
-						</a>
-					</li>
-					<li>
-						<a href="UnreplacedComponent.html">
-							UnreplacedComponent
-						</a>
-					</li>
-					<li>
-						<a href="WrongParamType.html">
-							WrongParamType
 						</a>
 					</li>
 			</ul>
@@ -149,10 +122,10 @@
 				</li>
 				<li>
 					
-						<a href="namespace-none.html">Namespace</a>
+						<a href="namespace-components.html">Namespace</a>
 					
 				</li>
-<li class="active"><a href="DatabaseLayer.html">Class</a></li>				<li>
+<li class="active"><a href="components.Airline.html">Class</a></li>				<li>
 					<a href="tree.html">Tree</a>
 				</li>
 			</ul>
@@ -168,7 +141,7 @@
 
 		<div class="layout-content">
 		<h1>
-			Class <a href="DatabaseLayer.html">DatabaseLayer</a>
+			Class <a href="namespace-components.html">components</a>\<a href="components.Airline.html">Airline</a>
 		</h1>
 
 
@@ -181,7 +154,7 @@
 
 
 		<div class="classLikeSection">
-			<b>Located at</b> <a href="source-lib.DatabaseLayer.html#8" title="Go to source code">lib/DatabaseLayer.php</a><br>
+			<b>Located at</b> <a href="source-app.Airline.html#20" title="Go to source code">app/Airline.php</a><br>
 		</div>
 
 
@@ -201,7 +174,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-lib.DatabaseLayer.html#23-31" title="Go to source code">__construct</a>(<span><var>$host</var></span>, <span><var>$user</var></span>, <span><var>$password</var></span>, <span><var>$database</var></span>, <span><var>$port</var> = <span class="php-num">3306</span></span>)</code>
+				<code><a href="source-app.Airline.html#26-31" title="Go to source code">__construct</a>(<span>string <var>$name</var></span>, <span>array <var>$images</var> = <span class="php-kw">null</span></span>, <span><a href="components.Image.html"><span title="components\Image">Image</span></a> <var>$logo</var> = <span class="php-kw">null</span></span>)</code>
 
 
 
@@ -227,7 +200,7 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-lib.DatabaseLayer.html#33-35" title="Go to source code">__toString</a>()</code>
+				<code><a href="source-app.Airline.html#33-36" title="Go to source code">__toString</a>()</code>
 
 
 
@@ -242,7 +215,7 @@
 			<a href="#___toString">#</a>
 		</td>
 	</tr>
-	<tr class="expandable collapsed" data-order="executeStatement" id="_executeStatement">
+	<tr class="expandable collapsed" data-order="loadImages" id="_loadImages">
 			<td class="table-cell table-shrink">
 				<code class="nowrap">
 					
@@ -253,42 +226,61 @@
 			</td>
 
 			<td class="table-cell">
-				<code><a href="source-lib.DatabaseLayer.html#73-116" title="Go to source code">executeStatement</a>(<span>string <var>$statement</var></span>, <span>array <var>$params</var> = []</span>): array</code>
+				<code><a href="source-app.Airline.html#38-53" title="Go to source code">loadImages</a>(<span><a href="utilities.DatabaseLayer.html"><span title="utilities\DatabaseLayer">DatabaseLayer</span></a> <var>$db</var></span>)</code>
 
 
 
 	<div class="expandable-expandedView">
 
-							<h4>Parameters</h4>
-							<table>
-									<tr>
-										<td><var>$statement</var>&nbsp;&nbsp;</td>
-										<td><p>contains the SQL statement with 0 or more &quot;?&quot; placeholders for parameters</p>
-</td>
-									</tr>
-									<tr>
-										<td><var>$params</var>&nbsp;&nbsp;</td>
-										<td><p>contains the parameters to be bound to the statement</p>
-</td>
-									</tr>
-							</table>
 
-							<h4>Returns</h4>
-							<div><p>containing the result rows of a query</p>
-</div>
 
 							<h4>Throws</h4>
 							<table>
 									<tr>
 										<td><code><a href="Exception.html"><span>Exception</span></a></code>&nbsp;</td>
-										<td></td>
+										<td><p>in case of errors with database communication</p>
+</td>
 									</tr>
 							</table>
 
 	</div>
 			</td>
 		<td class="table-anchor">
-			<a href="#_executeStatement">#</a>
+			<a href="#_loadImages">#</a>
+		</td>
+	</tr>
+	<tr class="expandable collapsed" data-order="insertIntoDatabase" id="_insertIntoDatabase">
+			<td class="table-cell table-shrink">
+				<code class="nowrap">
+					
+	public
+					
+					
+				</code>
+			</td>
+
+			<td class="table-cell">
+				<code><a href="source-app.Airline.html#64-70" title="Go to source code">insertIntoDatabase</a>(<span><a href="utilities.DatabaseLayer.html"><span title="utilities\DatabaseLayer">DatabaseLayer</span></a> <var>$db</var></span>)</code>
+
+
+
+	<div class="expandable-expandedView">
+
+
+
+							<h4>Throws</h4>
+							<table>
+									<tr>
+										<td><code><a href="Exception.html"><span>Exception</span></a></code>&nbsp;</td>
+										<td><p>in case of errors with database communication</p>
+</td>
+									</tr>
+							</table>
+
+	</div>
+			</td>
+		<td class="table-anchor">
+			<a href="#_insertIntoDatabase">#</a>
 		</td>
 	</tr>
 		</table>

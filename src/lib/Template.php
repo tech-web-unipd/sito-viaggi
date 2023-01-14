@@ -1,4 +1,7 @@
 <?php
+namespace utilities;
+use Exception;
+
 class ComponentNotFound extends Exception {
     public function __construct($component) {
         parent::__construct("Component $component not found");

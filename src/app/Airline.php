@@ -1,5 +1,7 @@
 <?php
-require_once './src/lib/DatabaseLayer.php';
+namespace components;
+use Exception;
+
 class AirlineNotFound extends Exception
 {
     public function __construct($id)
@@ -36,7 +38,7 @@ class Airline
     /**
      * @throws Exception in case of errors with database communication
      */
-    public function loadImages(DatabaseLayer $db) {
+    public function loadImages(\utilities\DatabaseLayer $db) {
         $result = $db->executeStatement("SELECT * FROM image_airline WHERE airline = ?", [$this->name]);
         foreach ($result as $row) {
             $this->images[] = new Image($row['path'], $row['alt'], $row['is_cover']);
@@ -53,7 +55,7 @@ class Airline
     /**
      * @throws Exception in case of errors with database communication
      */
-    private function insertImagesIntoDatabase(DatabaseLayer $db) {
+    private function insertImagesIntoDatabase(\utilities\DatabaseLayer $db) {
         foreach ($this->images as $image) {
             $db->executeStatement("INSERT INTO image_airline (path, alt, is_cover, airline) VALUES (?, ?, ?, ?)", [$image->getPath(), $image->getAlt(), $image->is_cover, $this->name]);
         }
@@ -62,7 +64,7 @@ class Airline
     /**
      * @throws Exception in case of errors with database communication
      */
-    public function insertIntoDatabase(DatabaseLayer $db) {
+    public function insertIntoDatabase(\utilities\DatabaseLayer $db) {
         $db->executeStatement("INSERT INTO airline (name) VALUES (?)", [$this->name]);
         $this->insertImagesIntoDatabase($db);
     }
