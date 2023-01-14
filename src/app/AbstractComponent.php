@@ -96,6 +96,18 @@ abstract class AbstractComponent
     }
 
     /**
+     * @throws FieldNotLoaded if id value is null
+     */
+    public function getId(): string
+    {
+        if($this->id != null) {
+            return $this->id;
+        } else {
+            throw new FieldNotLoaded("id");
+        }
+    }
+
+    /**
      * @throws FieldNotLoaded if name value is null
      */
     public function getName(): string

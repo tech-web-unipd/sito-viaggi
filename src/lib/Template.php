@@ -51,8 +51,6 @@ class Template
 
         if ($total_changes == 0) {
             throw new ComponentNotFound($component_name);
-        } elseif ($total_changes > 1) {
-            throw new RepeatedComponent($component_name, $total_changes);
         }
     }
 

@@ -13,6 +13,7 @@ $destination_cards = "";
 foreach ($destinations as $destination) {
     $card_template = new \utilities\Template("templates/cards/destination-card.html");
     $destination_cards .= $card_template->build(array(
+        "id" => $destination->getId(),
         "title" => $destination->getName(),
         "description" => $destination->getDescription(),
     ));
