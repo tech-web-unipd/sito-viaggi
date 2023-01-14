@@ -2,12 +2,12 @@
 require_once 'lib/DatabaseLayer.php';
 require_once 'lib/Template.php';
 require_once 'app/Destination.php';
+require_once 'app/global.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
 
-$db = new \utilities\DatabaseLayer("127.0.0.1", "zan", "Ollare123", "progetto_tec_web");
 $destination_template = new \utilities\Template("templates/destination.html");
 $destination = new \components\Destination($_GET['id']);
 try {
