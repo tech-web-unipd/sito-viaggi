@@ -4,6 +4,7 @@ use Exception;
 use utilities\WrongParamType;
 
 require_once 'AbstractComponent.php';
+require_once 'Activity.php';
 
 class DestinationNotFound extends Exception {
     public function __construct($id) {
@@ -57,7 +58,7 @@ class Destination extends AbstractComponent
             throw new IdNotDefined();
         }
 
-        $this->images = array();
+        $this->activities = array();
         $result = $db->executeStatement("SELECT activity FROM offers WHERE destination = ?", array($this->id));
 
         foreach ($result as $row) {
@@ -86,6 +87,7 @@ class Destination extends AbstractComponent
             $this->state = $result[0]['state'];
             $this->description = $result[0]['description'];
             $this->loadImages($db);
+            $this->loadActivities($db);
         } else {
             throw new IdNotDefined();
         }

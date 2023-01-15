@@ -9,7 +9,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 }
 
 $destination_template = new \utilities\Template("templates/destination.html");
-$destination = new \components\Destination($_GET['id']);
+$destination = new \components\Destination(1);
 try {
     $destination->loadFromDatabase($db);
 } catch (\components\DestinationNotFound $e) {
@@ -43,6 +43,17 @@ $carousel = $carousel_template->build(array(
     "dots" => $carousel_dots,
 ));
 
+$activity_cards = "";
+foreach ($destination->getActivities() as $activity) {
+    $card_template = new \utilities\Template("templates/cards/activity-card.html");
+    $activity_cards .= $card_template->build(array(
+        "cover" => $activity->getCover()->build(),
+        "title" => $activity->getName(),
+        "description" => $activity->getDescription(),
+        "id" => $activity->getId(),
+    ));
+}
+
 echo $destination_template->build(
     array(
         "destinationName" => $destination->getName(),
@@ -50,5 +61,6 @@ echo $destination_template->build(
         "header" => "HEADER PLACEHOLDER",
         "footer" => "FOOTER PLACEHOLDER",
         "description" => $destination->getDescription(),
+        "activities" => $activity_cards,
     )
 );
