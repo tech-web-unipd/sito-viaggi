@@ -19,7 +19,8 @@ class Image
      */
     public function build(): string
     {
-        return "<img src=\"$this->path\" alt=\"$this->alt\">";
+        $path = "/sito-viaggi".substr($this->path, 1);
+        return "<img src=\"$path\" alt=\"$this->alt\">";
     }
 
     public function getPath(): string
