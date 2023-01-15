@@ -1,3 +1,9 @@
+/*
+=======================================
+============== CAROUSEL ===============
+=======================================
+*/
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -40,19 +46,17 @@ let touchendX = 0;
 let touchendY = 0;
 
 function checkDirection() {
-    let swiped_up = touchendY < touchstartY;
-    let swiped_down = touchendY > touchstartY;
     let swiped_left = touchendX < touchstartX;
     let swiped_right = touchendX > touchstartX;
-    let vertical_movement = Math.abs(touchendY - touchstartY);
-    let acceptable_vertical_movement = 175;
+    let acceptable_vertical_movement = Math.abs(touchendY - touchstartY) < 175;
+    let acceptable_horizontal_movement = Math.abs(touchendX - touchstartX) > 50;
 
-    if (swiped_left && (vertical_movement < acceptable_vertical_movement)) {
+    if (swiped_left && acceptable_horizontal_movement && acceptable_vertical_movement) {
         plusSlides(1);
         return;
     }
 
-    if (swiped_right && (vertical_movement < acceptable_vertical_movement)) {
+    if (swiped_right && acceptable_horizontal_movement && acceptable_vertical_movement) {
         plusSlides(-1);
         return;
     }

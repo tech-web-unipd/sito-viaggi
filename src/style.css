@@ -1,3 +1,8 @@
+:root {
+    --carosuel-width: 90%;
+    --carousel-slide-height: 40em;
+}
+
 * {
     font-family: 'Work Sans', sans-serif;
 }
@@ -10,9 +15,13 @@
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
-
+/*
+=======================================
+============== CAROUSEL ===============
+=======================================
+*/
 .carousel {
-    max-width: 90%;
+    max-width: var(--carosuel-width);
     position: relative;
     margin: auto;
     overflow: hidden;
@@ -28,7 +37,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    height: 40em;
+    max-height: var(--carousel-slide-height);
 }
 
 .prev, .next {
@@ -67,7 +76,7 @@
     padding: 8px 12px;
     position: absolute;
     top: 1em;
-    left: 50%;
+    left: 47.5%;
     background-color: rgb(0,0,0,0.3);
     border-radius: 10em;
 }
