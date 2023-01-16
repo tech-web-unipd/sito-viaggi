@@ -9,7 +9,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 }
 
 $destination_template = new \utilities\Template("templates/destination.html");
-$destination = new \components\Destination(1);
+$destination = new \components\Destination($_GET['id']);
 try {
     $destination->loadFromDatabase($db);
 } catch (\components\DestinationNotFound $e) {
@@ -49,7 +49,7 @@ foreach ($destination->getActivities() as $activity) {
     $activity_cards .= $card_template->build(array(
         "cover" => $activity->getCover()->build(),
         "title" => $activity->getName(),
-        "description" => $activity->getDescription(),
+        "price" => $activity->getPrice(),
         "id" => $activity->getId(),
     ));
 }

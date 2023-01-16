@@ -1,6 +1,8 @@
 :root {
     --carosuel-width: 90%;
     --carousel-slide-height: 40em;
+    --cards-border-radius: 1.5em;
+    --cards-max-width: 40%;
 }
 
 * {
@@ -14,6 +16,14 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 300,
+            'GRAD' 0,
+            'opsz' 48
 }
 /*
 =======================================
@@ -114,4 +124,57 @@
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
+}
+
+/*
+========================================
+================ CARDS =================
+========================================
+*/
+.card {
+    width: var(--cards-max-width);
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 33.333%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--cards-border-radius);
+    border: 0.15em solid green;
+    overflow: hidden;
+}
+
+.card h2, .card p {
+    padding: 0 6.5%;
+}
+
+.card p {
+    font-size: 1.4em;
+    align-self: flex-end;
+}
+
+.card img {
+    width:100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    align-self: center;
+}
+
+.cards-collection {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    gap: 2.5em;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+.card button {
+    text-align: center;
+    font-size: medium;
+    height: 3em;
+    width: 90%;
+    align-self: center;
+    border-radius: var(--cards-border-radius);
+    margin-bottom: 0.7em;
 }
