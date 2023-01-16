@@ -16,7 +16,6 @@ foreach ($destinations as $destination) {
         "cover" => $destination->getCover()->build(),
         "id" => $destination->getId(),
         "title" => $destination->getName(),
-        "description" => $destination->getDescription(),
     ));
 }
 
