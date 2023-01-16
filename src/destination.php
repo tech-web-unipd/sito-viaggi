@@ -54,6 +54,9 @@ foreach ($destination->getActivities() as $activity) {
     ));
 }
 
+$hotel = $destination->getHotels()[0];
+$airline = $destination->getAirlines()[0];
+
 echo $destination_template->build(
     array(
         "destinationName" => $destination->getName(),
@@ -61,6 +64,9 @@ echo $destination_template->build(
         "header" => "HEADER PLACEHOLDER",
         "footer" => "FOOTER PLACEHOLDER",
         "description" => $destination->getDescription(),
+        "hotelName" => $hotel->getName(),
+        "hotelDescription" => $hotel->getDescription(),
+        "airline" => $airline->getName(),
         "activities" => $activity_cards,
     )
 );

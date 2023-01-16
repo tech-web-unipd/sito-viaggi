@@ -68,4 +68,15 @@ class Airline
         $db->executeStatement("INSERT INTO airline (name) VALUES (?)", [$this->name]);
         $this->insertImagesIntoDatabase($db);
     }
+
+    /**
+     * @throws NameNotDefined
+     */
+    public function getName(): string {
+        if($this->name != null) {
+            return $this->name;
+        } else {
+            throw new NameNotDefined();
+        }
+    }
 }

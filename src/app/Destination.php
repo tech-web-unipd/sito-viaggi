@@ -5,6 +5,8 @@ use utilities\WrongParamType;
 
 require_once 'AbstractComponent.php';
 require_once 'Activity.php';
+require_once 'Hotel.php';
+require_once 'Airline.php';
 
 class DestinationNotFound extends Exception {
     public function __construct($id) {
@@ -18,13 +20,17 @@ class Destination extends AbstractComponent
     private ?string $continent;
     private ?string $state;
     private ?array $activities;
+    private ?array $hotels;
+    private ?array $airlines;
 
-    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null)
+    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null, array $hotels = null, array $airlines = null)
     {
         parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
         $this->continent = $continent;
         $this->state = $state;
         $this->activities = $activities;
+        $this->hotels = $hotels;
+        $this->airlines = $airlines;
     }
 
     public function __toString()
@@ -69,6 +75,46 @@ class Destination extends AbstractComponent
     }
 
     /**
+     * @throws IdNotDefined in case id value is null
+     * @throws WrongParamType if one of the statement's parameters is of a non-valid type
+     * @throws Exception in case of errors with database communication
+     */
+    private function loadHotels(\utilities\DatabaseLayer $db): void {
+        if ($this->id === null) {
+            throw new IdNotDefined();
+        }
+
+        $this->hotels = array();
+        $result = $db->executeStatement("SELECT * FROM hotel WHERE destination = ?", array($this->id));
+
+        foreach ($result as $row) {
+            $hotel = new Hotel($row['id']);
+            $hotel->loadFromDatabase($db);
+            $this->hotels[] = $hotel;
+        }
+    }
+
+    /**
+     * @throws IdNotDefined in case id value is null
+     * @throws WrongParamType if one of the statement's parameters is of a non-valid type
+     * @throws Exception in case of errors with database communication
+     */
+    private function loadAirlines(\utilities\DatabaseLayer $db) {
+        if ($this->id === null) {
+            throw new IdNotDefined();
+        }
+
+        $this->airlines = array();
+        $result = $db->executeStatement("SELECT * FROM flight WHERE destination = ?", array($this->id));
+
+        foreach ($result as $row) {
+            $airline = new Airline($row['airline']);
+            $airline->loadImages($db);
+            $this->airlines[] = $airline;
+        }
+    }
+
+    /**
      * @throws DestinationNotFound if the destination is not in the database
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
@@ -88,6 +134,8 @@ class Destination extends AbstractComponent
             $this->description = $result[0]['description'];
             $this->loadImages($db);
             $this->loadActivities($db);
+            $this->loadHotels($db);
+            $this->loadAirlines($db);
         } else {
             throw new IdNotDefined();
         }
@@ -144,6 +192,28 @@ class Destination extends AbstractComponent
             return $this->activities;
         } else {
             throw new FieldNotLoaded('activities');
+        }
+    }
+
+    /**
+     * @throws FieldNotLoaded if hotels value is null
+     */
+    public function getHotels(): array {
+        if ($this->hotels != null) {
+            return $this->hotels;
+        } else {
+            throw new FieldNotLoaded('hotels');
+        }
+    }
+
+    /**
+     * @throws FieldNotLoaded if airlines value is null
+     */
+    public function getAirlines(): array {
+        if ($this->airlines != null) {
+            return $this->airlines;
+        } else {
+            throw new FieldNotLoaded('airlines');
         }
     }
 }
