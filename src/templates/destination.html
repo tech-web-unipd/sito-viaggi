@@ -10,8 +10,9 @@
         <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
         <link rel="stylesheet" href="/sito-viaggi/src/style.css" media="screen">
         <link rel="shorcut icon" type="" href=""> <!---link logo ---->
-        <link rel="stylesheet" href="print.css" media="print"> 
-        <link rel="stylesheet" href="mini.css" media="only screen">
+        <link rel="stylesheet" href="print.css" media="print">
+        <link rel="stylesheet" href="/sito-viaggi/src/small-screen.css" media="only screen and (max-width: 632px)">
+        <link rel="stylesheet" href="/sito-viaggi/src/large-screen.css" media="only screen and (min-width: 1100px)">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -29,18 +30,22 @@
 
         <main>
             <h1><component>destinationName</component></h1>
-            <component>carousel</component>
-            <component>description</component>
-            <section>
+            <section id="gallery">
+                <component>carousel</component>
+            </section>
+            <section id="description">
+                <component>description</component>
+            </section>
+            <section id="hotels">
                 <h2>Alloggi disponibili</h2>
                 <component>hotelName</component>
                 <component>hotelDescription</component>
             </section>
-            <section>
+            <section id="airlines">
                 <h2>Compagnia aerea</h2>
                 <component>airline</component>
             </section>
-            <section>
+            <section id="activities">
                 <h2>Aggiungi delle attività al tuo viaggio</h2>
                 <div  class="horizontal-cards-collection">
                     <component>activities</component>
