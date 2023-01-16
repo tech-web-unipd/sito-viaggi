@@ -10,6 +10,16 @@ h1 {
     height: 0.4em;
     width: 0.4em;
 }
+/* smartphones, touchscreens */
+@media (pointer: coarse) {
+    .prev, .next {
+        display: none;
+    }
+
+    .slide-number {
+        display: none;
+    }
+}
 
 .active, .dot:hover {
     width: 0.7em;
