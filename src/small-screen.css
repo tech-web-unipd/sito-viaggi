@@ -1,3 +1,17 @@
 h1 {
     color: orange;
 }
+
+.activity-card {
+    flex-basis: 60%;
+}
+
+.dot {
+    height: 0.4em;
+    width: 0.4em;
+}
+
+.active, .dot:hover {
+    width: 0.7em;
+    height: 0.7em;
+}
