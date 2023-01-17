@@ -45,7 +45,7 @@ let touchstartY = 0;
 let touchendX = 0;
 let touchendY = 0;
 
-function checkDirection() {
+function swipeCarousel() {
     let swiped_left = touchendX < touchstartX;
     let swiped_right = touchendX > touchstartX;
     let acceptable_vertical_movement = Math.abs(touchendY - touchstartY) < 175;
@@ -71,6 +71,6 @@ Array.from(document.getElementsByClassName("carousel")).map((element) => {
     element.addEventListener('touchend', e => {
         touchendX = e.changedTouches[0].screenX;
         touchendY = e.changedTouches[0].screenY;
-        checkDirection();
+        swipeCarousel();
     })
 })

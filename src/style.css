@@ -3,6 +3,45 @@
     --carousel-slide-height: 40em;
     --cards-border-radius: 1.5em;
     --cards-max-width: 40%;
+    --primary: #0051DF;
+    --onPrimary: #FFFFFF;
+    --primaryContainer: #DBE1FF;
+    --onPrimaryContainer: #00174D;
+    --secondary: #595E72;
+    --onSecondary: #FFFFFF;
+    --secondaryContainer: #DDE1F9;
+    --onSecondaryContainer: #161B2C;
+    --tertiary: #8F00E0;
+    --onTertiary: #FFFFFF;
+    --tertiaryContainer: #F3DAFF;
+    --onTertiaryContainer: #2E004D;
+    --surface: #FEFBFF;
+    --onSurface: #1C1B1E;
+    --error: #BA1A1A;
+    --onError: #FFFFFF;
+    --errorContainer: #FFDAD6;
+    --onErrorContainer: #410002;
+}
+
+.dark-theme {
+    --primary: #B5C4FF;
+    --onPrimary: #00297A;
+    --primaryContainer: #003DAB;
+    --onPrimaryContainer: #DBE1FF;
+    --secondary: #C1C5DD;
+    --onSecondary: #2B3042;
+    --secondaryContainer: #414659;
+    --onSecondaryContainer: #DDE1F9;
+    --tertiary: #E2BBDB;
+    --onTertiary: #422740;
+    --tertiaryContainer: #5B3D58;
+    --onTertiaryContainer: #FFD6F7;
+    --surface: #1B1B1F;
+    --onSurface: #E6E1E6;
+    --error: #FFB4AB;
+    --onError: #690005;
+    --errorContainer: #93000A;
+    --onErrorContainer: #FFB4AB;
 }
 
 * {
@@ -18,12 +57,39 @@
                                   supported by Chrome and Opera */
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-            'FILL' 0,
-            'wght' 300,
-            'GRAD' 0,
-            'opsz' 48
+body {
+    background-color: var(--surface);
+}
+
+/*
+=======================================
+============= CONTAINERS ==============
+=======================================
+*/
+
+.primary-container {
+    background-color: var(--primaryContainer);
+    color: var(--onPrimaryContainer);
+    border-color: var(--primary);
+}
+
+.secondary-container {
+    background-color: var(--secondaryContainer);
+    color: var(--onSecondaryContainer);
+    border-color: var(--secondary);
+}
+
+.tertiary-container {
+    background-color: var(--tertiaryContainer);
+    color: var(--onTertiaryContainer);
+    border-color: var(--tertiary);
+}
+
+.container {
+    padding: 1.2em 2em;
+    height: fit-content;
+    margin: 0 1em 1.2em;
+    border-radius: var(--cards-border-radius);
 }
 
 /*
@@ -114,7 +180,8 @@ main > h1 {
     height: 0.6em;
     width: 0.6em;
     margin: 0 0.2em;
-    background-color: rgba(187, 187, 187, 0.8);
+    background-color: var(--onSurface);
+    opacity: 0.3;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease, width 0.4s;
@@ -123,7 +190,8 @@ main > h1 {
 .active, .dot:hover {
     width: 0.9em;
     height: 0.9em;
-    background-color: rgba(113, 113, 113, 0.88);
+    background-color: var(--onSurface);
+    opacity: 0.7;
 }
 
 .carousel-dots {
@@ -144,6 +212,9 @@ main > h1 {
     to {opacity: 1}
 }
 
+#gallery {
+    margin-bottom: 1em;
+}
 /*
 =========================================
 =========== CARDS COLLECTORS ============
@@ -251,7 +322,7 @@ main > h1 {
     flex-direction: column;
     justify-content: space-between;
     border-radius: var(--cards-border-radius);
-    border: 0.15em solid green;
+    border: 0.15em solid;
     overflow: hidden;
     margin-bottom: 1em;
 }
@@ -266,12 +337,11 @@ main > h1 {
 }
 
 .activity-card h2 {
-    color: #053368;
     transition: color 0.4s;
 }
 
 .activity-card:hover h2 {
-    color: #1e5eb6;
+    color: var(--tertiary);
 }
 
 .activity-card img {
