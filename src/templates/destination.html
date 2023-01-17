@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="/sito-viaggi/src/large-screen.css" media="only screen and (min-width: 1100px)">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
         <script src="/sito-viaggi/src/index.js" defer></script>
     </head>
     <body>
@@ -31,22 +31,22 @@
 
         <main>
             <h1><component>destinationName</component></h1>
-            <section id="gallery">
+            <section class="slide-bottom" id="gallery">
                 <component>carousel</component>
             </section>
-            <section class="primary-container container" id="description">
+            <section class="primary-container container slide-right" id="description">
                 <component>description</component>
             </section>
-            <section class="secondary-container container" id="hotels">
+            <section class="secondary-container container slide-up" id="hotels">
                 <h2>Alloggi disponibili</h2>
                 <h3><component>hotelName</component></h3>
                 <component>hotelDescription</component>
             </section>
-            <section class="secondary-container container" id="airlines">
+            <section class="secondary-container container slide-left" id="airlines">
                 <h2>Compagnia aerea</h2>
                 <h3><component>airline</component></h3>
             </section>
-            <section id="activities">
+            <section class="slide-up" id="activities">
                 <h2>Aggiungi delle attività al tuo viaggio</h2>
                 <div  class="horizontal-cards-collection">
                     <component>activities</component>

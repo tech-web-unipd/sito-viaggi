@@ -60,6 +60,71 @@
 body {
     background-color: var(--surface);
 }
+/*
+=======================================
+============= ANIMATIONS ==============
+=======================================
+*/
+
+.slide-right {
+    animation-name: slide-right;
+    animation-duration: 0.7s;
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.slide-left {
+    animation-name: slide-left;
+    animation-duration: 0.7s;
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.slide-up {
+    animation-name: slide-up;
+    animation-duration: 0.7s;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.slide-bottom {
+    animation-name: slide-bottom;
+    animation-duration: 0.7s;
+}
+
+@keyframes slide-bottom {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
 
 /*
 =======================================
@@ -204,7 +269,7 @@ main > h1 {
 
 .fade {
     animation-name: fade;
-    animation-duration: 1.4s;
+    animation-duration: 0.6s;
 }
 
 @keyframes fade {
