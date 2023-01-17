@@ -4,24 +4,26 @@
 =======================================
 */
 
-let slideIndex = 1;
-showSlides(slideIndex);
+let slideIndex = [1, 1];
+let slideId = ["gallery-slide", "hotel"]
+let dotId = ["dot", "hotel"]
+showSlides(slideIndex, 0);
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function currentSlide(n, index) {
+    showSlides(slideIndex[index] = n, index);
 }
 
-function showSlides(n) {
+function showSlides(n, index) {
     let i;
-    let slides = document.getElementsByClassName("carousel-slide");
-    let dots = document.getElementsByClassName("dot");
+    let slides = document.getElementsByClassName(slideId[index]);
+    let dots = document.getElementsByClassName(dotId[index]);
 
     if(n > slides.length) {
-        slideIndex = 1;
+        slideIndex[index] = 1;
     }
 
     if(n < 1) {
-        slideIndex = slides.length;
+        slideIndex[index] = slides.length;
     }
 
     for (i = 0; i < slides.length; i++) {
@@ -32,12 +34,12 @@ function showSlides(n) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
 
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+    slides[slideIndex[index] - 1].style.display = "block";
+    dots[slideIndex[index] - 1].className += " active";
 }
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+function plusSlides(n, index) {
+    showSlides(slideIndex[index] += n, index);
 }
 
 let touchstartX = 0;
@@ -52,12 +54,12 @@ function swipeCarousel() {
     let acceptable_horizontal_movement = Math.abs(touchendX - touchstartX) > 50;
 
     if (swiped_left && acceptable_horizontal_movement && acceptable_vertical_movement) {
-        plusSlides(1);
+        plusSlides(1, 0);
         return;
     }
 
     if (swiped_right && acceptable_horizontal_movement && acceptable_vertical_movement) {
-        plusSlides(-1);
+        plusSlides(-1, 0);
         return;
     }
 }

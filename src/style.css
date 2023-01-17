@@ -180,11 +180,11 @@ main > h1 {
     overflow: hidden;
 }
 
-.carousel-slide {
+.gallery-slide {
     display: none;
 }
 
-.carousel-slide img {
+.gallery-slide img {
     border-radius: 1.4em;
     aspect-ratio: 3/2;
     object-fit: cover;
