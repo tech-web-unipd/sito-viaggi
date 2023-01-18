@@ -7,6 +7,8 @@ require_once 'AbstractComponent.php';
 require_once 'Activity.php';
 require_once 'Hotel.php';
 require_once 'Airline.php';
+require_once 'Travel.php';
+require_once 'Date.php';
 
 class DestinationNotFound extends Exception {
     public function __construct($id) {
@@ -22,8 +24,9 @@ class Destination extends AbstractComponent
     private ?array $activities;
     private ?array $hotels;
     private ?array $airlines;
+    private ?array $travels;
 
-    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null, array $hotels = null, array $airlines = null)
+    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null, array $hotels = null, array $airlines = null, array $travels = null)
     {
         parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
         $this->continent = $continent;
@@ -31,6 +34,7 @@ class Destination extends AbstractComponent
         $this->activities = $activities;
         $this->hotels = $hotels;
         $this->airlines = $airlines;
+        $this->travels = $travels;
     }
 
     public function __toString()
@@ -114,6 +118,22 @@ class Destination extends AbstractComponent
         }
     }
 
+    private function loadTravels(\utilities\DatabaseLayer $db) {
+        if ($this->id === null) {
+            throw new IdNotDefined();
+        }
+
+        $this->travels = array();
+        $result = $db->executeStatement("SELECT * FROM travel WHERE destination = ?", array($this->id));
+
+        foreach ($result as $row) {
+            $departure = new \Date($row['start_date']);
+            $return = new \Date($row['end_date']);
+            $travel = new Travel($row['destination'], $departure, $return, $row['price']);
+            $this->travels[] = $travel;
+        }
+    }
+
     /**
      * @throws DestinationNotFound if the destination is not in the database
      * @throws IdNotDefined if the id value is null
@@ -136,6 +156,7 @@ class Destination extends AbstractComponent
             $this->loadActivities($db);
             $this->loadHotels($db);
             $this->loadAirlines($db);
+            $this->loadTravels($db);
         } else {
             throw new IdNotDefined();
         }
@@ -214,6 +235,17 @@ class Destination extends AbstractComponent
             return $this->airlines;
         } else {
             throw new FieldNotLoaded('airlines');
+        }
+    }
+
+    /**
+     * @throws FieldNotLoaded if airlines value is null
+     */
+    public function getTravels(): array {
+        if ($this->travels != null) {
+            return $this->travels;
+        } else {
+            throw new FieldNotLoaded('travels');
         }
     }
 }

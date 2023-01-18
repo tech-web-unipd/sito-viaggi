@@ -92,10 +92,25 @@ foreach ($destination->getAirlines() as $airline) {
     ));
 }
 
+$price_table_template = new \utilities\Template("templates/price-table/price-table.html");
+$counter = 0;
+$table_rows = "";
+foreach ($destination->getTravels() as $travel) {
+    $counter += 1;
+    $table_row_template = new \utilities\Template("templates/price-table/table-row.html");
+
+    $table_rows .= $table_row_template->build(array(
+        "departureDate" => $travel->getDeparture(),
+        "returnDate" => $travel->getReturn(),
+        "price" => $travel->getPrice(),
+    ));
+}
+
 echo $destination_template->build(
     array(
         "destinationName" => $destination->getName(),
         "carousel" => $carousel,
+        "priceTable" => $price_table_template->build(array("tableRows" => $table_rows)),
         "header" => "HEADER PLACEHOLDER",
         "footer" => "FOOTER PLACEHOLDER",
         "description" => $destination->getDescription(),
