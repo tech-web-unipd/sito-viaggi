@@ -5,9 +5,10 @@
 */
 
 let slideIndex = [1, 1];
-let slideId = ["gallery-slide", "hotel"]
-let dotId = ["dot", "hotel"]
-showSlides(slideIndex, 0);
+let slideId = ["gallery-slide", "hotel-slide"]
+let dotId = ["gallery-dot", "hotel-dot"]
+showSlides(slideIndex[0], 0);
+showSlides(slideIndex[1], 1)
 
 function currentSlide(n, index) {
     showSlides(slideIndex[index] = n, index);
@@ -47,21 +48,31 @@ let touchstartY = 0;
 let touchendX = 0;
 let touchendY = 0;
 
-function swipeCarousel() {
+function leftSwipe() {
     let swiped_left = touchendX < touchstartX;
+    let acceptable_vertical_movement = Math.abs(touchendY - touchstartY) < 175;
+    let acceptable_horizontal_movement = Math.abs(touchendX - touchstartX) > 50;
+
+    return swiped_left && acceptable_horizontal_movement && acceptable_vertical_movement;
+}
+
+function rightSwipe() {
     let swiped_right = touchendX > touchstartX;
     let acceptable_vertical_movement = Math.abs(touchendY - touchstartY) < 175;
     let acceptable_horizontal_movement = Math.abs(touchendX - touchstartX) > 50;
 
-    if (swiped_left && acceptable_horizontal_movement && acceptable_vertical_movement) {
-        plusSlides(1, 0);
-        return;
-    }
+    return swiped_right && acceptable_horizontal_movement && acceptable_vertical_movement;
+}
 
-    if (swiped_right && acceptable_horizontal_movement && acceptable_vertical_movement) {
-        plusSlides(-1, 0);
-        return;
+function swipeCarousel(index) {
+    if (leftSwipe()) {
+        plusSlides(1, index);
+        return
     }
+     if (rightSwipe()) {
+         plusSlides(-1, index);
+         return
+     }
 }
 
 Array.from(document.getElementsByClassName("carousel")).map((element) => {
@@ -73,6 +84,15 @@ Array.from(document.getElementsByClassName("carousel")).map((element) => {
     element.addEventListener('touchend', e => {
         touchendX = e.changedTouches[0].screenX;
         touchendY = e.changedTouches[0].screenY;
-        swipeCarousel();
+
+        if (element.classList.contains("gallery-carousel")) {
+            swipeCarousel(0);
+            return
+        }
+
+        if (element.classList.contains("container-carousel")) {
+            swipeCarousel(1);
+            return
+        }
     })
 })

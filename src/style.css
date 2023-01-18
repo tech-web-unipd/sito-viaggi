@@ -170,6 +170,27 @@ main > h1 {
 
 /*
 =======================================
+========= CONTAINER CAROUSEL ==========
+=======================================
+*/
+
+.container-carousel {
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.controls > .carousel-dots {
+    margin: auto;
+}
+
+/*
+=======================================
 ============== CAROUSEL ===============
 =======================================
 */
@@ -177,7 +198,6 @@ main > h1 {
     max-width: var(--carosuel-width);
     position: relative;
     margin: auto;
-    overflow: hidden;
 }
 
 .gallery-slide {
@@ -195,8 +215,11 @@ main > h1 {
     max-height: var(--carousel-slide-height);
 }
 
-.prev, .next {
-    cursor: pointer;
+.hotel-slide {
+    display: none;
+}
+
+.gallery-carousel > .prev, .gallery-carousel > .next {
     position: absolute;
     top: 50%;
     width: 0.75em;
@@ -213,15 +236,15 @@ main > h1 {
     background-color: rgb(0,0,0,0.5);
 }
 
-.prev {
+.gallery-carousel > .prev {
     left: 0.6em;
 }
 
-.next {
+.gallery-carousel > .next {
     right: 0.6em;
 }
 
-.next:hover, .prev:hover {
+.gallery-carousel > .next:hover, .gallery-carousel > .prev:hover {
     background-color: rgb(0,0,0,0.8);
 }
 
