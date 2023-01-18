@@ -4,11 +4,15 @@
 =======================================
 */
 
-let slideIndex = [1, 1];
-let slideId = ["gallery-slide", "hotel-slide"]
-let dotId = ["gallery-dot", "hotel-dot"]
+let slideIndex = [1, 1, 1];
+let carouselClass = ["gallery-carousel", "hotel-carousel", "airline-carousel"];
+let slideClass = ["gallery-slide", "hotel-slide", "airline-slide"];
+let dotId = ["gallery-dot", "hotel-dot", "airline-dot"];
 showSlides(slideIndex[0], 0);
-showSlides(slideIndex[1], 1)
+showSlides(slideIndex[1], 1);
+showSlides(slideIndex[2], 2);
+hideUnnecessaryControls(1);
+hideUnnecessaryControls(2);
 
 function currentSlide(n, index) {
     showSlides(slideIndex[index] = n, index);
@@ -16,7 +20,7 @@ function currentSlide(n, index) {
 
 function showSlides(n, index) {
     let i;
-    let slides = document.getElementsByClassName(slideId[index]);
+    let slides = document.getElementsByClassName(slideClass[index]);
     let dots = document.getElementsByClassName(dotId[index]);
 
     if(n > slides.length) {
@@ -85,14 +89,19 @@ Array.from(document.getElementsByClassName("carousel")).map((element) => {
         touchendX = e.changedTouches[0].screenX;
         touchendY = e.changedTouches[0].screenY;
 
-        if (element.classList.contains("gallery-carousel")) {
-            swipeCarousel(0);
-            return
-        }
-
-        if (element.classList.contains("container-carousel")) {
-            swipeCarousel(1);
-            return
+        for (let i = 0; i < carouselClass.length; ++i) {
+            if (element.classList.contains(carouselClass[i])) {
+                swipeCarousel(i);
+                return
+            }
         }
     })
 })
+
+function hideUnnecessaryControls(classIndex) {
+    let slide = document.getElementsByClassName(slideClass[classIndex]);
+
+    if(slide.length <= 1) {
+        document.querySelector("." + carouselClass[classIndex] + " > .controls").style.display = "none";
+    }
+}

@@ -79,4 +79,12 @@ class Airline
             throw new NameNotDefined();
         }
     }
+
+    public function getLogo(): Image {
+        if($this->logo != null) {
+            return $this->logo;
+        } else {
+            throw new NameNotDefined();
+        }
+    }
 }

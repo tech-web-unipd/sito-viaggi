@@ -59,6 +59,7 @@
 
 body {
     background-color: var(--surface);
+    font-size: 1.3em;
 }
 /*
 =======================================
@@ -174,6 +175,25 @@ main > h1 {
 =======================================
 */
 
+.airline-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.airline-info img {
+    width: 25%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+/*
+=======================================
+========= CONTAINER CAROUSEL ==========
+=======================================
+*/
+
 .container-carousel {
     display: flex;
     flex-direction: column;
@@ -190,7 +210,7 @@ main > h1 {
 }
 
 .controls .prev, .controls .next {
-    width: 8%;
+    width: 5%;
     height: fit-content;
     transition: 0.4s;
 }

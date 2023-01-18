@@ -73,8 +73,24 @@ foreach ($destination->getHotels() as $hotel) {
     ));
 }
 
-$hotel = $destination->getHotels()[0];
-$airline = $destination->getAirlines()[0];
+$airline_carousel_template = new \utilities\Template("templates/carousel/airline-carousel.html");
+$counter = 0;
+$airline_slides = "";
+$airline_dots = "";
+foreach ($destination->getAirlines() as $airline) {
+    $counter += 1;
+    $slide_template = new \utilities\Template("templates/carousel/airline-slide.html");
+    $dot_template = new utilities\Template("templates/carousel/airline-dot.html");
+
+    $airline_slides .= $slide_template->build(array(
+        "logo" => $airline->getLogo()->build(),
+        "airlineName" => $airline->getName(),
+    ));
+
+    $airline_dots .= $dot_template->build(array(
+        "index" => $counter,
+    ));
+}
 
 echo $destination_template->build(
     array(
@@ -84,7 +100,7 @@ echo $destination_template->build(
         "footer" => "FOOTER PLACEHOLDER",
         "description" => $destination->getDescription(),
         "hotelCarousel" => $hotel_carousel_template->build(array("slides" => $hotel_slides, "dots" => $hotel_dots)),
-        "airline" => $airline->getName(),
+        "airline" => $airline_carousel_template->build(array("slides" => $airline_slides, "dots" => $airline_dots)),
         "activities" => $activity_cards,
     )
 );
