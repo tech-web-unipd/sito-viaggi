@@ -13,7 +13,7 @@
         <link rel="shorcut icon" type="" href=""> <!---link logo ---->
         <link rel="stylesheet" href="print.css" media="print">
         <link rel="stylesheet" href="/sito-viaggi/src/small-screen.css" media="only screen and (max-width: 700px)">
-        <link rel="stylesheet" href="/sito-viaggi/src/large-screen.css" media="only screen and (min-width: 1100px)">
+        <link rel="stylesheet" href="/sito-viaggi/src/large-screen.css" media="only screen and (min-width: 1400px)">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -29,15 +29,18 @@
         </nav>
         
         <main>
-            <h2>Goditi un rilassante viaggio in una località marittima</h2>
-            <p>Clicca sulla destinazione che più ti attira per cominciare la tua prossima avventura.</p>
-            <div class="horizontal-cards-collection">
-                <component>seaDestinations</component>
-            </div>
-            <h2>Esplora una nuova grande città</h2>
-            <div class="horizontal-cards-collection">
-                <component>cityDestinations</component>
-            </div>
+            <section class="primary-container container">
+                <h2>Goditi un rilassante viaggio in una località marittima</h2>
+                <div class="horizontal-cards-collection">
+                    <component>seaDestinations</component>
+                </div>
+            </section>
+            <section class="primary-container container">
+                <h2>Esplora una nuova grande città</h2>
+                <div class="horizontal-cards-collection">
+                    <component>cityDestinations</component>
+                </div>
+            </section>
         </main>
 
         

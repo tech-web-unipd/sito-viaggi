@@ -21,3 +21,7 @@ main > h1 { grid-area: 1 / 1 / 2 / 3; }
 .activity-card {
     flex-basis: 25%;
 }
+
+.full-picture-card {
+    flex-basis: 20%;
+}

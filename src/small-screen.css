@@ -35,3 +35,7 @@ h1 {
     aspect-ratio: 3/2;
     object-fit: contain;
 }
+
+.full-picture-card {
+    flex-basis: 80%;
+}
