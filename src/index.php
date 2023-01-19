@@ -23,14 +23,17 @@ function createDestinationCollections($destinations): string
 
 $sea_destinations = \DestinationService::getDestinationsByType($db, \DestinationType::sea);
 $city_destinations = \DestinationService::getDestinationsByType($db, \DestinationType::city);
+$safari_destinations = \DestinationService::getDestinationsByType($db, \DestinationType::safari);
 $index_template = new \utilities\Template("templates/index.html");
 
 $sea_destinations_cards = createDestinationCollections($sea_destinations);
 $city_destinations_cards = createDestinationCollections($city_destinations);
+$safari_destinations_cards = createDestinationCollections($safari_destinations);
 
 echo $index_template->build(array(
     "header" => "headerPlaceHolder",
     "footer" => "footerPlaceHolder",
     "seaDestinations" => $sea_destinations_cards,
     "cityDestinations" => $city_destinations_cards,
+    "safariDestinations" => $safari_destinations_cards,
 ));
