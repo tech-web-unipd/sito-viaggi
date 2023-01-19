@@ -57,7 +57,7 @@ abstract class AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    protected function loadImages(\utilities\DatabaseLayer $db): void
+    public function loadImages(\utilities\DatabaseLayer $db): void
     {
         if ($this->id === null) {
             throw new IdNotDefined();

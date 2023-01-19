@@ -43,23 +43,6 @@ class Destination extends AbstractComponent
     }
 
     /**
-     * @throws Exception if there are some errors with database communication
-     */
-    static public function  getAllDestinations(\utilities\DatabaseLayer $db): array {
-        $destinations = [];
-        $query = "SELECT * FROM destination";
-        $result = $db->executeStatement($query);
-        foreach ($result as $row) {
-            $destination = new Destination($row['id'], $row['name'], $row['description'], null, null, $row['continent'], $row['state'], null);
-            $destination->loadImages($db);
-
-            $destinations[] = $destination;
-        }
-
-        return $destinations;
-    }
-
-    /**
      * @throws IdNotDefined if the id value is null
      * @throws Exception
      */
@@ -124,7 +107,7 @@ class Destination extends AbstractComponent
         }
 
         $this->travels = array();
-        $result = $db->executeStatement("SELECT * FROM travel WHERE destination = ?", array($this->id));
+        $result = $db->executeStatement("SELECT * FROM travel WHERE destination = ? ORDER BY start_date", array($this->id));
 
         foreach ($result as $row) {
             $departure = new \Date($row['start_date']);
