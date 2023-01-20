@@ -372,6 +372,7 @@ main > h1 {
     row-gap: 2.5em;
     column-gap: 2em;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 /*
@@ -539,4 +540,39 @@ button.add-to-cart {
 
 button:hover.add-to-cart {
     background-color: darkorange;
+}
+
+/*
+===========================================
+============= FILTER BUTTONS ==============
+===========================================
+*/
+
+.filters-container {
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+    row-gap: 0.5em;
+    flex-wrap: wrap;
+    margin-bottom: 2%;
+}
+
+.filters-container button {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1em;
+    border-radius: var(--cards-border-radius);
+    background-color: var(--surface);
+    color: var(--onSurface);
+    border: 1px solid var(--tertiary);
+    transition: background-color 0.4s ease;
+}
+
+button.active-filter {
+    background-color: var(--tertiaryContainer);
+    color: var(--onTertiaryContainer);
+}
+
+#notFoundText {
+    display: none;
 }

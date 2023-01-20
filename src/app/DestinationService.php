@@ -20,7 +20,7 @@ class DestinationService
         $result = $db->executeStatement($query);
 
         foreach ($result as $row) {
-            $destination = new Destination($row['id'], $row['name'], $row['description'], null, null, $row['continent'], $row['state'], null);
+            $destination = new Destination($row['id'], $row['name'], $row['description'], null, null, $row['continent'], $row['state'], null, null, null, null, $row['primary_type']);
             $destination->loadImages($db);
             $destinations[] = $destination;
         }
@@ -36,7 +36,7 @@ class DestinationService
         $result = $db->executeStatement("SELECT * FROM destination");
 
         foreach ($result as $row) {
-            $destination = new Destination($row['id'], $row['name'], $row['description'], null, null, $row['continent'], $row['state'], null);
+            $destination = new Destination($row['id'], $row['name'], $row['description'], null, null, $row['continent'], $row['state'], null, null, null, null, $row['primary_type']);
             $destination->loadImages($db);
 
             $destinations[] = $destination;

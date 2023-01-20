@@ -16,6 +16,8 @@ function createDestinationCollections($destinations): string
             "cover" => $destination->getCover()->build(),
             "id" => $destination->getId(),
             "title" => $destination->getName(),
+            "type" => $destination->getPrimaryType(),
+            "continent" => $destination->getContinent(),
         ));
     }
     return $cards;

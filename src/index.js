@@ -23,24 +23,26 @@ function showSlides(n, index) {
     let slides = document.getElementsByClassName(slideClass[index]);
     let dots = document.getElementsByClassName(dotId[index]);
 
-    if(n > slides.length) {
-        slideIndex[index] = 1;
-    }
+    if (slides.length !== 0) {
+        if(n > slides.length) {
+            slideIndex[index] = 1;
+        }
 
-    if(n < 1) {
-        slideIndex[index] = slides.length;
-    }
+        if(n < 1) {
+            slideIndex[index] = slides.length;
+        }
 
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
 
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
 
-    slides[slideIndex[index] - 1].style.display = "block";
-    dots[slideIndex[index] - 1].className += " active";
+        slides[slideIndex[index] - 1].style.display = "block";
+        dots[slideIndex[index] - 1].className += " active";
+    }
 }
 
 function plusSlides(n, index) {
@@ -101,7 +103,83 @@ Array.from(document.getElementsByClassName("carousel")).map((element) => {
 function hideUnnecessaryControls(classIndex) {
     let slide = document.getElementsByClassName(slideClass[classIndex]);
 
-    if(slide.length <= 1) {
+    if(slide.length <= 1 && slide.length !== 0) {
         document.querySelector("." + carouselClass[classIndex] + " > .controls").style.display = "none";
     }
+}
+/*
+========================================
+=============== FILTERS ================
+========================================
+*/
+let active_filters = [];
+filterSelection("all");
+function filterSelection(selection) {
+    let cards_to_filter = document.querySelectorAll("#filtered-container .card");
+    if (selection === "all") {
+        active_filters = [];
+        cards_to_filter.forEach((card) => {
+            card.style.display = "block";
+        });
+
+        return
+    }
+
+
+    if (active_filters.includes(selection)) {
+        active_filters.splice(active_filters.indexOf(selection), 1);
+    } else {
+        active_filters.push(selection);
+    }
+
+    let match_counter = 0;
+    for (let i = 0; i < cards_to_filter.length; i++) {
+        if (checkFilters(cards_to_filter[i].classList)) {
+            if(match_counter === 0) document.getElementById("notFoundText").style.display = "none";
+            cards_to_filter[i].style.display = "block";
+            match_counter++;
+        } else {
+            cards_to_filter[i].style.display = "none";
+        }
+    }
+
+    if (match_counter === 0) document.getElementById("notFoundText").style.display = "block";
+}
+
+function checkFilters(classes) {
+    if (classes.length === 0) {
+        return false;
+    }
+
+    let needed_matches = active_filters.length;
+
+    for (let i = 0; i < classes.length; i++) {
+        if (active_filters.includes(classes[i])) {
+            needed_matches--;
+        }
+    }
+
+    return needed_matches === 0;
+}
+
+let filter_buttons = document.querySelectorAll(".filters-container button");
+for (let i = 0; i < filter_buttons.length; i++) {
+    filter_buttons[i].addEventListener("click", function() {
+        if(this.classList.contains("reset-btn")) {
+            filter_buttons.forEach((button) => {
+                button.classList.remove("active-filter");
+            });
+            this.classList.add("active-filter");
+            return
+        } else {
+            document.getElementsByClassName("reset-btn")[0].classList.remove("active-filter");
+        }
+
+        this.classList.toggle("active-filter");
+        if(document.getElementsByClassName("active-filter").length === 0) {
+            document.querySelector(".filters-container .reset-btn").classList.add("active-filter");
+        } else {
+            document.querySelector(".filters-container .reset-btn").classList.remove("active-filter");
+        }
+    });
 }
