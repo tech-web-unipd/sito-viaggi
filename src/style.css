@@ -158,6 +158,18 @@ body {
 }
 
 /*
+========================================
+============= DESCRIPTION ==============
+========================================
+*/
+
+#description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/*
 =======================================
 ================ MAIN =================
 =======================================
@@ -499,7 +511,19 @@ td:not(tr:last-child > td) {
     align-self: center;
 }
 
-.activity-card button {
+/*
+==========================================
+============== ADD TO CART ===============
+==========================================
+*/
+
+#description .add-to-cart {
+    max-width: 60%;
+    margin-top: 3.5%;
+}
+
+button.add-to-cart {
+    cursor: pointer;
     text-align: center;
     font-size: large;
     height: 3em;
@@ -513,6 +537,6 @@ td:not(tr:last-child > td) {
     position: relative;
 }
 
-.activity-card button:hover {
+button:hover.add-to-cart {
     background-color: darkorange;
 }
