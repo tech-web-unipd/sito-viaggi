@@ -16,6 +16,8 @@ class Activity extends AbstractComponent
     private const IMAGE_FOREIGN_KEY = "activity";
     private ?int $price;
 
+    private ?array $destinations;
+
     public function __construct(string $id = null, string $name = null, int $price = null, string $description = null, array $images = null, Image $cover = null)
     {
         $this->price = $price;
@@ -32,6 +34,22 @@ class Activity extends AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
+
+     private function  loadDestination(\utilities\DatabaseLayer $db): void {
+        if ($this->id === null) {
+            throw new IdNotDefined();
+        }
+
+        $this->destinations = array();
+        $result = $db->executeStatement("SELECT destination FROM offers WHERE activity = ?", array($this->id));
+
+        foreach ($result as $row) {
+            $destination = new Destination($row['destination']);
+            $destination->loadFromDatabase($db);
+            $this->destinations[] = $destination;
+        }
+    }
+
     public function loadFromDatabase(\utilities\DatabaseLayer $db): void
     {
         if ($this->id != null) {
@@ -78,6 +96,13 @@ class Activity extends AbstractComponent
             return $this->price;
         } else {
             throw new FieldNotLoaded('price');
+        }
+    }
+    public function getDestinations(): array {
+        if ($this->destinations != null) {
+            return $this->destinations;
+        } else {
+            throw new FieldNotLoaded('activities');
         }
     }
 }

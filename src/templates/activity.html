@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            GoTo - <component>activityName</component>
+        </title>
+        <meta name="description" content="In questa pagina del nostro sito di viaggi troverai i dettagli riguardanti l'attività che hai selezionato, descrizione, immagini e tante curiosità."> <!---descrizione ---->
+        <meta name="keyword" content="Viaggi, Viaggiare, Vacanze"> <!--- aggiungere keywords ---->
+        <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/sito-viaggi/src/style.css" media="screen">
+        <link rel="shorcut icon" type="" href=""> <!---link logo ---->
+        <link rel="stylesheet" href="print.css" media="print">
+        <link rel="stylesheet" href="/sito-viaggi/src/small-screen.css" media="only screen and (max-width: 700px)">
+        <link rel="stylesheet" href="/sito-viaggi/src/large-screen.css" media="only screen and (min-width: 1400px)">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <script src="/sito-viaggi/src/index.js" defer></script>
+    </head>
+    <body>
+        <component>header</component>
+        <nav id= "breadcrumb" aria-label="percorso">
+            <p>
+                Ti trovi in: <a href="index.php">Home</a> >> <!---Qua dovrei metterci il link ma non so come--> <component>destinationName</component> >> <component>activityName</component>
+            </p>
+        </nav>
+    
+        <main class="single-component-page">
+            <h1><component>activityName</component></h1>
+            <section class="slide-bottom" id="gallery">
+                <component>carousel</component>
+            </section>
+            <section class="primary-container container slide-right" id="description">
+                <component>description</component>
+            </section>
+            <section  id="price"> <!--non so come mettere bene il prezzo-->
+                <component>price</component>
+            </section>
+            <section class="slide-up" id="destinations">
+                <h2>Destinazioni contenenti questa attività:</h2> <!--Destinazioni o meglio viaggi?-->
+                <div  class="horizontal-cards-collection">
+                    <component>destinations</component>
+                </div>
+            </section>
+        </main>
