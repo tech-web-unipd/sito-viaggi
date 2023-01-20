@@ -564,7 +564,7 @@ button:hover.add-to-cart {
     border-radius: var(--cards-border-radius);
     background-color: var(--surface);
     color: var(--onSurface);
-    border: 1px solid var(--tertiary);
+    border: 2px solid var(--tertiary);
     transition: background-color 0.4s ease;
 }
 
