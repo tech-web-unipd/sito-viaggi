@@ -612,3 +612,8 @@ button.active-filter {
     outline: 2px solid var(--primary);
     border: none;
 }
+
+#toAllDestinations {
+    text-align: center;
+    font-size: larger;
+}

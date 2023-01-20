@@ -12,11 +12,18 @@ function createDestinationCollections($destinations): string
     $cards = "";
     foreach ($destinations as $destination) {
         $card_template = new \utilities\Template("templates/cards/destination-card.html");
+        $secondary_type = "";
+        try {
+            $secondary_type = $destination->getSecondaryType();
+        } catch (\components\FieldNotLoaded $e) {
+            $secondary_type = "";
+        }
         $cards .= $card_template->build(array(
             "cover" => $destination->getCover()->build(),
             "id" => $destination->getId(),
             "title" => $destination->getName(),
-            "type" => $destination->getPrimaryType(),
+            "primaryType" => $destination->getPrimaryType(),
+            "secondaryType" => $secondary_type,
             "continent" => $destination->getContinent(),
         ));
     }
