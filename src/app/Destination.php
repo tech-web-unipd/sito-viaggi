@@ -26,8 +26,9 @@ class Destination extends AbstractComponent
     private ?array $airlines;
     private ?array $travels;
     private ?string $primary_type;
+    private ?string $secondary_type;
 
-    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null, array $hotels = null, array $airlines = null, array $travels = null, string $primary_type = null)
+    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null, array $hotels = null, array $airlines = null, array $travels = null, string $primary_type = null, string $secondary_type = null)
     {
         parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
         $this->continent = $continent;
@@ -37,6 +38,7 @@ class Destination extends AbstractComponent
         $this->airlines = $airlines;
         $this->travels = $travels;
         $this->primary_type = $primary_type;
+        $this->secondary_type = $secondary_type;
     }
 
     public function __toString()
@@ -236,11 +238,22 @@ class Destination extends AbstractComponent
     }
 
     /**
-     * @throws FieldNotLoaded if airlines value is null
+     * @throws FieldNotLoaded if primary type value is null
      */
     public function getPrimaryType(): string {
         if ($this->primary_type != null) {
             return $this->primary_type;
+        } else {
+            throw new FieldNotLoaded('primary type');
+        }
+    }
+
+    /**
+     * @throws FieldNotLoaded if secondary type value is null
+     */
+    public function getSecondaryType(): string {
+        if ($this->secondary_type != null) {
+            return $this->secondary_type;
         } else {
             throw new FieldNotLoaded('primary type');
         }

@@ -183,3 +183,29 @@ for (let i = 0; i < filter_buttons.length; i++) {
         }
     });
 }
+
+/*
+===========================================
+=============== SEARCH BAR ================
+===========================================
+*/
+
+function searchDestination() {
+    let input = document.getElementsByClassName("search-bar")[0].value.toUpperCase();
+    let cards = document.getElementsByClassName("card");
+
+    let counter = 0;
+    for (let i = 0; i < cards.length; i++) {
+        let destination_name = cards[i].getElementsByTagName("h2")[0].innerHTML.toUpperCase();
+        let filtered = checkFilters(cards[i].classList);
+        if (destination_name.toUpperCase().indexOf(input) > -1 && filtered) {
+            if (counter === 0) document.getElementById("notFoundText").style.display = "none";
+            cards[i].style.display = "block";
+            counter++;
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+
+    if (counter === 0) document.getElementById("notFoundText").style.display = "block";
+}
