@@ -118,6 +118,7 @@ function filterSelection(selection) {
     let cards_to_filter = document.querySelectorAll("#filtered-container .card");
     if (selection === "all") {
         active_filters = [];
+        document.getElementsByClassName("search-bar")[0].value = "";
         cards_to_filter.forEach((card) => {
             card.style.display = "block";
         });
@@ -134,7 +135,7 @@ function filterSelection(selection) {
 
     let match_counter = 0;
     for (let i = 0; i < cards_to_filter.length; i++) {
-        if (checkFilters(cards_to_filter[i].classList)) {
+        if (checkFilters(cards_to_filter[i].classList) && checkSearchBar(cards_to_filter[i].getElementsByTagName("h2")[0].innerHTML.toUpperCase())) {
             if(match_counter === 0) document.getElementById("notFoundText").style.display = "none";
             cards_to_filter[i].style.display = "block";
             match_counter++;
@@ -183,12 +184,16 @@ for (let i = 0; i < filter_buttons.length; i++) {
         }
     });
 }
-
 /*
 ===========================================
 =============== SEARCH BAR ================
 ===========================================
 */
+
+function checkSearchBar(destination_name) {
+    let input = document.getElementsByClassName("search-bar")[0].value.toUpperCase();
+    return destination_name.toUpperCase().indexOf(input) > -1;
+}
 
 function searchDestination() {
     let input = document.getElementsByClassName("search-bar")[0].value.toUpperCase();
@@ -198,7 +203,7 @@ function searchDestination() {
     for (let i = 0; i < cards.length; i++) {
         let destination_name = cards[i].getElementsByTagName("h2")[0].innerHTML.toUpperCase();
         let filtered = checkFilters(cards[i].classList);
-        if (destination_name.toUpperCase().indexOf(input) > -1 && filtered) {
+        if (checkSearchBar(destination_name) && filtered) {
             if (counter === 0) document.getElementById("notFoundText").style.display = "none";
             cards[i].style.display = "block";
             counter++;
