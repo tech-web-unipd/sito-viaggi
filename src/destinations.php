@@ -28,7 +28,7 @@ foreach ($destinations as $destination) {
 
 
 echo $page_template->build(array(
-    "header" => "headerPlaceHolder",
+    "header" => buildHeader(),
     "footer" => "footerPlaceHolder",
     "allDestinations" => $destination_cards,
 ));

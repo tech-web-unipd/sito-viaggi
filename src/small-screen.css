@@ -2,10 +2,6 @@ body {
     font-size: 1em;
 }
 
-h1 {
-    color: orange;
-}
-
 .activity-card {
     flex-basis: 60%;
 }
@@ -42,4 +38,118 @@ h1 {
 
 .wrap-cards-collection {
     gap: 0;
+}
+
+/*
+===========================================
+================= HEADER ==================
+===========================================
+*/
+
+#header-logo {
+    margin-left: 0;
+    flex-basis: 38%;
+}
+
+.menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    background-color: var(--primary);
+    color: var(--onPrimary);
+}
+
+.menu.is-active {
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+.menu-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.25rem;
+}
+
+.menu-inner li:first-child {
+    margin-top: 0.8em;
+}
+
+.menu-inner li:last-child {
+    margin-bottom: 0.8em;
+}
+
+.menu-item > a {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: inherit;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.burger {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    order: -1;
+    z-index: 10;
+    border: none;
+    outline: none;
+    visibility: visible;
+    transform: rotate(0deg);
+    transition: 0.35s ease;
+    min-width: 40px;
+    min-height: 40px;
+    margin: auto 1em;
+}
+
+.burger-line {
+    position: absolute;
+    display: block;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    border: none;
+    outline: none;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+    background-color: var(--onPrimary);
+}
+
+.burger-line:nth-child(1) {
+    top: 15%;
+}
+
+.burger-line:nth-child(2) {
+    top: 42%;
+}
+
+.burger-line:nth-child(3) {
+    top: 69%;
+}
+
+.burger.is-active .burger-line:nth-child(1) {
+    top: 40%;
+    transform: rotate(135deg);
+}
+
+.burger.is-active .burger-line:nth-child(2) {
+    right: -1.5rem;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.burger.is-active .burger-line:nth-child(3) {
+    top: 40%;
+    transform: rotate(-135deg);
 }

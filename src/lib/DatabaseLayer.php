@@ -82,7 +82,7 @@ class DatabaseLayer {
      * @throws WrongParamType if one or more parameters are not of type int, float or string
      * @throws Exception in case of errors with database communication
      */
-    public function executeStatement(string $statement, array $params = array()): array | bool
+    public function executeStatement(string $statement, array $params = array())
     {
         $this->connection();
         $stmt = $this->db_connection->prepare($statement);

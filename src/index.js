@@ -113,7 +113,7 @@ function hideUnnecessaryControls(classIndex) {
 ========================================
 */
 let active_filters = [];
-filterSelection("all");
+if(document.getElementsByClassName("search-bar")[0]) filterSelection("all");
 function filterSelection(selection) {
     let cards_to_filter = document.querySelectorAll("#filtered-container .card");
     if (selection === "all") {
@@ -213,4 +213,20 @@ function searchDestination() {
     }
 
     if (counter === 0) document.getElementById("notFoundText").style.display = "block";
+}
+
+/*
+===========================================
+================= HEADER ==================
+===========================================
+*/
+
+const menu = document.getElementsByClassName("menu")[0];
+const burgerMenu = document.getElementsByClassName("burger")[0];
+
+if (burgerMenu && menu) {
+    burgerMenu.addEventListener("click", () => {
+        burgerMenu.classList.toggle("is-active");
+        menu.classList.toggle("is-active");
+    });
 }

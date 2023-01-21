@@ -21,6 +21,7 @@
     --onError: #FFFFFF;
     --errorContainer: #FFDAD6;
     --onErrorContainer: #410002;
+    --headerHeight: 7%;
 }
 
 .dark-theme {
@@ -60,8 +61,8 @@
 
 body {
     background-color: var(--surface);
+    margin: 0 auto;
 }
-
 /*
 =======================================
 ============= ANIMATIONS ==============
@@ -616,4 +617,87 @@ button.active-filter {
 #toAllDestinations {
     text-align: center;
     font-size: larger;
+}
+
+/*
+===========================================
+================= HEADER ==================
+===========================================
+*/
+
+header {
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--headerHeight);
+    margin: 0 auto;
+    transition: all 0.35s ease;
+}
+
+header > * {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+header a {
+    color: var(--onPrimary);
+    text-decoration: none;
+    font-size: larger;
+}
+
+#header-logo {
+    margin-left: 2.5%;
+}
+
+.menu {
+    position: relative;
+    top: 0;
+    padding: 0;
+}
+
+.menu-inner {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.menu-inner a {
+    display: block;
+    min-height: 35px;
+    line-height: 35px;
+}
+
+.burger {
+    display: none;
+    visibility: hidden;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+}
+
+#cart {
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    min-height: 35px;
+    min-width: 35px;
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    border: 1px solid var(--onPrimary);
 }
