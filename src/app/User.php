@@ -57,6 +57,11 @@ abstract class Sex {
     const MALE = "M";
     const WOMAN = "W";
     const UNDEFINED = "U";
+
+    public function __toString()
+    {  
+         return "$this";
+    }
 }
 
 abstract class Permission {
@@ -316,18 +321,17 @@ class User
         }
    }
 
-   public function toString()
-   {
-        
-       return "$this->gender";
+   public function __toString()
+   {  
+        return "$this->gender";
    }
 
 
    public function ModGender($gender_typed,\utilities\DatabaseLayer $db ) 
    {
         $this->gender = $gender_typed;
-        $new_gender = ($this->gender)->toString();
-        if ($db->executeStatement("UPDATE userprofile SET gender = $this->gender WHERE username = $this->username"))
+        $new_gender = $this->__toString();
+        if ($db->executeStatement("UPDATE userprofile SET gender = $new_gender WHERE username = $this->username"))
         {
             return true;
         }
