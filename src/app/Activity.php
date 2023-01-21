@@ -2,6 +2,9 @@
 namespace components;
 use Exception;
 
+require_once "AbstractComponent.php";
+require_once "Destination.php";
+
 class ActivityNotFound extends Exception
 {
     public function __construct($id)
@@ -18,9 +21,10 @@ class Activity extends AbstractComponent
 
     private ?array $destinations;
 
-    public function __construct(string $id = null, string $name = null, int $price = null, string $description = null, array $images = null, Image $cover = null)
+    public function __construct(string $id = null, string $name = null, int $price = null, string $description = null, array $images = null, Image $cover = null, array $destinations = null)
     {
         $this->price = $price;
+        $this->destinations = $destinations;
         parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
     }
 
@@ -63,6 +67,7 @@ class Activity extends AbstractComponent
             $this->price = $result[0]['price'];
             $this->description = $result[0]['description'];
             $this->loadImages($db);
+            $this->loadDestination($db);
         } else {
             throw new IdNotDefined();
         }

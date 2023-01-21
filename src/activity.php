@@ -9,13 +9,13 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 }
 
 $activity_template = new \utilities\Template("templates/activity.html");
-$activity = new \components\Activity($_GET['id']);
+$activity = new \components\Activity(2);
 try{
     $activity->loadFromDatabase($db);
 } catch (\components\ActivityNotFound $e){
     echo "Error not found activity";
 }
-$carousel_template = new \utilities\Template("Template/carousel/carousel.html");
+$carousel_template = new \utilities\Template("templates/carousel/carousel.html");
 $carousel = "";
 
 $carousel_slides = "";
@@ -43,6 +43,7 @@ $carousel = $carousel_template->build(array(
     "dots" => $carousel_dots,
 ));
 
+$destination_template = new \utilities\Template("templates/destination.html");
 $destination_cards = "";
 foreach ($activity->getDestinations() as $destination) {
     $card_template = new \utilities\Template("templates/cards/destination-card.html");

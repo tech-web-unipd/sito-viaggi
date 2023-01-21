@@ -39,3 +39,7 @@ h1 {
 .full-picture-card {
     flex-basis: 80%;
 }
+
+.wrap-cards-collection {
+    gap: 0;
+}
