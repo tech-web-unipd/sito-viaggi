@@ -1,6 +1,6 @@
 <?php
 use Exception;
-
+require_once "Date.php";
 
 class UserNotFound extends Exception
 {
@@ -77,20 +77,20 @@ class User
     private string $name;
     private string $surname;
     private Sex $gender;
-    private string $date_of_birth;
+    private Date $date_of_birth;
     private string $pw_hash;
     private string $email;
     private int $numero;
     private Permission $permission;
 
 
-    public function __construct(string $username, string $name, string $surname, Sex $gender, string $date_of_birth, string $email, int $numero, Permission $permission, string $password)
+    public function __construct(string $username, string $name, string $surname, Sex $gender, Date $date_of_birth, string $email, int $numero, Permission $permission, string $password)
     {
         $this->username = $username;
         $this->name = $name;
         $this->surname = $surname;
         $this->gender = $gender;
-        $this->date_of_birth = date($date_of_birth);
+        $this->date_of_birth = $date_of_birth;
         $this->pw_hash = hash('sha256', $password);
         $this->email = $email;
         $this->numero = $numero;
@@ -370,7 +370,7 @@ class User
         }
    }
 
-   public function ModDateOfBirth($date_of_birth_typed,\utilities\DatabaseLayer $db ) 
+   public function ModDateOfBirth(Date $date_of_birth_typed,\utilities\DatabaseLayer $db ) 
    {
         $this->date_of_birth = $date_of_birth_typed;
         if ($db->executeStatement("UPDATE userprofile SET date_of_bith = $this->date_of_birth WHERE username = $this->username"))
