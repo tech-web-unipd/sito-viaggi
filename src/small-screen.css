@@ -62,15 +62,17 @@ body {
     width: 100%;
     height: auto;
     overflow: hidden;
+    display: none;
     transition: all 0.4s ease-in-out;
     background-color: var(--primary);
     color: var(--onPrimary);
 }
 
 .menu.is-active {
-    top: 0;
+    top: -1%;
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .menu-inner {
