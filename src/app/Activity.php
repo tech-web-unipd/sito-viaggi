@@ -45,7 +45,7 @@ class Activity extends AbstractComponent
         }
 
         $this->destinations = array();
-        $result = $db->executeStatement("SELECT destination FROM offers WHERE activity = ?", array($this->id));
+        $result = $db->executeStatement("SELECT * FROM offers WHERE activity = ?", array($this->id));
 
         foreach ($result as $row) {
             $destination = new Destination($row['destination']);
@@ -67,7 +67,6 @@ class Activity extends AbstractComponent
             $this->price = $result[0]['price'];
             $this->description = $result[0]['description'];
             $this->loadImages($db);
-            $this->loadDestination($db);
         } else {
             throw new IdNotDefined();
         }
