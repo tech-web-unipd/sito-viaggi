@@ -159,3 +159,7 @@ body {
     top: 40%;
     transform: rotate(-135deg);
 }
+
+.user {
+    flex-basis: 20%;
+}

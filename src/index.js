@@ -196,7 +196,6 @@ function checkSearchBar(destination_name) {
 }
 
 function searchDestination() {
-    let input = document.getElementsByClassName("search-bar")[0].value.toUpperCase();
     let cards = document.getElementsByClassName("card");
 
     let counter = 0;

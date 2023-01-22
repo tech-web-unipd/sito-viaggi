@@ -65,6 +65,14 @@ body {
     background-color: var(--surface);
     margin: 0 auto;
 }
+
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 500,
+            'GRAD' 0,
+            'opsz' 48
+}
 /*
 =======================================
 ============= ANIMATIONS ==============
@@ -704,15 +712,8 @@ header a {
     visibility: hidden;
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 48
-}
-
 #cart {
+    cursor: pointer;
     border-radius: 12%;
     width: 3em;
     height: 3em;
@@ -725,4 +726,31 @@ header a {
 
 .user {
     margin-right: 2%;
+    flex-basis: 10%;
+}
+
+#login-button {
+    display: block;
+    width: auto;
+    min-height: 30px;
+    line-height: 30px;
+    font-size: medium;
+    background-color: var(--onPrimary);
+    color: var(--primary);
+    border-radius: var(--cards-border-radius);
+    text-align: center;
+}
+
+/*
+===========================================
+=============== BREADCRUMB ================
+===========================================
+*/
+
+#breadcrumb {
+    margin: 1em 1em 1.2em;
+    background-color: var(--secondaryContainer);
+    color: var(--onSecondaryContainer);
+    padding: 0.5em 1em;
+    border-radius: var(--cards-border-radius);
 }
