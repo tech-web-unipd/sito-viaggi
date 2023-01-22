@@ -229,3 +229,40 @@ if (burgerMenu && menu) {
         menu.classList.toggle("is-active");
     });
 }
+
+/*
+===========================================
+================= ACCESS ==================
+===========================================
+*/
+let registration_button = document.getElementById("back-to-registration-button");
+let login_button = document.getElementById("back-to-login-button");
+let login_section = document.getElementById("login-section");
+let registration_section = document.getElementById("registration-section");
+
+if(registration_button) {
+    registration_button.addEventListener("click", () => {
+        login_section.style.display = "none";
+        registration_section.style.display = "flex";
+    })
+}
+if(login_button) {
+    login_button.addEventListener("click", () => {
+        login_section.style.display = "flex";
+        registration_section.style.display = "none";
+    })
+}
+
+let first_password = document.getElementById("password");
+let repeated_password = document.getElementById("repeated-password");
+let not_matching_passwords = document.getElementById("not-matching-passwords");
+
+if(repeated_password && not_matching_passwords) {
+    repeated_password.addEventListener("keyup", () => {
+        if(first_password.value !== repeated_password.value) {
+            not_matching_passwords.style.display = "block";
+        } else {
+            not_matching_passwords.style.display = "none";
+        }
+    })
+}

@@ -63,6 +63,7 @@
 
 body {
     background-color: var(--surface);
+    color: var(--onSurface);
     margin: 0 auto;
 }
 
@@ -73,6 +74,7 @@ body {
             'GRAD' 0,
             'opsz' 48
 }
+
 /*
 =======================================
 ============= ANIMATIONS ==============
@@ -149,6 +151,23 @@ body {
     background-color: var(--primaryContainer);
     color: var(--onPrimaryContainer);
     border-color: var(--primary);
+}
+
+.primary-container form input[type=reset] {
+    background-color: var(--errorContainer);
+    color: var(--onErrorContainer);
+    border: 1px solid var(--onErrorContainer);
+}
+
+.primary-container form input[type=submit] {
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    border: none;
+}
+
+.primary-container form input[type=submit], .primary-container form input[type=reset], .primary-container button {
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .secondary-container {
@@ -740,7 +759,7 @@ header a {
     flex-basis: 10%;
 }
 
-#login-button {
+#access-button {
     display: block;
     width: auto;
     min-height: 30px;
@@ -764,4 +783,51 @@ header a {
     color: var(--onSecondaryContainer);
     padding: 0.5em 1em;
     border-radius: var(--cards-border-radius);
+}
+
+/*
+========================================
+============= ACCESS PAGE ==============
+========================================
+*/
+
+#access-page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.access-form label {
+    font-weight: bold;
+}
+
+#login-section, #registration-section, .access-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 0.6em;
+}
+
+#registration-section {
+    display: none;
+    max-width: 850px;
+}
+
+#access-page input, #access-page select, button.access-operation {
+    min-height: 30px;
+}
+
+button.access-operation {
+    background-color: var(--secondary);
+    color: var(--onSecondary);
+    border: none;
+}
+
+#not-matching-passwords {
+    display: none;
+    color: var(--error);
 }
