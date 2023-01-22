@@ -30,9 +30,9 @@ function createDestinationCollections($destinations): string
     return $cards;
 }
 
-$sea_destinations = \DestinationService::getDestinationsByType($db, \DestinationType::sea);
-$city_destinations = \DestinationService::getDestinationsByType($db, \DestinationType::city);
-$safari_destinations = \DestinationService::getDestinationsByType($db, \DestinationType::safari);
+$sea_destinations = \DestinationService::getDestinationsByType($db, \DestinationType::sea, "basic");
+$city_destinations = \DestinationService::getDestinationsByType($db, \DestinationType::city, "basic");
+$safari_destinations = \DestinationService::getDestinationsByType($db, \DestinationType::safari, "basic");
 $index_template = new \utilities\Template("templates/index.html");
 
 $sea_destinations_cards = createDestinationCollections($sea_destinations);

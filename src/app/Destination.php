@@ -9,36 +9,29 @@ require_once 'Hotel.php';
 require_once 'Airline.php';
 require_once 'Travel.php';
 require_once 'Date.php';
+require_once 'BasicDestination.php';
 
 class DestinationNotFound extends Exception {
     public function __construct($id) {
         parent::__construct("Destination with id: $id not found");
     }
 }
-class Destination extends AbstractComponent
+class Destination extends BasicDestination
 {
-    private const IMAGE_TABLE = "image_destination";
-    private const IMAGE_FOREIGN_KEY = "destination";
-    private ?string $continent;
     private ?string $state;
     private ?array $activities;
     private ?array $hotels;
     private ?array $airlines;
     private ?array $travels;
-    private ?string $primary_type;
-    private ?string $secondary_type;
 
     public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null, array $hotels = null, array $airlines = null, array $travels = null, string $primary_type = null, string $secondary_type = null)
     {
-        parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
-        $this->continent = $continent;
+        parent::__construct($id, $name, $description, $images, $cover, $continent, $primary_type, $secondary_type);
         $this->state = $state;
         $this->activities = $activities;
         $this->hotels = $hotels;
         $this->airlines = $airlines;
         $this->travels = $travels;
-        $this->primary_type = $primary_type;
-        $this->secondary_type = $secondary_type;
     }
 
     public function __toString()
@@ -135,16 +128,11 @@ class Destination extends AbstractComponent
                 throw new DestinationNotFound($this->id);
             }
 
-            $this->name = $result[0]['name'];
-            $this->continent = $result[0]['continent'];
-            $this->state = $result[0]['state'];
-            $this->description = $result[0]['description'];
-            $this->loadImages($db);
+            parent::loadFromDatabase($db);
             $this->loadActivities($db);
             $this->loadHotels($db);
             $this->loadAirlines($db);
             $this->loadTravels($db);
-            $this->primary_type = $result[0]['primary_type'];
         } else {
             throw new IdNotDefined();
         }
@@ -169,17 +157,6 @@ class Destination extends AbstractComponent
         }
     }
 
-    /**
-     * @throws FieldNotLoaded if continent value is null
-     */
-    public function getContinent(): string
-    {
-        if ($this->continent != null) {
-            return $this->continent;
-        } else {
-            throw new FieldNotLoaded('continent');
-        }
-    }
 
     /**
      * @throws FieldNotLoaded if state value is null
@@ -234,28 +211,6 @@ class Destination extends AbstractComponent
             return $this->travels;
         } else {
             throw new FieldNotLoaded('travels');
-        }
-    }
-
-    /**
-     * @throws FieldNotLoaded if primary type value is null
-     */
-    public function getPrimaryType(): string {
-        if ($this->primary_type != null) {
-            return $this->primary_type;
-        } else {
-            throw new FieldNotLoaded('primary type');
-        }
-    }
-
-    /**
-     * @throws FieldNotLoaded if secondary type value is null
-     */
-    public function getSecondaryType(): string {
-        if ($this->secondary_type != null) {
-            return $this->secondary_type;
-        } else {
-            throw new FieldNotLoaded('primary type');
         }
     }
 }
