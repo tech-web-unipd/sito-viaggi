@@ -58,7 +58,7 @@ echo $destination_template->build(
     array(
         "activityName" => $activity->getName(),
         "carousel" => $carousel,
-        "header" => "HEADER PLACEHOLDER",
+        "header" => buildHeader(),
         "footer" => "FOOTER PLACEHOLDER",
         "description" => $activity->getDescription(),
         "destinations" => $destination_cards,

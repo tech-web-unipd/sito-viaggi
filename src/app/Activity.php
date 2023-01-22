@@ -3,7 +3,7 @@ namespace components;
 use Exception;
 
 require_once "AbstractComponent.php";
-require_once "Destination.php";
+require_once "BasicDestination.php";
 
 class ActivityNotFound extends Exception
 {
@@ -48,7 +48,7 @@ class Activity extends AbstractComponent
         $result = $db->executeStatement("SELECT * FROM offers WHERE activity = ?", array($this->id));
 
         foreach ($result as $row) {
-            $destination = new Destination($row['destination']);
+            $destination = new BasicDestination($row['destination']);
             $destination->loadFromDatabase($db);
             $this->destinations[] = $destination;
         }
@@ -67,6 +67,7 @@ class Activity extends AbstractComponent
             $this->price = $result[0]['price'];
             $this->description = $result[0]['description'];
             $this->loadImages($db);
+            $this->loadDestination($db);
         } else {
             throw new IdNotDefined();
         }
