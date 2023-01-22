@@ -1,5 +1,6 @@
 <?php
 use Exception;
+
 require_once "Date.php";
 
 class UserNotFound extends Exception
@@ -53,18 +54,20 @@ class ErrorOccured extends Exception
 
 
 
-abstract class Sex {
+abstract class Sex
+{
     const MALE = "M";
     const WOMAN = "W";
     const UNDEFINED = "U";
 
     public function __toString()
-    {  
-         return "$this";
+    {
+        return "$this";
     }
 }
 
-abstract class Permission {
+abstract class Permission
+{
     const USER = "user";
     const ADMIN = "admin";
 }
@@ -144,11 +147,11 @@ class User
     }
 
 
-    public function loginUser(string $insert_username, string $insert_password, \utilities\DatabaseLayer $db) //returns true if login is successful, false in other cases (already logged in), throws an error is some of the field are compiled wrongly 
+    public static function loginUser(string $insert_username, string $insert_password, \utilities\DatabaseLayer $db) //returns true if login is successful, false in other cases (already logged in), throws an error is some of the field are compiled wrongly 
+
     {
         //check if user is already logged in
-        if (session_status() === PHP_SESSION_NONE)
-        {
+        if (session_status() === PHP_SESSION_NONE) {
             if ($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $insert_username")) {
                 if (password_verify($insert_password, $db->executeStatement("SELECT pw_hash AS pw_existent FROM userprofile WHERE username = $insert_username"))) {
                     // registrare sessione dell'utente
@@ -156,8 +159,8 @@ class User
                     //$_SESSION['session_id'] = session_id();
                     return true;
                 } else {
-                    throw new WrongField('password'); 
-                    
+                    throw new WrongField('password');
+
                 }
             } else {
                 throw new WrongField('username');
@@ -168,6 +171,7 @@ class User
     }
 
     public function logOutUser() //returns true if logout is successful
+
     {
         //$_SESSION = array(); 
         session_destroy();
@@ -255,128 +259,101 @@ class User
 
     //funzioni per la modifica dei singoli campi ---> modifico l'oggetto di invocazione ---> cancello/sostituisco quella nel database con quella nuova
 
-    public function modPassword($pw_typed, \utilities\DatabaseLayer $db )
-   {
+    public function modPassword($pw_typed, \utilities\DatabaseLayer $db)
+    {
         $new_pw = password_hash($pw_typed, PASSWORD_DEFAULT);
         $this->pw_hash = $new_pw;
-        if ($db->executeStatement("UPDATE userprofile SET pw_hash = $this->pw_hash WHERE username = $this->username"))
-        {
+        if ($db->executeStatement("UPDATE userprofile SET pw_hash = $this->pw_hash WHERE username = $this->username")) {
             return true;
-        }
-        else
-        {
+        } else {
             throw new ErrorOccured('password');
         }
-   }
+    }
 
-   public function modUsername($username_typed, \utilities\DatabaseLayer $db )
-   {
-        if(!($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $this->username")))
-       {
+    public function modUsername($username_typed, \utilities\DatabaseLayer $db)
+    {
+        if (!($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $this->username"))) {
             $old_username = $this->username;
             $this->username = $username_typed;
-            if ($db->executeStatement("UPDATE userprofile SET username = $this->username WHERE username = $old_username"))
-            {
+            if ($db->executeStatement("UPDATE userprofile SET username = $this->username WHERE username = $old_username")) {
                 return true;
-            }
-            else
-            {
+            } else {
                 throw new ErrorOccured('username');
             }
-       }
-       else
-      {
+        } else {
             throw new UserNotFound($this->username);
-      }
-
-   }
-
-   public function modName($name_typed, \utilities\DatabaseLayer $db )
-   {
-        $this->name = $name_typed;
-        if ($db->executeStatement("UPDATE userprofile SET name = $this->name WHERE username = $this->username"))
-        {
-            return true;
         }
-        else
-        {
+
+    }
+
+    public function modName($name_typed, \utilities\DatabaseLayer $db)
+    {
+        $this->name = $name_typed;
+        if ($db->executeStatement("UPDATE userprofile SET name = $this->name WHERE username = $this->username")) {
+            return true;
+        } else {
             throw new ErrorOccured('name');
         }
-   }
+    }
 
-   public function modSurname($surname_typed, \utilities\DatabaseLayer $db )
-   {
+    public function modSurname($surname_typed, \utilities\DatabaseLayer $db)
+    {
         $this->surname = $surname_typed;
-        if ($db->executeStatement("UPDATE userprofile SET surname = $this->surname WHERE username = $this->username"))
-        {
+        if ($db->executeStatement("UPDATE userprofile SET surname = $this->surname WHERE username = $this->username")) {
             return true;
-        }
-        else
-        {
+        } else {
             throw new ErrorOccured('surname');
         }
-   }
+    }
 
-   public function __toString()
-   {  
+    public function __toString()
+    {
         return "$this->gender";
-   }
+    }
 
 
-   public function modGender($gender_typed, \utilities\DatabaseLayer $db )
-   {
+    public function modGender($gender_typed, \utilities\DatabaseLayer $db)
+    {
         $this->gender = $gender_typed;
         $new_gender = $this->__toString();
-        if ($db->executeStatement("UPDATE userprofile SET gender = $new_gender WHERE username = $this->username"))
-        {
+        if ($db->executeStatement("UPDATE userprofile SET gender = $new_gender WHERE username = $this->username")) {
             return true;
-        }
-        else
-        {
+        } else {
             throw new ErrorOccured('gender');
         }
-   }
+    }
 
-   
 
-   public function modEmail($email_typed, \utilities\DatabaseLayer $db )
-   {
+
+    public function modEmail($email_typed, \utilities\DatabaseLayer $db)
+    {
         $this->email = $email_typed;
-        if ($db->executeStatement("UPDATE userprofile SET email = $this->email WHERE username = $this->username"))
-        {
+        if ($db->executeStatement("UPDATE userprofile SET email = $this->email WHERE username = $this->username")) {
             return true;
-        }
-        else
-        {
+        } else {
             throw new ErrorOccured('email');
         }
-   }
+    }
 
 
-   public function modNumero($numero_typed, \utilities\DatabaseLayer $db )
-   {
+    public function modNumero($numero_typed, \utilities\DatabaseLayer $db)
+    {
         $this->numero = $numero_typed;
-        if ($db->executeStatement("UPDATE userprofile SET numero = $this->numero WHERE username = $this->username"))
-        {
+        if ($db->executeStatement("UPDATE userprofile SET numero = $this->numero WHERE username = $this->username")) {
             return true;
-        }
-        else
-        {
+        } else {
             throw new ErrorOccured('numero');
         }
-   }
+    }
 
-   public function modDateOfBirth(Date $date_of_birth_typed, \utilities\DatabaseLayer $db )
-   {
+    public function modDateOfBirth(Date $date_of_birth_typed, \utilities\DatabaseLayer $db)
+    {
         $this->date_of_birth = $date_of_birth_typed;
-        if ($db->executeStatement("UPDATE userprofile SET date_of_bith = $this->date_of_birth WHERE username = $this->username"))
-        {
+        if ($db->executeStatement("UPDATE userprofile SET date_of_bith = $this->date_of_birth WHERE username = $this->username")) {
             return true;
-        }
-        else
-        {
+        } else {
             throw new ErrorOccured('date_of_birth');
         }
-   }
+    }
 
 }
