@@ -77,17 +77,17 @@ class User
 {
 
     private string $username;
-    private string $name;
-    private string $surname;
-    private Sex $gender;
-    private Date $date_of_birth;
-    private string $pw_hash;
-    private string $email;
-    private int $numero;
-    private Permission $permission;
+    private ?string $name;
+    private ?string $surname;
+    private ?string $gender;
+    private ?Date $date_of_birth;
+    private ?string $pw_hash;
+    private ?string $email;
+    private ?int $numero;
+    private ?string $permission;
 
 
-    public function __construct(string $username, string $name, string $surname, Sex $gender, Date $date_of_birth, string $email, int $numero, Permission $permission, string $password)
+    public function __construct(string $username, string $permission = null, string $name = null, string $surname = null, string $gender = null, Date $date_of_birth = null, string $email = null, int $phone_number = null, string $password = null)
     {
         $this->username = $username;
         $this->name = $name;
@@ -96,7 +96,7 @@ class User
         $this->date_of_birth = $date_of_birth;
         $this->pw_hash = password_hash($password, PASSWORD_DEFAULT);
         $this->email = $email;
-        $this->numero = $numero;
+        $this->numero = $phone_number;
         $this->permission = $permission;
     }
 
@@ -135,7 +135,7 @@ class User
             $this->name = $result[0]['name'];
             $this->surname = $result[0]['surname'];
             $this->gender = $result[0]['gender'];
-            $this->date_of_birth = $result[0]['date_of_birth'];
+            $this->date_of_birth = new Date($result[0]['date_of_birth']);
             $this->pw_hash = $result[0]['pw_hash'];
             $this->email = $result[0]['email'];
             $this->numero = $result[0]['numero'];
@@ -178,7 +178,7 @@ class User
         return true;
     }
 
-    public function getPermission(): Permission
+    public function getPermission(): string
     {
         if ($this->permission) {
             return $this->permission;

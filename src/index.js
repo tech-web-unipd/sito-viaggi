@@ -259,7 +259,7 @@ let not_matching_passwords = document.getElementById("not-matching-passwords");
 
 if(repeated_password && not_matching_passwords) {
     repeated_password.addEventListener("keyup", () => {
-        if(first_password.value !== repeated_password.value) {
+        if(first_password.value !== repeated_password.value && first_password.value !== "") {
             not_matching_passwords.style.display = "block";
         } else {
             not_matching_passwords.style.display = "none";
