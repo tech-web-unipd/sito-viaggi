@@ -91,13 +91,13 @@ class User
         $this->surname = $surname;
         $this->gender = $gender;
         $this->date_of_birth = $date_of_birth;
-        $this->pw_hash = hash('sha256', $password);
+        $this->pw_hash = password_hash($password, PASSWORD_DEFAULT);
         $this->email = $email;
         $this->numero = $numero;
         $this->permission = $permission;
     }
 
-    public function UserAge(): string
+    public function userAge(): string
     {
         $dateOfBirth = $this->date_of_birth;
         $today = date("Y-m-d");
@@ -108,7 +108,7 @@ class User
 
     public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
     {
-        if ($this->UserAge() > 18) {
+        if ($this->userAge() > 18) {
             if (!($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $this->username"))) {
                 $db->executeStatement("INSERT INTO userprofile (username, name, surname, gender, date_of_birth, pw_hash, email, numero, permission) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [$this->username, $this->name, $this->surname, $this->gender, $this->date_of_birth, $this->pw_hash, $this->email, $this->numero, $this->permission]);
             } else {
@@ -146,13 +146,11 @@ class User
 
     public function loginUser(string $insert_username, string $insert_password, \utilities\DatabaseLayer $db) //returns true if login is successful, false in other cases (already logged in), throws an error is some of the field are compiled wrongly 
     {
-        $hash_inserted_pw = hash('sha256', $insert_password);
-        //controllo se l'utente è già loggato
-        if (session_status() === PHP_SESSION_NONE) 
+        //check if user is already logged in
+        if (session_status() === PHP_SESSION_NONE)
         {
-
             if ($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $insert_username")) {
-                if (password_verify($hash_inserted_pw, $db->executeStatement("SELECT pw_hash AS pw_existent FROM userprofile WHERE username = $insert_username"))) {
+                if (password_verify($insert_password, $db->executeStatement("SELECT pw_hash AS pw_existent FROM userprofile WHERE username = $insert_username"))) {
                     // registrare sessione dell'utente
                     session_start();
                     //$_SESSION['session_id'] = session_id();
@@ -163,7 +161,6 @@ class User
                 }
             } else {
                 throw new WrongField('username');
-                
             }
         } else {
             return false;
@@ -172,7 +169,6 @@ class User
 
     public function logOutUser() //returns true if logout is successful
     {
-
         //$_SESSION = array(); 
         session_destroy();
         return true;
@@ -259,9 +255,9 @@ class User
 
     //funzioni per la modifica dei singoli campi ---> modifico l'oggetto di invocazione ---> cancello/sostituisco quella nel database con quella nuova
 
-    public function ModPassword($pw_typed,\utilities\DatabaseLayer $db ) 
+    public function modPassword($pw_typed, \utilities\DatabaseLayer $db )
    {
-        $new_pw=hash('sha256', $pw_typed);
+        $new_pw = password_hash($pw_typed, PASSWORD_DEFAULT);
         $this->pw_hash = $new_pw;
         if ($db->executeStatement("UPDATE userprofile SET pw_hash = $this->pw_hash WHERE username = $this->username"))
         {
@@ -273,7 +269,7 @@ class User
         }
    }
 
-   public function ModUsername($username_typed,\utilities\DatabaseLayer $db ) 
+   public function modUsername($username_typed, \utilities\DatabaseLayer $db )
    {
         if(!($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $this->username")))
        {
@@ -295,7 +291,7 @@ class User
 
    }
 
-   public function ModName($name_typed,\utilities\DatabaseLayer $db ) 
+   public function modName($name_typed, \utilities\DatabaseLayer $db )
    {
         $this->name = $name_typed;
         if ($db->executeStatement("UPDATE userprofile SET name = $this->name WHERE username = $this->username"))
@@ -308,7 +304,7 @@ class User
         }
    }
 
-   public function ModSurname($surname_typed,\utilities\DatabaseLayer $db ) 
+   public function modSurname($surname_typed, \utilities\DatabaseLayer $db )
    {
         $this->surname = $surname_typed;
         if ($db->executeStatement("UPDATE userprofile SET surname = $this->surname WHERE username = $this->username"))
@@ -327,7 +323,7 @@ class User
    }
 
 
-   public function ModGender($gender_typed,\utilities\DatabaseLayer $db ) 
+   public function modGender($gender_typed, \utilities\DatabaseLayer $db )
    {
         $this->gender = $gender_typed;
         $new_gender = $this->__toString();
@@ -343,7 +339,7 @@ class User
 
    
 
-   public function ModEmail($email_typed,\utilities\DatabaseLayer $db ) 
+   public function modEmail($email_typed, \utilities\DatabaseLayer $db )
    {
         $this->email = $email_typed;
         if ($db->executeStatement("UPDATE userprofile SET email = $this->email WHERE username = $this->username"))
@@ -357,7 +353,7 @@ class User
    }
 
 
-   public function ModNumero($numero_typed,\utilities\DatabaseLayer $db ) 
+   public function modNumero($numero_typed, \utilities\DatabaseLayer $db )
    {
         $this->numero = $numero_typed;
         if ($db->executeStatement("UPDATE userprofile SET numero = $this->numero WHERE username = $this->username"))
@@ -370,7 +366,7 @@ class User
         }
    }
 
-   public function ModDateOfBirth(Date $date_of_birth_typed,\utilities\DatabaseLayer $db ) 
+   public function modDateOfBirth(Date $date_of_birth_typed, \utilities\DatabaseLayer $db )
    {
         $this->date_of_birth = $date_of_birth_typed;
         if ($db->executeStatement("UPDATE userprofile SET date_of_bith = $this->date_of_birth WHERE username = $this->username"))
