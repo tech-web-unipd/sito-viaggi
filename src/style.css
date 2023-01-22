@@ -182,6 +182,22 @@ body {
     justify-content: space-evenly;
 }
 
+#description .add-to-cart {
+    max-width: 60%;
+    margin-top: 3.5%;
+}
+
+#description h1 {
+    font-size: xx-large;
+    margin-top: 0.7em;
+    margin-bottom: 0;
+}
+
+#activities {
+    color: var(--onSurface);
+    margin: 0 1em;
+}
+
 /*
 =======================================
 ================ MAIN =================
@@ -536,11 +552,6 @@ td:not(tr:last-child > td) {
 ============== ADD TO CART ===============
 ==========================================
 */
-
-#description .add-to-cart {
-    max-width: 60%;
-    margin-top: 3.5%;
-}
 
 button.add-to-cart {
     cursor: pointer;
