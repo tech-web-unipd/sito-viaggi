@@ -171,3 +171,13 @@ body {
 .carousel {
     margin: auto;
 }
+
+footer {
+    display: grid;
+}
+
+.vertical-line {
+    width: 8em;
+    height: 0;
+    margin: 0.5em auto;
+}
