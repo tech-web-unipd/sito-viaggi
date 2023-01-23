@@ -25,7 +25,7 @@
 
         <nav id="breadcrumb" aria-label="percorso">
             <p>
-                Ti trovi in: <a href="index.php">Home</a> >> <component>destinationName</component>
+                Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> >> <component>destinationName</component>
             </p>
         </nav>
         
@@ -37,7 +37,7 @@
             <section class="primary-container container slide-right" id="description">
                 <h1><component>destinationName</component></h1>
                 <div><component>description</component></div>
-                <button class="add-to-cart" onclick="addToCart()" type="button">Add to cart</button>
+                <a class="add-to-cart" href="./purchase_decision.php?id=<component>idDestination</component>">Add to cart</button>
             </section>
             <section class="secondary-container container slide-left" id="price">
                 <component>priceTable</component>

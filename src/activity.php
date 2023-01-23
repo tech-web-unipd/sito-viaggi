@@ -62,8 +62,7 @@ foreach ($activity->getDestinations() as $destination) {
     ));
 }
 
-echo $activity_template->build(
-    array(
+echo $activity_template->build(array(
         "header" => buildHeader(),
         "activityName" => $activity->getName(),
         "carousel" => $carousel,
@@ -71,5 +70,4 @@ echo $activity_template->build(
         "description" => $activity->getDescription(),
         "destinations" => $destination_cards,
         "price" => $activity->getPrice(),
-    )
-);
+    ));
