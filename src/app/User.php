@@ -174,7 +174,7 @@ class User
         }
     }
 
-    public function getGender(): Sex
+    public function getGender()
     {
         if ($this->gender) {
             return $this->gender;
