@@ -3,7 +3,7 @@
     --carousel-slide-height: 40em;
     --cards-border-radius: 1.5em;
     --cards-max-width: 40%;
-    --primary: #749de3;
+    --primary: #467cdb;
     --onPrimary: #FFFFFF;
     --primaryContainer: #DBE1FF;
     --onPrimaryContainer: #00174D;
@@ -14,7 +14,7 @@
     --tertiary: #8F00E0;
     --onTertiary: #FFFFFF;
     --tertiaryContainer: #bbbaf9;
-    --onTertiaryContainer: #ffffff;
+    --onTertiaryContainer: #4e28a6;
     --surface: #FEFBFF;
     --onSurface: #1C1B1E;
     --error: #BA1A1A;
@@ -913,4 +913,55 @@ button.access-operation {
 #not-matching-passwords {
     display: none;
     color: var(--error);
+}
+
+/*
+========================================
+================ FOOTER ================
+========================================
+*/
+
+footer {
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    margin: 0 auto;
+    padding: 0 10%;
+    transition: all 0.35s ease;
+}
+
+footer a {
+    color: var(--onPrimary);
+    text-decoration: none; 
+    font-size: larger;
+    border-bottom: 1px white;
+}
+
+footer img {
+    max-width: 2em;
+}
+
+#footer-logo {
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+    align-items: center;
+    margin: auto;
+    font-size: xx-large;
+    font-weight: bold;
+    max-width: 10em;
+    row-gap: 0.3em;
+    flex-wrap: wrap;
+}
+
+
+.vertical-line{
+    border: 0.5px dashed var(--onPrimary);
+    height: 5em;
 }
