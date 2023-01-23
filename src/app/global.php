@@ -13,3 +13,9 @@ function buildHeader(): string
         "user" => $unknown_template->build(),
     ));
 }
+
+function buildFooter(): string
+{
+    $footer_template = new utilities\Template("templates/footer.html");
+    return $footer_template->build();
+}
