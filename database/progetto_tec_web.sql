@@ -858,7 +858,7 @@ INSERT INTO `image_airline` (`id`, `path`, `alt`, `is_cover`, `airline`) VALUES
 (5, './assets/America_del_Sud/Aruba/airline/images/klm-logo.png', 'Scritta della KLM Royal Dutch Airlines, la scritta KLM è in grassetto maiuscolo, sopra il logo di una corona stilizzata.', 1, '<span lang=\"en\">KLM Royal Dutch Airlines</span>'),
 (6, './assets/America_del_Sud/Buenos Aires/airline/images/fe-logo.png', 'Fly Emirates logo.', 1, '<span lang=\"en\">Fly Emirates</span>'),
 (7, './assets/America_del_Sud/Galápagos/airline/images/name.png', 'America Airlines logo.', 1, '<span lang=\"en\">America Airlines</span>'),
-(8, './assets/America_del_Sud/Patagonia/airline/images/name.png', 'America Airlines logo.', 1, '<span lang=\"en\">America Airlines</span>'),
+(8, './assets/America_del_Sud/Patagonia/airline/images/AA-logo.png', 'America Airlines logo.', 1, '<span lang=\"en\">America Airlines</span>'),
 (9, './assets/Asia/Bali/airline/images/logo.png', 'Scritta Fly Emirates.', 1, '<span lang=\"en\">America Airlines</span>'),
 (10, './assets/Asia/HongKong/airline/images/logo.png', 'Logo compagnia aerea, è una scritta che dice Fly Emirates.', 1, '<span lang=\"en\">Fly Emirates</span>'),
 (11, './assets/Asia/Seoul/airline/images/logo.png', 'Logo compagnia aerea, è una scritta che dice Fly Emirates.', 1, '<span lang=\"en\">Fly Emirates</span>'),
