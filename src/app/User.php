@@ -308,7 +308,7 @@ class User
 
     public function __toString()
     {
-        return "$this->gender";
+        return "$this->name, $this->surname, $this->gender";
     }
 
 
