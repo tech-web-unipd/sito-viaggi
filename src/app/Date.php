@@ -15,6 +15,6 @@ class Date
 
     public function __toString()
     {
-        return "$this->day/$this->month/$this->year";
+        return "$this->year-$this->month-$this->day";
     }
 }
