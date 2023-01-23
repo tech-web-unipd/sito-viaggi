@@ -8,6 +8,6 @@ $agenzia = new Template("templates/agenzia.html");
 echo $agenzia->build(
     array(
         "header" => buildHeader(),
-        "footer" => HEADER PLACEHOLDER",
+        "footer" => "HEADER PLACEHOLDER",
     )
 );
