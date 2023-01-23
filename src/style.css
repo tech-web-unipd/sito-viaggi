@@ -3,7 +3,7 @@
     --carousel-slide-height: 40em;
     --cards-border-radius: 1.5em;
     --cards-max-width: 40%;
-    --primary: #0051DF;
+    --primary: #749de3;
     --onPrimary: #FFFFFF;
     --primaryContainer: #DBE1FF;
     --onPrimaryContainer: #00174D;
@@ -13,8 +13,8 @@
     --onSecondaryContainer: #161B2C;
     --tertiary: #8F00E0;
     --onTertiary: #FFFFFF;
-    --tertiaryContainer: #F3DAFF;
-    --onTertiaryContainer: #2E004D;
+    --tertiaryContainer: #bbbaf9;
+    --onTertiaryContainer: #ffffff;
     --surface: #FEFBFF;
     --onSurface: #1C1B1E;
     --error: #BA1A1A;
@@ -185,7 +185,7 @@ body {
 .container {
     padding: 1.2em 2em;
     height: initial;
-    margin: 0 1em 1.2em;
+    margin: 0 8em 2em;
     border-radius: var(--cards-border-radius);
 }
 
@@ -497,7 +497,7 @@ td:not(tr:last-child > td) {
     flex-shrink: 0;
     flex-basis: 35%;
     border-radius: var(--cards-border-radius);
-    border: 0.17em solid var(--onPrimaryContainer);
+    box-shadow: 0.2em 0.2em 0.6em var(--secondary);
     overflow: hidden;
     margin-bottom: 0.5em;
 }
@@ -619,6 +619,10 @@ button:hover.add-to-cart {
     min-width: 30px;
 }
 
+.filters-container button:hover{
+    background-color: var(--secondaryContainer);
+}
+
 button.active-filter {
     background-color: var(--tertiaryContainer);
     color: var(--onTertiaryContainer);
@@ -675,9 +679,9 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
-    width: 100%;
     height: var(--headerHeight);
     margin: 0 auto;
+    padding: 0 5%;
     transition: all 0.35s ease;
 }
 
@@ -697,7 +701,7 @@ header a {
     justify-content: center;
     column-gap: 1em;
     align-items: center;
-    margin: 0.5em 0 0.5em 2.5%;
+    margin: 0.5em 0;
     font-size: xx-large;
     font-weight: bold;
     max-width: 15%;
@@ -737,6 +741,10 @@ header a {
     line-height: 35px;
 }
 
+.menu-inner a:hover {
+    text-shadow: 0.1em 0.1em 0.2em var(--onPrimaryContainer);
+}
+
 .burger {
     display: none;
     visibility: hidden;
@@ -771,6 +779,12 @@ header a {
     text-align: center;
 }
 
+#access-button:hover {
+    
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+}
+
 /*
 ===========================================
 =============== BREADCRUMB ================
@@ -778,13 +792,50 @@ header a {
 */
 
 #breadcrumb {
-    margin: 1em 1em 1.2em;
+    margin: 0.5em 5em 1.2em 5em;
     background-color: var(--secondaryContainer);
     color: var(--onSecondaryContainer);
     padding: 0.5em 1em;
     border-radius: var(--cards-border-radius);
 }
 
+#breadcrumb p{
+    margin: 0;
+}
+
+/*
+===========================================
+========= HORIZONTAL SCROLL BAR ===========
+===========================================
+*/
+::-webkit-scrollbar{
+    width: 1.2em;
+    height: 1em;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.3em var(--secondary); 
+    background-color: #f2f2f2;
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-track:horizontal {
+    box-shadow: none;
+    background-color: #ffffff;
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: var(--primary); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--onPrimaryContainer); 
+}
 /*
 ========================================
 ============= ACCESS PAGE ==============
