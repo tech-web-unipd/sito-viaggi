@@ -41,7 +41,7 @@ $safari_destinations_cards = createDestinationCollections($safari_destinations);
 
 echo $index_template->build(array(
     "header" => buildHeader(),
-    "footer" => "footerPlaceHolder",
+    "footer" => buildFooter(),
     "seaDestinations" => $sea_destinations_cards,
     "cityDestinations" => $city_destinations_cards,
     "safariDestinations" => $safari_destinations_cards,

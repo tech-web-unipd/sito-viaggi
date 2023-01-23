@@ -112,7 +112,7 @@ echo $destination_template->build(
         "carousel" => $carousel,
         "priceTable" => $price_table_template->build(array("tableRows" => $table_rows)),
         "header" => buildHeader(),
-        "footer" => "FOOTER PLACEHOLDER",
+        "footer" => buildFooter(),
         "description" => $destination->getDescription(),
         "hotelCarousel" => $hotel_carousel_template->build(array("slides" => $hotel_slides, "dots" => $hotel_dots)),
         "airline" => $airline_carousel_template->build(array("slides" => $airline_slides, "dots" => $airline_dots)),

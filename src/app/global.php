@@ -28,6 +28,6 @@ function buildHeader(): string
 
 function buildFooter(): string
 {
-    $footer_template = new utilities\Template("templates/footer.html");
+    $footer_template = new utilities\Template("templates/footer/footer.html");
     return $footer_template->build();
 }
