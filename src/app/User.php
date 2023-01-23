@@ -146,38 +146,6 @@ class User
         }
     }
 
-
-    public static function loginUser(string $insert_username, string $insert_password, \utilities\DatabaseLayer $db) //returns true if login is successful, false in other cases (already logged in), throws an error is some of the field are compiled wrongly 
-
-    {
-        //check if user is already logged in
-        if (session_status() === PHP_SESSION_NONE) {
-            if ($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $insert_username")) {
-                if (password_verify($insert_password, $db->executeStatement("SELECT pw_hash AS pw_existent FROM userprofile WHERE username = $insert_username"))) {
-                    // registrare sessione dell'utente
-                    session_start();
-                    //$_SESSION['session_id'] = session_id();
-                    return true;
-                } else {
-                    throw new WrongField('password');
-
-                }
-            } else {
-                throw new WrongField('username');
-            }
-        } else {
-            return false;
-        }
-    }
-
-    public function logOutUser() //returns true if logout is successful
-
-    {
-        //$_SESSION = array(); 
-        session_destroy();
-        return true;
-    }
-
     public function getPermission(): string
     {
         if ($this->permission) {
@@ -308,7 +276,7 @@ class User
 
     public function __toString()
     {
-        return "$this->gender";
+        return "$this->name, $this->surname, $this->gender";
     }
 
 
