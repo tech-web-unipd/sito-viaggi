@@ -769,13 +769,24 @@ header a {
 }
 
 .user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.6em;
     margin-right: 2%;
     flex-basis: 10%;
 }
 
+@media (max-width: 1000px) {
+    #surname {
+        display: none;
+    }
+}
+
 #access-button {
     display: block;
-    width: auto;
+    width: 100%;
     min-height: 30px;
     line-height: 30px;
     font-size: medium;

@@ -48,10 +48,13 @@ class UserService
             if(password_verify($password, $expected_password)) {
                 $user = new User($username);
                 $user->loadFromDatabase($db);
-                session_start();
-                $_SESSION['user'] = $user;
-                $_SESSION['is_admin'] = $user->getPermission() == Permission::ADMIN;
-                return $user;
+                if(session_start()) {
+                    $_SESSION['user'] = $user;
+                    $_SESSION['is_admin'] = $user->getPermission() == Permission::ADMIN;
+                    return $user;
+                } else {
+                    throw new Exception("UNABLE TO START SESSION");
+                }
             } else {
                 throw new WrongCredentials();
             }

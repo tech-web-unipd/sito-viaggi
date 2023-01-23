@@ -9,7 +9,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 }
 
 $activity_template = new \utilities\Template("templates/activity.html");
-$activity = new \components\Activity(2);
+$activity = new \components\Activity($_GET['id']);
 try{
     $activity->loadFromDatabase($db);
 } catch (\components\ActivityNotFound $e){
@@ -43,22 +43,30 @@ $carousel = $carousel_template->build(array(
     "dots" => $carousel_dots,
 ));
 
-$destination_template = new \utilities\Template("templates/destination.html");
 $destination_cards = "";
 foreach ($activity->getDestinations() as $destination) {
     $card_template = new \utilities\Template("templates/cards/destination-card.html");
+    $secondary_type = "";
+        try {
+            $secondary_type = $destination->getSecondaryType();
+        } catch (\components\FieldNotLoaded $e) {
+            $secondary_type = "";
+        }
     $destination_cards .= $card_template->build(array(
         "cover" => $destination->getCover()->build(),
         "id" => $destination->getId(),
         "title" => $destination->getName(),
+        "primaryType" => $destination->getPrimaryType(),
+        "secondaryType" => $secondary_type,
+        "continent" => $destination->getContinent(),
     ));
 }
 
-echo $destination_template->build(
+echo $activity_template->build(
     array(
+        "header" => buildHeader(),
         "activityName" => $activity->getName(),
         "carousel" => $carousel,
-        "header" => buildHeader(),
         "footer" => "FOOTER PLACEHOLDER",
         "description" => $activity->getDescription(),
         "destinations" => $destination_cards,

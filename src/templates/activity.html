@@ -23,20 +23,22 @@
         <component>header</component>
         <nav id= "breadcrumb" aria-label="percorso">
             <p>
-                Ti trovi in: <a href="index.php">Home</a> >> <!---Qua dovrei metterci il link ma non so come--> <component>destinationName</component> >> <component>activityName</component>
+                Ti trovi in: <a href="index.php">Home</a> >> <component>activityName</component>
             </p>
         </nav>
     
         <main class="single-component-page">
-            <h1><component>activityName</component></h1>
-            <section  id="price">
-                <component>price</component>
             <section class="slide-bottom" id="gallery">
                 <component>carousel</component>
             </section>
             <section class="primary-container container slide-right" id="description">
-                <component>description</component>
+                <h1><component>activityName</component></h1>
+                <div><component>description</component></div>
             </section>
+            <section class="price-activity">
+                <p>
+                    <component>price</component> € a persona
+                </p>
             </section>
             <section class="slide-up" id="destinations">
                 <h2>Destinazioni contenenti questa attività:</h2> <!--Destinazioni o meglio viaggi?-->
