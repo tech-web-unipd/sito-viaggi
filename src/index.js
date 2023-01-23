@@ -266,3 +266,33 @@ if(repeated_password && not_matching_passwords) {
         }
     })
 }
+
+/*
+===========================================
+=============== LIGHT/DARK ================
+===========================================
+*/
+
+let theme_button = document.getElementById("theme-button");
+if(theme_button) {
+    setTheme();
+    theme_button.addEventListener("click", () => {
+        let theme_icon = document.getElementById("theme-icon");
+        if(theme_icon.innerHTML === "light_mode") {
+            theme_icon.innerHTML = "dark_mode";
+            localStorage.setItem("theme", "light");
+        } else {
+            theme_icon.innerHTML = "light_mode";
+            localStorage.setItem("theme", "dark");
+        }
+        document.body.classList.toggle("dark-theme");
+    })
+}
+
+function setTheme() {
+    let theme = localStorage.getItem("theme");
+    if(theme === "dark") {
+        document.body.classList.toggle("dark-theme");
+        document.getElementById("theme-icon").innerHTML = "light_mode";
+    }
+}

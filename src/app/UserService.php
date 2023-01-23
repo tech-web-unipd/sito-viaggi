@@ -63,5 +63,12 @@ class UserService
         }
     }
 
+    public static function userRegistration(User $user, \utilities\DatabaseLayer $db) {
+        if(!self::usernameAlreadyExists($user->getUsername(), $db)) {
+            $user->insertIntoDatabase($db);
+        } else {
+            throw new UserExistent($user->getUsername());
+        }
+    }
 
 }

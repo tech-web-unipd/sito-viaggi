@@ -111,15 +111,7 @@ class User
 
     public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
     {
-        if ($this->userAge() > 18) {
-            if (!($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $this->username"))) {
-                $db->executeStatement("INSERT INTO userprofile (username, name, surname, gender, date_of_birth, pw_hash, email, numero, permission) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [$this->username, $this->name, $this->surname, $this->gender, $this->date_of_birth, $this->pw_hash, $this->email, $this->numero, $this->permission]);
-            } else {
-                throw new UserExistent($this->username);
-            }
-        } else {
-            throw new UserIsUnderage();
-        }
+        $db->executeStatement("INSERT INTO userprofile (username, name, surname, gender, date_of_birth, pw_hash, email, numero, permission) VALUES (\"$this->username\", \"$this->name\", \"$this->surname\", \"$this->gender\", \"$this->date_of_birth\", \"$this->pw_hash\", \"$this->email\", \"$this->numero\", \"$this->permission\")");
     }
 
     public function loadFromDatabase(\utilities\DatabaseLayer $db): void
@@ -182,7 +174,7 @@ class User
         }
     }
 
-    public function getGender(): Sex
+    public function getGender()
     {
         if ($this->gender) {
             return $this->gender;

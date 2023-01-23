@@ -66,7 +66,7 @@ echo $activity_template->build(array(
         "header" => buildHeader(),
         "activityName" => $activity->getName(),
         "carousel" => $carousel,
-        "footer" => "FOOTER PLACEHOLDER",
+        "footer" => buildFooter(),
         "description" => $activity->getDescription(),
         "destinations" => $destination_cards,
         "price" => $activity->getPrice(),
