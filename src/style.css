@@ -756,9 +756,9 @@ header a {
     visibility: hidden;
 }
 
-#cart {
+#theme-button {
     cursor: pointer;
-    border-radius: 12%;
+    border-radius: 50%;
     width: 3em;
     height: 3em;
     min-height: 35px;
@@ -766,6 +766,7 @@ header a {
     background-color: var(--primary);
     color: var(--onPrimary);
     border: 2px solid var(--onPrimary);
+    line-height: 0;
 }
 
 .user {
