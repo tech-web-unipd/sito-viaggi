@@ -64,7 +64,7 @@ foreach ($activity->getDestinations() as $destination) {
 
 echo $activity_template->build(
     array(
-        "header" => "FOOTER PLACEHOLDER",
+        "header" => buildHeader(),
         "activityName" => $activity->getName(),
         "carousel" => $carousel,
         "footer" => "FOOTER PLACEHOLDER",
