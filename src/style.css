@@ -182,6 +182,12 @@ body {
     border-color: var(--tertiary);
 }
 
+.tertiary-container a:hover {
+    color: var(--onTertiaryContainer);
+    font-weight: bold;
+    transition: 0.2s;
+}
+
 .container {
     padding: 1.2em 2em;
     height: initial;
@@ -297,7 +303,7 @@ main > h1 {
 .carousel {
     max-width: var(--carosuel-width);
     position: relative;
-    margin: auto;
+    margin-left: 7em;
 }
 
 .gallery-slide {
@@ -499,7 +505,7 @@ td:not(tr:last-child > td) {
     border-radius: var(--cards-border-radius);
     box-shadow: 0.2em 0.2em 0.6em var(--secondary);
     overflow: hidden;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 .full-picture-card img {
@@ -877,6 +883,21 @@ button.access-operation {
     color: var(--onSecondary);
     border: none;
 }
+
+#access-page input[type=submit]:hover, button.access-operation:hover {
+    background-color: var(--tertiary);
+    font-weight: bold;
+}
+
+#username-text, #login-password{
+    padding: 0 0.5em;
+    font-size: 1em;
+    border-radius: var(--cards-border-radius);
+    background-color: var(--surface);
+    color: var(--onSurface);
+    border: 2px solid var(--tertiary);
+}
+
 
 #not-matching-passwords {
     display: none;
