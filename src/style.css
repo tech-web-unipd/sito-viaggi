@@ -17,6 +17,7 @@
     --onTertiaryContainer: #4e28a6;
     --surface: #FEFBFF;
     --onSurface: #1C1B1E;
+    --shadow: #494949;
     --error: #BA1A1A;
     --onError: #FFFFFF;
     --errorContainer: #FFDAD6;
@@ -34,10 +35,10 @@
     --onSecondary: #2B3042;
     --secondaryContainer: #414659;
     --onSecondaryContainer: #DDE1F9;
-    --tertiary: #E2BBDB;
+    --tertiary: #732364;
     --onTertiary: #422740;
-    --tertiaryContainer: #5B3D58;
-    --onTertiaryContainer: #FFD6F7;
+    --tertiaryContainer: #9d5f96;
+    --onTertiaryContainer: #ffedfc;
     --surface: #1B1B1F;
     --onSurface: #E6E1E6;
     --error: #FFB4AB;
@@ -182,9 +183,15 @@ body {
     border-color: var(--tertiary);
 }
 
-.tertiary-container a:hover {
+.tertiary-container a {
+    text-decoration: none;
     color: var(--onTertiaryContainer);
+}
+
+.tertiary-container a:hover {
+    color: var(--tertiary);
     font-weight: bold;
+    font-size: 1.2em;
     transition: 0.2s;
 }
 
@@ -423,6 +430,7 @@ main > h1 {
     gap: 2.5em;
     flex-wrap: nowrap;
     overflow: auto;
+    margin-bottom: 0.5em;
 }
 
 .wrap-cards-collection {
@@ -476,6 +484,7 @@ table {
     border-spacing: 0;
     margin: auto;
     text-align: center;
+    color: var(--onPrimaryContainer);
 }
 
 caption {
@@ -503,7 +512,7 @@ td:not(tr:last-child > td) {
     flex-shrink: 0;
     flex-basis: 35%;
     border-radius: var(--cards-border-radius);
-    box-shadow: 0.2em 0.2em 0.6em var(--secondary);
+    box-shadow: 0.2em 0.2em 0.6em var(--shadow);
     overflow: hidden;
     margin-bottom: 1em;
 }
@@ -546,7 +555,6 @@ td:not(tr:last-child > td) {
     flex-direction: column;
     justify-content: space-between;
     border-radius: var(--cards-border-radius);
-    border: 0.15em solid;
     overflow: hidden;
     margin-bottom: 1em;
 }
@@ -712,7 +720,6 @@ header a {
     font-weight: bold;
     max-width: 15%;
     row-gap: 0.3em;
-    flex-wrap: wrap;
 }
 
 #header-logo img {
@@ -748,7 +755,7 @@ header a {
 }
 
 .menu-inner a:hover {
-    text-shadow: 0.1em 0.1em 0.2em var(--onPrimaryContainer);
+    text-shadow: 0.1em 0.1em 0.2em var(--shadow);
 }
 
 .burger {
@@ -758,7 +765,7 @@ header a {
 
 #theme-button {
     cursor: pointer;
-    border-radius: 12%;
+    border-radius: 50%;
     width: 3em;
     height: 3em;
     min-height: 35px;
@@ -946,6 +953,19 @@ footer a {
 
 footer img {
     max-width: 2em;
+    filter: var(--logoFilter);
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin: auto;
+    padding: 0;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer div {
+    margin: auto;
 }
 
 #footer-logo {
@@ -959,12 +979,14 @@ footer img {
     max-width: 10em;
     row-gap: 0.3em;
     flex-wrap: wrap;
+    height: 2em;
 }
 
 
 .vertical-line{
     border: 0.5px dashed var(--onPrimary);
     height: 5em;
+    width: 0;
 }
 
 /*
@@ -975,7 +997,6 @@ footer img {
 #photos {
     display: flex;
     background: none;
-    justify-content: space-evenly;
     margin: auto;
     width: 80%;
 }
@@ -983,7 +1004,7 @@ footer img {
 #photos img {
     max-height: 15em;
     margin: 0 0.5em 1em 0;
-    border-radius: 1em;
+    border-radius: var(--cards-border-radius);
 }
 
 /*

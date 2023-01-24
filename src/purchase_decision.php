@@ -88,7 +88,7 @@ echo $purchase_template->build(array(
         "header" => buildHeader(),
         "form" => $form,
         "price" => "PLACEHOLDER",
-        "footer" => "PLACEHOLDER",
+        "footer" => buildFooter(),
         "destinationName" => $destination->getName(),
     ));
 
