@@ -26,20 +26,21 @@ $purchase_template = new \utilities\Template("templates/purchase_decision.html")
 $travel_input = "";
 foreach($destination->getTravels() as $travel){
     $travel_template = new \utilities\Template("templates/form/travel.html");
-    $departure = $travel->getDeparture()->__toString();
-    $nameTravel = "dal " . $departure ." al" . $travel->getReturn()->__toString() . " al prezzo di: " . $travel->getPrice() . "€";
+    $nameTravel = "Dal " . $travel->getDeparture() ." al" . $travel->getReturn() . " al prezzo di: " . $travel->getPrice() . "€";
     $travel_input .= $travel_template->build(array(
-        "idTravel" => $departure,
+        "idTravel" => $travel->getDeparture(),
         "nameTravel" => $nameTravel,
     ));
 }
 
 $activity_input = "";
+$counter_activity = 0;
 foreach($destination->getActivities() as $activity){
+    $counter_activity += 1;
     $activity_template = new \utilities\Template("templates/form/activity.html");
     $activity_name = $activity->getName() . " al prezzo di: " . $activity->getPrice() . "€";
     $activity_input .= $activity_template->build(array(
-        "idActivity" => $activity->getName(),
+        "idActivity" => $counter_activity,
         "nameActivity" => $activity_name,
     ));
 }
