@@ -776,6 +776,12 @@ header a {
     line-height: 0;
 }
 
+#theme-button:hover {
+    font-weight: bold;
+    color: var(--onPrimaryContainer);
+    transition: 0.3s;
+}
+
 .user {
     display: flex;
     flex-direction: column;
@@ -808,6 +814,7 @@ header a {
     
     background-color: var(--onPrimaryContainer);
     color: var(--onPrimary);
+    font-weight: bold;
 }
 
 /*
