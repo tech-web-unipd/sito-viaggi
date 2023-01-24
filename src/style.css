@@ -66,6 +66,7 @@ body {
     background-color: var(--surface);
     color: var(--onSurface);
     margin: 0 auto;
+    position: relative;
 }
 
 .material-symbols-outlined {
@@ -942,14 +943,14 @@ footer {
     background-color: var(--primary);
     color: var(--onPrimary);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    position: sticky;
-    top: 0;
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    right: 0;
     left: 0;
-    z-index: 100;
-    margin: 0 auto;
-    padding: 0 10%;
+    width: 100%;
     transition: all 0.35s ease;
 }
 
@@ -1061,7 +1062,7 @@ footer div {
 =============== PURCHASE FORM ============
 ==========================================
 */
-#form {
+.form-destination {
     background-color: var(--primaryContainer);
     color: var(--onPrimaryContainer);
     border-radius: var(--cards-border-radius);
@@ -1070,13 +1071,13 @@ footer div {
     padding: 2em;
 }
 
-fieldset {
+.form-destination fieldset {
     border: none;
     padding: 1em;
     color: var(--onPrimaryContainer);
 }
 
-form input[type=radio], form input[type=checkbox] {
+.form-destination input[type=radio], .form-destination input[type=checkbox] {
     position: absolute;
     cursor: pointer;
     height: 1em;
@@ -1084,18 +1085,18 @@ form input[type=radio], form input[type=checkbox] {
     background-color: #eee;
 }
 
-form input[type=radio]:hover, form input[type=checkbox]:hover {
+.form-destination input[type=radio]:hover, .form-destination input[type=checkbox]:hover {
     color: green;
 }
 
-form label {
+.form-destination label {
     background: var(--tertiaryContainer);
     border-radius: 3em;
     padding: 0.5em 4em;
     display: flex;
 }
 
-form input[type=submit] {
+.form-destination input[type=submit] {
     cursor: pointer;
     font-size: large;
     height: 3em;
@@ -1110,7 +1111,7 @@ form input[type=submit] {
     position: relative;
 }
 
-form input[type=submit]:hover {
+.form-destination input[type=submit]:hover {
     background-color: darkorange;
     font-weight: bold;
 }
