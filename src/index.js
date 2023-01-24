@@ -296,3 +296,21 @@ function setTheme() {
         document.getElementById("theme-icon").innerHTML = "light_mode";
     }
 }
+
+    function Price(){
+        var price = 0;
+
+        var travel = document.getElementsByName('travel');
+        for(i=0; i < travel.length; i++){
+            if(travel[i].checked)
+                price += travel[i].value;
+        }
+
+        var activity = document.getElementsByName('activity');
+        for(i=0; i < activity.length; i++){
+            if(activity[i].checked)
+                price += activity[i].value;
+        }
+        var x = document.getElementById("total-price");
+        x.innerHTML = price;  
+    }  
