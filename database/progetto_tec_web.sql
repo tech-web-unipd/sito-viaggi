@@ -342,6 +342,7 @@ INSERT INTO `image_activity` (`id`, `path`, `alt`, `is_cover`, `activity`) VALUE
 (10, './assets/Africa/capeTown-southAfrica/activities/city-tour/images/tour5.webp', 'Spiaggia di sabbia bianca affollata di pinguini, il mare limpido e calmo bagna la costa.', 0, 2),
 (11, './assets/Africa/capeTown-southAfrica/activities/city-tour/images/tour6.webp', 'Primo piano di due pinguini africani.', 0, 2),
 (12, './assets/Africa/capeTown-southAfrica/activities/city-tour/images/tour7.webp', 'Una numerosa colonia di pinguini riposa su un\'ampia spiaggia di sabbia bianca.', 0, 2),
+<<<<<<< Updated upstream
 (13, './assets/Africa/capeTown-southAfrica/activities/safari-acquila/images/cover.webp', 'Foto macro del muso un leopardo steso sull\'erba con gli occhi aperti vigili.', 1, 3),
 (14, './assets/Africa/capeTown-southAfrica/activities/safari-acquila/images/reserve1.webp', 'Maestoso leone in piedi in mezzo a un prato erboso.', 0, 3),
 (15, './assets/Africa/capeTown-southAfrica/activities/safari-acquila/images/reserve2.webp', 'Cucciolo di elefante cammiina nella natura, alberi bassi e arbusti lo circondano.', 0, 3),
@@ -351,6 +352,17 @@ INSERT INTO `image_activity` (`id`, `path`, `alt`, `is_cover`, `activity`) VALUE
 (19, './assets/Africa/capeTown-southAfrica/activities/safari-acquila/images/reserve6.webp', 'Un cucciolo di elefante cammina tra gli alberi seguito da un altro elefante poco più grande.', 0, 3),
 (20, './assets/Africa/capeTown-southAfrica/activities/safari-acquila/images/reserve7.webp', 'Il fuoristrada tursitico si avvicina a un esemplare di Eland.', 0, 3),
 (21, './assets/Africa/capeTown-southAfrica/activities/safari-acquila/images/reserve8.webp', 'Punto di ristoro del safari, locale a forma di capanna. L\'interno illuminato da ampie vetrate ospita numerosi divani e tavolini per accogliere i turisti che desiderano consumare qualcosa al bar.', 0, 3),
+=======
+(13, './assets/Africa/capeTown-southAfrica/activities/safari-aquila/images/cover.webp', 'Foto macro del muso di un leopardo steso sull\'erba con gli occhi aperti vigili.', 1, 3),
+(14, './assets/Africa/capeTown-southAfrica/activities/safari-aquila/images/reserve1.webp', 'Maestoso leone in piedi in mezzo a un prato erboso.', 0, 3),
+(15, './assets/Africa/capeTown-southAfrica/activities/safari-aquila/images/reserve2.webp', 'Cucciolo di elefante cammiina nella natura, alberi bassi e arbusti lo circondano.', 0, 3),
+(16, './assets/Africa/capeTown-southAfrica/activities/safari-aquila/images/reserve3.webp', 'Una leonessa e il suo cucciolo giocano affettuosamente.', 0, 3),
+(17, './assets/Africa/capeTown-southAfrica/activities/safari-aquila/images/reserve4.webp', 'Quattro ghepardi divorano in modo famelico una gazzella.', 0, 3),
+(18, './assets/Africa/capeTown-southAfrica/activities/safari-aquila/images/reserve5.webp', 'Macro di un elefante che con la proboscite di porta alla bocca un ramo.', 0, 3),
+(19, './assets/Africa/capeTown-southAfrica/activities/safari-aquila/images/reserve6.webp', 'Un cucciolo di elefante cammina tra gli alberi seguito da un altro elefante poco più grande.', 0, 3),
+(20, './assets/Africa/capeTown-southAfrica/activities/safari-aquila/images/reserve7.webp', 'Il fuoristrada tursitico si avvicina a un esemplare di Eland.', 0, 3),
+(21, './assets/Africa/capeTown-southAfrica/activities/safari-aquila/images/reserve8.webp', 'Punto di ristoro del safari, locale a forma di capanna. L\'interno illuminato da ampie vetrate ospita numerosi divani e tavolini per accogliere i turisti che desiderano consumare qualcosa al bar.', 0, 3),
+>>>>>>> Stashed changes
 (22, './assets/Africa/capeTown-southAfrica/activities/sea-tour/images/cover.webp', 'Due foche appena uscita dall\'acqua si godono il sole stese sulle rocce.', 1, 4),
 (23, './assets/Africa/capeTown-southAfrica/activities/sea-tour/images/sea1.webp', 'Un turista fotografa una balenottera riaffiorata accanto all\'imbarcazione.', 0, 4),
 (24, './assets/Africa/capeTown-southAfrica/activities/sea-tour/images/sea2.webp', 'Una foca salta fuori dall\'acqua a pancia in su.', 0, 4),
@@ -529,10 +541,17 @@ INSERT INTO `image_activity` (`id`, `path`, `alt`, `is_cover`, `activity`) VALUE
 (197, './assets/Asia/Bali/activities/street-food/images/food3.webp', 'Bancarella alimentare del mercato, qui si serve pollo al vapore con riso.', 0, 41),
 (198, './assets/Asia/HongKong/activities/cascata/images/cover.webp', 'Una delle cascate.', 1, 42),
 (199, './assets/Asia/HongKong/activities/cascata/images/cascata1.webp', 'Cascate.', 0, 42),
+<<<<<<< Updated upstream
 (200, './assets/Asia/HongKong/activities/Iantau/images/cover.webp', 'Statua del grande budda e sullo sfondo le montagne di Lantau.', 1, 43),
 (201, './assets/Asia/HongKong/activities/Iantau/images/budda2.webp', 'Budda di Lantau, e percorso che permette di raggiungerlo.', 0, 43),
 (202, './assets/Asia/HongKong/activities/Iantau/images/canale.webp', 'Canale di Lantau.', 0, 43),
 (203, './assets/Asia/HongKong/activities/Iantau/images/tempio.webp', 'Tempio di Lantau circondato da montagne.', 0, 43),
+=======
+(200, './assets/Asia/HongKong/activities/lantau/images/cover.webp', 'Statua del grande budda e sullo sfondo le montagne di Lantau.', 1, 43),
+(201, './assets/Asia/HongKong/activities/lantau/images/budda2.webp', 'Budda di Lantau, e percorso che permette di raggiungerlo.', 0, 43),
+(202, './assets/Asia/HongKong/activities/lantau/images/canale.webp', 'Canale di Lantau.', 0, 43),
+(203, './assets/Asia/HongKong/activities/lantau/images/tempio.webp', 'Tempio di Lantau circondato da montagne.', 0, 43),
+>>>>>>> Stashed changes
 (204, './assets/Asia/HongKong/activities/schiena-drago/images/cover.webp', 'Scorcio di montagne che rappresentano la schiena del drago.', 1, 44),
 (205, './assets/Asia/HongKong/activities/schiena-drago/images/dragon.webp', 'Montagne della schiena del drago delimitate dal mare.', 0, 44),
 (206, './assets/Asia/HongKong/activities/schiena-drago/images/risaie.webp', 'Distesa di risaie.', 0, 44),
@@ -578,13 +597,13 @@ INSERT INTO `image_activity` (`id`, `path`, `alt`, `is_cover`, `activity`) VALUE
 (246, './assets/Asia/Tokyo/activities/tour-privato/images/cover.webp', 'Zona a tema anime e video games molto famosa in centro a Tokyo.', 1, 56),
 (247, './assets/Asia/Tokyo/activities/tour-privato/images/cherry.webp', 'Passeggiata sul ponte che attraversa un suggestivo canale costeggiato da alberi di ciliegio in fiore.', 0, 56),
 (248, './assets/Asia/Tokyo/activities/tour-privato/images/shibuya1.webp', 'Stazione di Shibuya dove una grande folla sta attraversando le strisce pedonali.', 0, 56),
-(249, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e  Santa Gudula/images/cover.webp', 'Foto della facciata principale della cattedrale illuminata con i suoi tre portali sormontati dalle relative ghimberghe, dietro il tramonto.', 1, 57),
-(250, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e  Santa Gudula/images/cattedrale_1.webp', 'Interno della cattedrale con le colonne gotiche.', 0, 57),
-(251, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e  Santa Gudula/images/cattedrale_2.webp', 'Esterno della cattedrale, struttura gotica con pinnacoli e doccioni.', 0, 57),
-(252, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e  Santa Gudula/images/cattedrale_3.webp', 'Facciata principale della cattedrale con i suoi tre portali sormontati dalle relative ghimberghe.', 0, 57),
-(253, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e  Santa Gudula/images/cattedrale_4.webp', 'Facciata principale della cattedrale vista dal basso con i suoi tre portali sormontati dalle relative ghimberghe. Dietro il cielo colorato dal tramonto.', 0, 57),
-(254, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e  Santa Gudula/images/cattedrale_5.webp', 'Interno della cattedrale con vetrate decorate.', 0, 57),
-(255, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e  Santa Gudula/images/cattedrale_6.webp', 'Affresco su una delle cappelle della cattedrale.', 0, 57),
+(249, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e Santa Gudula/images/cover.webp', 'Foto della facciata principale della cattedrale illuminata con i suoi tre portali sormontati dalle relative ghimberghe, dietro il tramonto.', 1, 57),
+(250, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e Santa Gudula/images/cattedrale_1.webp', 'Interno della cattedrale con le colonne gotiche.', 0, 57),
+(251, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e Santa Gudula/images/cattedrale_2.webp', 'Esterno della cattedrale, struttura gotica con pinnacoli e doccioni.', 0, 57),
+(252, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e Santa Gudula/images/cattedrale_3.webp', 'Facciata principale della cattedrale con i suoi tre portali sormontati dalle relative ghimberghe.', 0, 57),
+(253, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e Santa Gudula/images/cattedrale_4.webp', 'Facciata principale della cattedrale vista dal basso con i suoi tre portali sormontati dalle relative ghimberghe. Dietro il cielo colorato dal tramonto.', 0, 57),
+(254, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e Santa Gudula/images/cattedrale_5.webp', 'Interno della cattedrale con vetrate decorate.', 0, 57),
+(255, './assets/Europa/Bruxelles/activities/Cattedrale di San Michele Arcangelo e Santa Gudula/images/cattedrale_6.webp', 'Affresco su una delle cappelle della cattedrale.', 0, 57),
 (256, './assets/Europa/Bruxelles/activities/Grand Place/images/cover.webp', 'Lussuoso edificio illuminato nella Grand Place.', 1, 58),
 (257, './assets/Europa/Bruxelles/activities/Grand Place/images/grand_place_1.webp', 'Famoso tappeto di fiori che ogni due anni occupa la Grand Place con i suoi decori colorati.', 0, 58),
 (258, './assets/Europa/Bruxelles/activities/Grand Place/images/grand_place_2.webp', 'La Grand Place illuminata nelle ore del crepuscolo', 0, 58),
@@ -618,9 +637,15 @@ INSERT INTO `image_activity` (`id`, `path`, `alt`, `is_cover`, `activity`) VALUE
 (286, './assets/Europa/Ibiza/activities/Dalt Vila/images/dalt_vila_2.webp', 'Via della cittadina che costeggia diverse abitazioni tutte contraddistinte per il loro colore bianco. In primo piano, una casa ricoperta da una pianta arrampicante con dei frutti di colore rosso acceso.', 0, 63),
 (287, './assets/Europa/Ibiza/activities/Dalt Vila/images/dalt_vila_3.webp', 'Dalt Vila illuminata dalle luci notturne, rivela le proprie abitazioni colorate di un giallo ocra da queste luci con il castello illuminato di bianco che sovrasta dall\'alto la città.', 0, 63),
 (288, './assets/Europa/Ibiza/activities/Necropoli di Puig des Molins/images/cover.webp', 'Dama di Ibiza e altre 3 statue puniche della necropoli. ', 1, 64),
+<<<<<<< Updated upstream
 (289, './assets/Europa/Ibiza/activities/Necropoli di Puig des Molins/images/molis_1.webp', 'Nel primo piano due tombe vuote aperte, ricolme d\'acqua all\'interno della grotta della necropoli.', 0, 64),
 (290, './assets/Europa/Ibiza/activities/Necropoli di Puig des Molins/images/molis_2.webp', 'Una stanza dell\'edificio della Necropoli in cui vi sono esposte dietro diverse vetrate manufatti tipici.', 0, 64),
 (291, './assets/Europa/Ibiza/activities/Necropoli di Puig des Molins/images/molis_3.webp', 'Dietro una vetrata sono esposti manufatti come piatti e vasi illuminati da una forte luce dall\'alto.', 0, 64),
+=======
+(289, './assets/Europa/Ibiza/activities/Necropoli di Puig des Molins/images/molins_1.webp', 'Nel primo piano due tombe vuote aperte, ricolme d\'acqua all\'interno della grotta della necropoli.', 0, 64),
+(290, './assets/Europa/Ibiza/activities/Necropoli di Puig des Molins/images/molins_2.webp', 'Una stanza dell\'edificio della Necropoli in cui vi sono esposte dietro diverse vetrate manufatti tipici.', 0, 64),
+(291, './assets/Europa/Ibiza/activities/Necropoli di Puig des Molins/images/molins_3.webp', 'Dietro una vetrata sono esposti manufatti come piatti e vasi illuminati da una forte luce dall\'alto.', 0, 64),
+>>>>>>> Stashed changes
 (292, './assets/Europa/Ibiza/activities/Tour in moto d\'acqua/images/cover.webp', 'Moto d\'acqua nera con dettagli gialli in acqua.', 1, 65),
 (293, './assets/Europa/Ibiza/activities/Tour in moto d\'acqua/images/moto_1.webp', 'Uomo che saluta con il pollice in su sopra una moto d\'acqua nera con dettagli gialli in acqua.', 0, 65),
 (294, './assets/Europa/Ibiza/activities/Tour in moto d\'acqua/images/moto_2.webp', 'Moto d\'acqua bianca con dettagli neri e gialli attraccata a riva.', 0, 65),
@@ -668,11 +693,19 @@ INSERT INTO `image_activity` (`id`, `path`, `alt`, `is_cover`, `activity`) VALUE
 (335, './assets/Europa/Parigi/activities/Tour Eiffel/images/eiffel_1.webp', 'Tour Eiffel di notte illuminata dalle luci.', 0, 75),
 (336, './assets/Europa/Parigi/activities/Tour Eiffel/images/eiffel_2.webp', 'Vista della Torre Eiffel dal Senna in una giornata di sole, si nota un imbarcazione turistica.', 0, 75),
 (337, './assets/Europa/Parigi/activities/Tour Eiffel/images/eiffel_3.webp', 'Tour Eiffel di notte illuminata dalle luci e un faro che illumina il cielo.', 0, 75),
+<<<<<<< Updated upstream
 (338, './assets/NordAmerica/chicago-illinois/activities/art-istitute/images/cover.webp', 'Ingresso dell\'Art Istitute di Chicago', 1, 76),
 (339, './assets/NordAmerica/chicago-illinois/activities/art-istitute/images/art1.webp', 'La Tiffany Window altrimenti nota come Hartwell Monumental Window, composta da 48 pannelli di diversi tipi di vetro si trova in cima alla scalinata Woman\'s Board Grand.', 0, 76),
 (340, './assets/NordAmerica/chicago-illinois/activities/art-istitute/images/art2.webp', 'Famoso quadro \'I nottambuli\' di Edward Hopper.', 0, 76),
 (341, './assets/NordAmerica/chicago-illinois/activities/art-istitute/images/art3.webp', 'American Gothic di Grant Wood.', 0, 76),
 (342, './assets/NordAmerica/chicago-illinois/activities/art-istitute/images/art4.webp', 'Edificio Modern Wing che ospita l\'Art Istitute a Chicago.', 0, 76),
+=======
+(338, './assets/NordAmerica/chicago-illinois/activities/art-institute/images/cover.webp', 'Ingresso dell\'Art Istitute di Chicago', 1, 76),
+(339, './assets/NordAmerica/chicago-illinois/activities/art-institute/images/art1.webp', 'La Tiffany Window altrimenti nota come Hartwell Monumental Window, composta da 48 pannelli di diversi tipi di vetro si trova in cima alla scalinata Woman\'s Board Grand.', 0, 76),
+(340, './assets/NordAmerica/chicago-illinois/activities/art-institute/images/art2.webp', 'Famoso quadro \'I nottambuli\' di Edward Hopper.', 0, 76),
+(341, './assets/NordAmerica/chicago-illinois/activities/art-institute/images/art3.webp', 'American Gothic di Grant Wood.', 0, 76),
+(342, './assets/NordAmerica/chicago-illinois/activities/art-institute/images/art4.webp', 'Edificio Modern Wing che ospita l\'Art Istitute a Chicago.', 0, 76),
+>>>>>>> Stashed changes
 (343, './assets/NordAmerica/chicago-illinois/activities/centennial-wheel/images/cover.webp', 'Centennial Wheel di Chicago.', 1, 77),
 (344, './assets/NordAmerica/chicago-illinois/activities/centennial-wheel/images/wheel1.webp', 'Interno della cabina della ruota panoramica con comodi sedili in pelle.', 0, 77),
 (345, './assets/NordAmerica/chicago-illinois/activities/centennial-wheel/images/wheel2.webp', 'Tettoia di entrata e uscita dalle cabine della ruota panoramica.', 0, 77),
@@ -864,6 +897,7 @@ INSERT INTO `image_airline` (`id`, `path`, `alt`, `is_cover`, `airline`) VALUES
 (11, './assets/Asia/Seoul/airline/images/logo.png', 'Logo compagnia aerea, è una scritta che dice Fly Emirates.', 1, '<span lang=\"en\">Fly Emirates</span>'),
 (12, './assets/Asia/Tokyo/airline/images/logo.png', 'Logo compagnia aerea, è una scritta che dice Fly Emirates.', 1, '<span lang=\"en\">Fly Emirates</span>'),
 (13, './assets/Europa/Bruxelles/airline/images/ba-logo.png', 'Scritta Bussels airlines, sulla sinistra il logo, una b puntinata.', 1, '<span lang=\"fr\">Brussels</span> <span lang=\"en\">airlines</span>'),
+<<<<<<< Updated upstream
 (14, './assets/Europa/Ibiza/airline/images/ry-logo.png', 'Logo della <span lang=\"en\">Ryanair</span>.', 1, '<span lang=\"en\">Ryanair</span>'),
 (15, './assets/Europa/Nizza/airline/images/af-logo.png', 'Air France logo.', 1, '<span lang=\"en\">Air France</span>'),
 (16, './assets/Europa/Parigi/airline/images/lu-logo.png', 'Logo della compagnia Lufthansa.', 1, 'Lufthansa'),
@@ -871,6 +905,12 @@ INSERT INTO `image_airline` (`id`, `path`, `alt`, `is_cover`, `airline`) VALUES
 (18, './assets/NordAmerica/losAngeles-california/airline/images/british-airways-logo.png', 'Logo british airways.', 1, '<span lang=\"en\">British Airways</span>'),
 (19, './assets/NordAmerica/newYork/airline/images/lufthansa-logo.svg', 'Logo Lufthansa, un uccello all\'interno di un cerchio.', 1, 'Lufthansa'),
 (20, './assets/NordAmerica/vancouver-birtishColumbia/airline/images/air-canada-logo.svg', 'Logo di air canada, una foglia d\'acero rossa.', 1, '<span lang=\"en\">Air Canada</span>'),
+=======
+(14, './assets/Europa/Ibiza/airline/images/ry-logo.png', 'Logo della Ryanair.', 1, '<span lang=\"en\">Ryanair</span>'),
+(17, './assets/NordAmerica/chicago-illinois/airline/images/logo-iberia.svg', 'Scritta Iberia, simbolo di una bandiera sul lato destro della scritta.', 1, 'Iberia'),
+(18, './assets/NordAmerica/losAngeles-california/airline/images/british-airways-logo.png', 'Logo british airways.', 1, '<span lang=\"en\">British Airways</span>'),
+(20, './assets/NordAmerica/vancouver-britishColumbia/airline/images/air-canada-logo.svg', 'Logo di air canada, una foglia d\'acero rossa.', 1, '<span lang=\"en\">Air Canada</span>'),
+>>>>>>> Stashed changes
 (21, './assets/Oceania/Auckland/airline/images/logo.png', 'Scritta della Quatar Airways, sulla destra il logo con un orice arabo.', 1, '<span lang=\"en\">Qatar Airways</span>'),
 (22, './assets/Oceania/BoraBora/airline/images/logo.png', 'Scritta della Quatar Airways, sulla destra il logo con un orice arabo.', 1, '<span lang=\"en\">Qatar Airways</span>'),
 (23, './assets/Oceania/Fiji/airline/images/logo.png', 'Scritta della Quatar Airways, sulla destra il logo con un orice arabo.', 1, '<span lang=\"en\">Qatar Airways</span>'),
@@ -977,9 +1017,15 @@ INSERT INTO `image_destination` (`id`, `path`, `alt`, `is_cover`, `destination`)
 (80, './assets/Europa/Bruxelles/images/bruxelles_6.webp', 'Lussuosi palazzi della Grand Place con facciate decorate con dettagli dorati.', 0, 13),
 (81, './assets/Europa/Bruxelles/images/bruxelles_7.webp', 'Municipio di Bruxelles.', 0, 13),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 (82, './assets/Europa/Ibiza/images/cover.webp', '<span lang=\"es\">Dalt Vila</span>, la città vecchia di <span lang=\"es\">Ibiza</span> situata in collina. In primo piano vi è il porto e i diversi <span lang=\"en\">yatch</span> e barche vele ormeggiati.', 1, 14),
 (83, './assets/Europa/Ibiza/images/ibiza_1.webp', 'In primo piano un piccolo <span lang=\"en\">yatch</span> e  3 barche a vele in un acqua cristallina di una giornata di sole e di sfondo l\'isola che fronteggia <span lang=\"es\">Ibiza</span>. Le foglie due palme fanno da cornice all\'immagine.', 0, 14),
 (84, './assets/Europa/Ibiza/images/ibiza_2.webp', 'L\'acqua cristallina di <span lang=\"es\">Ibiza</span> di una giornata di sole con diverse barche a vela ormeggiate a largo e di sfondo l\'isola che fronteggia <span lang=\"es\">Ibiza</span>.', 0, 14),
+=======
+(82, './assets/Europa/Ibiza/images/cover.webp', 'Dalt Vila, la città vecchia di Ibiza situata in collina. In primo piano vi è il porto e i diversi yatch e barche vele ormeggiati.', 1, 14),
+(83, './assets/Europa/Ibiza/images/ibiza_1.webp', 'In primo piano un piccolo yatch e  3 barche a vele in un acqua cristallina di una giornata di sole e di sfondo l\'isola che fronteggia Ibiza. Le foglie due palme fanno da cornice all\'immagine.', 0, 14),
+(84, './assets/Europa/Ibiza/images/ibiza_2.webp', 'L\'acqua cristallina di Ibiza di una giornata di sole con diverse barche a vela ormeggiate a largo e di sfondo l\'isola che fronteggia Ibiza.', 0, 14),
+>>>>>>> Stashed changes
 =======
 (82, './assets/Europa/Ibiza/images/cover.webp', 'Dalt Vila, la città vecchia di Ibiza situata in collina. In primo piano vi è il porto e i diversi yatch e barche vele ormeggiati.', 1, 14),
 (83, './assets/Europa/Ibiza/images/ibiza_1.webp', 'In primo piano un piccolo yatch e  3 barche a vele in un acqua cristallina di una giornata di sole e di sfondo l\'isola che fronteggia Ibiza. Le foglie due palme fanno da cornice all\'immagine.', 0, 14),
@@ -1038,7 +1084,7 @@ INSERT INTO `image_destination` (`id`, `path`, `alt`, `is_cover`, `destination`)
 (136, './assets/Oceania/Fiji/images/fiji4.webp', 'Animatori che ballano in abiti tipici.', 0, 23),
 (137, './assets/Oceania/Fiji/images/fiji5.webp', 'Uno dei resort presenti sull\'isola.', 0, 23),
 (138, './assets/Oceania/Sydney/images/cover.webp', 'Vista del porto di Sydney al tramonto, si scorge il ponte che porta alla città e la città stessa sullo sfondo.', 1, 24),
-(139, './assets/Oceania/Sydney/images/sydeny1.webp', 'Museo di Sydney.', 0, 24),
+(139, './assets/Oceania/Sydney/images/sydeny.webp', 'Museo di Sydney.', 0, 24),
 (140, './assets/Oceania/Sydney/images/sydeny2.webp', 'Ponte di Sydney che porta alla città.', 0, 24),
 (141, './assets/Oceania/Sydney/images/sydeny4.webp', 'Vista di Sydney e del ponte che porta ad essa.', 0, 24),
 (142, './assets/Oceania/Sydney/images/sydeny5.webp', 'Una delle strade dello shopping in centro città.', 0, 24);
@@ -1093,7 +1139,11 @@ INSERT INTO `image_hotel` (`id`, `path`, `alt`, `is_cover`, `hotel`) VALUES
 (29, './assets/Africa/windhoek-namibia/hotel/images/external2.webp', 'Grande piscina attraversata da un ponte che conduce ad una piscina sopraelevata con idromassaggio. L\'area è ricca di piante.', 0, 4),
 (30, './assets/Africa/windhoek-namibia/hotel/images/external3.webp', 'Vista dall\'alto della piscina grande, ci sono sdraio con cuscini ed ombrelloni.', 0, 4),
 (31, './assets/Africa/windhoek-namibia/hotel/images/kitchen1.webp', 'Cucina con microonde, bollitore, forno, frigorifero e cappa anti odori. È presente un tavolo da pranzo in legno ed un tavolo in legno con panche all\'esterno.', 0, 4),
+<<<<<<< Updated upstream
 (32, './assets/Africa/windhoek-namibia/hotel/images/reception.webp', 'Reception ordinata con una caraffa di succo e alcuni bicchieri e dei fiori alle estremità del bancone.', 0, 4),
+=======
+(32, './assets/Africa/windhoek-namibia/hotel/images/reception.webp', 'Receptionordinata con una caraffa di succo e alcuni bicchieri e dei fiori alle estremità del bancone.', 0, 4),
+>>>>>>> Stashed changes
 (33, './assets/America_del_Sud/Aruba/hotel/images/cover.webp', 'Struttura dell\'hotel visto dall\'alto, situato in riva al mare è composto da tre edifici a 10 piani posti a ferro di cavallo, in mezzo ai quali si trova l\'ampia piscina e il giardino.', 1, 5),
 (34, './assets/America_del_Sud/Aruba/hotel/images/biliardo.webp', 'Sala con tavolo da biliardo.', 0, 5),
 (35, './assets/America_del_Sud/Aruba/hotel/images/external_1.webp', 'Visuale dall\'alto dell\'esterno dell\'hotel, si nota uno dei tre edifici, la piscina, la spiaggia subito vicina e il mare.', 0, 5),
