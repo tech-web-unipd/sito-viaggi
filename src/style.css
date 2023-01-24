@@ -310,7 +310,7 @@ main > h1 {
 .carousel {
     max-width: var(--carosuel-width);
     position: relative;
-    margin-left: 7em;
+    margin: auto;
 }
 
 .gallery-slide {
@@ -1026,3 +1026,23 @@ footer div {
     width: 5em;
 }
 
+/*
+==========================================
+================ ACTIVITY ================
+==========================================
+*/
+
+#gallery-activity {
+    margin-bottom: 2em;
+}
+
+#price-activity {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: var(--cards-border-radius);
+    padding: 0.5em;
+    width: 15%;
+    margin: 0 0 0 auto;
+    border: 2px solid var(--onPrimaryContainer);
+}
