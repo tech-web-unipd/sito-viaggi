@@ -37,7 +37,7 @@
     --onSecondaryContainer: #DDE1F9;
     --tertiary: #732364;
     --onTertiary: #422740;
-    --tertiaryContainer: #9d5f96;
+    --tertiaryContainer: #b88fdf;
     --onTertiaryContainer: #ffedfc;
     --surface: #1B1B1F;
     --onSurface: #E6E1E6;
@@ -927,7 +927,6 @@ button.access-operation {
     padding: 0 0.5em;
     font-size: 1em;
     border-radius: var(--cards-border-radius);
-    color: var(--onSurface);
     border: 2px solid var(--tertiary);
 }
 
@@ -1077,7 +1076,7 @@ footer div {
 ==========================================
 */
 .form-destination {
-    background-color: var(--primaryContainer);
+    background-color: var(--tertiaryContainer);
     color: var(--onPrimaryContainer);
     border-radius: var(--cards-border-radius);
     margin: auto;
@@ -1104,7 +1103,8 @@ footer div {
 }
 
 .form-destination label {
-    background: var(--tertiaryContainer);
+    background: var(--tertiary);
+    color: white;
     border-radius: 3em;
     padding: 0.5em 4em;
     display: flex;
