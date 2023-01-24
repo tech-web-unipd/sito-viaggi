@@ -586,9 +586,10 @@ td:not(tr:last-child > td) {
 ==========================================
 */
 
-button.add-to-cart {
+.add-to-cart {
     cursor: pointer;
     text-align: center;
+    text-decoration: none;
     font-size: large;
     height: 3em;
     width: 90%;
@@ -601,8 +602,9 @@ button.add-to-cart {
     position: relative;
 }
 
-button:hover.add-to-cart {
+.add-to-cart:hover {
     background-color: darkorange;
+    font-weight: bold;
 }
 
 /*
@@ -1052,4 +1054,63 @@ footer div {
     width: 15%;
     margin: 0 0 0 auto;
     border: 2px solid var(--onPrimaryContainer);
+}
+
+/*
+==========================================
+=============== PURCHASE FORM ============
+==========================================
+*/
+#form {
+    background-color: var(--primaryContainer);
+    color: var(--onPrimaryContainer);
+    border-radius: var(--cards-border-radius);
+    margin: auto;
+    width: 60%;
+    padding: 2em;
+}
+
+fieldset {
+    border: none;
+    padding: 1em;
+    color: var(--onPrimaryContainer);
+}
+
+form input[type=radio], form input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    height: 1em;
+    margin: 0.8em 2em;
+    background-color: #eee;
+}
+
+form input[type=radio]:hover, form input[type=checkbox]:hover {
+    color: green;
+}
+
+form label {
+    background: var(--tertiaryContainer);
+    border-radius: 3em;
+    padding: 0.5em 4em;
+    display: flex;
+}
+
+form input[type=submit] {
+    cursor: pointer;
+    font-size: large;
+    height: 3em;
+    width: 90%;
+    border-radius: var(--cards-border-radius);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+    border: 2.5px solid darkorange;
+    transition: background-color 0.4s ease;
+    position: relative;
+}
+
+form input[type=submit]:hover {
+    background-color: darkorange;
+    font-weight: bold;
 }
