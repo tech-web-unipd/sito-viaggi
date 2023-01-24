@@ -31,7 +31,7 @@ foreach($destination->getTravels() as $travel){
     $travel_template = new \utilities\Template("templates/form/travel.html");
     $travel_label = "Dal " . $travel->getDeparture() ." al " . $travel->getReturn() . " al prezzo di: " . $travel->getPrice() . "€";
     $travel_input .= $travel_template->build(array(
-        "idTravel" => $travel_counter,
+        "idTravel" => $travel_name . $travel_counter,
         "nameTravel" => $travel_name,
         "labelTravel" => $travel_label,
     ));
@@ -45,7 +45,7 @@ foreach($destination->getActivities() as $activity){
     $activity_template = new \utilities\Template("templates/form/activity.html");
     $activity_label = $activity->getName() . " al prezzo di: " . $activity->getPrice() . "€";
     $activity_input .= $activity_template->build(array(
-        "idActivity" => $activity_counter,
+        "idActivity" => $activity_name . $activity_counter,
         "nameActivity" => $activity_name . $activity_counter,
         "labelActivity" => $activity_label,
     ));
@@ -58,7 +58,7 @@ foreach($destination->getHotels() as $hotel){
     $hotel_counter += 1;
     $hotel_template = new \utilities\Template("templates/form/hotel.html");
     $hotel_input .= $hotel_template->build(array(
-            "idHotel" => $hotel_counter,
+            "idHotel" => $hotel_name . $hotel_counter,
             "nameHotel" => $hotel_name,
             "labelHotel" => $hotel->getName(),
     ));
@@ -71,7 +71,7 @@ foreach($destination->getAirlines() as $airline){
     $airline_counter += 1;
     $airline_template = new \utilities\Template("templates/form/airline.html");
     $airline_input .= $airline_template->build(array(
-            "idAirline" => $airline_counter,
+            "idAirline" => $airline_name . $airline_counter,
             "nameAirline" => $airline_name,
             "labelAirline" => $airline->getName(),
         ));
