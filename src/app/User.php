@@ -217,7 +217,6 @@ class User
         }
     }
 
-    //funzioni per la modifica dei singoli campi ---> modifico l'oggetto di invocazione ---> cancello/sostituisco quella nel database con quella nuova
 
     public function modPassword($pw_typed, \utilities\DatabaseLayer $db)
     {
