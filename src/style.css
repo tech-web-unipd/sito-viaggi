@@ -162,8 +162,8 @@ body {
 }
 
 .primary-container form input[type=submit] {
-    background-color: var(--primary);
-    color: var(--onPrimary);
+    background-color: var(--tertiaryContainer);
+    color: var(--onTertiaryContainer);
     border: none;
 }
 
@@ -838,6 +838,10 @@ header a {
     margin: 0;
 }
 
+#breadcrumb a {
+    color: var(--onSecondaryContainer);
+}
+
 /*
 ===========================================
 ========= HORIZONTAL SCROLL BAR ===========
@@ -915,22 +919,32 @@ button.access-operation {
 
 #access-page input[type=submit]:hover, button.access-operation:hover {
     background-color: var(--tertiary);
+    color: var(--onTertiaryContainer);
     font-weight: bold;
 }
 
-#username-text, #login-password{
+#username-text, #login-password, .access-form input, #gender {
     padding: 0 0.5em;
     font-size: 1em;
     border-radius: var(--cards-border-radius);
-    background-color: var(--surface);
     color: var(--onSurface);
     border: 2px solid var(--tertiary);
 }
 
-
 #not-matching-passwords {
     display: none;
     color: var(--error);
+}
+
+#registration-section input[type=reset] {
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    border: none;
+}
+
+#registration-section input[type=reset]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
 }
 
 /*
