@@ -973,21 +973,9 @@ INSERT INTO `image_destination` (`id`, `path`, `alt`, `is_cover`, `destination`)
 (79, './assets/Europa/Bruxelles/images/bruxelles_5.webp', 'Scalinata del palazzo di giustizia.', 0, 13),
 (80, './assets/Europa/Bruxelles/images/bruxelles_6.webp', 'Lussuosi palazzi della Grand Place con facciate decorate con dettagli dorati.', 0, 13),
 (81, './assets/Europa/Bruxelles/images/bruxelles_7.webp', 'Municipio di Bruxelles.', 0, 13),
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 (82, './assets/Europa/Ibiza/images/cover.webp', 'Dalt Vila, la città vecchia di Ibiza situata in collina. In primo piano vi è il porto e i diversi yatch e barche vele ormeggiati.', 1, 14),
 (83, './assets/Europa/Ibiza/images/ibiza_1.webp', 'In primo piano un piccolo yatch e  3 barche a vele in un acqua cristallina di una giornata di sole e di sfondo l\'isola che fronteggia Ibiza. Le foglie due palme fanno da cornice all\'immagine.', 0, 14),
 (84, './assets/Europa/Ibiza/images/ibiza_2.webp', 'L\'acqua cristallina di Ibiza di una giornata di sole con diverse barche a vela ormeggiate a largo e di sfondo l\'isola che fronteggia Ibiza.', 0, 14),
-=======
-(82, './assets/Europa/Ibiza/images/cover.webp', 'Dalt Vila, la città vecchia di Ibiza situata in collina. In primo piano vi è il porto e i diversi yatch e barche vele ormeggiati.', 1, 14),
-(83, './assets/Europa/Ibiza/images/ibiza_1.webp', 'In primo piano un piccolo yatch e  3 barche a vele in un acqua cristallina di una giornata di sole e di sfondo l\'isola che fronteggia Ibiza. Le foglie due palme fanno da cornice all\'immagine.', 0, 14),
-(84, './assets/Europa/Ibiza/images/ibiza_2.webp', 'L\'acqua cristallina di Ibiza di una giornata di sole con diverse barche a vela ormeggiate a largo e di sfondo l\'isola che fronteggia Ibiza.', 0, 14),
->>>>>>> Stashed changes
-=======
-(82, './assets/Europa/Ibiza/images/cover.webp', 'Dalt Vila, la città vecchia di Ibiza situata in collina. In primo piano vi è il porto e i diversi yatch e barche vele ormeggiati.', 1, 14),
-(83, './assets/Europa/Ibiza/images/ibiza_1.webp', 'In primo piano un piccolo yatch e  3 barche a vele in un acqua cristallina di una giornata di sole e di sfondo l\'isola che fronteggia Ibiza. Le foglie due palme fanno da cornice all\'immagine.', 0, 14),
-(84, './assets/Europa/Ibiza/images/ibiza_2.webp', 'L\'acqua cristallina di Ibiza di una giornata di sole con diverse barche a vela ormeggiate a largo e di sfondo l\'isola che fronteggia Ibiza.', 0, 14),
->>>>>>> Stashed changes
 (85, './assets/Europa/Ibiza/images/ibiza_3.webp', 'Sulla sinistra una spiaggia di sabbia dorata con ombrelloni e lettini e scogli su una parte della riva. L\'acqua è cristallina in una giornata di sole. ', 0, 14),
 (86, './assets/Europa/Nizza/images/cover.webp', 'Piccolo porto di nizza in cui sono ormeggiate diverse barche e yatch. Vista della città dall\'alto.', 1, 15),
 (87, './assets/Europa/Nizza/images/nizza_1.webp', 'Spiaggia cristallina, si nota la grande edificazione della cittadina in riva al mare. La spiaggia è sabbiosa, lunga e stretta.', 0, 15),
@@ -1096,11 +1084,7 @@ INSERT INTO `image_hotel` (`id`, `path`, `alt`, `is_cover`, `hotel`) VALUES
 (29, './assets/Africa/windhoek-namibia/hotel/images/external2.webp', 'Grande piscina attraversata da un ponte che conduce ad una piscina sopraelevata con idromassaggio. L\'area è ricca di piante.', 0, 4),
 (30, './assets/Africa/windhoek-namibia/hotel/images/external3.webp', 'Vista dall\'alto della piscina grande, ci sono sdraio con cuscini ed ombrelloni.', 0, 4),
 (31, './assets/Africa/windhoek-namibia/hotel/images/kitchen1.webp', 'Cucina con microonde, bollitore, forno, frigorifero e cappa anti odori. È presente un tavolo da pranzo in legno ed un tavolo in legno con panche all\'esterno.', 0, 4),
-<<<<<<< Updated upstream
 (32, './assets/Africa/windhoek-namibia/hotel/images/reception.webp', 'Reception ordinata con una caraffa di succo e alcuni bicchieri e dei fiori alle estremità del bancone.', 0, 4),
-=======
-(32, './assets/Africa/windhoek-namibia/hotel/images/reception.webp', 'Receptionordinata con una caraffa di succo e alcuni bicchieri e dei fiori alle estremità del bancone.', 0, 4),
->>>>>>> Stashed changes
 (33, './assets/America_del_Sud/Aruba/hotel/images/cover.webp', 'Struttura dell\'hotel visto dall\'alto, situato in riva al mare è composto da tre edifici a 10 piani posti a ferro di cavallo, in mezzo ai quali si trova l\'ampia piscina e il giardino.', 1, 5),
 (34, './assets/America_del_Sud/Aruba/hotel/images/biliardo.webp', 'Sala con tavolo da biliardo.', 0, 5),
 (35, './assets/America_del_Sud/Aruba/hotel/images/external_1.webp', 'Visuale dall\'alto dell\'esterno dell\'hotel, si nota uno dei tre edifici, la piscina, la spiaggia subito vicina e il mare.', 0, 5),
