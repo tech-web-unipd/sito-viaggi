@@ -32,12 +32,15 @@
         
         <main>
             <h1>Aggiungi destinazione</h1>
+            
             <p>Nello spazio sottostante inserisci i dettagli della destinazione.</p>
             
-            <form action="/action_page.php" method="get">
+            <form action="/action_page.php" method="post">
             <fieldset>
-                <legend>Scegli il continente:</legend>
-            
+                <legend>Aggiungi destinazione:</legend>
+                <h2>Continente</h2>
+                <p>Scegli constinente:</p>
+                <fieldset>
                 <div>
                     <input type="radio" id="africa" name="continent" value="africa" required/>  
                     <label for="africa">Africa</label>
@@ -73,31 +76,40 @@
                     <label for="europa">Europa</label>
                        
                 </div>
-                    
-            </fieldset>
-            </form> 
+            </fieldset>   
 
+            <h2>Città e stato</h2>
             <label>Destinazione<span>*</span>:</label><input name="Destinazione" maxlength="100" placeholder="Destinazione" required/>
             <label>Stato<span>*</span>: </label><input name="Stato" maxlength="100" placeholder="Stato" required/>
+
+            <h2>Date</h2>
             <p>Seleziona le date del viaggio:</p>
-            <p><label>Data del viaggio<span>*</span>:</label><input type="date" id="date1" name="date1" required/></p>
-            <label>Prezzo<span>*</span>:</label> <input type="number" name="price1" id="price1" placeholder="price" required/>
-            <p><label>Data del viaggio:</label><input type="date" id="date2" name="date2"/></p>
-            <label>Prezzo:</label> <input type="number" name="price2" id="price2" placeholder="price">
-            <p><label>Data del viaggio:</label><input type="date" id="date3" name="date3"/></p>
-            <label>Prezzo:</label> <input type="number" name="price3" id="price3" placeholder="price">
-            <p><label>Data del viaggio:</label><input type="date" id="date4" name="date4"/></p>
-            <label>Prezzo:</label> <input type="number" name="price4" id="price4" placeholder="price">
-            <p><label>Data del viaggio:</label><input type="date" id="date5" name="date5"/></p>
-            <label>Prezzo:</label> <input type="number" name="price5" id="price5" placeholder="price">
-            <p><label>Data del viaggio:</label><input type="date" id="date6" name="date6"/></p>
-            <label>Prezzo:</label> <input type="number" name="price6" id="price6" placeholder="price">
-            <p><label>Data del viaggio:</label><input type="date" id="date7" name="date7"/></p>
-            <label>Prezzo>:</label> <input type="number" name="price7" id="price7" placeholder="price">
-            <p><label>Data del viaggio:</label><input type="date" id="date8" name="date8"/></p>
-            <label>Prezzo:</label> <input type="number" name="price8" id="price8" placeholder="price">
+            <div><label>Data del viaggio<span>*</span>:</label><input type="date" id="date1" name="date1" required/>
+            <label>Prezzo<span>*</span>:</label> <input type="number" name="price1" id="price1" placeholder="price" required/></div>
+
+            <div><label>Data del viaggio:</label><input type="date" id="date2" name="date2"/>
+            <label>Prezzo:</label> <input type="number" name="price2" id="price2" placeholder="price"></div>
+
+            <div><label>Data del viaggio:</label><input type="date" id="date3" name="date3"/>
+            <label>Prezzo:</label> <input type="number" name="price3" id="price3" placeholder="price"></div>
+
+            <div><label>Data del viaggio:</label><input type="date" id="date4" name="date4"/>
+            <label>Prezzo:</label> <input type="number" name="price4" id="price4" placeholder="price"></div>
+
+            <div><label>Data del viaggio:</label><input type="date" id="date5" name="date5"/>
+            <label>Prezzo:</label> <input type="number" name="price5" id="price5" placeholder="price"></div>
+
+            <div><label>Data del viaggio:</label><input type="date" id="date6" name="date6"/>
+            <label>Prezzo:</label> <input type="number" name="price6" id="price6" placeholder="price"></div>
+
+            <div><label>Data del viaggio:</label><input type="date" id="date7" name="date7"/>
+            <label>Prezzo:</label> <input type="number" name="price7" id="price7" placeholder="price"></div>
+
+            <div><label>Data del viaggio:</label><input type="date" id="date8" name="date8"/>
+            <label>Prezzo:</label> <input type="number" name="price8" id="price8" placeholder="price"></div>
+
             <p>Inserisci una breve descrizione della destinazione:</p>
-            <textarea rows="10" cols="40" name="descrizione"></textarea>
+            <textarea rows="8" cols="40" name="descrizione"></textarea>
 
             <div class="first">
                 <p>Inserisci delle immagini relative alla destinazione:</p>
@@ -105,10 +117,95 @@
                 <p><img id="output" width="200" /></p>
             </div>
 
+            <h2>Hotel</h2>
+            <p>Inserisici i dettagli dell'hotel:</p>
+            <label>Nome<span>*</span>:</label><input name="nome" maxlength="100" placeholder="nomehotel" required/>
+            <p>Inserisci una breve descrizione dell'hotel:</p>
+            <textarea rows="8" cols="40" name="descrizione"></textarea>
+            <div class="first">
+                <p>Inserisci delle immagini relative all'hotel:</p>
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+                <p><img id="output" width="200" /></p>
+            </div>
+
+            <h2>Attività</h2>
+            <p>Inserisici le attività da proporre:</p>
+            <label>Nome Attività<span>*</span>:</label><input name="nomeactivity1" maxlength="100" placeholder="nomeactivity" required/> 
+            <p>Inserisci una breve descrizione dell'attività:</p>
+            <textarea rows="5" cols="40" name="descrizioneatt1"></textarea>
+            <div class="first">
+                <p>Inserisci delle immagini relative all'attività:</p>
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+                <p><img id="output" width="200" /></p>
+            </div>
+
+            <label>Nome Attività:</label><input name="nomeactivity2" maxlength="100" placeholder="nomeactivity" required/> 
+            <p>Inserisci una breve descrizione dell'attività:</p>
+            <textarea rows="5" cols="40" name="descrizioneatt2"></textarea>
+            <div class="first">
+                <p>Inserisci delle immagini relative all'attività:</p>
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+                <p><img id="output" width="200" /></p>
+            </div>
+
+            <label>Nome Attività:</label><input name="nomeactivity3" maxlength="100" placeholder="nomeactivity" required/> 
+            <p>Inserisci una breve descrizione dell'attività:</p>
+            <textarea rows="5" cols="40" name="descrizioneatt3"></textarea>
+            <div class="first">
+                <p>Inserisci delle immagini relative all'attività:</p>
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+                <p><img id="output" width="200" /></p>
+            </div>
+
+
+            <label>Nome Attività:</label><input name="nomeactivity4" maxlength="100" placeholder="nomeactivity" required/> 
+            <p>Inserisci una breve descrizione dell'attività:</p>
+            <textarea rows="5" cols="40" name="descrizioneatt4"></textarea>
+            <div class="first">
+                <p>Inserisci delle immagini relative all'attività:</p>
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+                <p><img id="output" width="200" /></p>
+            </div>
+
+
+
+
+            <label>Nome Attività:</label><input name="nomeactivity5" maxlength="100" placeholder="nomeactivity" required/> 
+            <p>Inserisci una breve descrizione dell'attività:</p>
+            <textarea rows="5" cols="40" name="descrizioneatt5"></textarea>
+            <div class="first">
+                <p>Inserisci delle immagini relative all'attività:</p>
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+                <p><img id="output" width="200" /></p>
+            </div>
+
+
+
+
+            <label>Nome Attività:</label><input name="nomeactivity6" maxlength="100" placeholder="nomeactivity" required/> 
+            <p>Inserisci una breve descrizione dell'attività:</p>
+            <textarea rows="5" cols="40" name="descrizioneatt6"></textarea>
+            <div class="first">
+                <p>Inserisci delle immagini relative all'attività:</p>
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+                <p><img id="output" width="200" /></p>
+            </div>
+
+            <h2>Compagnia aerea</h2>
+            <p>Inserisci il nome della compagnia aerea:</p>
+            <label>Nome Compagnia Aerea:</label><input name="nomeaaereo" maxlength="100" placeholder="nomeaereo" required/> 
+            <div class="first">
+                <p>Inserisci logo compagnia aerea :</p>
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+                <p><img id="output" width="200" /></p>
+            </div>
             
-            <!---da aggiungere hotel e attività -->
-            <input type="submit" name="submit" value="Registrati"/>
-            <input type="reset" name="undo" value="Annulla"/>
+            
+            <input type="submit" name="submit" value="Aggiungi Viaggio"/>
+            <input type="reset" name="undo" value="Annulla Cambiamenti"/>
+
+        </fieldset>
+    </form> 
         </main>
         
         <component>footer</component>
