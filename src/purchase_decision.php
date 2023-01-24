@@ -33,6 +33,7 @@ foreach($destination->getTravels() as $travel){
     $travel_input .= $travel_template->build(array(
         "idTravel" => $travel_name . $travel_counter,
         "nameTravel" => $travel_name,
+        "priceTravel" => $travel->getPrice(),
         "labelTravel" => $travel_label,
     ));
 }
@@ -46,7 +47,8 @@ foreach($destination->getActivities() as $activity){
     $activity_label = $activity->getName() . " al prezzo di: " . $activity->getPrice() . "€";
     $activity_input .= $activity_template->build(array(
         "idActivity" => $activity_name . $activity_counter,
-        "nameActivity" => $activity_name . $activity_counter,
+        "nameActivity" => $activity_name,
+        "priceActivity" => $activity->getPrice(),
         "labelActivity" => $activity_label,
     ));
 }
