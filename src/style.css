@@ -29,7 +29,7 @@
 .dark-theme {
     --primary: #B5C4FF;
     --onPrimary: #00297A;
-    --primaryContainer: #003DAB;
+    --primaryContainer: #467cdb;
     --onPrimaryContainer: #DBE1FF;
     --secondary: #C1C5DD;
     --onSecondary: #2B3042;
@@ -1150,4 +1150,18 @@ footer div {
     font-size: larger;
     font-weight: bold;
     text-align: center;
+}
+
+/*
+==========================================
+=============== ADMNIN FORM ==============
+==========================================
+*/
+.add-destination fieldset {
+    border: none;
+}
+
+.field {
+    border-radius: var(--cards-border-radius);
+    border: 0.5em solid var(--onPrimaryContainer);
 }
