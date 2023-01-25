@@ -174,7 +174,7 @@ class Purchase
 
     public function setMoment(): void
     {
-        $this->moment = date("Y-m-d");
+        $this->moment = new Date(date("Y-m-d"));
     }
 
     public function setCard($card): void

@@ -12,21 +12,18 @@ require_once 'app/Hotel.php';
 if (session_status() === PHP_SESSION_NONE)
     session_start();
 
+if(!isset($_SESSION["destination_visited"]))
+    header("location: /sito-viaggi/src/index.php");
+
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
-else{
-    $_SESSION["destination_want"]=$_GET['id'];
-    if(!isset($_SESSION['user']))
-        header("location: /sito-viaggi/src/access.php");
-}
 
-$destination = new \components\Destination($_GET['id']);
-try {
-    $destination->loadFromDatabase($db);
-} catch (\components\DestinationNotFound $e) {
-    echo "Error not found destination";
-}
+if(!isset($_SESSION['user']))
+    header("location: /sito-viaggi/src/access.php");
+
+
+$destination = $_SESSION["destination_visited"];
 
 $form_template = new \utilities\Template("templates/form/form-destination.html");
 $purchase_template = new \utilities\Template("templates/purchase_decision.html");
@@ -99,5 +96,6 @@ echo $purchase_template->build(array(
         "form" => $form,
         "footer" => buildFooter(),
         "destinationName" => $destination->getName(),
+        "destinationId" => $destination->getId(),
     ));
 
