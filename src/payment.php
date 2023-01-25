@@ -6,6 +6,9 @@ require_once "app/global.php";
 if (session_status() === PHP_SESSION_NONE)
     session_start();
 
+if (!isset($_SESSION["destination_want"]))
+    echo "NOT SELECTED DESTINATION";
+
 if(!isset($_SESSION['user'])){
     header("location: /sito-viaggi/src/access.php");
 }
