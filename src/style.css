@@ -592,7 +592,7 @@ td:not(tr:last-child > td) {
     text-align: center;
     text-decoration: none;
     font-size: large;
-    height: 3em;
+    padding: 1em;
     width: 90%;
     align-self: center;
     border-radius: var(--cards-border-radius);
@@ -1139,4 +1139,15 @@ footer div {
 .form-destination label:hover {
     background-color: var(--tertiary);
     color: white;
+}
+
+.price-total {
+    margin: 2em auto;
+    width: 60%;
+}
+
+.price-total p {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
 }
