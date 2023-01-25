@@ -11,8 +11,8 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 }
 else{
     $_SESSION["destination_want"]=$_GET['id'];
-    If(isset($_SESSION['user'])){
-        header("location: /sito-viaggi/src/purchase_decision.php?id="+$_SESSION["destination_want"]);
+    if(isset($_SESSION['user'])){
+        header("location: /sito-viaggi/src/purchase_decision.php?id=" . $_SESSION["destination_want"]);
     }
     else{
         header("location: /sito-viaggi/src/access.php");
