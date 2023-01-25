@@ -9,8 +9,16 @@ require_once 'app/Activity.php';
 require_once 'app/Airline.php';
 require_once 'app/Hotel.php';
 
+if (session_status() === PHP_SESSION_NONE)
+    session_start();
+
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
+}
+else{
+    $_SESSION["destination_want"]=$_GET['id'];
+    if(!isset($_SESSION['user']))
+        header("location: /sito-viaggi/src/access.php");
 }
 
 $destination = new \components\Destination($_GET['id']);
