@@ -1053,3 +1053,29 @@ footer div {
     margin: 0 0 0 auto;
     border: 2px solid var(--onPrimaryContainer);
 }
+
+/*
+==========================================
+============== FORM PURCHASE =============
+==========================================
+*/
+
+#choose-one-travel {
+    display: none;
+    color: var(--error);
+}
+
+#choose-one-hotel {
+    display: none;
+    color: var(--error);
+}
+
+#choose-one-airline {
+    display: none;
+    color: var(--error);
+}
+
+#refresh-the-page {
+    display: none;
+    color: var(--error);
+}

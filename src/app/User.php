@@ -86,6 +86,8 @@ class User
     private ?int $numero;
     private ?string $permission;
 
+    
+
 
     public function __construct(string $username, string $permission = null, string $name = null, string $surname = null, string $gender = null, Date $date_of_birth = null, string $email = null, int $phone_number = null, string $password = null)
     {
@@ -216,7 +218,6 @@ class User
             throw new UndefinedField('pw_hash');
         }
     }
-
 
     public function modPassword($pw_typed, \utilities\DatabaseLayer $db)
     {

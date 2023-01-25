@@ -297,20 +297,92 @@ function setTheme() {
     }
 }
 
-    function Price(){
-        var price = 0;
 
-        var travel = document.getElementsByName('travel');
+/*
+===========================================
+============= FORM PURCHASE ===============
+===========================================
+*/
+
+    function Price(){
+        let price = Number(0);
+
+        if(document.getElementsByName('travel') && document.getElementsByName('activity')){
+            var travel = document.getElementsByName('travel');
         for(i=0; i < travel.length; i++){
-            if(travel[i].checked)
-                price += travel[i].value;
+            if(travel[i].checked){
+                var travel_value = travel[i].value;
+                var parts_travel = travel_value.split('=');
+                price += Number(parts_travel[3]);
+            }
         }
 
         var activity = document.getElementsByName('activity');
         for(i=0; i < activity.length; i++){
-            if(activity[i].checked)
-                price += activity[i].value;
+            if(activity[i].checked){
+                var activity_value = activity[i].value;
+                var parts_activiy = activity_value.split('=');
+                price += Number(parts_activity[3]);
+            }
         }
-        var x = document.getElementById("total-price");
-        x.innerHTML = price;  
+        document.getElementById("total-price").innerHTML = price;
+        }
     }  
+
+    function validateFormPurchase(){
+
+        let travel_counter = Number(0);
+        let hotel_counter = Number(0);
+        let airline_counter = Number(0);
+        ok = true;
+
+        var travel = document.getElementsByName('travel');
+        for(i=0; i < travel.length; i++){
+            if(travel[i].checked)
+                travel_counter += 1;
+        }
+
+        var hotel = document.getElementsByName('hotel');
+        for(i=0; i < hotel.length; i++){
+            if(hotel[i].checked)
+                hotel_counter += 1;
+        }
+
+        var airline = document.getElementsByName('airline');
+        for(i=0; i < airline.length; i++){
+            if(airline[i].checked)
+                airline_counter += 1;
+        }
+
+        let error = document.getElementById("refresh-the-page");
+        let travel_error = document.getElementById("choose-one-travel");
+        let hotel_error = document.getElementById("choose-one-hotel");
+        let airline_error = document.getElementById("choose-one-airline");
+
+        if(travel_counter > 1 || hotel_counter > 1 || airline_counter > 1){
+            error.style.display = "block";
+            ok= false;
+        } 
+        else{
+            error.style.display = "none";
+            if(travel_counter == 0){
+                travel_error.style.display = "block";
+                ok= false;
+            }
+            else
+                travel_error.style.display = "none";
+            if(hotel_counter == 0){
+                hotel_error.style.display = "block";
+                ok= false;
+            }
+            else
+                hotel_error.style.display = "none";
+            if(airline_counter == 0){
+                airline_error.style.display = "block";
+                ok= false;
+            }
+            else
+                airline_error.style.display = "none";
+        }  
+        return ok;
+    }

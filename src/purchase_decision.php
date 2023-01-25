@@ -33,7 +33,7 @@ foreach($destination->getTravels() as $travel){
     $travel_input .= $travel_template->build(array(
         "idTravel" => $travel_name . $travel_counter,
         "nameTravel" => $travel_name,
-        "priceTravel" => $travel->getPrice(),
+        "valueTravel" => "id=" . $travel_counter . "&price=" . $travel->getPrice(),
         "labelTravel" => $travel_label,
     ));
 }
@@ -48,7 +48,7 @@ foreach($destination->getActivities() as $activity){
     $activity_input .= $activity_template->build(array(
         "idActivity" => $activity_name . $activity_counter,
         "nameActivity" => $activity_name,
-        "priceActivity" => $activity->getPrice(),
+        "valueActivity" => "id=" . $activity_counter . "&price=" . $activity->getPrice(),
         "labelActivity" => $activity_label,
     ));
 }
@@ -89,7 +89,6 @@ $form = $form_template->build(array(
 echo $purchase_template->build(array(
         "header" => buildHeader(),
         "form" => $form,
-        "price" => "PLACEHOLDER",
         "footer" => buildFooter(),
         "destinationName" => $destination->getName(),
     ));
