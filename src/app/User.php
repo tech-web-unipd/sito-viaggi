@@ -51,6 +51,8 @@ class ErrorOccured extends Exception
     }
 }
 
+class WrongPassword extends Exception {}
+
 
 
 
@@ -85,8 +87,6 @@ class User
     private ?string $email;
     private ?int $numero;
     private ?string $permission;
-
-    
 
 
     public function __construct(string $username, string $permission = null, string $name = null, string $surname = null, string $gender = null, Date $date_of_birth = null, string $email = null, int $phone_number = null, string $password = null)
@@ -169,7 +169,7 @@ class User
 
     public function getSurname(): string
     {
-        if ($this->surname) {
+        if ($this->surname !== null) {
             return $this->surname;
         } else {
             throw new UndefinedField('surname');
@@ -219,14 +219,16 @@ class User
         }
     }
 
-    public function modPassword($pw_typed, \utilities\DatabaseLayer $db)
+
+    public function modPassword($old_password, $new_password, \utilities\DatabaseLayer $db)
     {
-        $new_pw = password_hash($pw_typed, PASSWORD_DEFAULT);
-        $this->pw_hash = $new_pw;
-        if ($db->executeStatement("UPDATE userprofile SET pw_hash = $this->pw_hash WHERE username = $this->username")) {
-            return true;
+        print($this->pw_hash);
+        if(password_verify($old_password, $db->executeStatement("SELECT pw_hash FROM userprofile WHERE username = ?", array($this->username))[0]['pw_hash'])) {
+            $new_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $db->executeStatement("UPDATE userprofile SET pw_hash = \"$new_password\" WHERE username = \"$this->username\"");
+            $this->pw_hash = $new_password;
         } else {
-            throw new ErrorOccured('password');
+            throw new WrongPassword();
         }
     }
 
@@ -248,22 +250,14 @@ class User
 
     public function modName($name_typed, \utilities\DatabaseLayer $db)
     {
+        $db->executeStatement("UPDATE userprofile SET name = \"$name_typed\" WHERE username = \"$this->username\"");
         $this->name = $name_typed;
-        if ($db->executeStatement("UPDATE userprofile SET name = $this->name WHERE username = $this->username")) {
-            return true;
-        } else {
-            throw new ErrorOccured('name');
-        }
     }
 
     public function modSurname($surname_typed, \utilities\DatabaseLayer $db)
     {
+        $db->executeStatement("UPDATE userprofile SET surname = \"$surname_typed\" WHERE username = \"$this->username\"");
         $this->surname = $surname_typed;
-        if ($db->executeStatement("UPDATE userprofile SET surname = $this->surname WHERE username = $this->username")) {
-            return true;
-        } else {
-            throw new ErrorOccured('surname');
-        }
     }
 
     public function __toString()
@@ -274,46 +268,29 @@ class User
 
     public function modGender($gender_typed, \utilities\DatabaseLayer $db)
     {
+        $db->executeStatement("UPDATE userprofile SET gender = \"$gender_typed\" WHERE username = \"$this->username\"");
         $this->gender = $gender_typed;
-        $new_gender = $this->__toString();
-        if ($db->executeStatement("UPDATE userprofile SET gender = $new_gender WHERE username = $this->username")) {
-            return true;
-        } else {
-            throw new ErrorOccured('gender');
-        }
     }
 
 
 
     public function modEmail($email_typed, \utilities\DatabaseLayer $db)
     {
+        $db->executeStatement("UPDATE userprofile SET email = \"$email_typed\" WHERE username = \"$this->username\"");
         $this->email = $email_typed;
-        if ($db->executeStatement("UPDATE userprofile SET email = $this->email WHERE username = $this->username")) {
-            return true;
-        } else {
-            throw new ErrorOccured('email');
-        }
     }
 
 
-    public function modNumero($numero_typed, \utilities\DatabaseLayer $db)
+    public function modNumber($number_typed, \utilities\DatabaseLayer $db)
     {
-        $this->numero = $numero_typed;
-        if ($db->executeStatement("UPDATE userprofile SET numero = $this->numero WHERE username = $this->username")) {
-            return true;
-        } else {
-            throw new ErrorOccured('numero');
-        }
+        $db->executeStatement("UPDATE userprofile SET numero = \"$number_typed\" WHERE username = \"$this->username\"");
+        $this->numero = $number_typed;
     }
 
-    public function modDateOfBirth(Date $date_of_birth_typed, \utilities\DatabaseLayer $db)
+    public function modBirthday(Date $birthday_typed, \utilities\DatabaseLayer $db)
     {
-        $this->date_of_birth = $date_of_birth_typed;
-        if ($db->executeStatement("UPDATE userprofile SET date_of_bith = $this->date_of_birth WHERE username = $this->username")) {
-            return true;
-        } else {
-            throw new ErrorOccured('date_of_birth');
-        }
+        $db->executeStatement("UPDATE userprofile SET date_of_birth = \"$birthday_typed\" WHERE username = \"$this->username\"");
+        $this->date_of_birth = $birthday_typed;
     }
 
 }

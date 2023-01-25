@@ -2,15 +2,15 @@
 
 class Date
 {
-    private int $day;
-    private int $month;
-    private int $year;
+    private string $day;
+    private string $month;
+    private string $year;
 
     public function __construct(string $date)
     {
-        $this->day = (int)substr($date, 8, 2);
-        $this->month = (int)substr($date, 5, 2);
-        $this->year = (int)substr($date, 0, 4);
+        $this->day = substr($date, 8, 2);
+        $this->month = substr($date, 5, 2);
+        $this->year = substr($date, 0, 4);
     }
 
     public function __toString()
