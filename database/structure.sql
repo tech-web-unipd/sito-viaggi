@@ -13,6 +13,7 @@ DROP TABLE IF EXISTS Image_Activity;
 DROP TABLE IF EXISTS Image_Destination;
 DROP TABLE IF EXISTS Image_Airline;
 DROP TABLE IF EXISTS Image_Hotel;
+drop table if exists Purchase_activity;
 
 CREATE TABLE Activity(
     id int primary key AUTO_INCREMENT,
@@ -27,7 +28,9 @@ CREATE TABLE Destination(
     name varchar(100) not null,
     continent varchar(50) not null,
     state varchar(50) not null,
-    description TEXT not null
+    description TEXT not null,
+    primary_type enum('city','sea','safari','mountains') DEFAULT NULL,
+    secondary_type enum('city','sea','safari','mountains') DEFAULT NULL
 );
 ALTER TABLE Destination AUTO_INCREMENT=00001;
 
@@ -92,7 +95,6 @@ CREATE TABLE Payment_Method(
     username varchar(50) not null,
     FOREIGN KEY(username) REFERENCES UserProfile(username) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
 CREATE TABLE Purchase(
     id int PRIMARY KEY AUTO_INCREMENT,
     moment timestamp not null DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -101,11 +103,23 @@ CREATE TABLE Purchase(
     destination int not null,
     start_date DATE not null,
     end_date DATE not null,
+    hotel int not null,
+    airline varchar(100) not null,
     FOREIGN KEY(username) REFERENCES UserProfile(username) ON DELETE NO ACTION ON UPDATE NO ACTION, 
     FOREIGN KEY(card) REFERENCES Payment_Method(card_number) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    FOREIGN KEY(destination, start_date, end_date) REFERENCES Travel(destination, start_date, end_date) ON DELETE NO ACTION ON UPDATE NO ACTION
+    FOREIGN KEY(destination, start_date, end_date) REFERENCES Travel(destination, start_date, end_date) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY(hotel) REFERENCES Hotel(id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY(airline) REFERENCES Airline(name) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 ALTER TABLE Purchase AUTO_INCREMENT=00001;
+
+CREATE TABLE Purchase_activity(
+    purchase int,
+    activity int,
+    PRIMARY KEY(purchase,activity),
+    FOREIGN KEY(purchase) REFERENCES Purchase(id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY(activity) REFERENCES Activity(id) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
 
 CREATE TABLE Partecipant(
     document_type varchar(50),
