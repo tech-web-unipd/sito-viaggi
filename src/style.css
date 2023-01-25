@@ -24,6 +24,7 @@
     --onErrorContainer: #410002;
     --headerHeight: 7%;
     --logoFilter: invert(97%) sepia(100%) saturate(0%) hue-rotate(34deg) brightness(101%) contrast(102%);;
+    --positiveOutcome: green;
 }
 
 .dark-theme {
@@ -46,6 +47,7 @@
     --errorContainer: #93000A;
     --onErrorContainer: #FFB4AB;
     --logoFilter: invert(14%) sepia(44%) saturate(5400%) hue-rotate(215deg) brightness(80%) contrast(105%);
+    --positiveOutcome: #74ff74;
 }
 
 * {
@@ -796,7 +798,7 @@ header a {
 }
 
 @media (max-width: 1000px) {
-    #surname {
+    #header-surname {
         display: none;
     }
 }
@@ -908,7 +910,11 @@ header a {
     max-width: 850px;
 }
 
-#access-page input, #access-page select, button.access-operation {
+#registration-section form input, #modify-data form input{
+    width: 100%;
+}
+
+.user-data input, .user-data select, button.access-operation {
     min-height: 30px;
 }
 
@@ -931,11 +937,6 @@ button.access-operation {
     border: 2px solid var(--tertiary);
 }
 
-#not-matching-passwords {
-    display: none;
-    color: var(--error);
-}
-
 #registration-section input[type=reset] {
     background-color: var(--onPrimaryContainer);
     color: var(--onPrimary);
@@ -946,7 +947,6 @@ button.access-operation {
     background-color: var(--tertiary);
     color: var(--onPrimary);
 }
-
 /*
 ========================================
 ================ FOOTER ================
@@ -1135,10 +1135,9 @@ footer div {
     background-color: darkorange;
     font-weight: bold;
 }
-
 .form-destination label:hover {
-    background-color: var(--tertiary);
-    color: white;
+     background-color: var(--tertiary);
+     color: white;
 }
 
 .price-total {
@@ -1151,10 +1150,45 @@ footer div {
     font-weight: bold;
     text-align: center;
 }
+/*
+==========================================
+================= OUTCOME ================
+==========================================
+*/
+
+.positive-outcome {
+    color: var(--positiveOutcome);
+}
+
+.negative-outcome {
+    color: var(--error);
+}
+
+/*
+===========================================
+================== LOADER =================
+===========================================
+*/
+
+#loader {
+    border: 2px solid var(--onPrimaryContainer);
+    border-radius: 50%;
+    border-top: 2px solid var(--primaryContainer);
+    width: 0.7em;
+    min-height: 0.7em;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 /*
 ==========================================
-=============== ADMNIN FORM ==============
+=============== ADMIN FORM ==============
 ==========================================
 */
 .add-destination fieldset {

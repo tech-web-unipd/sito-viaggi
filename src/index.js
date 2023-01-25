@@ -255,18 +255,104 @@ if(login_button) {
 
 let first_password = document.getElementById("password");
 let repeated_password = document.getElementById("repeated-password");
-let not_matching_passwords = document.getElementById("not-matching-passwords");
+let matching_passwords = false;
+let available_username = false;
+let username_input = document.getElementById("username");
 
-if(repeated_password && not_matching_passwords) {
+if(repeated_password) {
     repeated_password.addEventListener("keyup", () => {
         if(first_password.value !== repeated_password.value && first_password.value !== "") {
-            not_matching_passwords.style.display = "block";
+            showInputError(repeated_password, "Le password non corrispondono");
         } else {
-            not_matching_passwords.style.display = "none";
+            hideInputError(repeated_password);
+            matching_passwords = true;
         }
     })
 }
 
+if(username_input) {
+    username_input.addEventListener("blur", () => {
+        hideInputError(username_input);
+        if(username_input.value !== "") {
+            showInputMessage(username_input, "Controllo se il nome utente è disponibile...");
+            isUsernameAvailable(username_input.value).then((value) => {
+                if (value) {
+                    hideInputError(username_input);
+                    available_username = true;
+                    showInputMessage(username_input, "Nome utente disponibile");
+                } else {
+                    hideInputError(username_input);
+                    available_username = false;
+                    showInputError(username_input, "Il nome utente non è disponibile");
+                }
+            })
+        }
+    })
+}
+
+function isUsernameAvailable(username) {
+    let xml_http = getXMLHttp();
+    if(xml_http) {
+        xml_http.open("GET", `/sito-viaggi/src/isUsernameAvailable.php?username=${username}`, true);
+        xml_http.send(null);
+        return new Promise((res, rej) => {
+            xml_http.onreadystatechange = function () {
+                if(xml_http.readyState === 4) {
+                    res(!!xml_http.responseText);
+                }
+            }
+        })
+    }
+}
+
+function getXMLHttp() {
+    let xml_http;
+    try{
+        xml_http = new XMLHttpRequest();
+    } catch (e) {
+        try {
+            xml_http = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                xml_http = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {
+                return false;
+            }
+        }
+    }
+    return xml_http;
+}
+
+function showInputError(input_element, message) {
+    if(input_element.parentNode.childNodes.length < 2) {
+        let p = document.createElement("p");
+        p.className = "negative-outcome";
+        p.appendChild(document.createTextNode(message));
+        input_element.parentNode.appendChild(p);
+    }
+}
+
+function showInputMessage(input_element, message) {
+    if(input_element.parentNode.childNodes.length < 2) {
+        let p = document.createElement("p");
+        p.appendChild(document.createTextNode(message));
+        input_element.parentNode.appendChild(p);
+    }
+}
+
+function hideInputError(input_element) {
+    if(input_element.parentNode.childNodes.length === 2) {
+        input_element.parentNode.childNodes[1].remove();
+    }
+}
+
+function checkRegistrationForm() {
+    return checkPasswords() && available_username;
+}
+
+function checkPasswords() {
+    return matching_passwords;
+}
 /*
 ===========================================
 =============== LIGHT/DARK ================
