@@ -18,7 +18,8 @@ class UndefinedField extends Exception
     }
 }
 
-class Purchase{
+class Purchase
+{
     private int $id;
     private ?Date $moment;
     private ?string $username;
@@ -29,7 +30,9 @@ class Purchase{
     private ?int $hotel;
     private ?int $airline;
 
-    public function __construct(int $id, Date $moment = null, string $username = null, string $card = null, int $destination = null, Date $start_date = null, Date $end_date = null, int $hotel = null, int $airline = null){
+    private ?array $activities;
+
+    public function __construct(int $id, Date $moment = null, string $username = null, string $card = null, int $destination = null, Date $start_date = null, Date $end_date = null, int $hotel = null, int $airline = null, array $activities = []){
         $this->id = $id;
         $this->moment = $moment;
         $this->username = $username;
@@ -39,12 +42,19 @@ class Purchase{
         $this->end_date = $end_date;
         $this->hotel = $hotel;
         $this->airline = $airline;
+        $this->activities = $activities;
     }
 
     public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
     {
         $db->executeStatement("INSERT INTO purchase (id,moment,username,card,destination,start_date,end_date,hotel,airline) VALUES (\"$this->id\", \"$this->moment\", \"$this->username\", \"$this->card\", \"$this->destination\", \"$this->start_date\", \"$this->end_date\", \"$this->hotel\", \"$this->airline\")");
+        
+        for($i = 0; $i < count($this->activities); $i++){
+            $db->executeStatement("INSERT INTO purchase_activity(purchase,activity) VALUES (\"$this->id\",\"$this->activities[$i]\")");
+        }
+    
     }
+
     public function loadFromDatabase(\utilities\DatabaseLayer $db): void
     {
         if($this->id != null){
@@ -63,6 +73,16 @@ class Purchase{
             $this->end_date = new Date($result[0]['end_date']);
             $this->hotel = $result[0]['hotel'];
             $this->airline = $result[0]['airline'];
+
+            $result = $db->executeStatement("SELECT * FROM purchase_activity WHERE purchase = ?", [$this->id]);
+            if(count($result) == 0){
+                $this->activities = [];
+            }else{
+                for($i = 0; $i < count($result); $i++){
+                    array_push($this->activities, $result[$i]['activity']);
+                }
+            }
+
         } else {
             throw new UndefinedField("id");
         }
@@ -146,4 +166,23 @@ class Purchase{
             throw new UndefinedField('airline');
         }
     }
+
+    public function setId(\utilities\DatabaseLayer $db): void{
+        $result = $db->executeStatement("SELECT MAX(id) AS id FROM purchase");
+        $this->id = $result[0]['id'];
+    }
+
+    public function setMoment(): void
+    {
+        $this->moment = date("Y-m-d");
+    }
+
+    public function setCard($card): void
+    {
+        if($card == null){
+            throw new UndefinedField('card');
+        } else
+            $this->card = $card;
+    }
+
 }
