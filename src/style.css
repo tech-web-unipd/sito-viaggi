@@ -883,6 +883,7 @@ header a {
 
 #access-page {
     display: flex;
+    flex: 1;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
@@ -958,7 +959,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     margin: auto;
     bottom: 0;
     right: 0;
@@ -1072,30 +1073,9 @@ footer div {
 
 /*
 ==========================================
-============== FORM PURCHASE =============
+=============== PURCHASE FORM ============
 ==========================================
 */
-
-#choose-one-travel {
-    display: none;
-    color: var(--error);
-}
-
-#choose-one-hotel {
-    display: none;
-    color: var(--error);
-}
-
-#choose-one-airline {
-    display: none;
-    color: var(--error);
-}
-
-#refresh-the-page {
-    display: none;
-    color: var(--error);
-}
-
 .form-destination {
     background-color: var(--tertiaryContainer);
     color: var(--onPrimaryContainer);
@@ -1119,13 +1099,18 @@ footer div {
     background-color: #eee;
 }
 
-.form-destination input[type=radio]:hover, .form-destination input[type=checkbox]:hover {
-    color: green;
+.form-destination input[type=radio]:checked + label {
+    background-color: var(--tertiary);
+    color: white;
+}
+
+.form-destination input[type=checkbox]:checked + label {
+    background-color: var(--tertiary);
+    color: white;
 }
 
 .form-destination label {
-    background: var(--tertiary);
-    color: white;
+    border: 0.2em solid var(--tertiary);
     border-radius: 3em;
     padding: 0.5em 4em;
     display: flex;
@@ -1149,4 +1134,9 @@ footer div {
 .form-destination input[type=submit]:hover {
     background-color: darkorange;
     font-weight: bold;
+}
+
+.form-destination label:hover {
+    background-color: var(--tertiary);
+    color: white;
 }
