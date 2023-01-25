@@ -313,7 +313,7 @@ function setTheme() {
             if(travel[i].checked){
                 var travel_value = travel[i].value;
                 var parts_travel = travel_value.split('=');
-                price += Number(parts_travel[3]);
+                price += Number(parts_travel[4]);
             }
         }
 
@@ -328,61 +328,3 @@ function setTheme() {
         document.getElementById("total-price").innerHTML = price;
         }
     }  
-
-    function validateFormPurchase(){
-
-        let travel_counter = Number(0);
-        let hotel_counter = Number(0);
-        let airline_counter = Number(0);
-        ok = true;
-
-        var travel = document.getElementsByName('travel');
-        for(i=0; i < travel.length; i++){
-            if(travel[i].checked)
-                travel_counter += 1;
-        }
-
-        var hotel = document.getElementsByName('hotel');
-        for(i=0; i < hotel.length; i++){
-            if(hotel[i].checked)
-                hotel_counter += 1;
-        }
-
-        var airline = document.getElementsByName('airline');
-        for(i=0; i < airline.length; i++){
-            if(airline[i].checked)
-                airline_counter += 1;
-        }
-
-        let error = document.getElementById("refresh-the-page");
-        let travel_error = document.getElementById("choose-one-travel");
-        let hotel_error = document.getElementById("choose-one-hotel");
-        let airline_error = document.getElementById("choose-one-airline");
-
-        if(travel_counter > 1 || hotel_counter > 1 || airline_counter > 1){
-            error.style.display = "block";
-            ok= false;
-        } 
-        else{
-            error.style.display = "none";
-            if(travel_counter == 0){
-                travel_error.style.display = "block";
-                ok= false;
-            }
-            else
-                travel_error.style.display = "none";
-            if(hotel_counter == 0){
-                hotel_error.style.display = "block";
-                ok= false;
-            }
-            else
-                hotel_error.style.display = "none";
-            if(airline_counter == 0){
-                airline_error.style.display = "block";
-                ok= false;
-            }
-            else
-                airline_error.style.display = "none";
-        }  
-        return ok;
-    }

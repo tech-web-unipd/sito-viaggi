@@ -41,7 +41,7 @@ foreach($destination->getTravels() as $travel){
     $travel_input .= $travel_template->build(array(
         "idTravel" => $travel_name . $travel_counter,
         "nameTravel" => $travel_name,
-        "valueTravel" => "id=" . $travel_counter . "&price=" . $travel->getPrice(),
+        "valueTravel" => "start=" . $travel->getDeparture() . "&end=" . $travel->getReturn() . "&price=" . $travel->getPrice(),
         "labelTravel" => $travel_label,
     ));
 }
