@@ -30,7 +30,7 @@ class PurchaseActivity{
         $db->executeStatement("INSERT INTO purchase_activity(purchase,activity) VALUES (\"$this->purchase\", \"$this->activity\")");
     }
 
-    public function loadFromDatabase(\utilities\DatabaseLayer $db): 
+    public function loadFromDatabase(\utilities\DatabaseLayer $db): void
     /* Siccome mi ritorna da 0 a x colonne dove x sono le attivita per quel viaggio, non posso impostare qui i campi*/
     {
         if($this->purchase != null){
@@ -39,7 +39,7 @@ class PurchaseActivity{
             if(count($result) == 0){
                 throw new PurchaseActivityNotFound();
             }
-            return $result;
+            /*return $result;*/
         }else {
             throw new UndefinedField("purchase");
         }

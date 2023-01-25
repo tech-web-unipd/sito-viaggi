@@ -16,10 +16,9 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
 else{
+    $_SESSION["destination_want"]=$_GET['id'];
     if(!isset($_SESSION['user']))
         header("location: /sito-viaggi/src/access.php");
-    if (!isset($_SESSION["destination_want"]))
-        echo "NOT SELECTED DESTINATION";
 }
 
 $destination = new \components\Destination($_GET['id']);
