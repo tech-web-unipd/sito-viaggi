@@ -37,7 +37,7 @@
     --onSecondaryContainer: #DDE1F9;
     --tertiary: #732364;
     --onTertiary: #422740;
-    --tertiaryContainer: #9d5f96;
+    --tertiaryContainer: #b88fdf;
     --onTertiaryContainer: #ffedfc;
     --surface: #1B1B1F;
     --onSurface: #E6E1E6;
@@ -66,6 +66,7 @@ body {
     background-color: var(--surface);
     color: var(--onSurface);
     margin: 0 auto;
+    position: relative;
 }
 
 .material-symbols-outlined {
@@ -161,8 +162,8 @@ body {
 }
 
 .primary-container form input[type=submit] {
-    background-color: var(--primary);
-    color: var(--onPrimary);
+    background-color: var(--tertiaryContainer);
+    color: var(--onTertiaryContainer);
     border: none;
 }
 
@@ -586,9 +587,10 @@ td:not(tr:last-child > td) {
 ==========================================
 */
 
-button.add-to-cart {
+.add-to-cart {
     cursor: pointer;
     text-align: center;
+    text-decoration: none;
     font-size: large;
     height: 3em;
     width: 90%;
@@ -601,8 +603,9 @@ button.add-to-cart {
     position: relative;
 }
 
-button:hover.add-to-cart {
+.add-to-cart:hover {
     background-color: darkorange;
+    font-weight: bold;
 }
 
 /*
@@ -835,6 +838,10 @@ header a {
     margin: 0;
 }
 
+#breadcrumb a {
+    color: var(--onSecondaryContainer);
+}
+
 /*
 ===========================================
 ========= HORIZONTAL SCROLL BAR ===========
@@ -912,22 +919,31 @@ button.access-operation {
 
 #access-page input[type=submit]:hover, button.access-operation:hover {
     background-color: var(--tertiary);
+    color: var(--onTertiaryContainer);
     font-weight: bold;
 }
 
-#username-text, #login-password{
+#username-text, #login-password, .access-form input, #gender {
     padding: 0 0.5em;
     font-size: 1em;
     border-radius: var(--cards-border-radius);
-    background-color: var(--surface);
-    color: var(--onSurface);
     border: 2px solid var(--tertiary);
 }
-
 
 #not-matching-passwords {
     display: none;
     color: var(--error);
+}
+
+#registration-section input[type=reset] {
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    border: none;
+}
+
+#registration-section input[type=reset]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
 }
 
 /*
@@ -940,14 +956,14 @@ footer {
     background-color: var(--primary);
     color: var(--onPrimary);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    position: sticky;
-    top: 0;
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    right: 0;
     left: 0;
-    z-index: 100;
-    margin: 0 auto;
-    padding: 0 10%;
+    width: 100%;
     transition: all 0.35s ease;
 }
 
@@ -1078,4 +1094,59 @@ footer div {
 #refresh-the-page {
     display: none;
     color: var(--error);
+}
+
+.form-destination {
+    background-color: var(--tertiaryContainer);
+    color: var(--onPrimaryContainer);
+    border-radius: var(--cards-border-radius);
+    margin: auto;
+    width: 60%;
+    padding: 2em;
+}
+
+.form-destination fieldset {
+    border: none;
+    padding: 1em;
+    color: var(--onPrimaryContainer);
+}
+
+.form-destination input[type=radio], .form-destination input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    height: 1em;
+    margin: 0.8em 2em;
+    background-color: #eee;
+}
+
+.form-destination input[type=radio]:hover, .form-destination input[type=checkbox]:hover {
+    color: green;
+}
+
+.form-destination label {
+    background: var(--tertiary);
+    color: white;
+    border-radius: 3em;
+    padding: 0.5em 4em;
+    display: flex;
+}
+
+.form-destination input[type=submit] {
+    cursor: pointer;
+    font-size: large;
+    height: 3em;
+    width: 90%;
+    border-radius: var(--cards-border-radius);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+    border: 2.5px solid darkorange;
+    transition: background-color 0.4s ease;
+    position: relative;
+}
+
+.form-destination input[type=submit]:hover {
+    background-color: darkorange;
+    font-weight: bold;
 }

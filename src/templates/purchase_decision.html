@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>
-            Acquisto destinazione - GoTo
+            GoTo - Acquisto pacchetto <component>destinationName</component>
         </title>
-        <meta name="description" content="In questa pagina potrete acquistare la vostra destinazione scelta e decidere le attività da svolgere, l'hotel in cui soggiornare e la compagnia aerea con cui volare."> <!---descrizione ---->
-        <meta name="keyword" content="Viaggi, Viaggiare, Vacanze"> <!--- aggiungere keywords ---->
+        <meta name="description" content="In questa pagina potrete acquistare il pacchetto per <component>destinationName</component> e decidere le attività da svolgere, l'hotel in cui soggiornare e la compagnia aerea con cui volare.">
+        <meta name="keyword" content="Viaggi, Viaggiare, Vacanze, GoTo, pacchetto <component>destinationName</component>">
         <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/sito-viaggi/src/style.css" media="screen">
-        <link rel="shorcut icon" type="" href=""> <!---link logo ---->
+        <link rel="icon" type="image/png" href="/sito-viaggi/assets/icons/logo.png">
         <link rel="stylesheet" href="print.css" media="print">
         <link rel="stylesheet" href="/sito-viaggi/src/small-screen.css" media="only screen and (max-width: 700px)">
         <link rel="stylesheet" href="/sito-viaggi/src/large-screen.css" media="only screen and (min-width: 1400px)">
@@ -29,9 +29,9 @@
             </p>
         </nav>
     
-        <main class="single-component-page">
+        <main>
             <h1>Pagina di acquisto del viaggio per <component>destinationName</component></h1>
-            <section id="form">
+            <section id="form" class="slide-right">
                 <component>form</component>
             </section>    
             <section class="price-total">

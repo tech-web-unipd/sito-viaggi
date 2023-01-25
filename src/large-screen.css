@@ -25,3 +25,7 @@ main > h1 { grid-area: 1 / 1 / 2 / 3; }
 .full-picture-card {
     flex-basis: 20%;
 }
+
+#form {
+    width: 50%;
+}
