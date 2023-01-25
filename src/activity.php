@@ -3,10 +3,17 @@ require_once 'lib/DatabaseLayer.php';
 require_once 'lib/Template.php';
 require_once 'app/Activity.php';
 require_once 'app/global.php';
+require_once 'app/Destination.php';
+
+if (session_status() === PHP_SESSION_NONE)
+    session_start();
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
+
+if(!isset($_SESSION["destination_visited"]))
+    header("location: /sito-viaggi/src/index.php");
 
 $activity_template = new \utilities\Template("templates/activity.html");
 $activity = new \components\Activity($_GET['id']);
@@ -60,6 +67,9 @@ foreach ($activity->getDestinations() as $destination) {
         "secondaryType" => $secondary_type,
         "continent" => $destination->getContinent(),
     ));
+
+    $destination_visited = $_SESSION["destination_visited"];
+
 }
 
 echo $activity_template->build(array(
@@ -69,5 +79,7 @@ echo $activity_template->build(array(
         "footer" => buildFooter(),
         "description" => $activity->getDescription(),
         "destinations" => $destination_cards,
+        "destinationId" => $destination_visited->getId(),
+        "destinationName" => $destination_visited->getName(),
         "price" => $activity->getPrice(),
     ));

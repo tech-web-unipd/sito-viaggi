@@ -4,6 +4,9 @@ require_once 'lib/Template.php';
 require_once 'app/Destination.php';
 require_once 'app/global.php';
 
+if (session_status() === PHP_SESSION_NONE)
+    session_start();
+
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
@@ -15,6 +18,8 @@ try {
 } catch (\components\DestinationNotFound $e) {
     echo "Error not found destination";
 }
+$_SESSION["destination_visited"] = $destination;
+
 $carousel_template = new \utilities\Template("templates/carousel/carousel.html");
 $carousel = "";
 

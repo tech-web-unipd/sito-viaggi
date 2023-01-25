@@ -386,11 +386,11 @@ function setTheme() {
 
 /*
 ===========================================
-============= FORM PURCHASE ===============
+================= PURCHASE ================
 ===========================================
 */
 
-    function Price(){
+    function PurchasePrice(){
         let price = Number(0);
 
         if(document.getElementsByName('travel') && document.getElementsByName('activity')){
@@ -414,3 +414,13 @@ function setTheme() {
         document.getElementById("total-price").innerHTML = price;
         }
     }  
+
+/*
+===========================================
+================= PAYMENT =================
+===========================================
+*/
+
+    function checkPaymentForm(){
+
+    }
