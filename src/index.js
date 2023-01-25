@@ -398,8 +398,8 @@ function setTheme() {
         for(i=0; i < travel.length; i++){
             if(travel[i].checked){
                 var travel_value = travel[i].value;
-                var parts_travel = travel_value.split('=');
-                price += Number(parts_travel[4]);
+                var parts_travel = travel_value.toString().split(/=/);
+                price += Number(parts_travel[3]);
             }
         }
 
@@ -407,8 +407,8 @@ function setTheme() {
         for(i=0; i < activity.length; i++){
             if(activity[i].checked){
                 var activity_value = activity[i].value;
-                var parts_activiy = activity_value.split('=');
-                price += Number(parts_activity[3]);
+                var parts_activity = activity_value.toString().split(/=/);
+                price += Number(parts_activity[2]);
             }
         }
         document.getElementById("total-price").innerHTML = price;
