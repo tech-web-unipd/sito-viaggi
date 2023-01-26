@@ -28,15 +28,19 @@
         </nav>
     
         <main>
-            <section class="slide-bottom" id="gallery-hotel">
-                <component>carousel</component>
-            </section>
-            <section class="primary-container container slide-right" id="description-hotel">
+            <section class="primary-container container slide-right" id="description-activity">
                 <h1><component>hotelName</component></h1>
                 <div><component>description</component></div>
-                <p id="link-hotel">
-                    <component>link</component>
-                </p>
+                <a href="<component>linkHotel</component>" class="hotel-link">Vai al sito dell'hotel</a>
+            </section>
+            <section class="slide-bottom" id="hotel-gallery">
+                <component>carousel</component>
+            </section>
+            <section class="tertiary-container container slide-up" id="destinations">
+                <h2>Destinazione relativa:</h2> 
+                <div  class="horizontal-cards-collection">
+                    <component>destination</component>
+                </div>
             </section>
         </main>
         <component>footer</component>

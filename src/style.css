@@ -335,6 +335,24 @@ main > h1 {
     display: none;
 }
 
+.hotel-link {
+    text-decoration: none;
+    text-align: center;
+    margin:1em auto;
+    padding: 1em;
+    display: block;
+    width: 35%;
+    background-color: var(--onPrimaryContainer);
+    border-radius: var(--cards-border-radius);
+    color: var(--onPrimary);
+}
+
+.hotel-link:hover {
+    background-color: var(--onPrimary);
+    color: var(--onPrimaryContainer);
+    font-weight: bolder;
+}
+
 .gallery-carousel > .prev, .gallery-carousel > .next {
     position: absolute;
     top: 50%;
