@@ -1369,3 +1369,9 @@ footer div {
     background-color: var(--tertiary);
     color: var(--onPrimary);
 }
+
+.access-form input[type=submit]:hover, .access-form input[type=reset]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
+    font-weight: bold;
+}
