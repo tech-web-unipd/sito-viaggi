@@ -14,8 +14,10 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
 
-if(!isset($_SESSION["destination_visited"]))
+if(!isset($_SESSION["destination_visited"])) {
     header("location: /sito-viaggi/src/index.php");
+    exit();
+}
 
 $activity_template = new \utilities\Template("templates/activity.html");
 $activity = new \components\Activity($_GET['id']);

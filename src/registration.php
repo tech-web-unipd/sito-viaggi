@@ -8,6 +8,8 @@ try {
     UserService::userRegistration($user, $db);
     UserService::login($_POST['username'], $_POST['password'], $db);
     header("location: /sito-viaggi/src/index.php");
+    exit();
 } catch (UserExistent $e) {
     header("location: /sito-viaggi/src/access.php");
+    exit();
 }
