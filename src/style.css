@@ -1293,6 +1293,7 @@ footer div {
 .total-price-payment {
     margin: 2em auto;
     width: fit-content;
+    height: fit-content;
 }
 
 .total-price-payment p {
