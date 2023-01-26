@@ -346,7 +346,7 @@ main > h1 {
     padding: 1em;
     display: block;
     width: 35%;
-    background-color: var(--onPrimary);    
+    background-color: var(--onPrimary);
     color: var(--onPrimaryContainer);
     border-radius: var(--cards-border-radius);
 }
@@ -1233,7 +1233,7 @@ footer div {
 */
 #form-payment {
     display: flex;
-    margin: auto;
+    margin: 0.5em auto;
     padding: 1.5em;
     background-color: var(--tertiaryContainer);
     color: var(--onTertiaryContainer);
@@ -1354,18 +1354,18 @@ footer div {
     border: none;
 }
 
-#form input[type=submit], #form input[type=reset] {
+.add-destination input[type=submit], .add-destination input[type=reset] {
     padding: 0.5em;
     width: 40%;
     margin: 0.5em 2em;
 }
 
-#form input[type=reset] {
+.add-destination input[type=reset] {
     background-color: var(--onPrimaryContainer);
     color: var(--onPrimary);
 }
 
-#form input[type=submit]:hover, #form input[type=reset]:hover {
+.add-destination input[type=submit]:hover, .add-destination input[type=reset]:hover {
     background-color: var(--tertiary);
     color: var(--onPrimary);
 }
