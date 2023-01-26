@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>
-            TITOLO
+            Pagamento - GoTo
         </title>
         <meta name="description" content="">
         <meta name="keyword" content="Viaggi, Viaggiare, Vacanze, GoTo, "> <!--- aggiungere keywords ---->
@@ -31,9 +31,9 @@
             </p>
         </nav>
 
-        <main>
+        <main class="single-component-page">
             <h1>Pagina dell'acquisto del pacchetto scelto</h1>
-            <section id="form-payment">
+            <section id="form-payment" class="container slide-right">
                 <form class="payment" action="verify_payment.php"  method="POST">
                     <label for="name">Nome<span>*</span>:</label><span><input id="name" name="name" maxlength="100" placeholder="Nome" required/></span>
                     <label for="surname">Cognome<span>*</span>: </label><span><input id="surname" name="surname" maxlength="100" placeholder="Cognome" required/></span>
@@ -44,7 +44,7 @@
                     <input type="reset" name="undo" value="Annulla"/>
                 </form>
             </section>
-            <section class="total-price-payment">
+            <section class="total-price-payment tertiary-container container slide-up">
                 <p>Totale dell'importo dell'acquisto: <span id="price-total-payment"><component>price</component></span>€</p>
             </section>
         </main>

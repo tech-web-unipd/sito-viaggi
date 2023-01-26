@@ -10,16 +10,6 @@ body {
     height: 0.4em;
     width: 0.4em;
 }
-/* smartphones, touchscreens */
-@media (pointer: coarse) {
-    .prev, .next {
-        display: none;
-    }
-
-    .slide-number {
-        display: none;
-    }
-}
 
 .active, .dot:hover {
     width: 0.7em;
@@ -187,11 +177,11 @@ footer {
     margin: 0.5em auto;
 }
 
-form input[type=radio], form input[type=checkbox] {
+.form-destination input[type=radio], .form-destination input[type=checkbox] {
     margin: 3.5em 1.5em;
 }
 
-form label {
+.form-destination label {
     max-width: 40%;
     margin: auto;
 }
@@ -206,4 +196,17 @@ form label {
     height: 1em;
     margin: 0.8em 2em;
     background-color: #eee;
+}
+
+.total-price-payment {
+    margin-top: 1.5em;
+}
+
+.add-destination {
+    max-width: 65%;
+}
+
+.field {
+    max-width: 60%;
+    margin-left: 0;
 }
