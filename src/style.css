@@ -1139,7 +1139,11 @@ footer div {
     border: 0.2em solid var(--tertiary);
     border-radius: 3em;
     padding: 0.5em 4em;
-    display: flex;
+    display: grid;
+}
+
+.form-destination label span {
+    display: contents;
 }
 
 .form-destination input[type=submit] {
