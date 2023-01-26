@@ -3,9 +3,20 @@ require_once 'lib/DatabaseLayer.php';
 require_once 'lib/Template.php';
 require_once 'app/Hotel.php';
 require_once 'app/global.php';
+require_once 'app/Destination.php';
+
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
+}
+
+if(!isset($_SESSION["destination_visited"])) {
+    header("location: /sito-viaggi/src/index.php");
+    exit();
 }
 
 $hotel_template = new \utilities\Template("templates/hotel.html");
@@ -14,8 +25,7 @@ $hotel = new \components\Hotel($_GET['id']);
 try
 {
     $hotel->loadFromDatabase($db);
-} 
-catch (\components\HotelNotFound $e)
+} catch (\components\HotelNotFound $e)
 {
     echo "Error Hotel not found";
 }
@@ -48,6 +58,7 @@ $carousel = $carousel_template->build(array(
     "dots" => $carousel_dots,
 ));
 
+$destination_visited = $_SESSION["destination_visited"];
 
 echo $hotel_template->build(array(
         "header" => buildHeader(),
@@ -55,5 +66,7 @@ echo $hotel_template->build(array(
         "carousel" => $carousel,
         "footer" => buildFooter(),
         "description" => $hotel->getDescription(),
+        "destinationId" => $destination_visited->getId(),
+        "destinationName" => $destination_visited->getName(),
         "link" => $hotel->getLink(),
     ));

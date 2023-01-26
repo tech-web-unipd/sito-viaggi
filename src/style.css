@@ -346,14 +346,13 @@ main > h1 {
     padding: 1em;
     display: block;
     width: 35%;
-    background-color: var(--onPrimaryContainer);
+    background-color: var(--onPrimary);
     border-radius: var(--cards-border-radius);
-    color: var(--onPrimary);
 }
 
 .hotel-link:hover {
-    background-color: var(--onPrimary);
-    color: var(--onPrimaryContainer);
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
     font-weight: bolder;
 }
 
