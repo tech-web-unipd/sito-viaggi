@@ -177,7 +177,7 @@ footer {
     margin: 0.5em auto;
 }
 
-form input[type=radio], form input[type=checkbox] {
+.form-destination input[type=radio], .form-destination input[type=checkbox] {
     margin: 3.5em 1.5em;
 }
 
@@ -200,4 +200,13 @@ form input[type=radio], form input[type=checkbox] {
 
 .total-price-payment {
     margin-top: 1.5em;
+}
+
+.add-destination {
+    max-width: 65%;
+}
+
+.field {
+    max-width: 60%;
+    margin-left: 0;
 }

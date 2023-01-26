@@ -743,6 +743,7 @@ header a {
     column-gap: 1em;
     align-items: center;
     margin: 0.5em 0;
+    font-size: xx-large;
     font-weight: bold;
     max-width: 15%;
     row-gap: 0.3em;
@@ -1320,11 +1321,51 @@ footer div {
 =============== ADMIN FORM ==============
 ==========================================
 */
+.add-destination {
+    width: fit-content;
+    margin: auto;
+}
+
 .add-destination fieldset {
     border: none;
+    margin: 0;
+    padding-bottom: 1em;
+}
+
+.continente div {
+    height: fit-content;
 }
 
 .field {
     border-radius: var(--cards-border-radius);
-    border: 0.5em solid var(--onPrimaryContainer);
+    border: 0.2em solid var(--onPrimaryContainer);
+    padding-left: 1em;
+    margin: 1em 0;
+}
+
+.field textarea, .field input {
+    border-radius: var(--cards-border-radius);
+    border: 2px solid var(--primary);
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.field input[type=file] {
+    border: none;
+}
+
+#form input[type=submit], #form input[type=reset] {
+    padding: 0.5em;
+    width: 40%;
+    margin: 0.5em 2em;
+}
+
+#form input[type=reset] {
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+}
+
+#form input[type=submit]:hover, #form input[type=reset]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
 }
