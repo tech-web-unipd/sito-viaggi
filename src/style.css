@@ -1099,8 +1099,16 @@ footer div {
     color: var(--onPrimaryContainer);
     border-radius: var(--cards-border-radius);
     margin: auto;
-    width: 60%;
+    width: 50%;
+    display: flex;
     padding: 2em;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-destination form {
+    display: grid;
 }
 
 .form-destination fieldset {
@@ -1140,16 +1148,16 @@ footer div {
     height: 3em;
     width: 90%;
     border-radius: var(--cards-border-radius);
-    margin: auto;
+    margin: 1em auto;
     display: flex;
     justify-content: center;
     background-color: orange;
     border: 2.5px solid darkorange;
-    transition: background-color 0.4s ease;
     position: relative;
 }
 
 .form-destination input[type=submit]:hover {
+    transition: 0.4s ease;
     background-color: darkorange;
     font-weight: bold;
 }
@@ -1160,7 +1168,7 @@ footer div {
 
 .price-total {
     margin: 2em auto;
-    width: 60%;
+    width: 50%;
 }
 
 .price-total p {
@@ -1168,6 +1176,28 @@ footer div {
     font-weight: bold;
     text-align: center;
 }
+
+
+.form-destination input[type=reset] {
+     cursor: pointer;
+    font-size: large;
+    height: 3em;
+    width: 90%;
+    border-radius: var(--cards-border-radius);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    border: none;
+    position: relative;
+}
+
+.form-destination input[type=reset]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
+}
+
 /*
 ==========================================
 ================= OUTCOME ================
