@@ -172,8 +172,13 @@ body {
     margin: auto;
 }
 
+.content-wrap {
+  padding-bottom: 20em;   
+}
+
 footer {
     display: grid;
+    height: 20em;
 }
 
 .vertical-line {
