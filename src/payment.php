@@ -25,14 +25,12 @@ if(!isset($_SESSION['user'])){
     exit();
 }
 
-
-
 $destination_visited = $_SESSION["destination_visited"];
 
-$travel = $_POST["travel"];
-$hotel = (int)$_POST["hotel"];
-$airline = (int)$_POST["airline"];
-$activities = $_POST["activity"];
+$travel = $_POST['travel'];
+$hotel = (int)$_POST['hotel'];
+$airline = (int)$_POST['airline'];
+$_POST['activity'];
 
 if (empty($travel)){
     header("location: /sito-viaggi/src/index.php");
@@ -48,13 +46,10 @@ if (empty($airline)){
 }
 
 $hotel_array = $destination_visited->getHotels();
-$hotel_choose = $hotel_array[$hotel-1];
-$hotel_name = $hotel_choose->getName();
+$hotel_name = $hotel_array[$hotel-1]->getName();
 
 $airline_array = $destination_visited->getAirlines();
-$airline_choose = $airline_array[$airline-1];
-$airline_name = $airline_choose->getName();
-
+$airline_name = $airline_array[$airline-1]->getName();
 
 $user = $_SESSION['user'];
 
@@ -64,11 +59,12 @@ $travel_end = new Date($travel_array['end']);
 $price = (float)$travel_array['price'];
 
 $activity_array_id = [];
-$activity_price = (float)(0);
-foreach($activities as $activity){
-    parse_str($activity,$activity_array);
-    array_push($activity_array_id, $activity_array['id']);
-    $price += (float)$activity_array['price'];
+if(!empty($_POST['activity'])){
+    foreach($_POST['activity'] as $activity){
+        parse_str($activity,$activity_array);
+        array_push($activity_array_id, $activity_array['id']);
+        $price += (float)$activity_array['price'];
+    }
 }
 
 $moment = new Date(date("Y-m-d"));

@@ -43,7 +43,7 @@ foreach($destination->getTravels() as $travel){
 
 $activity_input = "";
 $activity_counter = 0;
-$activity_name = "activity";
+$activity_name = "activity[]";
 foreach($destination->getActivities() as $activity){
     $activity_counter += 1;
     $activity_template = new \utilities\Template("templates/form/activity.html");
