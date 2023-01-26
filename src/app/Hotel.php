@@ -2,6 +2,8 @@
 namespace components;
 use Exception;
 
+require_once "AbstractComponent.php";
+
 class HotelNotFound extends Exception
 {
     public function __construct($id)
