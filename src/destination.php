@@ -73,7 +73,6 @@ foreach ($destination->getHotels() as $hotel) {
     $hotel_slides .= $slide_template->build(array(
        "hotelName" => $hotel->getName(),
        "hotelDescription" => $hotel->getDescription(),
-              "hotelId" => $hotel->getId(),
     ));
 
     $hotel_dots .= $dot_template->build(array(
