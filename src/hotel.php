@@ -72,7 +72,7 @@ if(!isset($_SESSION["destination_visited"])){
 
 echo $hotel_template->build(array(
         "header" => buildHeader(),
-        "hotelName" => $hotel->getName(),
+        "hotelName" => $hotel->getNameWithoutSpan(),
         "carousel" => $carousel,
         "footer" => buildFooter(),
         "description" => $hotel->getDescription(),

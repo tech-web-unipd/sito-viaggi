@@ -119,6 +119,22 @@ abstract class AbstractComponent
         }
     }
 
+    private function isThereSpan($string): bool {
+        $pattern_begin = "<span";
+        $pattern_end = "</span>";
+        $pattern = sprintf("~(%s)(.*)>(.*)(%s)~", $pattern_begin, $pattern_end);
+        return preg_match_all($pattern, $string);
+    }
+
+    public function getNameWithoutSpan(): string {
+        $name = $this->getName();
+        if($this->isThereSpan($name)) {
+            $name = str_replace("</span>", "", $name);
+            $name = preg_replace("~(<span)(.*)(>)~", "", $name);
+        }
+        return $name;
+    }
+
     /**
      * @throws FieldNotLoaded if description value is null
      */
