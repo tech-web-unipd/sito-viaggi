@@ -9,9 +9,6 @@ require_once 'app/Activity.php';
 require_once 'app/Airline.php';
 require_once 'app/Hotel.php';
 
-if (session_status() === PHP_SESSION_NONE)
-    session_start();
-
 if(!isset($_SESSION["destination_visited"]))
     header("location: /sito-viaggi/src/index.php");
 

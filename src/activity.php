@@ -5,9 +5,6 @@ require_once 'app/Activity.php';
 require_once 'app/global.php';
 require_once 'app/Destination.php';
 
-if (session_status() === PHP_SESSION_NONE)
-    session_start();
-
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }

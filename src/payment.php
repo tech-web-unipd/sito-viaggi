@@ -6,10 +6,6 @@ require_once "app/Purchase.php";
 require_once "app/User.php";
 require_once "app/Destination.php";
 
-
-if (session_status() === PHP_SESSION_NONE)
-    session_start();
-
 if (!isset($_SESSION["destination_visited"]))
     header("location: /sito-viaggi/src/index.php");
 

@@ -7,6 +7,9 @@ require_once "app/Destination.php";
 require_once "app/global.php";
 require_once "app/DestinationService.php";
 
+if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+
+
 function createDestinationCollections($destinations): string
 {
     $cards = "";
