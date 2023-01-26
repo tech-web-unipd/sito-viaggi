@@ -58,7 +58,7 @@ $_SESSION["purchase_to_buy"] = $purchase;
 $purchase_template = new \utilities\Template("templates/payment.html");
 echo $purchase_template->build(array(
         "header" => buildHeader(),
-        "destinationId" => $destination,
+        "destinationId" => $destination_visited->getId(),
         "destinationName" =>$destination_visited->getName(),
         "price" => $activity_price + $travel_price,
         "footer" => buildFooter(),
