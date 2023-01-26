@@ -1217,6 +1217,81 @@ footer div {
 
 /*
 ==========================================
+=============== FORM PAYMENT =============
+==========================================
+*/
+#form-payment {
+    display: flex;
+    margin: auto;
+    padding: 1.5em;
+    background-color: var(--tertiaryContainer);
+    color: var(--onTertiaryContainer);
+    justify-content: center;
+    width: fit-content;
+}
+
+#form-payment label{
+    display: flex;
+    padding: 0.5em 0;
+}
+
+#form-payment input {
+    display: flex;
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: var(--cards-border-radius);
+    border: 2px solid var(--tertiary);
+}
+
+#form-payment input[type=submit] {
+     cursor: pointer;
+    font-size: large;
+    width: 90%;
+    border-radius: var(--cards-border-radius);
+    margin: 1em auto;
+    justify-content: center;
+    background-color: orange;
+    border: 2.5px solid darkorange;
+    position: relative;
+}
+
+#form-payment input[type=submit]:hover {
+    transition: 0.4s ease;
+    background-color: darkorange;
+    font-weight: bold;
+}
+
+#form-payment input[type=reset] {
+     cursor: pointer;
+    font-size: large;
+    width: 90%;
+    border-radius: var(--cards-border-radius);
+    margin: auto;
+    justify-content: center;
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    border: none;
+    position: relative;
+}
+
+#form-payment input[type=reset]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
+}
+
+.total-price-payment {
+    margin: 2em auto;
+    width: fit-content;
+}
+
+.total-price-payment p {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*
+==========================================
 ================= OUTCOME ================
 ==========================================
 */
