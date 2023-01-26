@@ -188,4 +188,17 @@ form input[type=radio], form input[type=checkbox] {
 
 form label {
     max-width: 40%;
+    margin: auto;
+}
+
+.form-destination {
+    width: 70%;
+}
+
+.form-destination input[type=radio], .form-destination input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    height: 1em;
+    margin: 0.8em 2em;
+    background-color: #eee;
 }
