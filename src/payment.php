@@ -14,11 +14,14 @@ if(!isset($_SESSION))
         session_start(); 
     }
 
-if (!isset($_SESSION["destination_visited"]))
-    header("location: /sito-viaggi/src/index.php");
+if (!isset($_SESSION["destination_visited"])){
+    header("location: /sito-viaggi/src/destinations.php");
+    exit();
+}
 
 if(!isset($_SESSION['user'])){
     header("location: /sito-viaggi/src/access.php");
+    exit();
 }
 
 
@@ -29,12 +32,19 @@ $travel = $_POST["travel"];
 $hotel = (int)$_POST["hotel"];
 $airline = (int)$_POST["airline"];
 
-if (empty($travel))
-    header("location: /sito-viaggi/src/index.php");
-if (empty($hotel))
-    header("location: /sito-viaggi/src/index.php"); 
-if (empty($airline))
-    header("location: /sito-viaggi/src/index.php");
+if (empty($travel)){
+    header("location: /sito-viaggi/src/destinations.php");
+    exit();
+}
+if (empty($hotel)){
+    header("location: /sito-viaggi/src/destinations.php");
+    exit();
+}
+if (empty($airline)){
+    header("location: /sito-viaggi/src/destinations.php");
+    exit();
+}
+    
 
 
 $user = $_SESSION['user'];
@@ -54,6 +64,7 @@ foreach($_POST['activity'] as $activity){
 $moment = new Date(date("Y-m-d"));
 $purchase = new Purchase(0,$moment,$user->getUsername(),null,$destination_visited->getId(),$travel_start,$travel_end,$hotel,$airline,$activity_array_id);
 $_SESSION["purchase_to_buy"] = $purchase;
+
 
 $purchase_template = new \utilities\Template("templates/payment.html");
 echo $purchase_template->build(array(

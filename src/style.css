@@ -779,10 +779,18 @@ header a {
     display: block;
     min-height: 35px;
     line-height: 35px;
+    outline: 1px solid var(--primary);
+    border-radius: 15px;
+    padding: 0.5em;
 }
 
 .menu-inner a:hover {
     text-shadow: 0.1em 0.1em 0.2em var(--shadow);
+}
+
+.menu-item a:visited {
+    display: block;
+    outline-color: var(--onPrimary);
 }
 
 .burger {
@@ -842,6 +850,10 @@ header a {
     background-color: var(--onPrimaryContainer);
     color: var(--onPrimary);
     font-weight: bold;
+}
+
+#personal-area-link {
+    text-decoration: underline;
 }
 
 /*
@@ -1302,28 +1314,6 @@ footer div {
 
 .negative-outcome {
     color: var(--error);
-}
-
-/*
-===========================================
-================== LOADER =================
-===========================================
-*/
-
-#loader {
-    border: 2px solid var(--onPrimaryContainer);
-    border-radius: 50%;
-    border-top: 2px solid var(--primaryContainer);
-    width: 0.7em;
-    min-height: 0.7em;
-    animation: spin 1s linear infinite;
-    display: none;
-}
-
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 /*
