@@ -180,6 +180,10 @@ body {
     border-color: var(--secondary);
 }
 
+.secondary-container a {
+    color: var(--onSecondaryContainer);
+}
+
 .tertiary-container {
     background-color: var(--tertiaryContainer);
     color: var(--onTertiaryContainer);
