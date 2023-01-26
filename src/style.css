@@ -346,7 +346,8 @@ main > h1 {
     padding: 1em;
     display: block;
     width: 35%;
-    background-color: var(--onPrimary);
+    background-color: var(--onPrimary);    
+    color: var(--onPrimaryContainer);
     border-radius: var(--cards-border-radius);
 }
 
