@@ -393,7 +393,7 @@ function setTheme() {
     function PurchasePrice(){
         let price = Number(0);
 
-        if(document.getElementsByName('travel') && document.getElementsByName('activity[]')){
+        if(document.getElementsByName('travel') && document.getElementsByName("activity[]")){
             var travel = document.getElementsByName('travel');
         for(i=0; i < travel.length; i++){
             if(travel[i].checked){
@@ -403,7 +403,7 @@ function setTheme() {
             }
         }
 
-        var activity = document.getElementsByName('activity[]');
+        var activity = document.getElementsByName("activity[]");
         for(i=0; i < activity.length; i++){
             if(activity[i].checked){
                 var activity_value = activity[i].value;
