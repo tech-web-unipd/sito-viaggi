@@ -27,12 +27,12 @@ class Purchase
     private ?int $destination;
     private ?Date $start_date;
     private ?Date $end_date;
-    private ?int $hotel;
-    private ?int $airline;
+    private ?string $hotel;
+    private ?string $airline;
 
     private ?array $activities;
 
-    public function __construct(int $id, Date $moment = null, string $username = null, string $card = null, int $destination = null, Date $start_date = null, Date $end_date = null, int $hotel = null, int $airline = null, array $activities = []){
+    public function __construct(int $id, Date $moment = null, string $username = null, string $card = null, int $destination = null, Date $start_date = null, Date $end_date = null, string $hotel = null, string $airline = null, array $activities = []){
         $this->id = $id;
         $this->moment = $moment;
         $this->username = $username;
@@ -149,7 +149,7 @@ class Purchase
         }
     }
 
-    public function getHotel(): int
+    public function getHotel(): string
     {
         if ($this->hotel) {
             return $this->hotel;
@@ -158,7 +158,7 @@ class Purchase
         }
     }
 
-    public function getAirline(): int
+    public function getAirline(): string
     {
         if ($this->airline) {
             return $this->airline;

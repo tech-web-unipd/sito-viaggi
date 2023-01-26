@@ -8,6 +8,7 @@ require_once "app/Destination.php";
 require_once "app/Date.php";
 require_once 'lib/Template.php';
 require_once 'lib/DatabaseLayer.php';
+;
 
 if(!isset($_SESSION)) 
     { 
@@ -15,7 +16,7 @@ if(!isset($_SESSION))
     }
 
 if (!isset($_SESSION["destination_visited"])){
-    header("location: /sito-viaggi/src/destinations.php");
+    header("location: /sito-viaggi/src/index.php");
     exit();
 }
 
@@ -33,18 +34,25 @@ $hotel = (int)$_POST["hotel"];
 $airline = (int)$_POST["airline"];
 
 if (empty($travel)){
-    header("location: /sito-viaggi/src/destinations.php");
+    header("location: /sito-viaggi/src/index.php");
     exit();
 }
 if (empty($hotel)){
-    header("location: /sito-viaggi/src/destinations.php");
+    header("location: /sito-viaggi/src/index.php");
     exit();
 }
 if (empty($airline)){
-    header("location: /sito-viaggi/src/destinations.php");
+    header("location: /sito-viaggi/src/index.php");
     exit();
 }
-    
+
+$hotel_array = $destination_visited->getHotels();
+$hotel_choose = $hotel_array[$hotel-1];
+$hotel_name = $hotel_choose->getName();
+
+$airline_array = $destination_visited->getAirlines();
+$airline_choose = $airline_array[$airline-1];
+$airline_name = $airline_choose->getName();
 
 
 $user = $_SESSION['user'];
@@ -61,8 +69,9 @@ foreach($_POST['activity'] as $activity){
     array_push($activity_array_id, $activity_array['id']);
     $activity_price += (float)$activity_array['price'];
 }
+
 $moment = new Date(date("Y-m-d"));
-$purchase = new Purchase(0,$moment,$user->getUsername(),null,$destination_visited->getId(),$travel_start,$travel_end,$hotel,$airline,$activity_array_id);
+$purchase = new Purchase(0,$moment,$user->getUsername(),null,$destination_visited->getId(),$travel_start,$travel_end,$hotel_name,$airline_name,$activity_array_id);
 $_SESSION["purchase_to_buy"] = $purchase;
 
 

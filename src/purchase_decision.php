@@ -65,6 +65,7 @@ foreach($destination->getHotels() as $hotel){
     $hotel_input .= $hotel_template->build(array(
             "idHotel" => $hotel_name . $hotel_counter,
             "nameHotel" => $hotel_name,
+            "valueHotel" => $hotel_counter,
             "labelHotel" => $hotel->getName(),
     ));
 }
@@ -78,6 +79,7 @@ foreach($destination->getAirlines() as $airline){
     $airline_input .= $airline_template->build(array(
             "idAirline" => $airline_name . $airline_counter,
             "nameAirline" => $airline_name,
+            "valueAirline" => $airline_counter,
             "labelAirline" => $airline->getName(),
         ));
 }

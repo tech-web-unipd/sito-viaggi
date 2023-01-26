@@ -46,7 +46,7 @@ class Hotel extends AbstractComponent
             $this->description = $result[0]['description'];
             $this->loadImages($db);
         } else {
-            throw new IdNotDefined();
+           /* throw new IdNotDefined()*/;
         }
     }
 
