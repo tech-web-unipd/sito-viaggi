@@ -7,7 +7,19 @@ require_once "app/Destination.php";
 require_once "app/global.php";
 require_once "app/DestinationService.php";
 
-if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
+$status = session_status();
+if($status == PHP_SESSION_NONE){
+    //There is no active session
+    session_start();
+}else
+if($status == PHP_SESSION_DISABLED){
+    //Sessions are not available
+}else
+if($status == PHP_SESSION_ACTIVE){
+    //Destroy current and start new one
+    session_destroy();
+    session_start();
+}
 
 
 function createDestinationCollections($destinations): string

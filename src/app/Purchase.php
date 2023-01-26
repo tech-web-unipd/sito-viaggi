@@ -10,7 +10,7 @@ class PurchaseNotFound extends Exception{
     }
 }
 
-class UndefinedField extends Exception
+class UndefinedFieldPurchase extends Exception
 {
     public function __construct($field)
     {
@@ -84,7 +84,7 @@ class Purchase
             }
 
         } else {
-            throw new UndefinedField("id");
+            throw new UndefinedFieldPurchase("id");
         }
     }
     public function getId(): int
@@ -101,7 +101,7 @@ class Purchase
         if ($this->moment) {
             return $this->moment;
         } else {
-            throw new UndefinedField('moment');
+            throw new UndefinedFieldPurchase('moment');
         }
     }
 
@@ -110,7 +110,7 @@ class Purchase
         if ($this->username) {
             return $this->username;
         } else {
-            throw new UndefinedField('username');
+            throw new UndefinedFieldPurchase('username');
         }
     }
     public function getCard(): string
@@ -118,7 +118,7 @@ class Purchase
         if ($this->card) {
             return $this->card;
         } else {
-            throw new UndefinedField('card');
+            throw new UndefinedFieldPurchase('card');
         }
     }
 
@@ -127,7 +127,7 @@ class Purchase
         if ($this->destination) {
             return $this->destination;
         } else {
-            throw new UndefinedField('destination');
+            throw new UndefinedFieldPurchase('destination');
         }
     }
 
@@ -136,7 +136,7 @@ class Purchase
         if ($this->start_date) {
             return $this->start_date;
         } else {
-            throw new UndefinedField('start date');
+            throw new UndefinedFieldPurchase('start date');
         }
     }
 
@@ -145,7 +145,7 @@ class Purchase
         if ($this->end_date) {
             return $this->end_date;
         } else {
-            throw new UndefinedField('end date');
+            throw new UndefinedFieldPurchase('end date');
         }
     }
 
@@ -154,7 +154,7 @@ class Purchase
         if ($this->hotel) {
             return $this->hotel;
         } else {
-            throw new UndefinedField('hotel');
+            throw new UndefinedFieldPurchase('hotel');
         }
     }
 
@@ -163,7 +163,7 @@ class Purchase
         if ($this->airline) {
             return $this->airline;
         } else {
-            throw new UndefinedField('airline');
+            throw new UndefinedFieldPurchase('airline');
         }
     }
 
@@ -180,7 +180,7 @@ class Purchase
     public function setCard($card): void
     {
         if($card == null){
-            throw new UndefinedField('card');
+            throw new UndefinedFieldPurchase('card');
         } else
             $this->card = $card;
     }

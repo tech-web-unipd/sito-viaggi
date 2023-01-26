@@ -9,12 +9,13 @@ require_once 'app/Activity.php';
 require_once 'app/Airline.php';
 require_once 'app/Hotel.php';
 
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+
 if(!isset($_SESSION["destination_visited"]))
     header("location: /sito-viaggi/src/index.php");
-
-if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    echo "NOT FOUND PLACEHOLDER";
-}
 
 if(!isset($_SESSION['user']))
     header("location: /sito-viaggi/src/access.php");

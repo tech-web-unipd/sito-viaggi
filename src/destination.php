@@ -4,6 +4,11 @@ require_once 'lib/Template.php';
 require_once 'app/Destination.php';
 require_once 'app/global.php';
 
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
@@ -119,6 +124,5 @@ echo $destination_template->build(
         "hotelCarousel" => $hotel_carousel_template->build(array("slides" => $hotel_slides, "dots" => $hotel_dots)),
         "airline" => $airline_carousel_template->build(array("slides" => $airline_slides, "dots" => $airline_dots)),
         "activities" => $activity_cards,
-        "idDestination" => $destination->getId(),
     )
 );
