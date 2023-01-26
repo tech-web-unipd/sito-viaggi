@@ -32,6 +32,7 @@ $destination_visited = $_SESSION["destination_visited"];
 $travel = $_POST["travel"];
 $hotel = (int)$_POST["hotel"];
 $airline = (int)$_POST["airline"];
+$activities = $_POST["activity"];
 
 if (empty($travel)){
     header("location: /sito-viaggi/src/index.php");
@@ -60,14 +61,14 @@ $user = $_SESSION['user'];
 parse_str($travel,$travel_array);
 $travel_start = new Date($travel_array['start']);
 $travel_end = new Date($travel_array['end']);
-$travel_price = (float)$travel_array['price'];
+$price = (float)$travel_array['price'];
 
 $activity_array_id = [];
 $activity_price = (float)(0);
-foreach($_POST['activity'] as $activity){
+foreach($activities as $activity){
     parse_str($activity,$activity_array);
     array_push($activity_array_id, $activity_array['id']);
-    $activity_price += (float)$activity_array['price'];
+    $price += (float)$activity_array['price'];
 }
 
 $moment = new Date(date("Y-m-d"));
@@ -80,7 +81,7 @@ echo $purchase_template->build(array(
         "header" => buildHeader(),
         "destinationId" => $destination_visited->getId(),
         "destinationName" =>$destination_visited->getName(),
-        "price" => $activity_price + $travel_price,
+        "price" => $price,
         "footer" => buildFooter(),
     ));
 
