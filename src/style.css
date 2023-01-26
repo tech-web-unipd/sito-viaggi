@@ -970,6 +970,14 @@ button.access-operation {
 ================ FOOTER ================
 ========================================
 */
+.page-container {
+  position: relative;
+  min-height: 100%;
+}
+
+.content-wrap {
+  padding-bottom: 8em;   
+}
 
 footer {
     background-color: var(--primary);
@@ -977,7 +985,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
+    height: 8em;
     margin: auto;
     bottom: 0;
     right: 0;
@@ -1139,11 +1148,7 @@ footer div {
     border: 0.2em solid var(--tertiary);
     border-radius: 3em;
     padding: 0.5em 4em;
-    display: grid;
-}
-
-.form-destination label span {
-    display: contents;
+    display: flex;
 }
 
 .form-destination input[type=submit] {
@@ -1168,6 +1173,10 @@ footer div {
 .form-destination label:hover {
      background-color: var(--tertiary);
      color: white;
+}
+
+.form-destination label span {
+    display: contents;
 }
 
 .price-total {

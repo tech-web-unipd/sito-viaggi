@@ -21,44 +21,45 @@
         <script src="/sito-viaggi/src/index.js" defer></script>
     </head>
     <body>
-        <component>header</component>
+        <div class="page-container">
+            <div class="content-wrap">
+                <component>header</component>
 
-        <nav id="breadcrumb" aria-label="percorso">
-            <p>
-                Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> >> <component>destinationName</component>
-            </p>
-        </nav>
-        
-
-        <main class="single-component-page">
-            <section class="slide-bottom" id="gallery">
-                <component>carousel</component>
-            </section>
-            <section class="primary-container container slide-right" id="description">
-                <h1><component>destinationName</component></h1>
-                <div><component>description</component></div>
-                <a class="add-to-cart" href="./purchase_decision.php">Vai alla configurazione dell'acquisto</a>
-            </section>
-            <section class="secondary-container container slide-left" id="price">
-                <component>priceTable</component>
-            </section>
-            <section class="secondary-container container slide-up" id="hotels">
-                <h2>Alloggi disponibili</h2>
-                <component>hotelCarousel</component>
-            </section>
-            <section class="secondary-container container slide-left" id="airlines">
-                <h2>Compagnia aerea</h2>
-                <component>airline</component>
-            </section>
-            <section class="slide-up" id="activities">
-                <h2>Aggiungi le attività che preferisci al tuo viaggio</h2>
-                <div  class="horizontal-cards-collection">
-                    <component>activities</component>
-                </div>
-            </section>
-        </main>
-
-        
-        <component>footer</component>
+                <nav id="breadcrumb" aria-label="percorso">
+                    <p>
+                        Ti trovi in: <a href="index.php"><span lang="en">Home</span></a> >> <component>destinationName</component>
+                    </p>
+                </nav>
+                
+                <main class="single-component-page">
+                    <section class="slide-bottom" id="gallery">
+                        <component>carousel</component>
+                    </section>
+                    <section class="primary-container container slide-right" id="description">
+                        <h1><component>destinationName</component></h1>
+                        <div><component>description</component></div>
+                        <a class="add-to-cart" href="./purchase_decision.php">Vai alla configurazione dell'acquisto</a>
+                    </section>
+                    <section class="secondary-container container slide-left" id="price">
+                        <component>priceTable</component>
+                    </section>
+                    <section class="secondary-container container slide-up" id="hotels">
+                        <h2>Alloggi disponibili</h2>
+                        <component>hotelCarousel</component>
+                    </section>
+                    <section class="secondary-container container slide-left" id="airlines">
+                        <h2>Compagnia aerea</h2>
+                        <component>airline</component>
+                    </section>
+                    <section class="slide-up" id="activities">
+                        <h2>Aggiungi le attività che preferisci al tuo viaggio</h2>
+                        <div  class="horizontal-cards-collection">
+                            <component>activities</component>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            <component>footer</component>
+        </div>
     </body>
 </html>
