@@ -395,10 +395,10 @@ function setTheme() {
             var hotel = document.getElementsByName('hotel');
             var airline = document.getElementsByName('airline');
             if(travel.length == 1)
-                travel.checked = true;
-            if(hotel.length == 1)
+                travel[0].checked = true;
+            if(hotel[0].length == 1)
                 hotel.checked = true;
-            if(airline.length == 1)
+            if(airline[0].length == 1)
                 airline.checked = true;
 
         }
