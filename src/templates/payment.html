@@ -34,12 +34,12 @@
         <main class="single-component-page">
             <h1>Pagina dell'acquisto del pacchetto scelto</h1>
             <section id="form-payment" class="container slide-right">
-                <form class="payment" action="verify_payment.php"  method="POST">
-                    <label for="name">Nome<span>*</span>:</label><span><input id="name" name="name" maxlength="100" placeholder="Nome" required/></span>
-                    <label for="surname">Cognome<span>*</span>: </label><span><input id="surname" name="surname" maxlength="100" placeholder="Cognome" required/></span>
-                    <label for="card">Carta<span>*</span>: </label><span><input id="card" name="card" placeholder="Numero della carta" required/></span>
-                    <label for="cvc">CVC<span>*</span>: </label><span><input id="cvc" name="cvc" placeholder="CVC della carta" required/></span>
-                    <label for="expiration">Scadenza della carta<span>*</span>: </label><span><input id="expiration" name="expiration" placeholder="Scadenza della carta" required/></span>
+                <form class="payment" action="verify_payment.php" onsubmit="checkPaymentValue()" method="POST">
+                    <label for="name">Nome<span>*</span>:</label><span><input id="name-payment" name="name" maxlength="100" placeholder="Nome" required/></span>
+                    <label for="surname">Cognome<span>*</span>: </label><span><input id="surname-payment" name="surname" maxlength="100" placeholder="Cognome" required/></span>
+                    <label for="card">Carta<span>*</span>: </label><span><input type="text" id="card-payment" name="card" placeholder="Numero della carta" required/></span>
+                    <label for="cvc">CVC<span>*</span>: </label><span><input type="text" id="cvc-payment" name="cvc" placeholder="CVC della carta" required/></span>
+                    <label for="expiration">Scadenza della carta<span>*</span>: </label><span><input type="month" id="expiration-payment" name="expiration" placeholder="Scadenza della carta" required/></span>
                     <input type="submit" name="submit" value="Acquista"/>
                     <input type="reset" name="undo" value="Annulla"/>
                 </form>

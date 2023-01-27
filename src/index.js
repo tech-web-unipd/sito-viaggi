@@ -435,6 +435,75 @@ function setTheme() {
 ===========================================
 */
 
-    function checkPaymentForm(){
-
+function checkPaymentValue(){
+    if(document.getElementById("name-payment")){  
+        let name = document.getElementById("name-payment");
+        ok = true;
+        for(i=0; i < name.length && ok; i++){
+            var x = name.charAt(i);
+            if(x <= 64 || x >= 91 && x <= 96|| x >= 123)
+                ok = false;
+        }
+        if(!ok){
+            showInputError(name, "Inserire un nome valido composto solo da lettere.");
+        }else{
+            hideInputError(name);
+        }
     }
+    if(document.getElementById("surname-payment")){
+        ok = true;
+        for(i=0; i < surname.length && ok; i++){
+            var x = surname.charAt(i);
+            if(x <= 64 || x >= 91 && x <= 96|| x >= 123)
+                ok = false;
+        }
+        if(!ok){
+            showInputError(surname, "Inserire un cognome valido composto solo da lettere.");
+        }else{
+            hideInputError(surname);
+        }
+    }
+    if(document.getElementById("card-payment")){
+        let card = document.getElementById("card-payment");
+        if(card.length != 16){
+            showInputError(card, "Inserire il numero del conto corrente composto da 16 cifre numeriche.");
+        }else{
+            hideInputError(card);
+            ok = true;
+            for(i=0; i < 16 && ok; i++){
+                var x = card.charAt(i);
+                if(x >= 48 && x <= 57)
+                    ok = false;
+            }
+            if(!ok)
+                showInputError(card, "Il conto corrente è composto da sole cifre numeriche");
+        }
+    }
+    if(document.getElementById("cvc-payment")){
+        let cvc = document.getElementById("cvc-payment");
+        if(cvc.length != 3){
+            showInputError(cvc, "Inserire il codice di sicurezza della carta (cvc) composto da 3 cifre numeriche.");
+        }else{
+            hideInputError(cvc);
+            ok = true;
+            for(i=0; i < 3 && ok; i++){
+                var x = cvc.charAt(i);
+                if(x >= 48 && x <= 57)
+                    ok = false;
+            }
+            if(!ok)
+                showInputError(cvc, "Il codice di sicurezza della carta (cvc) è composto da sole cifre numeriche");
+        }
+    }
+    if(document.getElementById("expiration-payment")){
+        let expiration = document.getElementById("expiration-payment");
+        let year = new Date().getFullYear();
+        let month = new Date().getMonth();
+        let expiration_splitted = expiration.split(/-/);
+        if(expiration_splitted[0] > year || expiration_splitted[1] > (month+1)){
+            showInputError(expiration, "La data di scadenza della carta non è valida");
+        }else{
+            hideInputError(expiration);
+        }
+    }
+}
