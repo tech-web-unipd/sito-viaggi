@@ -14,10 +14,6 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
 
-if(!isset($_SESSION["destination_visited"])) {
-    header("location: /sito-viaggi/src/index.php");
-    exit();
-}
 
 $activity_template = new \utilities\Template("templates/activity.html");
 $activity = new \components\Activity($_GET['id']);
@@ -71,9 +67,24 @@ foreach ($activity->getDestinations() as $destination) {
         "secondaryType" => $secondary_type,
         "continent" => $destination->getContinent(),
     ));
+}
 
+$breadcrumb;
+
+if(!isset($_SESSION["destination_visited"])){
+    $breadcrumb_template = new \utilities\Template("templates/breadcrumbs/basic.html");
+    $breadcrumb = $breadcrumb_template->build(array(
+        "name" => $activity->getName(),
+    ));
+}else{
     $destination_visited = $_SESSION["destination_visited"];
-
+    $breadcrumb_template = new \utilities\Template("templates/breadcrumbs/activity.html");
+    $breadcrumb = $breadcrumb_template->build(
+        array(
+            "destinationId" => $destination_visited->getId(),
+            "destinationName" => $destination_visited->getName(),
+            "activityName" => $activity->getName(),
+        ));
 }
 
 echo $activity_template->build(array(
@@ -83,7 +94,6 @@ echo $activity_template->build(array(
         "footer" => buildFooter(),
         "description" => $activity->getDescription(),
         "destinations" => $destination_cards,
-        "destinationId" => $destination_visited->getId(),
-        "destinationName" => $destination_visited->getName(),
         "price" => $activity->getPrice(),
+        "breadcrumb" => $breadcrumb,
     ));

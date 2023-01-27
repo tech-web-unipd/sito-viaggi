@@ -7,8 +7,13 @@ require_once "app/global.php";
 
 try {
     UserService::login($_POST['username'], $_POST['pw_hash'], $db);
-    header("location: /sito-viaggi/src/index.php");
-    exit();
+    if(isset($_SESSION['want_purchase'])){
+        header("location: /sito-viaggi/src/purchase_decision.php");
+        exit();
+    }else{
+        header("location: /sito-viaggi/src/index.php");
+        exit();
+    }
 } catch (WrongCredentials|UserNotFound $e) {
     header("location: /sito-viaggi/src/access.php?wrongCredentials=true");
     exit();

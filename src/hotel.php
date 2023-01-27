@@ -14,11 +14,6 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
 
-if(!isset($_SESSION["destination_visited"])) {
-    header("location: /sito-viaggi/src/index.php");
-    exit();
-}
-
 $hotel_template = new \utilities\Template("templates/hotel.html");
 $hotel = new \components\Hotel($_GET['id']);
 
@@ -58,7 +53,22 @@ $carousel = $carousel_template->build(array(
     "dots" => $carousel_dots,
 ));
 
-$destination_visited = $_SESSION["destination_visited"];
+$breadcrumb;
+
+if(!isset($_SESSION["destination_visited"])){
+    $breadcrumb_template = new \utilities\Template("templates/breadcrumbs/basic.html");
+    $breadcrummb = $breadcrumb_template->build(array(
+            "name" => $hotel->getName(),
+        ));
+}else{
+    $destination_visited = $_SESSION['destination_visited'];
+    $breadcrumb_template = new \utilities\Template("templates/breadcrumbs/hotel.html");
+    $breadcrumb = $breadcrumb_template->build(array(
+        "destinationId" => $destination_visited->getId(),
+        "destinationName" => $destination_visited->getName(),
+        "hotelName" => $hotel->getName(),
+    ));
+}
 
 echo $hotel_template->build(array(
         "header" => buildHeader(),
@@ -66,7 +76,6 @@ echo $hotel_template->build(array(
         "carousel" => $carousel,
         "footer" => buildFooter(),
         "description" => $hotel->getDescription(),
-        "destinationId" => $destination_visited->getId(),
-        "destinationName" => $destination_visited->getName(),
+        "breadcrumb" => $breadcrumb,
         "link" => $hotel->getLink(),
     ));

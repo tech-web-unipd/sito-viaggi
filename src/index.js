@@ -389,29 +389,43 @@ function setTheme() {
 ================= PURCHASE ================
 ===========================================
 */
+    function checkRadioButton(){
+        if(document.getElementsByName('travel') && document.getElementsByName('hotel') && document.getElementsByName('airline')){
+            var travel = document.getElementsByName('travel');
+            var hotel = document.getElementsByName('hotel');
+            var airline = document.getElementsByName('airline');
+            if(travel.length == 1)
+                travel.checked = true;
+            if(hotel.length == 1)
+                hotel.checked = true;
+            if(airline.length == 1)
+                airline.checked = true;
+
+        }
+    }
 
     function PurchasePrice(){
         let price = Number(0);
 
         if(document.getElementsByName('travel') && document.getElementsByName("activity[]")){
             var travel = document.getElementsByName('travel');
-        for(i=0; i < travel.length; i++){
-            if(travel[i].checked){
-                var travel_value = travel[i].value;
-                var parts_travel = travel_value.toString().split(/=/);
-                price += Number(parts_travel[3]);
+            for(i=0; i < travel.length; i++){
+                if(travel[i].checked){
+                    var travel_value = travel[i].value;
+                    var parts_travel = travel_value.toString().split(/=/);
+                    price += Number(parts_travel[3]);
+                }
             }
-        }
 
-        var activity = document.getElementsByName("activity[]");
-        for(i=0; i < activity.length; i++){
-            if(activity[i].checked){
-                var activity_value = activity[i].value;
-                var parts_activity = activity_value.toString().split(/=/);
-                price += Number(parts_activity[2]);
+            var activity = document.getElementsByName("activity[]");
+            for(i=0; i < activity.length; i++){
+                if(activity[i].checked){
+                    var activity_value = activity[i].value;
+                    var parts_activity = activity_value.toString().split(/=/);
+                    price += Number(parts_activity[2]);
+                }
             }
-        }
-        document.getElementById("total-price").innerHTML = price;
+            document.getElementById("total-price").innerHTML = price;
         }
     }  
 

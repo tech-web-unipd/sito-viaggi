@@ -14,11 +14,18 @@ if(!isset($_SESSION))
         session_start(); 
     }
 
-if(!isset($_SESSION["destination_visited"]))
+if(!isset($_SESSION["destination_visited"])){
     header("location: /sito-viaggi/src/index.php");
+    exit();
+}
 
-if(!isset($_SESSION['user']))
+
+if (!isset($_SESSION['user'])) {
+    $_SESSION['want_purchase'] = $_SESSION["destination_visited"];
     header("location: /sito-viaggi/src/access.php");
+    exit();
+
+}
 
 
 $destination = $_SESSION["destination_visited"];
