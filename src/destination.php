@@ -1,4 +1,9 @@
 <?php
+
+use components\Destination;
+use components\DestinationNotFound;
+use utilities\Template;
+
 require_once 'lib/DatabaseLayer.php';
 require_once 'lib/Template.php';
 require_once 'app/Destination.php';
@@ -13,16 +18,16 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
 
-$destination_template = new \utilities\Template("templates/destination.html");
-$destination = new \components\Destination($_GET['id']);
+$destination_template = new Template("templates/destination.html");
+$destination = new Destination($_GET['id']);
 try {
     $destination->loadFromDatabase($db);
-} catch (\components\DestinationNotFound $e) {
+} catch (DestinationNotFound $e) {
     echo "Error not found destination";
 }
 $_SESSION["destination_visited"] = $destination;
 
-$carousel_template = new \utilities\Template("templates/carousel/carousel.html");
+$carousel_template = new Template("templates/carousel/carousel.html");
 $carousel = "";
 
 $carousel_slides = "";
@@ -31,8 +36,8 @@ $counter = 0;
 foreach ($destination->getImages() as $image) {
     $counter += 1;
 
-    $slide_template = new \utilities\Template("templates/carousel/slide.html");
-    $dot_template = new \utilities\Template("templates/carousel/dot.html");
+    $slide_template = new Template("templates/carousel/slide.html");
+    $dot_template = new Template("templates/carousel/dot.html");
 
     $carousel_slides .= $slide_template->build(array(
         "slideNumber" => $counter,
@@ -52,7 +57,7 @@ $carousel = $carousel_template->build(array(
 
 $activity_cards = "";
 foreach ($destination->getActivities() as $activity) {
-    $card_template = new \utilities\Template("templates/cards/activity-card.html");
+    $card_template = new Template("templates/cards/activity-card.html");
     $activity_cards .= $card_template->build(array(
         "cover" => $activity->getCover()->build(),
         "title" => $activity->getName(),
@@ -61,13 +66,13 @@ foreach ($destination->getActivities() as $activity) {
     ));
 }
 
-$hotel_carousel_template = new \utilities\Template("templates/carousel/hotel-carousel.html");
+$hotel_carousel_template = new Template("templates/carousel/hotel-carousel.html");
 $counter = 0;
 $hotel_slides = "";
 $hotel_dots = "";
 foreach ($destination->getHotels() as $hotel) {
     $counter += 1;
-    $slide_template = new \utilities\Template("templates/carousel/hotel-slide.html");
+    $slide_template = new Template("templates/carousel/hotel-slide.html");
     $dot_template = new utilities\Template("templates/carousel/hotel-dot.html");
 
     $hotel_slides .= $slide_template->build(array(
@@ -81,13 +86,13 @@ foreach ($destination->getHotels() as $hotel) {
     ));
 }
 
-$airline_carousel_template = new \utilities\Template("templates/carousel/airline-carousel.html");
+$airline_carousel_template = new Template("templates/carousel/airline-carousel.html");
 $counter = 0;
 $airline_slides = "";
 $airline_dots = "";
 foreach ($destination->getAirlines() as $airline) {
     $counter += 1;
-    $slide_template = new \utilities\Template("templates/carousel/airline-slide.html");
+    $slide_template = new Template("templates/carousel/airline-slide.html");
     $dot_template = new utilities\Template("templates/carousel/airline-dot.html");
 
     $airline_slides .= $slide_template->build(array(
@@ -100,12 +105,12 @@ foreach ($destination->getAirlines() as $airline) {
     ));
 }
 
-$price_table_template = new \utilities\Template("templates/price-table/price-table.html");
+$price_table_template = new Template("templates/price-table/price-table.html");
 $counter = 0;
 $table_rows = "";
 foreach ($destination->getTravels() as $travel) {
     $counter += 1;
-    $table_row_template = new \utilities\Template("templates/price-table/table-row.html");
+    $table_row_template = new Template("templates/price-table/table-row.html");
 
     $table_rows .= $table_row_template->build(array(
         "departureDate" => $travel->getDeparture(),
@@ -116,6 +121,7 @@ foreach ($destination->getTravels() as $travel) {
 
 echo $destination_template->build(
     array(
+        "base" => BASE,
         "destinationName" => $destination->getName(),
         "carousel" => $carousel,
         "priceTable" => $price_table_template->build(array("tableRows" => $table_rows)),

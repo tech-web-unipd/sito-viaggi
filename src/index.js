@@ -77,7 +77,7 @@ function swipeCarousel(index) {
     }
      if (rightSwipe()) {
          plusSlides(-1, index);
-         return
+
      }
 }
 

@@ -1,5 +1,6 @@
 <?php
-use Exception;
+
+use utilities\DatabaseLayer;
 
 require_once "Date.php";
 
@@ -111,12 +112,12 @@ class User
 
     }
 
-    public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
+    public function insertIntoDatabase(DatabaseLayer $db): void
     {
         $db->executeStatement("INSERT INTO userprofile (username, name, surname, gender, date_of_birth, pw_hash, email, numero, permission) VALUES (\"$this->username\", \"$this->name\", \"$this->surname\", \"$this->gender\", \"$this->date_of_birth\", \"$this->pw_hash\", \"$this->email\", \"$this->numero\", \"$this->permission\")");
     }
 
-    public function loadFromDatabase(\utilities\DatabaseLayer $db): void
+    public function loadFromDatabase(DatabaseLayer $db): void
     {
         if ($this->username != null) {
             $result = $db->executeStatement("SELECT * FROM userprofile WHERE username = ?", [$this->username]);
@@ -220,7 +221,7 @@ class User
     }
 
 
-    public function modPassword($old_password, $new_password, \utilities\DatabaseLayer $db)
+    public function modPassword($old_password, $new_password, DatabaseLayer $db)
     {
         print($this->pw_hash);
         if(password_verify($old_password, $db->executeStatement("SELECT pw_hash FROM userprofile WHERE username = ?", array($this->username))[0]['pw_hash'])) {
@@ -232,7 +233,7 @@ class User
         }
     }
 
-    public function modUsername($username_typed, \utilities\DatabaseLayer $db)
+    public function modUsername($username_typed, DatabaseLayer $db)
     {
         if (!($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $this->username"))) {
             $old_username = $this->username;
@@ -248,13 +249,13 @@ class User
 
     }
 
-    public function modName($name_typed, \utilities\DatabaseLayer $db)
+    public function modName($name_typed, DatabaseLayer $db)
     {
         $db->executeStatement("UPDATE userprofile SET name = \"$name_typed\" WHERE username = \"$this->username\"");
         $this->name = $name_typed;
     }
 
-    public function modSurname($surname_typed, \utilities\DatabaseLayer $db)
+    public function modSurname($surname_typed, DatabaseLayer $db)
     {
         $db->executeStatement("UPDATE userprofile SET surname = \"$surname_typed\" WHERE username = \"$this->username\"");
         $this->surname = $surname_typed;
@@ -266,7 +267,7 @@ class User
     }
 
 
-    public function modGender($gender_typed, \utilities\DatabaseLayer $db)
+    public function modGender($gender_typed, DatabaseLayer $db)
     {
         $db->executeStatement("UPDATE userprofile SET gender = \"$gender_typed\" WHERE username = \"$this->username\"");
         $this->gender = $gender_typed;
@@ -274,20 +275,20 @@ class User
 
 
 
-    public function modEmail($email_typed, \utilities\DatabaseLayer $db)
+    public function modEmail($email_typed, DatabaseLayer $db)
     {
         $db->executeStatement("UPDATE userprofile SET email = \"$email_typed\" WHERE username = \"$this->username\"");
         $this->email = $email_typed;
     }
 
 
-    public function modNumber($number_typed, \utilities\DatabaseLayer $db)
+    public function modNumber($number_typed, DatabaseLayer $db)
     {
         $db->executeStatement("UPDATE userprofile SET numero = \"$number_typed\" WHERE username = \"$this->username\"");
         $this->numero = $number_typed;
     }
 
-    public function modBirthday(Date $birthday_typed, \utilities\DatabaseLayer $db)
+    public function modBirthday(Date $birthday_typed, DatabaseLayer $db)
     {
         $db->executeStatement("UPDATE userprofile SET date_of_birth = \"$birthday_typed\" WHERE username = \"$this->username\"");
         $this->date_of_birth = $birthday_typed;

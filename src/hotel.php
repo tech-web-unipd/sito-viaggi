@@ -1,4 +1,9 @@
 <?php
+
+use components\Hotel;
+use components\HotelNotFound;
+use utilities\Template;
+
 require_once 'lib/DatabaseLayer.php';
 require_once 'lib/Template.php';
 require_once 'app/Hotel.php';
@@ -14,18 +19,18 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "NOT FOUND PLACEHOLDER";
 }
 
-$hotel_template = new \utilities\Template("templates/hotel.html");
-$hotel = new \components\Hotel($_GET['id']);
+$hotel_template = new Template("templates/hotel.html");
+$hotel = new Hotel($_GET['id']);
 
 try
 {
     $hotel->loadFromDatabase($db);
-} catch (\components\HotelNotFound $e)
+} catch (HotelNotFound $e)
 {
     echo "Error Hotel not found";
 }
 
-$carousel_template = new \utilities\Template("templates/carousel/carousel.html");
+$carousel_template = new Template("templates/carousel/carousel.html");
 $carousel = "";
 
 $carousel_slides = "";
@@ -34,8 +39,8 @@ $counter = 0;
 foreach($hotel->getImages() as $image){
     $counter += 1;
 
-    $slide_template = new \utilities\Template("templates/carousel/slide.html");
-    $dot_template = new \utilities\Template("templates/carousel/dot.html");
+    $slide_template = new Template("templates/carousel/slide.html");
+    $dot_template = new Template("templates/carousel/dot.html");
 
     $carousel_slides .= $slide_template->build(array(
             "slideNumber" => $counter,
@@ -56,13 +61,13 @@ $carousel = $carousel_template->build(array(
 $breadcrumb;
 
 if(!isset($_SESSION["destination_visited"])){
-    $breadcrumb_template = new \utilities\Template("templates/breadcrumbs/basic.html");
+    $breadcrumb_template = new Template("templates/breadcrumbs/basic.html");
     $breadcrummb = $breadcrumb_template->build(array(
             "name" => $hotel->getName(),
         ));
 }else{
     $destination_visited = $_SESSION['destination_visited'];
-    $breadcrumb_template = new \utilities\Template("templates/breadcrumbs/hotel.html");
+    $breadcrumb_template = new Template("templates/breadcrumbs/hotel.html");
     $breadcrumb = $breadcrumb_template->build(array(
         "destinationId" => $destination_visited->getId(),
         "destinationName" => $destination_visited->getName(),
@@ -71,6 +76,7 @@ if(!isset($_SESSION["destination_visited"])){
 }
 
 echo $hotel_template->build(array(
+        "base" => BASE,
         "header" => buildHeader(),
         "hotelName" => $hotel->getNameWithoutSpan(),
         "carousel" => $carousel,

@@ -1,6 +1,7 @@
 <?php
 namespace components;
 use Exception;
+use utilities\DatabaseLayer;
 
 require_once "AbstractComponent.php";
 
@@ -32,7 +33,7 @@ class Hotel extends AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    public function loadFromDatabase(\utilities\DatabaseLayer $db): void
+    public function loadFromDatabase(DatabaseLayer $db): void
     {
         if ($this->id != null) {
             $result = $db->executeStatement("SELECT * FROM hotel WHERE id = ?", [$this->id]);
@@ -54,7 +55,7 @@ class Hotel extends AbstractComponent
      * @throws UndefinedField if one or more fields are not defined
      * @throws Exception in case of errors with database communication
      */
-    public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
+    public function insertIntoDatabase(DatabaseLayer $db): void
     {
         if (!($this->name == null || $this->link == null || $this->description == null || $this->images == null)) {
             if ($this->id == null) {

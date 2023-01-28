@@ -1,4 +1,7 @@
 <?php
+
+use utilities\Template;
+
 require_once 'lib/DatabaseLayer.php';
 require_once 'lib/Template.php';
 require_once 'app/global.php';
@@ -15,14 +18,14 @@ if(!isset($_SESSION))
     }
 
 if(!isset($_SESSION["destination_visited"])){
-    header("location: /sito-viaggi/src/index.php");
+    header("location: " . BASE . "src/index.php");
     exit();
 }
 
 
 if (!isset($_SESSION['user'])) {
     $_SESSION['want_purchase'] = $_SESSION["destination_visited"];
-    header("location: /sito-viaggi/src/access.php");
+    header("location: " . BASE . "src/access.php");
     exit();
 
 }
@@ -30,15 +33,15 @@ if (!isset($_SESSION['user'])) {
 
 $destination = $_SESSION["destination_visited"];
 
-$form_template = new \utilities\Template("templates/form/form-destination.html");
-$purchase_template = new \utilities\Template("templates/purchase_decision.html");
+$form_template = new Template("templates/form/form-destination.html");
+$purchase_template = new Template("templates/purchase_decision.html");
 
 $travel_input = "";
 $travel_counter = 0;
 $travel_name = "travel";
 foreach($destination->getTravels() as $travel){
     $travel_counter += 1;
-    $travel_template = new \utilities\Template("templates/form/travel.html");
+    $travel_template = new Template("templates/form/travel.html");
     $travel_label = "Dal " . $travel->getDeparture() ." al " . $travel->getReturn() . " al prezzo di: " . $travel->getPrice() . "€";
     $travel_input .= $travel_template->build(array(
         "idTravel" => $travel_name . $travel_counter,
@@ -53,7 +56,7 @@ $activity_counter = 0;
 $activity_name = "activity[]";
 foreach($destination->getActivities() as $activity){
     $activity_counter += 1;
-    $activity_template = new \utilities\Template("templates/form/activity.html");
+    $activity_template = new Template("templates/form/activity.html");
     $activity_label = $activity->getName() . " al prezzo di: " . $activity->getPrice() . "€";
     $activity_input .= $activity_template->build(array(
         "idActivity" => $activity_name . $activity_counter,
@@ -68,7 +71,7 @@ $hotel_counter = 0;
 $hotel_name = "hotel";
 foreach($destination->getHotels() as $hotel){
     $hotel_counter += 1;
-    $hotel_template = new \utilities\Template("templates/form/hotel.html");
+    $hotel_template = new Template("templates/form/hotel.html");
     $hotel_input .= $hotel_template->build(array(
             "idHotel" => $hotel_name . $hotel_counter,
             "nameHotel" => $hotel_name,
@@ -82,7 +85,7 @@ $airline_counter = 0;
 $airline_name = "airline";
 foreach($destination->getAirlines() as $airline){
     $airline_counter += 1;
-    $airline_template = new \utilities\Template("templates/form/airline.html");
+    $airline_template = new Template("templates/form/airline.html");
     $airline_input .= $airline_template->build(array(
             "idAirline" => $airline_name . $airline_counter,
             "nameAirline" => $airline_name,
@@ -99,6 +102,7 @@ $form = $form_template->build(array(
     ));
 
 echo $purchase_template->build(array(
+        "base" => BASE,
         "header" => buildHeader(),
         "form" => $form,
         "footer" => buildFooter(),

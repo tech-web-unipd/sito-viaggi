@@ -1,6 +1,7 @@
 <?php
 namespace components;
 use Exception;
+use utilities\DatabaseLayer;
 
 require_once "Image.php";
 
@@ -49,15 +50,15 @@ abstract class AbstractComponent
         $this->cover = $cover;
     }
 
-    public abstract function loadFromDatabase(\utilities\DatabaseLayer $db): void;
+    public abstract function loadFromDatabase(DatabaseLayer $db): void;
 
-    public abstract function insertIntoDatabase(\utilities\DatabaseLayer $db): void;
+    public abstract function insertIntoDatabase(DatabaseLayer $db): void;
 
     /**
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    public function loadImages(\utilities\DatabaseLayer $db): void
+    public function loadImages(DatabaseLayer $db): void
     {
         if ($this->id === null) {
             throw new IdNotDefined();
@@ -77,7 +78,7 @@ abstract class AbstractComponent
      * @throws UndefinedField if there are on or more fields not defined
      * @throws Exception in case of errors with database communication
      */
-    protected function insertImagesIntoDatabase(\utilities\DatabaseLayer $db): void
+    protected function insertImagesIntoDatabase(DatabaseLayer $db): void
     {
         if (!($this->images == null)) {
             if ($this->id === null) {

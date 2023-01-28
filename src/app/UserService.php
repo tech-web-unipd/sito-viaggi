@@ -1,5 +1,7 @@
 <?php
 
+use utilities\DatabaseLayer;
+
 require_once "global.php";
 require_once "User.php";
 
@@ -19,7 +21,7 @@ class AlreadyLoggedIn extends Exception {
 
 class UserService
 {
-    public static function usernameAlreadyExists(string $username, \utilities\DatabaseLayer $db): bool {
+    public static function usernameAlreadyExists(string $username, DatabaseLayer $db): bool {
         if($db->executeStatement("SELECT username FROM userprofile WHERE username = ?", array($username))[0]['username']) {
             return true;
         } else {
@@ -27,7 +29,7 @@ class UserService
         }
     }
 
-    private static function getPassword(string $username, \utilities\DatabaseLayer $db) {
+    private static function getPassword(string $username, DatabaseLayer $db) {
         if(self::usernameAlreadyExists($username, $db)) {
             return $db->executeStatement("SELECT pw_hash FROM userprofile WHERE username = ?", array($username))[0]['pw_hash'];
         } else {
@@ -41,7 +43,7 @@ class UserService
      * @throws WrongCredentials
      * @throws UndefinedField
      */
-    public static function login(string $username, string $password, \utilities\DatabaseLayer $db): User
+    public static function login(string $username, string $password, DatabaseLayer $db): User
     {
         if(session_status() === PHP_SESSION_NONE) {
             $expected_password = self::getPassword($username, $db);
@@ -63,7 +65,7 @@ class UserService
         }
     }
 
-    public static function userRegistration(User $user, \utilities\DatabaseLayer $db) {
+    public static function userRegistration(User $user, DatabaseLayer $db) {
         if(!self::usernameAlreadyExists($user->getUsername(), $db)) {
             $user->insertIntoDatabase($db);
         } else {

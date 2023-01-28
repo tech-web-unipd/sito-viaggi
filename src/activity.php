@@ -1,4 +1,10 @@
 <?php
+
+use components\Activity;
+use components\ActivityNotFound;
+use components\FieldNotLoaded;
+use utilities\Template;
+
 require_once 'lib/DatabaseLayer.php';
 require_once 'lib/Template.php';
 require_once 'app/Activity.php';
@@ -15,14 +21,14 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 }
 
 
-$activity_template = new \utilities\Template("templates/activity.html");
-$activity = new \components\Activity($_GET['id']);
+$activity_template = new Template("templates/activity.html");
+$activity = new Activity($_GET['id']);
 try{
     $activity->loadFromDatabase($db);
-} catch (\components\ActivityNotFound $e){
+} catch (ActivityNotFound $e){
     echo "Error not found activity";
 }
-$carousel_template = new \utilities\Template("templates/carousel/carousel.html");
+$carousel_template = new Template("templates/carousel/carousel.html");
 $carousel = "";
 
 $carousel_slides = "";
@@ -31,8 +37,8 @@ $counter = 0;
 foreach($activity->getImages() as $image){
     $counter += 1;
 
-    $slide_template = new \utilities\Template("templates/carousel/slide.html");
-    $dot_template = new \utilities\Template("templates/carousel/dot.html");
+    $slide_template = new Template("templates/carousel/slide.html");
+    $dot_template = new Template("templates/carousel/dot.html");
 
     $carousel_slides .= $slide_template->build(array(
             "slideNumber" => $counter,
@@ -52,11 +58,11 @@ $carousel = $carousel_template->build(array(
 
 $destination_cards = "";
 foreach ($activity->getDestinations() as $destination) {
-    $card_template = new \utilities\Template("templates/cards/destination-card.html");
+    $card_template = new Template("templates/cards/destination-card.html");
     $secondary_type = "";
         try {
             $secondary_type = $destination->getSecondaryType();
-        } catch (\components\FieldNotLoaded $e) {
+        } catch (FieldNotLoaded $e) {
             $secondary_type = "";
         }
     $destination_cards .= $card_template->build(array(
@@ -72,13 +78,13 @@ foreach ($activity->getDestinations() as $destination) {
 $breadcrumb;
 
 if(!isset($_SESSION["destination_visited"])){
-    $breadcrumb_template = new \utilities\Template("templates/breadcrumbs/basic.html");
+    $breadcrumb_template = new Template("templates/breadcrumbs/basic.html");
     $breadcrumb = $breadcrumb_template->build(array(
         "name" => $activity->getName(),
     ));
 }else{
     $destination_visited = $_SESSION["destination_visited"];
-    $breadcrumb_template = new \utilities\Template("templates/breadcrumbs/activity.html");
+    $breadcrumb_template = new Template("templates/breadcrumbs/activity.html");
     $breadcrumb = $breadcrumb_template->build(
         array(
             "destinationId" => $destination_visited->getId(),
@@ -88,6 +94,7 @@ if(!isset($_SESSION["destination_visited"])){
 }
 
 echo $activity_template->build(array(
+        "base" => BASE,
         "header" => buildHeader(),
         "activityName" => $activity->getName(),
         "carousel" => $carousel,

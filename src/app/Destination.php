@@ -1,6 +1,8 @@
 <?php
 namespace components;
+use Date;
 use Exception;
+use utilities\DatabaseLayer;
 use utilities\WrongParamType;
 
 require_once 'AbstractComponent.php';
@@ -43,7 +45,7 @@ class Destination extends BasicDestination
      * @throws IdNotDefined if the id value is null
      * @throws Exception
      */
-    private function  loadActivities(\utilities\DatabaseLayer $db): void {
+    private function  loadActivities(DatabaseLayer $db): void {
         if ($this->id === null) {
             throw new IdNotDefined();
         }
@@ -63,7 +65,7 @@ class Destination extends BasicDestination
      * @throws WrongParamType if one of the statement's parameters is of a non-valid type
      * @throws Exception in case of errors with database communication
      */
-    private function loadHotels(\utilities\DatabaseLayer $db): void {
+    private function loadHotels(DatabaseLayer $db): void {
         if ($this->id === null) {
             throw new IdNotDefined();
         }
@@ -83,7 +85,7 @@ class Destination extends BasicDestination
      * @throws WrongParamType if one of the statement's parameters is of a non-valid type
      * @throws Exception in case of errors with database communication
      */
-    private function loadAirlines(\utilities\DatabaseLayer $db) {
+    private function loadAirlines(DatabaseLayer $db) {
         if ($this->id === null) {
             throw new IdNotDefined();
         }
@@ -98,7 +100,7 @@ class Destination extends BasicDestination
         }
     }
 
-    private function loadTravels(\utilities\DatabaseLayer $db) {
+    private function loadTravels(DatabaseLayer $db) {
         if ($this->id === null) {
             throw new IdNotDefined();
         }
@@ -107,8 +109,8 @@ class Destination extends BasicDestination
         $result = $db->executeStatement("SELECT * FROM travel WHERE destination = ? ORDER BY start_date", array($this->id));
 
         foreach ($result as $row) {
-            $departure = new \Date($row['start_date']);
-            $return = new \Date($row['end_date']);
+            $departure = new Date($row['start_date']);
+            $return = new Date($row['end_date']);
             $travel = new Travel($row['destination'], $departure, $return, $row['price']);
             $this->travels[] = $travel;
         }
@@ -119,7 +121,7 @@ class Destination extends BasicDestination
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    public function loadFromDatabase(\utilities\DatabaseLayer $db): void
+    public function loadFromDatabase(DatabaseLayer $db): void
     {
         if ($this->id != null) {
             $result = $db->executeStatement("SELECT * FROM destination WHERE id = ?", [$this->id]);
@@ -142,7 +144,7 @@ class Destination extends BasicDestination
      * @throws UndefinedField if one or more fields are not defined
      * @throws Exception in case of errors with database communication
      */
-    public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
+    public function insertIntoDatabase(DatabaseLayer $db): void
     {
         if (!($this->name == null || $this->continent == null || $this->state == null || $this->description == null || $this->images == null)) {
             if ($this->id == null) {

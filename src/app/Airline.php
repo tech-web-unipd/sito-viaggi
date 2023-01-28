@@ -1,6 +1,7 @@
 <?php
 namespace components;
 use Exception;
+use utilities\DatabaseLayer;
 
 class AirlineNotFound extends Exception
 {
@@ -38,7 +39,7 @@ class Airline
     /**
      * @throws Exception in case of errors with database communication
      */
-    public function loadImages(\utilities\DatabaseLayer $db) {
+    public function loadImages(DatabaseLayer $db) {
         $result = $db->executeStatement("SELECT * FROM image_airline WHERE airline = ?", [$this->name]);
         foreach ($result as $row) {
             $this->images[] = new Image($row['path'], $row['alt'], $row['is_cover']);
@@ -55,7 +56,7 @@ class Airline
     /**
      * @throws Exception in case of errors with database communication
      */
-    private function insertImagesIntoDatabase(\utilities\DatabaseLayer $db) {
+    private function insertImagesIntoDatabase(DatabaseLayer $db) {
         foreach ($this->images as $image) {
             $db->executeStatement("INSERT INTO image_airline (path, alt, is_cover, airline) VALUES (?, ?, ?, ?)", [$image->getPath(), $image->getAlt(), $image->is_cover, $this->name]);
         }
@@ -64,7 +65,7 @@ class Airline
     /**
      * @throws Exception in case of errors with database communication
      */
-    public function insertIntoDatabase(\utilities\DatabaseLayer $db) {
+    public function insertIntoDatabase(DatabaseLayer $db) {
         $db->executeStatement("INSERT INTO airline (name) VALUES (?)", [$this->name]);
         $this->insertImagesIntoDatabase($db);
     }

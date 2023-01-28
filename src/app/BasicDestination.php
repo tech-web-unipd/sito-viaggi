@@ -2,10 +2,11 @@
 namespace components;
 
 use http\Exception;
+use utilities\DatabaseLayer;
 
 require_once "AbstractComponent.php";
 
-class BasicDestination extends \components\AbstractComponent
+class BasicDestination extends AbstractComponent
 {
     private const IMAGE_TABLE = "image_destination";
     private const IMAGE_FOREIGN_KEY = "destination";
@@ -13,7 +14,7 @@ class BasicDestination extends \components\AbstractComponent
     protected ?string $primary_type;
     protected ?string $secondary_type;
 
-    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, \components\Image $cover = null, string $continent = null, string $primary_type = null, string $secondary_type = null)
+    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $primary_type = null, string $secondary_type = null)
     {
         parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
         $this->continent = $continent;
@@ -21,7 +22,7 @@ class BasicDestination extends \components\AbstractComponent
         $this->secondary_type = $secondary_type;
     }
 
-    public function loadFromDatabase(\utilities\DatabaseLayer $db): void
+    public function loadFromDatabase(DatabaseLayer $db): void
     {
         if ($this->id != null) {
             $result = $db->executeStatement("SELECT * FROM destination WHERE id = ?", [$this->id]);
@@ -41,7 +42,7 @@ class BasicDestination extends \components\AbstractComponent
         }
     }
 
-    public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
+    public function insertIntoDatabase(DatabaseLayer $db): void
     {
         throw new \Exception("You can insert only complete destinations");
     }

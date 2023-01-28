@@ -2,6 +2,8 @@
 
 use components\Destination;
 use components\BasicDestination;
+use components\IdNotDefined;
+use utilities\DatabaseLayer;
 
 require_once 'Destination.php';
 require_once 'BasicDestination.php';
@@ -17,7 +19,7 @@ abstract class DestinationType {
 class DestinationService
 {
 
-    static public function getDestinationsByType(\utilities\DatabaseLayer $db, string $type, string $load_type = "complete") {
+    static public function getDestinationsByType(DatabaseLayer $db, string $type, string $load_type = "complete") {
         $query = "SELECT * FROM destination WHERE primary_type = '$type'";
         $destinations = array();
         $result = $db->executeStatement($query);
@@ -34,7 +36,7 @@ class DestinationService
     /**
      * @throws Exception if there are some errors with database communication
      */
-    static public function  getAllDestinations(\utilities\DatabaseLayer $db, string $load_type = "complete"): array {
+    static public function  getAllDestinations(DatabaseLayer $db, string $load_type = "complete"): array {
         $destinations = [];
         $result = $db->executeStatement("SELECT * FROM destination");
 
@@ -49,12 +51,12 @@ class DestinationService
 
     /**
      * @param array $result
-     * @param \utilities\DatabaseLayer $db
+     * @param DatabaseLayer $db
      * @param array $destinations
      * @return array
-     * @throws \components\IdNotDefined
+     * @throws IdNotDefined
      */
-    public static function createDestinationFromQuery(array $result, \utilities\DatabaseLayer $db, array $destinations): array
+    public static function createDestinationFromQuery(array $result, DatabaseLayer $db, array $destinations): array
     {
         foreach ($result as $row) {
             $destination = new Destination($row['id'], $row['name'], $row['description'], null, null, $row['continent'], $row['state'], null, null, null, null, $row['primary_type'], $row['secondary_type']);
@@ -65,7 +67,7 @@ class DestinationService
         return $destinations;
     }
 
-    public static function createBasicDestinationFromQuery(array $result, \utilities\DatabaseLayer $db, array $destinations): array
+    public static function createBasicDestinationFromQuery(array $result, DatabaseLayer $db, array $destinations): array
     {
         foreach ($result as $row) {
             $destination = new BasicDestination($row['id'], $row['name'], $row['description'], null, null, $row['continent'], $row['primary_type'], $row['secondary_type']);

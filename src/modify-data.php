@@ -49,25 +49,25 @@ if(isset($_SESSION['user'])) {
             try {
                 $user->modPassword($_POST['old-password'], $_POST['password'], $db);
                 if($modified) {
-                    header("location: /sito-viaggi/src/personal-area.php?wrongPassword=0&dataModified=1");
+                    header("location: " . BASE . "src/personal-area.php?wrongPassword=0&dataModified=1");
                 } else {
-                    header("location: /sito-viaggi/src/personal-area.php?wrongPassword=0&dataModified=0");
+                    header("location: " . BASE . "src/personal-area.php?wrongPassword=0&dataModified=0");
                 }
                 exit();
             } catch (WrongPassword $e) {
                 if($modified) {
-                    header("location: /sito-viaggi/src/personal-area.php?wrongPassword=1&dataModified=1");
+                    header("location: " . BASE . "src/personal-area.php?wrongPassword=1&dataModified=1");
                 } else {
-                    header("location: /sito-viaggi/src/personal-area.php?wrongPassword=1&dataModified=0");
+                    header("location: " . BASE . "src/personal-area.php?wrongPassword=1&dataModified=0");
                 }
                 exit();
             }
         }
 
-        header("location: /sito-viaggi/src/personal-area.php?dataModified=1");
+        header("location: " . BASE . "src/personal-area.php?dataModified=1");
         exit();
     } catch (Exception $e) {
-        header("location: /sito-viaggi/src/personal-area.php");
+        header("location: " . BASE . "src/personal-area.php");
         exit();
     }
 }

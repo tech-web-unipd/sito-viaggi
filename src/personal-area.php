@@ -1,10 +1,12 @@
 <?php
 
+use utilities\Template;
+
 require_once "app/User.php";
 require_once "lib/Template.php";
 require_once "app/global.php";
 
-$personal_area_template = new \utilities\Template("templates/personal-area.html");
+$personal_area_template = new Template("templates/personal-area.html");
 
 session_start();
 if(isset($_SESSION['user'])) {
@@ -41,6 +43,7 @@ if(isset($_SESSION['user'])) {
 
     echo $personal_area_template->build(
         array(
+            "base" => BASE,
             "header" => buildHeader(),
             "outcome" => $outcome,
             "passwordOutcome" => $password_outcome,

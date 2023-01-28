@@ -8,13 +8,13 @@ try {
     UserService::userRegistration($user, $db);
     UserService::login($_POST['username'], $_POST['password'], $db);
     if(isset($_SESSION['want_purchase'])){
-        header("location: /sito-viaggi/src/purchase_decision.php");
+        header("location: " . BASE . "src/purchase_decision.php");
         exit();
     }else{
-        header("location: /sito-viaggi/src/index.php");
+        header("location: " . BASE . "src/index.php");
         exit();
     }
 } catch (UserExistent $e) {
-    header("location: /sito-viaggi/src/access.php");
+    header("location: " . BASE . "src/access.php");
     exit();
 }

@@ -7,6 +7,7 @@ $agenzia = new Template("templates/agenzia.html");
 
 echo $agenzia->build(
     array(
+        "base" => BASE,
         "header" => buildHeader(),
         "footer" => buildFooter(),
     )
