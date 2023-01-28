@@ -389,17 +389,21 @@ function setTheme() {
 ================= PURCHASE ================
 ===========================================
 */
+    let form_purchase = document.getElementById("form-purchase");
+    if(form_purchase) {
+        checkRadioButton();
+    }
     function checkRadioButton(){
         if(document.getElementsByName('travel') && document.getElementsByName('hotel') && document.getElementsByName('airline')){
-            var travel = document.getElementsByName('travel');
-            var hotel = document.getElementsByName('hotel');
-            var airline = document.getElementsByName('airline');
-            if(travel.length == 1)
+            let travel = document.getElementsByName('travel');
+            let hotel = document.getElementsByName('hotel');
+            let airline = document.getElementsByName('airline');
+            if(travel.length === 1)
                 travel[0].checked = true;
-            if(hotel[0].length == 1)
-                hotel.checked = true;
-            if(airline[0].length == 1)
-                airline.checked = true;
+            if(hotel.length === 1)
+                hotel[0].checked = true;
+            if(airline.length === 1)
+                airline[0].checked = true;
 
         }
     }
