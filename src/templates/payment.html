@@ -34,12 +34,12 @@
         <main class="single-component-page">
             <h1>Pagina dell'acquisto del pacchetto scelto</h1>
             <section id="form-payment" class="container slide-right">
-                <form class="payment" action="verify_payment.php" onsubmit="return checkPaymentValue()" method="POST">
-                    <label for="name">Nome<span>*</span>:</label><span><input id="name-payment" name="name" maxlength="100" placeholder="Nome" required/></span>
-                    <label for="surname">Cognome<span>*</span>: </label><span><input id="surname-payment" name="surname" maxlength="100" placeholder="Cognome" required/></span>
-                    <label for="card">Carta<span>*</span>: </label><span><input type="text" id="card-payment" name="card" placeholder="Numero della carta" required/></span>
-                    <label for="cvc">CVC<span>*</span>: </label><span><input type="text" id="cvc-payment" name="cvc" placeholder="CVC della carta" required/></span>
-                    <label for="expiration">Scadenza della carta<span>*</span>: </label><span><input type="month" id="expiration-payment" name="expiration" placeholder="Scadenza della carta" required/></span>
+                <form class="payment" onsubmit="return checkPaymentValue()" action="verify_payment.php" method="POST">
+                    <label for="name-payment">Nome<span>*</span>:</label><span><input id="name-payment" name="name-payment" maxlength="100" placeholder="Nome" required/></span>
+                    <label for="surname-payment">Cognome<span>*</span>: </label><span><input id="surname-payment" name="surname-payment" maxlength="100" placeholder="Cognome" required/></span>
+                    <label for="card-payment">Carta<span>*</span>: </label><span><input type="text" id="card-payment" name="card-payment" placeholder="Numero della carta" required/></span>
+                    <label for="cvc-payment">CVC<span>*</span>: </label><span><input type="text" id="cvc-payment" name="cvc-payment" placeholder="CVC della carta" required/></span>
+                    <label for="expiration-payment">Scadenza della carta<span>*</span>: </label><span><input type="month" id="expiration-payment" name="expiration-payment" placeholder="Scadenza della carta" required/></span>
                     <input type="submit" name="submit" value="Acquista"/>
                     <input type="reset" name="undo" value="Annulla"/>
                 </form>

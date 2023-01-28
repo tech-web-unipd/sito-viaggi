@@ -30,9 +30,11 @@ class Purchase
     private ?string $hotel;
     private ?string $airline;
 
+    private ?float $price;
+
     private ?array $activities;
 
-    public function __construct(int $id, Date $moment = null, string $username = null, string $card = null, int $destination = null, Date $start_date = null, Date $end_date = null, string $hotel = null, string $airline = null, array $activities = []){
+    public function __construct(int $id, Date $moment = null, string $username = null, string $card = null, int $destination = null, Date $start_date = null, Date $end_date = null, string $hotel = null, string $airline = null, array $activities = [], float $price = null){
         $this->id = $id;
         $this->moment = $moment;
         $this->username = $username;
@@ -43,6 +45,7 @@ class Purchase
         $this->hotel = $hotel;
         $this->airline = $airline;
         $this->activities = $activities;
+        $this->price = $price;
     }
 
     public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
@@ -167,9 +170,28 @@ class Purchase
         }
     }
 
+    public function getPrice(\utilities\DatabaseLayer $db): float
+    {
+        if($this->price == null){
+            $price_travel = $db->executeStatement("SELECT T.price as price FROM travel as T, WHERE D.id = T.destination AND T.destination = ? AND T.start = ? AND T.end = ?", [$this->destination, $this->start_date, $this->end_date]);
+            $price_activities = (float) 0;
+            foreach($this->activities as $activity){
+                $price_activity = $db->executeStatement("SELECT A.price as price FROM purchase_activity as PA, activity as A WHERE PA.activity = A.id and PA.purchase = ? AND PA.activity = ?",[$this->id, $activity]);
+                $price_activities += (float)($price_activity[0]['price']);
+            }
+            $this->price = $price_travel + $price_activities;
+        }
+        return $this->price;
+    }
+
     public function setId(\utilities\DatabaseLayer $db): void{
         $result = $db->executeStatement("SELECT MAX(id) AS id FROM purchase");
-        $this->id = $result[0]['id'];
+        if(count($result) == 0){
+            $this->id = 1;
+        }else{
+            $id_max = (int)$result[0]['id'];
+            $this->id = $id_max + 1;
+        }
     }
 
     public function setMoment(): void

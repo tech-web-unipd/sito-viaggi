@@ -27,23 +27,33 @@ if(!isset($_SESSION['user'])){
 
 $destination_visited = $_SESSION["destination_visited"];
 
-$travel = $_POST['travel'];
-$hotel = (int)$_POST['hotel'];
-$airline = (int)$_POST['airline'];
-$_POST['activity'];
+$travel = null;
+$hotel = null;
+$airline = null;
+$activities = null;
 
-if (empty($travel)){
-    header("location: /sito-viaggi/src/index.php");
-    exit();
+if(empty($_POST['travel']) || empty($_POST['hotel']) || empty($_POST['airline'])){
+    if(!isset($_SESSION['travel_to_buy']) || !isset($_SESSION['hotel_to_buy']) || !isset($_SESSION['airline_to_buy'])){
+        header("location: /sito-viaggi/src/purchase_decision.php");
+        exit();
+    }else{
+        $travel = $_SESSION['travel_to_buy'];
+        $hotel = (int)$_SESSION['hotel_to_buy'];
+        $airline = (int)$_SESSION['airline_to_buy'];
+        $activities = (array)$_SESSION['activities_to_buy'];
+    }
+}else{
+    $travel = $_POST['travel'];
+    $hotel = (int)$_POST['hotel'];
+    $airline = (int)$_POST['airline'];
+    $activities = (array)$_POST['activity'];
+
+    $_SESSION['travel_to_buy'] = $travel;
+    $_SESSION['hotel_to_buy'] = $hotel;
+    $_SESSION['airline_to_buy'] = $airline;
+    $_SESSION['activities_to_buy'] = $activities;
 }
-if (empty($hotel)){
-    header("location: /sito-viaggi/src/index.php");
-    exit();
-}
-if (empty($airline)){
-    header("location: /sito-viaggi/src/index.php");
-    exit();
-}
+
 
 $hotel_array = $destination_visited->getHotels();
 $hotel_name = $hotel_array[$hotel-1]->getName();
@@ -59,8 +69,8 @@ $travel_end = new Date($travel_array['end']);
 $price = (float)$travel_array['price'];
 
 $activity_array_id = [];
-if(!empty($_POST['activity'])){
-    foreach($_POST['activity'] as $activity){
+if(!empty($activities)){
+    foreach($activities as $activity){
         parse_str($activity,$activity_array);
         array_push($activity_array_id, $activity_array['id']);
         $price += (float)$activity_array['price'];
@@ -68,7 +78,7 @@ if(!empty($_POST['activity'])){
 }
 
 $moment = new Date(date("Y-m-d"));
-$purchase = new Purchase(0,$moment,$user->getUsername(),null,$destination_visited->getId(),$travel_start,$travel_end,$hotel_name,$airline_name,$activity_array_id);
+$purchase = new Purchase(0,$moment,$user->getUsername(),null,$destination_visited->getId(),$travel_start,$travel_end,$hotel_name,$airline_name,$activity_array_id,$price);
 $_SESSION["purchase_to_buy"] = $purchase;
 
 
