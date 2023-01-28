@@ -441,7 +441,7 @@ function checkPaymentValue(){
         ok = true;
         for(i=0; i < name.length && ok; i++){
             var x = name.charAt(i);
-            if(x <= 64 || x >= 91 && x <= 96|| x >= 123)
+            if(x < 65 || x > 90 && x < 97|| x > 122)
                 ok = false;
         }
         if(!ok){
@@ -454,7 +454,7 @@ function checkPaymentValue(){
         ok = true;
         for(i=0; i < surname.length && ok; i++){
             var x = surname.charAt(i);
-            if(x <= 64 || x >= 91 && x <= 96|| x >= 123)
+            if(x < 65 || x > 90 && x < 97|| x > 122)
                 ok = false;
         }
         if(!ok){
@@ -472,7 +472,7 @@ function checkPaymentValue(){
             ok = true;
             for(i=0; i < 16 && ok; i++){
                 var x = card.charAt(i);
-                if(x >= 48 && x <= 57)
+                if(x < 48 || x > 57)
                     ok = false;
             }
             if(!ok)
@@ -488,7 +488,7 @@ function checkPaymentValue(){
             ok = true;
             for(i=0; i < 3 && ok; i++){
                 var x = cvc.charAt(i);
-                if(x >= 48 && x <= 57)
+                if(x < 48 || x > 57)
                     ok = false;
             }
             if(!ok)
@@ -500,7 +500,7 @@ function checkPaymentValue(){
         let year = new Date().getFullYear();
         let month = new Date().getMonth();
         let expiration_splitted = expiration.split(/-/);
-        if(expiration_splitted[0] > year || expiration_splitted[1] > (month+1)){
+        if(expiration_splitted[0] < year || expiration_splitted[0] == year && expiration_splitted[1] < (month+1)){
             showInputError(expiration, "La data di scadenza della carta non è valida");
         }else{
             hideInputError(expiration);

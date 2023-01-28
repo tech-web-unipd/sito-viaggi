@@ -7,8 +7,13 @@ $user = new User($_POST["username"], "user", $_POST['name'], $_POST['surname'], 
 try {
     UserService::userRegistration($user, $db);
     UserService::login($_POST['username'], $_POST['password'], $db);
-    header("location: /sito-viaggi/src/index.php");
-    exit();
+    if(isset($_SESSION['want_purchase'])){
+        header("location: /sito-viaggi/src/purchase_decision.php");
+        exit();
+    }else{
+        header("location: /sito-viaggi/src/index.php");
+        exit();
+    }
 } catch (UserExistent $e) {
     header("location: /sito-viaggi/src/access.php");
     exit();
