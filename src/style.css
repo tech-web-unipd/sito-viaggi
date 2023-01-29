@@ -980,6 +980,11 @@ button.access-operation {
     background-color: var(--tertiary);
     color: var(--onPrimary);
 }
+
+.user-data h2 {
+    margin: 1em auto;
+    width: fit-content;
+}
 /*
 ========================================
 ================ FOOTER ================

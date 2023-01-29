@@ -22,7 +22,7 @@ class AlreadyLoggedIn extends Exception {
 class UserService
 {
     public static function usernameAlreadyExists(string $username, DatabaseLayer $db): bool {
-        if($db->executeStatement("SELECT username FROM userprofile WHERE username = ?", array($username))[0]['username']) {
+        if($db->executeStatement("SELECT username FROM userprofile WHERE username = \"$username\"")[0]['username']) {
             return true;
         } else {
             return false;

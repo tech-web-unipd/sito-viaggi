@@ -290,6 +290,12 @@ if(username_input) {
     })
 }
 
+function checkPersonalDataForm() {
+    if(first_password.value !== "") {
+        return checkPasswords() && available_username;
+    }
+}
+
 function isUsernameAvailable(username) {
     let xml_http = getXMLHttp();
     if(xml_http) {

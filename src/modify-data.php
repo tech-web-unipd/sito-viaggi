@@ -2,6 +2,10 @@
 
 require_once "app/User.php";
 require_once "app/global.php";
+require_once "app/UserService.php";
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 session_start();
 if(isset($_SESSION['user'])) {
@@ -64,7 +68,11 @@ if(isset($_SESSION['user'])) {
             }
         }
 
-        header("location: " . BASE . "src/personal-area.php?dataModified=1");
+        if($modified) {
+            header("location: " . BASE . "src/personal-area.php?dataModified=1");
+        } else {
+            header("location: " . BASE . "src/personal-area.php");
+        }
         exit();
     } catch (Exception $e) {
         header("location: " . BASE . "src/personal-area.php");

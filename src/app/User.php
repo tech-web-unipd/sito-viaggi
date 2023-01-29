@@ -235,18 +235,9 @@ class User
 
     public function modUsername($username_typed, DatabaseLayer $db)
     {
-        if (!($db->executeStatement("SELECT username AS username_existent FROM userprofile WHERE username = $this->username"))) {
-            $old_username = $this->username;
-            $this->username = $username_typed;
-            if ($db->executeStatement("UPDATE userprofile SET username = $this->username WHERE username = $old_username")) {
-                return true;
-            } else {
-                throw new ErrorOccured('username');
-            }
-        } else {
-            throw new UserNotFound($this->username);
-        }
-
+        $old_username = $this->username;
+        $db->executeStatement("UPDATE userprofile SET username = \"$username_typed\" WHERE username = \"$old_username\"");
+        $this->username = $username_typed;
     }
 
     public function modName($name_typed, DatabaseLayer $db)
