@@ -17,4 +17,20 @@ class Date
     {
         return "$this->year-$this->month-$this->day";
     }
+
+    public function isBefore(Date $date): bool
+    {
+        if ($this->year < $date->year) {
+            return true;
+        } elseif ($this->year == $date->year) {
+            if ($this->month < $date->month) {
+                return true;
+            } elseif ($this->month == $date->month) {
+                if ($this->day < $date->day) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

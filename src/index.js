@@ -330,12 +330,10 @@ function getXMLHttp() {
 }
 
 function showInputError(input_element, message) {
-    if(input_element.parentNode.childNodes.length < 2) {
-        let p = document.createElement("p");
-        p.className = "negative-outcome";
-        p.appendChild(document.createTextNode(message));
-        input_element.parentNode.appendChild(p);
-    }
+    let p = document.createElement("p");
+    p.className = "negative-outcome";
+    p.appendChild(document.createTextNode(message));
+    input_element.parentNode.appendChild(p);
 }
 
 function showInputMessage(input_element, message) {
@@ -347,9 +345,9 @@ function showInputMessage(input_element, message) {
 }
 
 function hideInputError(input_element) {
-    if(input_element.parentNode.childNodes.length === 2) {
-        input_element.parentNode.childNodes[1].remove();
-    }
+    input_element.parentNode.childNodes.forEach((node) => {
+        if(node.classList && (node.classList.contains("negative-outcome") || node.classList.contains("positive-outcome"))) node.remove();
+    });
 }
 
 function checkRegistrationForm() {
@@ -359,6 +357,43 @@ function checkRegistrationForm() {
 function checkPasswords() {
     return matching_passwords;
 }
+/*
+==========================================
+================= ADMIN ==================
+==========================================
+*/
+
+function checkTravelInsertion() {
+    return checkTravelDate();
+}
+
+let departure_date_input = document.getElementById("departure-date");
+let return_date_input = document.getElementById("return-date");
+
+if(return_date_input && departure_date_input) {
+    departure_date_input.addEventListener("blur", () => {
+        checkTravelDate();
+    });
+    return_date_input.addEventListener("blur", () => {
+        checkTravelDate();
+    });
+}
+
+function checkTravelDate() {
+    if(departure_date_input && return_date_input) {
+        hideInputError(departure_date_input);
+
+        if(departure_date_input.value !== "" && return_date_input.value !== "") {
+            let departure_date = new Date(departure_date_input.value);
+            let return_date = new Date(return_date_input.value);
+            if(departure_date > return_date) {
+                showInputError(departure_date_input, "La data di partenza deve essere antecedente alla data di ritorno");
+                return false;
+            }
+        }
+    }
+}
+
 /*
 ===========================================
 =============== LIGHT/DARK ================

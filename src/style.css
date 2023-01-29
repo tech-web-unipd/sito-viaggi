@@ -1391,3 +1391,42 @@ footer div {
     color: var(--onPrimary);
     font-weight: bold;
 }
+
+.centered-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 0.5em;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.centered-form label {
+    font-weight: bold;
+    font-size: large;
+}
+
+.centered-form span, .centered-form input[type="submit"] {
+    width: 75%;
+    max-width: 500px;
+}
+
+.centered-form span:last-of-type {
+    margin-bottom: 0.6em;
+}
+
+.centered-form input, .centered-form select {
+    width: 100%;
+    min-height: 35px;
+}
+
+section:first-child {
+    margin-top: 1em;
+}
+
+.centered-form input[type="submit"]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
+    font-weight: bold;
+}

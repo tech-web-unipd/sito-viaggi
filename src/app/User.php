@@ -112,6 +112,11 @@ class User
 
     }
 
+    public function isAdmin(): bool
+    {
+        return $this->permission == "admin";
+    }
+
     public function insertIntoDatabase(DatabaseLayer $db): void
     {
         $db->executeStatement("INSERT INTO userprofile (username, name, surname, gender, date_of_birth, pw_hash, email, numero, permission) VALUES (\"$this->username\", \"$this->name\", \"$this->surname\", \"$this->gender\", \"$this->date_of_birth\", \"$this->pw_hash\", \"$this->email\", \"$this->numero\", \"$this->permission\")");
