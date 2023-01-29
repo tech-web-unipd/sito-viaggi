@@ -3,6 +3,7 @@
 require_once "app/UserService.php";
 require_once "app/global.php";
 require_once "app/Purchase.php";
+require_once "lib/DatabaseLayer.php";
 
 if(!isset($_SESSION)) 
     { 
@@ -26,13 +27,13 @@ $cvc = $_POST['cvc-payment'];
 $expiration = $_POST['expiration-payment'];
 
 if(empty($name) || empty($surname) || empty($card) || empty($cvc) || empty($expiration)){
-    header("location: /sito-viaggi/src/payment.php");
+    header("location: /sito-viaggi/src/payment.php"); 
     exit();
 }
 
 $ok = true;
 foreach(str_split($name) as $char){
-    if($char < 65 || $char > 90 && $char < 97|| $char > 122)
+    if(ord($char) < 65 || ord($char) > 90 && ord($char) < 97|| ord($char) > 122)
         $ok = false;
 }
 if(!$ok){
@@ -42,7 +43,7 @@ if(!$ok){
 
 $ok = true;
 foreach(str_split($surname) as $char){
-    if($char < 65 || $char > 90 && $char < 97|| $char > 122)
+    if(ord($char) < 65 || ord($char) > 90 && ord($char) < 97|| ord($char) > 122)
         $ok = false;
 }
 if(!$ok){
@@ -55,7 +56,7 @@ if(strlen($card) != 16){
     $ok = false;
 } else {
     foreach (str_split($card) as $char) {
-        if ($char < 48 || $char > 57)
+        if (ord($char) < 48 || ord($char) > 57)
             $ok = false;
     }
 }
@@ -69,7 +70,7 @@ if(strlen($cvc) != 3){
     $ok = false;
 } else {
     foreach (str_split($cvc) as $char) {
-        if ($char < 48 || $char > 57)
+        if (ord($char) < 48 || ord($char) > 57)
             $ok = false;
     }
 }
@@ -88,11 +89,15 @@ if($expiration_array[0] < $current_year || $expiration_array[0] == $current_year
 
 $purchase = $_SESSION["purchase_to_buy"];
 
-$purchase->setId();
+$purchase->setId($db);
 $purchase->setMoment();
 $purchase->setCard($card);
+$purchase->setCvc($cvc);
+$purchase->setExpiration(new Date($expiration));
+$purchase->setName($name);
+$purchase->setSurname($surname);
 
-$purchase->insertIntoDatabase();
+$purchase->insertIntoDatabase($db);
 
 $_SESSION["payment_fine"] = true;
 unset($_SESSION["purchase_to_buy"]);

@@ -27,15 +27,21 @@ class Purchase
     private ?int $destination;
     private ?Date $start_date;
     private ?Date $end_date;
-    private ?string $hotel;
+    private ?int $hotel;
     private ?string $airline;
 
     private ?float $price;
 
     private ?array $activities;
 
-    public function __construct(int $id, Date $moment = null, string $username = null, string $card = null, int $destination = null, Date $start_date = null, Date $end_date = null, string $hotel = null, string $airline = null, array $activities = [], float $price = null){
-        $this->id = $id;
+    private ?string $cvc;
+    private ?Date $expiration;
+    private ?string $name;
+    private ?string $surname;
+   
+
+    public function __construct(int $id, Date $moment = null, string $username = null, string $card = null, int $destination = null, Date $start_date = null, Date $end_date = null, int $hotel = null, string $airline = null, array $activities = [], float $price = null, string $cvc = null, Date $expiration = null, string $name = null, string $surname = null){
+        $this->id = $id; 
         $this->moment = $moment;
         $this->username = $username;
         $this->card = $card;
@@ -46,10 +52,18 @@ class Purchase
         $this->airline = $airline;
         $this->activities = $activities;
         $this->price = $price;
+        $this->cvc = $cvc;
+        $this->expiration = $expiration;    
+        $this->name = $name;
+        $this->surname = $surname;    
     }
 
     public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
     {
+        $result = $db->executeStatement("SELECT * FROM payment_method WHERE card_number = ?", [$this->card]);
+        if(count($result) == 0){
+            $db->executeStatement("INSERT INTO payment_method(card_number,cvc,expiration,name,surname,username) VALUES(\"$this->card\", \"$this->cvc\",\"$this->expiration\",\"$this->name\",\"$this->surname\",\"$this->username\")");
+        }
         $db->executeStatement("INSERT INTO purchase (id,moment,username,card,destination,start_date,end_date,hotel,airline) VALUES (\"$this->id\", \"$this->moment\", \"$this->username\", \"$this->card\", \"$this->destination\", \"$this->start_date\", \"$this->end_date\", \"$this->hotel\", \"$this->airline\")");
         
         for($i = 0; $i < count($this->activities); $i++){
@@ -85,6 +99,12 @@ class Purchase
                     array_push($this->activities, $result[$i]['activity']);
                 }
             }
+
+            $result = $db->executeStatement("SELECT * FROM payment_method WHERE card_number = ?", [$this->card]);
+            $this->cvc = $result[0]['cvc'];
+            $this->expiration = $result[0]['expiration'];
+            $this->name = $result[0]['name'];
+            $this->surname = $result[0]['surname'];
 
         } else {
             throw new UndefinedFieldPurchase("id");
@@ -207,4 +227,35 @@ class Purchase
             $this->card = $card;
     }
 
+    public function setCvc($cvc): void
+    {
+        if($cvc == null){
+            throw new UndefinedFieldPurchase('cvc');
+        } else
+            $this->cvc = $cvc;
+    }
+
+    public function setExpiration($expiration): void
+    {
+        if($expiration == null){
+            throw new UndefinedFieldPurchase('exxpiration');
+        } else
+            $this->expiration = $expiration;
+    }
+
+    public function setName($name): void
+    {
+        if($name == null){
+            throw new UndefinedFieldPurchase('name');
+        } else
+            $this->name = $name;
+    }
+
+    public function setSurname($surname): void
+    {
+        if($surname == null){
+            throw new UndefinedFieldPurchase('surname');
+        } else
+            $this->surname = $surname;
+    }
 }

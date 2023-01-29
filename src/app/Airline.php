@@ -81,6 +81,26 @@ class Airline
         }
     }
 
+    private function isThereSpan($string): bool {
+        $pattern_begin = "<span";
+        $pattern_end = "</span>";
+        $pattern = sprintf("~(%s)(.*)>(.*)(%s)~", $pattern_begin, $pattern_end);
+        return preg_match_all($pattern, $string);
+    }
+
+    public function getNameWithoutSpan(): string {
+        if($this->name != null) {
+            $name = $this->name;
+            if($this->isThereSpan($name)) {
+                $name = str_replace("</span>", "", $name);
+                $name = preg_replace("~(<span)(.*)(>)~", "", $name);
+            }
+            return $name;
+        } else {
+            throw new NameNotDefined();
+        }
+    }
+
     public function getLogo(): Image {
         if($this->logo != null) {
             return $this->logo;
