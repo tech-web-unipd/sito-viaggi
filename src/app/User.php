@@ -220,6 +220,12 @@ class User
         }
     }
 
+    public function getPurchase(DatabaseLayer $db): array
+    {
+        $result = $db->executeStatement("SELECT id FROM purchase WHERE username = ?", [$this->username]);
+        return $result;
+    }
+
 
     public function modPassword($old_password, $new_password, DatabaseLayer $db)
     {

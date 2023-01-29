@@ -61,7 +61,7 @@ $hotel_array = $destination_visited->getHotels();
 $hotel_id = (int)$hotel_array[$hotel-1]->getId();
 
 $airline_array = $destination_visited->getAirlines();
-$airline_name = $airline_array[$airline-1]->getNameWithoutSpan();
+$airline_name = $airline_array[$airline-1]->getName();
 
 
 
