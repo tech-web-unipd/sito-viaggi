@@ -980,6 +980,17 @@ button.access-operation {
     background-color: var(--tertiary);
     color: var(--onPrimary);
 }
+/*
+========================================
+============ PERSONAL AREA =============
+========================================
+*/
+
+.user-data div.tertiary-container {
+    margin-top: 1em;
+    text-align: center;
+    font-size: large;
+}
 
 .user-data h2 {
     margin: 1em auto;

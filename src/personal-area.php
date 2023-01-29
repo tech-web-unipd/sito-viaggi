@@ -16,6 +16,7 @@ if(isset($_SESSION['user'])) {
     $others = "";
     $outcome = "";
     $password_outcome = "";
+    $admin_dashboard = "";
 
     if(isset($_GET['dataModified'])) {
         if($_GET['dataModified'] == true) {
@@ -33,6 +34,11 @@ if(isset($_SESSION['user'])) {
         }
     }
 
+    if($user->getPermission() == "admin") {
+        $admin_dashboard = new Template("templates/admin/admin-link.html");
+        $admin_dashboard = $admin_dashboard->build();
+    }
+
     switch ($user->getGender()) {
         case "M": $male = 'selected="selected"';
         break;
@@ -43,6 +49,7 @@ if(isset($_SESSION['user'])) {
 
     echo $personal_area_template->build(
         array(
+            "adminDashboard" => $admin_dashboard,
             "base" => BASE,
             "header" => buildHeader(),
             "outcome" => $outcome,
