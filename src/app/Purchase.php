@@ -38,6 +38,10 @@ class Purchase
     private ?Date $expiration;
     private ?string $name;
     private ?string $surname;
+
+    private function escapeForDb(string $str): string {
+        return str_replace("\"", "\\\"", $str);
+    }
    
 
     public function __construct(int $id, Date $moment = null, string $username = null, string $card = null, int $destination = null, Date $start_date = null, Date $end_date = null, int $hotel = null, string $airline = null, array $activities = [], float $price = null, string $cvc = null, Date $expiration = null, string $name = null, string $surname = null){
@@ -60,16 +64,16 @@ class Purchase
 
     public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
     {
+        $escaped_airline = $this->escapeForDb($this->airline);
         $result = $db->executeStatement("SELECT * FROM payment_method WHERE card_number = ?", [$this->card]);
         if(count($result) == 0){
             $db->executeStatement("INSERT INTO payment_method(card_number,cvc,expiration,name,surname,username) VALUES(\"$this->card\", \"$this->cvc\",\"$this->expiration\",\"$this->name\",\"$this->surname\",\"$this->username\")");
         }
-        $db->executeStatement("INSERT INTO purchase (id,moment,username,card,destination,start_date,end_date,hotel,airline) VALUES (\"$this->id\", \"$this->moment\", \"$this->username\", \"$this->card\", \"$this->destination\", \"$this->start_date\", \"$this->end_date\", \"$this->hotel\", \"$this->airline\")");
+        $db->executeStatement("INSERT INTO purchase (id,moment,username,card,destination,start_date,end_date,hotel,airline) VALUES (\"$this->id\", \"$this->moment\", \"$this->username\", \"$this->card\", \"$this->destination\", \"$this->start_date\", \"$this->end_date\", \"$this->hotel\", \"$escaped_airline\")");
         
-        for($i = 0; $i < count($this->activities); $i++){
-            $db->executeStatement("INSERT INTO purchase_activity(purchase,activity) VALUES (\"$this->id\",\"$this->activities[$i]\")");
+        foreach ($this->activities as $activity) {
+            $db->executeStatement("INSERT INTO purchase_activity(purchase,activity) VALUES (\"$this->id\",\"$activity\")");
         }
-    
     }
 
     public function loadFromDatabase(\utilities\DatabaseLayer $db): void

@@ -3,7 +3,7 @@
     --carousel-slide-height: 40em;
     --cards-border-radius: 1.5em;
     --cards-max-width: 40%;
-    --primary: #467cdb;
+    --primary: #1a4fbe;
     --onPrimary: #FFFFFF;
     --primaryContainer: #DBE1FF;
     --onPrimaryContainer: #00174D;
@@ -30,7 +30,7 @@
 .dark-theme {
     --primary: #B5C4FF;
     --onPrimary: #00297A;
-    --primaryContainer: #467cdb;
+    --primaryContainer: #003DAB;
     --onPrimaryContainer: #DBE1FF;
     --secondary: #C1C5DD;
     --onSecondary: #2B3042;
@@ -550,14 +550,14 @@ td:not(tr:last-child > td) {
 .gradient-background h2 {
     position: absolute;
     left: 5%;
-    top: 12%;
+    top: 20%;
     color: white;
     z-index: 2;
 }
 
 .gradient-background {
     width: 100%;
-    height: 5em;
+    height: 6em;
     position: absolute;
     bottom: 0;
     left: 0;
