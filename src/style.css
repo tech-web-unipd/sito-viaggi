@@ -1337,60 +1337,6 @@ footer div {
 =============== ADMIN FORM ==============
 ==========================================
 */
-.add-destination {
-    width: fit-content;
-    margin: auto;
-}
-
-.add-destination fieldset {
-    border: none;
-    margin: 0;
-    padding-bottom: 1em;
-}
-
-.continente div {
-    height: fit-content;
-}
-
-.field {
-    border-radius: var(--cards-border-radius);
-    border: 0.2em solid var(--onPrimaryContainer);
-    padding-left: 1em;
-    margin: 1em 0;
-}
-
-.field textarea, .field input {
-    border-radius: var(--cards-border-radius);
-    border: 2px solid var(--primary);
-    padding: 0.5em;
-    margin: 0.5em;
-}
-
-.field input[type=file] {
-    border: none;
-}
-
-.add-destination input[type=submit], .add-destination input[type=reset] {
-    padding: 0.5em;
-    width: 40%;
-    margin: 0.5em 2em;
-}
-
-.add-destination input[type=reset] {
-    background-color: var(--onPrimaryContainer);
-    color: var(--onPrimary);
-}
-
-.add-destination input[type=submit]:hover, .add-destination input[type=reset]:hover {
-    background-color: var(--tertiary);
-    color: var(--onPrimary);
-}
-
-.access-form input[type=submit]:hover, .access-form input[type=reset]:hover {
-    background-color: var(--tertiary);
-    color: var(--onPrimary);
-    font-weight: bold;
-}
 
 .centered-form {
     display: flex;
@@ -1400,6 +1346,10 @@ footer div {
     flex-grow: 0;
     flex-shrink: 0;
     align-items: center;
+}
+
+h2[class=center] {
+    text-align: center;
 }
 
 .centered-form label {
@@ -1419,6 +1369,9 @@ footer div {
 .centered-form input, .centered-form select {
     width: 100%;
     min-height: 35px;
+    border-radius: var(--cards-border-radius);
+    border: 2px solid var(--primary);
+    padding: 0.5em;
 }
 
 section:first-child {
