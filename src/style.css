@@ -943,7 +943,7 @@ header a {
     max-width: 850px;
 }
 
-#registration-section form input, #modify-data form input{
+#registration-section form input, #modify-data form input {
     width: 100%;
 }
 
@@ -963,7 +963,7 @@ button.access-operation {
     font-weight: bold;
 }
 
-#username-text, #login-password, .access-form input, #gender {
+#username-text, #login-password, .access-form input {
     padding: 0 0.5em;
     font-size: 1em;
     border-radius: var(--cards-border-radius);
@@ -1366,12 +1366,17 @@ h2[class=center] {
     margin-bottom: 0.6em;
 }
 
-.centered-form input, .centered-form select {
+.centered-form input, .centered-form select, #gender {
     width: 100%;
     min-height: 35px;
     border-radius: var(--cards-border-radius);
     border: 2px solid var(--primary);
     padding: 0.5em;
+}
+
+.centered-form #gender {
+    width: 104%;
+    height: 3.5em;
 }
 
 section:first-child {
