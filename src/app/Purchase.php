@@ -204,6 +204,28 @@ class Purchase
         return $this->price;
     }
 
+    public function getActivities(): array
+    {
+        return $this->activities;
+    }
+
+    public function getName(): string
+    {
+        if ($this->name) {
+            return $this->name;
+        } else {
+            throw new UndefinedFieldPurchase('name');
+        }
+    }
+
+    public function getSurname(): string
+    {
+        if ($this->surname) {
+            return $this->surname;
+        } else {
+            throw new UndefinedFieldPurchase('surname');
+        }
+    }
     public function setId(\utilities\DatabaseLayer $db): void{
         $result = $db->executeStatement("SELECT MAX(id) AS id FROM purchase");
         if(count($result) == 0){
