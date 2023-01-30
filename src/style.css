@@ -1016,7 +1016,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     height: 8em;
     margin: auto;
     bottom: 0;
