@@ -30,6 +30,7 @@ try{
     header("location: " . BASE . "src/404.php?errorType=activity");
     exit();
 }
+
 $carousel_template = new Template("templates/carousel/carousel.html");
 $carousel = "";
 

@@ -13,9 +13,14 @@ if(isset($_GET['wrongCredentials']) && $_GET['wrongCredentials']) {
     $wrong_credentials = "<p class='negative-outcome'>Le credenziali inserite non sono corrette</p>";
 }
 
-echo $login_template->build(array(
-    "base" => BASE,
-    "header" => buildHeader(),
-    "wrongCredentials" => $wrong_credentials,
-    "footer" => buildFooter(),
-));
+try {
+    echo $login_template->build(array(
+        "base" => BASE,
+        "header" => buildHeader(),
+        "wrongCredentials" => $wrong_credentials,
+        "footer" => buildFooter(),
+    ));
+} catch (Exception $e) {
+    header("location: ".BASE."src/500.php");
+    exit();
+}
