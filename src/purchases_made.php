@@ -44,6 +44,7 @@ if(count($bought_trips) == 0){
                 $activity_template = new Template("templates/purchase_made/activity.html");
                 $activities .= $activity_template->build(array(
                     "Name" => $activity_want->getName(),
+                    "activityId"=> $activity_want->getId(),
                 ));
             }
             $activities_template = new Template("templates/purchase_made/contenitor_activities.html");
@@ -63,6 +64,7 @@ if(count($bought_trips) == 0){
             "Name" => $purchase->getName(),
             "Surname" => $purchase->getSurname(),
             "Destination" => $destination->getName(),
+            "idDestination" => $destination->getId(),
             "Start" => $purchase->getStartDate(),
             "End" => $purchase->getEndDate(),
             "Activities" => $activities_template_build,
