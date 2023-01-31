@@ -18,7 +18,6 @@ if($status == PHP_SESSION_NONE){
     session_start();
 }
 
-
 function createDestinationCollections($destinations): string
 {
     $cards = "";

@@ -22,14 +22,11 @@ if(!isset($_SESSION["destination_visited"])){
     exit();
 }
 
-
 if (!isset($_SESSION['user'])) {
     $_SESSION['want_purchase'] = $_SESSION["destination_visited"];
     header("location: " . BASE . "src/access.php");
     exit();
-
 }
-
 
 $destination = $_SESSION["destination_visited"];
 
