@@ -95,6 +95,7 @@ if(!isset($_SESSION["destination_visited"])){
 
 echo $activity_template->build(array(
         "base" => BASE,
+        "activityNameNoSpan" => $activity->getNameWithoutSpan(),
         "header" => buildHeader(),
         "activityName" => $activity->getName(),
         "carousel" => $carousel,
