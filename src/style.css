@@ -191,12 +191,10 @@ body {
 }
 
 .tertiary-container a {
-    text-decoration: none;
     color: var(--onTertiaryContainer);
 }
 
 .tertiary-container a:hover {
-    color: var(--tertiary);
     font-weight: bold;
     font-size: 1.2em;
     transition: 0.2s;
@@ -699,7 +697,7 @@ button.active-filter {
     border: none;
 }
 
-#toAllDestinations {
+.link-container {
     text-align: center;
     font-size: larger;
 }
@@ -1346,6 +1344,48 @@ footer div {
 
 .negative-outcome {
     color: var(--error);
+}
+
+/*
+==========================================
+=============== PURCHASE MADE ============
+==========================================
+*/
+.purchased {
+    list-style-type: none;
+}
+
+.purchased li {
+    margin-top: 1em;
+}
+
+#price-purchased {
+    font-size: larger;
+    font-weight: bold;
+    text-align: right;
+    color: var(--onPrimaryContainer);
+}
+
+#destination-purchased {
+    font-size: larger;
+    font-weight: bold;
+}
+.activities-purchased li {
+    list-style-type: none;
+}
+
+#destination-purchased a, .activities-purchased li a {
+    text-decoration: none;
+    padding: 0.2em 2em;
+    background-color: var(--onPrimary);
+    color: var(--onPrimaryContainer);
+    border-radius: var(--cards-border-radius);
+}
+
+#destination-purchased a:hover, .activities-purchased li a:hover {
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    font-weight: bolder;
 }
 
 /*
