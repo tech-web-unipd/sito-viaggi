@@ -1,6 +1,8 @@
 <?php
 namespace components;
 
+require_once "global.php";
+
 class Image
 {
     private string $path;
@@ -19,7 +21,7 @@ class Image
      */
     public function build(): string
     {
-        $path = "/sito-viaggi".substr($this->path, 1);
+        $path = BASE.substr($this->path, 2);
         return "<img src=\"$path\" alt=\"$this->alt\">";
     }
 
