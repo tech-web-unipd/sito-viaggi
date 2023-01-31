@@ -57,23 +57,15 @@ header {
 }
 
 #header-logo p {
-    font-size: 3em;
+    font-size: 18pt;
     font-weight: bold;
     margin-left: 0.5em;
     color: var(--primary);
 }
 
 
-.menu, #theme-button, .user, #toAllDestinations, .search-bar-container, .filters-container, #notFoundText {
+.menu, #theme-button, .user, #toAllDestinations, .search-bar-container, .filters-container, #notFoundText, #breadcrumb, input[type=reset], input[type=submit], button {
     display: none;
-}
-
-#breadcrumb {
-    margin: 2em;
-}
-
-#breadcrumb p {
-    border-bottom: 1px solid var(--primary);
 }
 
 a {
@@ -89,6 +81,14 @@ h1, h2 {
     color: var(--primary);
 }
 
+h1 {
+    font-size: 16pt;
+}
+
+h2 {
+    font-size: 14pt;
+}
+
 .primary-container, .secondary-container {
     border: 2px solid var(--primary);
     border-radius: var(--cards-border-radius);
@@ -96,36 +96,28 @@ h1, h2 {
     position: relative;
     display: grid;
 }
-
 .horizontal-cards-collection {
-   overflow: auto;
+    page-break-after: always;
 }
 
-.full-picture-card {
-    width: 10em;
-    margin-right: 2em;
-    overflow: hidden;
-    float: left;
+.horizontal-cards-collection, .wrap-cards-collection{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.full-picture-card, .card {
+    width: 5cm;
+    margin: 0;
 }
 
-.primary-container img, .horizontal-cards-collection img {
+.primary-container img, .full-picture-card img, .card img {
     border-radius: var(--cards-border-radius);
-    max-width: 8em;
+    max-width: 4cm;
 }
 
-.horizontal-cards-collection a {
+.full-picture-card a {
     color: var(--onPrimaryContainer);
     position: relative;
-}
-
-.wrap-cards-collection {
-    display: flex;
-    align-items: stretch;
-    flex-direction: row;
-    row-gap: 0.5em;
-    column-gap: 0.5em;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    font-size: small;
 }
 
 table {
@@ -149,6 +141,14 @@ td:not(tr:last-child > td) {
     border-bottom: 1px solid var(--onSecondaryContainer);
 }
 
+#story ul {
+    display: none;
+}
+
+#contact {
+    page-break-before: always;
+}
+
 .gallery-carousel {
     display: flex;
     align-items: center;
@@ -165,13 +165,12 @@ td:not(tr:last-child > td) {
     display: none;
 }
 
-.card, #form {
+#form, #form-payment {
     margin-bottom: 1.5em;
     border: 2px solid var(--tertiary);
     border-radius: var(--cards-border-radius);
     padding: 1em;
     position: relative;
-    display: grid;
 }
 
 .form-destination fieldset {
@@ -201,6 +200,38 @@ td:not(tr:last-child > td) {
     justify-content: center;
     border: 2.5px solid darkorange;
     position: relative;
+}
+
+#registration-section {
+    display: flex;
+}
+
+#registration-section p {
+    display: none;
+}
+
+.centered-form {
+    margin-top: 1cm;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 0.5em;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+#form-payment {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+form input {
+    display: flex;
+}
+
+.container ul {
+    margin-left: 1cm;
 }
 
 footer {
