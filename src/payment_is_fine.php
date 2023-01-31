@@ -17,6 +17,7 @@ if(!isset($_SESSION["payment_fine"])){
 
 $purchase = $_SESSION["purchase_to_buy"];
 $destination = new \components\Destination($purchase->getDestination());
+$destination->loadFromDatabase($db);
 
 unset($_SESSION["payment_fine"]);
 unset($_SESSION["purchase_to_buy"]);
@@ -36,7 +37,7 @@ echo $payment_fine_template->build(array(
     "destinationName" => $destination->getName(),
     "start" => $purchase->getStartDate(),
     "end" => $purchase->getEndDate(),
-    "price" => $purchase->getPrice(),
+    "price" => $purchase->getPrice($db),
     "footer" => buildFooter(),
     "base" => BASE,
 ));

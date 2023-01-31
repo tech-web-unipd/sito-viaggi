@@ -339,6 +339,7 @@ function showInputError(input_element, message) {
 function showInputMessage(input_element, message) {
     if(input_element.parentNode.childNodes.length < 2) {
         let p = document.createElement("p");
+        p.className = "positive-outcome";
         p.appendChild(document.createTextNode(message));
         input_element.parentNode.appendChild(p);
     }

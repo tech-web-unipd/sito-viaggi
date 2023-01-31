@@ -8,7 +8,8 @@ class Date
 
     public function __construct(string $date)
     {
-        $this->day = substr($date, 8, 2);
+        if(substr($date, 8, 2)) $this->day = substr($date, 8, 2);
+        else $this->day = "01";
         $this->month = substr($date, 5, 2);
         $this->year = substr($date, 0, 4);
     }
