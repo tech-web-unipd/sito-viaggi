@@ -69,7 +69,7 @@ class Purchase
         if(count($result) == 0){
             $db->executeStatement("INSERT INTO payment_method(card_number,cvc,expiration,name,surname,username) VALUES(\"$this->card\", \"$this->cvc\",\"$this->expiration\",\"$this->name\",\"$this->surname\",\"$this->username\")");
         }
-        $db->executeStatement("INSERT INTO purchase (id,moment,username,card,destination,start_date,end_date,hotel,airline) VALUES (\"$this->id\", \"$this->moment\", \"$this->username\", \"$this->card\", \"$this->destination\", \"$this->start_date\", \"$this->end_date\", \"$this->hotel\", \"$escaped_airline\")");
+        $db->executeStatement("INSERT INTO purchase (id,moment,username,card,destination,start_date,end_date,hotel,airline,price) VALUES (\"$this->id\", \"$this->moment\", \"$this->username\", \"$this->card\", \"$this->destination\", \"$this->start_date\", \"$this->end_date\", \"$this->hotel\", \"$escaped_airline\", \"$this->price\")");
         
         foreach ($this->activities as $activity) {
             $db->executeStatement("INSERT INTO purchase_activity(purchase,activity) VALUES (\"$this->id\",\"$activity\")");
@@ -94,6 +94,7 @@ class Purchase
             $this->end_date = new Date($result[0]['end_date']);
             $this->hotel = $result[0]['hotel'];
             $this->airline = $result[0]['airline'];
+            $this->price = $result[0]['price'];
 
             $result = $db->executeStatement("SELECT * FROM purchase_activity WHERE purchase = ?", [$this->id]);
             if(count($result) == 0){
@@ -109,7 +110,6 @@ class Purchase
             $this->expiration = new Date($result[0]['expiration']);
             $this->name = $result[0]['name'];
             $this->surname = $result[0]['surname'];
-
         } else {
             throw new UndefinedFieldPurchase("id");
         }
@@ -194,21 +194,14 @@ class Purchase
         }
     }
 
-    public function getPrice(\utilities\DatabaseLayer $db): float
+    public function getPrice(): float
     {
-        if($this->price == null){
-            $start_date = (string)($this->start_date);
-            $end_date = (string)($this->end_date);
-            $result_travel = $db->executeStatement("SELECT T.price as price FROM travel as T WHERE T.destination = $this->destination AND T.start_date = $start_date AND T.end_date = $end_date");
-            $price_travel = (float)($result_travel[0]['price']);
-            $price_activities = (float) 0;
-            foreach($this->activities as $activity){
-                $result_activity = $db->executeStatement("SELECT A.price as price FROM purchase_activity as PA, activity as A WHERE PA.activity = A.id and PA.purchase = $this->id  AND PA.activity = $activity");
-                $price_activities += (float)($result_activity[0]['price']);
-            }
-            $this->price = $price_travel + $price_activities;
+        if($this->price){
+            return $this->price;
+        }else{
+            throw new UndefinedFieldPurchase('price');
         }
-        return $this->price;
+        
     }
 
     public function getActivities(): array

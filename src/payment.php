@@ -85,7 +85,6 @@ $moment = new Date(date("Y-m-d"));
 $purchase = new Purchase(0,$moment,$user->getUsername(),null,$destination_visited->getId(),$travel_start,$travel_end,$hotel_id,$airline_name,$activity_array_id,$price);
 $_SESSION["purchase_to_buy"] = $purchase;
 
-
 $purchase_template = new \utilities\Template("templates/payment.html");
 echo $purchase_template->build(array(
         "base" => BASE,

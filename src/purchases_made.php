@@ -66,7 +66,7 @@ if(count($bought_trips) == 0){
             "Start" => $purchase->getStartDate(),
             "End" => $purchase->getEndDate(),
             "Activities" => $activities_template_build,
-            "Price" => $purchase->getPrice($db),
+            "Price" => $purchase->getPrice(),
         ));    
     }
 }

@@ -105,6 +105,7 @@ CREATE TABLE Purchase(
     end_date DATE not null,
     hotel int not null,
     airline varchar(100) not null,
+    price float not null,
     FOREIGN KEY(username) REFERENCES UserProfile(username) ON DELETE NO ACTION ON UPDATE NO ACTION, 
     FOREIGN KEY(card) REFERENCES Payment_Method(card_number) ON DELETE NO ACTION ON UPDATE NO ACTION,
     FOREIGN KEY(destination, start_date, end_date) REFERENCES Travel(destination, start_date, end_date) ON DELETE NO ACTION ON UPDATE NO ACTION,

@@ -1406,21 +1406,13 @@ CREATE TABLE `purchase` (
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `hotel` int(11) NOT NULL,
-  `airline` varchar(100) NOT NULL
+  `airline` varchar(100) NOT NULL,
+  `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `purchase`
 --
-
-INSERT INTO `purchase` (`id`, `moment`, `username`, `card`, `destination`, `start_date`, `end_date`, `hotel`, `airline`) VALUES
-(2, '2023-01-29 09:17:04', 'noyz', '1456745698573489', 1, '2023-04-12', '2023-04-19', 20, '<span lang=\"en\">British Airways</span>'),
-(3, '2023-01-29 23:00:00', 'gue', '3456123478903456', 3, '2023-04-12', '2023-04-19', 3, '<span lang=\"en\">Turkish Airlines</span>'),
-(4, '2023-01-29 23:00:00', 'gue', '2345123456788901', 3, '2023-04-12', '2023-04-19', 3, '<span lang=\"en\">Turkish Airlines</span>'),
-(5, '2023-01-29 23:00:00', 'gue', '1234123412341234', 3, '2023-04-12', '2023-04-19', 3, '<span lang=\"en\">Turkish Airlines</span>'),
-(6, '2023-01-29 23:00:00', 'gue', '1234123412341234', 3, '2023-04-12', '2023-04-19', 3, '<span lang=\"en\">Turkish Airlines</span>'),
-(7, '2023-01-29 23:00:00', 'gue', '1234123412341234', 3, '2023-04-12', '2023-04-19', 3, '<span lang=\"en\">Turkish Airlines</span>'),
-(8, '2023-01-29 23:00:00', 'gue', '1234123412341234', 3, '2023-04-12', '2023-04-19', 3, '<span lang=\"en\">Turkish Airlines</span>');
 
 -- --------------------------------------------------------
 
@@ -1436,13 +1428,6 @@ CREATE TABLE `purchase_activity` (
 --
 -- Dump dei dati per la tabella `purchase_activity`
 --
-
-INSERT INTO `purchase_activity` (`purchase`, `activity`) VALUES
-(4, 2),
-(5, 3),
-(6, 2),
-(7, 2),
-(8, 2);
 
 -- --------------------------------------------------------
 
