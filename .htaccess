@@ -1,11 +1,11 @@
 ErrorDocument 404 /sito-viaggi/src/404.php
-ErrorDocument 500 /sito-viaggi/500.php
-ErrorDocument 501 /sito-viaggi/500.php
-ErrorDocument 502 /sito-viaggi/500.php
-ErrorDocument 503 /sito-viaggi/500.php
-ErrorDocument 504 /sito-viaggi/500.php
-ErrorDocument 505 /sito-viaggi/500.php
-ErrorDocument 507 /sito-viaggi/500.php
+ErrorDocument 500 /sito-viaggi/src/500.php
+ErrorDocument 501 /sito-viaggi/src/500.php
+ErrorDocument 502 /sito-viaggi/src/500.php
+ErrorDocument 503 /sito-viaggi/src/500.php
+ErrorDocument 504 /sito-viaggi/src/500.php
+ErrorDocument 505 /sito-viaggi/src/500.php
+ErrorDocument 507 /sito-viaggi/src/500.php
 
 <IfModule mod_expires.c>
   ExpiresActive on

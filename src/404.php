@@ -10,7 +10,7 @@ $redirection_name = "Torna alla home";
 $message = "Ci dispiace che tu non abbia trovato ciò che stavi cercando, ma non preoccuparti, puoi sempre tornare alla home";
 $error_type = "Not found";
 
-$not_found_template = new utilities\Template("templates/404.html");
+$not_found_template = new utilities\Template("templates/errors/404.html");
 $possible_actions_template = new utilities\Template("templates/errors/possible-actions.html");
 
 if($_GET['errorType']) {
