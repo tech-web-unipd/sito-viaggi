@@ -106,7 +106,7 @@ class Purchase
 
             $result = $db->executeStatement("SELECT * FROM payment_method WHERE card_number = ?", [$this->card]);
             $this->cvc = $result[0]['cvc'];
-            $this->expiration = $result[0]['expiration'];
+            $this->expiration = new Date($result[0]['expiration']);
             $this->name = $result[0]['name'];
             $this->surname = $result[0]['surname'];
 
@@ -197,11 +197,14 @@ class Purchase
     public function getPrice(\utilities\DatabaseLayer $db): float
     {
         if($this->price == null){
-            $price_travel = $db->executeStatement("SELECT T.price as price FROM travel as T, WHERE D.id = T.destination AND T.destination = ? AND T.start = ? AND T.end = ?", [$this->destination, $this->start_date, $this->end_date]);
+            $start_date = (string)($this->start_date);
+            $end_date = (string)($this->end_date);
+            $result_travel = $db->executeStatement("SELECT T.price as price FROM travel as T WHERE T.destination = $this->destination AND T.start_date = $start_date AND T.end_date = $end_date");
+            $price_travel = (float)($result_travel[0]['price']);
             $price_activities = (float) 0;
             foreach($this->activities as $activity){
-                $price_activity = $db->executeStatement("SELECT A.price as price FROM purchase_activity as PA, activity as A WHERE PA.activity = A.id and PA.purchase = ? AND PA.activity = ?",[$this->id, $activity]);
-                $price_activities += (float)($price_activity[0]['price']);
+                $result_activity = $db->executeStatement("SELECT A.price as price FROM purchase_activity as PA, activity as A WHERE PA.activity = A.id and PA.purchase = $this->id  AND PA.activity = $activity");
+                $price_activities += (float)($result_activity[0]['price']);
             }
             $this->price = $price_travel + $price_activities;
         }

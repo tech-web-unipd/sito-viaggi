@@ -24,18 +24,18 @@ if(!isset($_SESSION['user'])){
 }
 
 $template_purchases_made = new Template("templates/purchases_made.html");
-$purchase_made = null;
+$purchase_made = "";
 
 $bought_trips = $_SESSION['user']->getPurchase($db);
 if(count($bought_trips) == 0){
-    $purchase_made = new Template("templates/purchase_made/nothing.html");
+    $purchase_made_template = new Template("templates/purchase_made/nothing.html");
+    $purchase_made .= $purchase_made_template->build();
 }else{
-    $purchase_made = [];
     for($i = 0; $i < count($bought_trips); $i++){
         $id = $bought_trips[$i]['id'];
         $purchase = new Purchase($id);
         $purchase->loadFromDatabase($db);
-        $activities_template_build = null;
+        $activities_template_build = "";
         if(count($purchase->getActivities())){
             $activities = "";
             foreach($purchase->getActivities() as $activity){
@@ -47,12 +47,14 @@ if(count($bought_trips) == 0){
                 ));
             }
             $activities_template = new Template("templates/purchase_made/contenitor_activities.html");
-            $activities_template_build = $activities_template->build(array("Activity" => $activities,));
+            $activities_template_build .= $activities_template->build(array("Activity" => $activities,));
         }else{
-            $activities_template_build = new Template("templates/purchase_made/noactivities.html");
+            $activities_template_build_template = new Template("templates/purchase_made/noactivities.html");
+            $activities_template_build = $activities_template_build_template->build();
         }
 
         $destination = new Destination($purchase->getDestination());
+        $destination->loadFromDatabase($db);
         $one_template_purchase = new Template("templates/purchase_made/purchase.html");
         $purchase_made .= $one_template_purchase->build(array(
             "Id" => $purchase->getId(),
