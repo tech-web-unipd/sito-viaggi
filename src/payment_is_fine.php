@@ -42,5 +42,3 @@ echo $payment_fine_template->build(array(
     "base" => BASE,
 ));
 
-header("refresh: 10; location: /sito-viaggi/src/index.php");
-exit();
