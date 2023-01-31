@@ -15,7 +15,8 @@ if(!isset($_SESSION))
     }
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    echo "NOT FOUND PLACEHOLDER";
+    header("location: " . BASE . "src/404.php?errorType=destination");
+    exit();
 }
 
 $destination_template = new Template("templates/destination.html");
@@ -23,7 +24,8 @@ $destination = new Destination($_GET['id']);
 try {
     $destination->loadFromDatabase($db);
 } catch (DestinationNotFound $e) {
-    echo "Error not found destination";
+    header("location: " . BASE . "src/404.php?errorType=destination");
+    exit();
 }
 $_SESSION["destination_visited"] = $destination;
 

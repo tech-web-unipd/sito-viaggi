@@ -16,7 +16,8 @@ if(!isset($_SESSION))
     }
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    echo "NOT FOUND PLACEHOLDER";
+    header("location: " . BASE . "src/404.php?errorType=hotel");
+    exit();
 }
 
 $hotel_template = new Template("templates/hotel.html");
@@ -27,7 +28,8 @@ try
     $hotel->loadFromDatabase($db);
 } catch (HotelNotFound $e)
 {
-    echo "Error Hotel not found";
+    header("location: " . BASE . "src/404.php?errorType=hotel");
+    exit();
 }
 
 $carousel_template = new Template("templates/carousel/carousel.html");

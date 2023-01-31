@@ -1,0 +1,26 @@
+ErrorDocument 404 /sito-viaggi/src/404.php
+ErrorDocument 500 /sito-viaggi/500.php
+ErrorDocument 501 /sito-viaggi/500.php
+ErrorDocument 502 /sito-viaggi/500.php
+ErrorDocument 503 /sito-viaggi/500.php
+ErrorDocument 504 /sito-viaggi/500.php
+ErrorDocument 505 /sito-viaggi/500.php
+ErrorDocument 507 /sito-viaggi/500.php
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpg "access 1 month"
+  ExpiresByType image/webp "access 1 month"
+  ExpiresByType image/svg+xml "access 1 month"
+  ExpiresByType image/gif "access 1 month"
+  ExpiresByType image/jpeg "access 1 month"
+  ExpiresByType image/png "access 1 month"
+  ExpiresByType text/css "access 1 month"
+  ExpiresByType text/javascript "access 1 month"
+  ExpiresByType application/javascript "access 1 month"
+  ExpiresByType application/x-shockwave-flash "access 1 month"
+  ExpiresByType image/ico "access 1 month"
+  ExpiresByType image/x-icon "access 1 month"
+  ExpiresByType text/html "access 600 seconds"
+  ExpiresDefault "access 2 days"
+</IfModule>
