@@ -17,7 +17,8 @@ if(!isset($_SESSION))
     }
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    echo "NOT FOUND PLACEHOLDER";
+    header("location: " . BASE . "src/404.php?errorType=activity");
+    exit();
 }
 
 
@@ -26,8 +27,10 @@ $activity = new Activity($_GET['id']);
 try{
     $activity->loadFromDatabase($db);
 } catch (ActivityNotFound $e){
-    echo "Error not found activity";
+    header("location: " . BASE . "src/404.php?errorType=activity");
+    exit();
 }
+
 $carousel_template = new Template("templates/carousel/carousel.html");
 $carousel = "";
 
