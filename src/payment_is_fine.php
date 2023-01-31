@@ -18,8 +18,15 @@ if(!isset($_SESSION["payment_fine"])){
 $purchase = $_SESSION["purchase_to_buy"];
 $destination = new \components\Destination($purchase->getDestination());
 
-session_destroy();
-session_start();
+unset($_SESSION["payment_fine"]);
+unset($_SESSION["purchase_to_buy"]);
+unset($_SESSION["destination_visited"]);
+unset($_SESSION["want_purchase"]);
+unset($_SESSION['travel_to_buy']);
+unset($_SESSION['hotel_to_buy']);
+unset($_SESSION['airline_to_buy']);
+unset($_SESSION['activities_to_buy']);
+
 
 $payment_fine_template = new \utilities\Template("templates/payment_is_fine.html");
 
@@ -31,6 +38,7 @@ echo $payment_fine_template->build(array(
     "end" => $purchase->getEndDate(),
     "price" => $purchase->getPrice(),
     "footer" => buildFooter(),
+    "base" => BASE,
 ));
 
 header("refresh: 10; location: /sito-viaggi/src/index.php");
