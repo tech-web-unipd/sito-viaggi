@@ -746,6 +746,21 @@ header a {
     font-weight: bold;
     max-width: 15%;
     row-gap: 0.3em;
+    flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 850px) {
+    #header-logo {
+        flex-wrap: wrap;
+    }
+
+    #header-logo img {
+        flex-basis: 60%;
+    }
+}
+
+#header-logo h1 {
+    flex-shrink: 1;
 }
 
 #header-logo img {
