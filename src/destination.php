@@ -122,6 +122,7 @@ foreach ($destination->getTravels() as $travel) {
 echo $destination_template->build(
     array(
         "base" => BASE,
+        "destinationNameNoSpan" => $destination->getNameWithoutSpan(),
         "destinationName" => $destination->getName(),
         "carousel" => $carousel,
         "priceTable" => $price_table_template->build(array("tableRows" => $table_rows)),
