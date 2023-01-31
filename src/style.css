@@ -195,7 +195,6 @@ body {
 }
 
 .tertiary-container a:hover {
-    color: var(--tertiary);
     font-weight: bold;
     font-size: 1.2em;
     transition: 0.2s;
