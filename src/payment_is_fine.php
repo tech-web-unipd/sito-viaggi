@@ -18,6 +18,7 @@ if(!isset($_SESSION["payment_fine"])){
 $purchase = $_SESSION["purchase_to_buy"];
 $destination = new \components\Destination($purchase->getDestination());
 $destination->loadFromDatabase($db);
+$destination->updatePurchased($db);
 
 unset($_SESSION["payment_fine"]);
 unset($_SESSION["purchase_to_buy"]);

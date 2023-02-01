@@ -29,6 +29,7 @@ CREATE TABLE Destination(
     continent varchar(50) not null,
     state varchar(50) not null,
     description TEXT not null,
+    purchased int not null,
     primary_type enum('city','sea','safari','mountains') DEFAULT NULL,
     secondary_type enum('city','sea','safari','mountains') DEFAULT NULL
 );

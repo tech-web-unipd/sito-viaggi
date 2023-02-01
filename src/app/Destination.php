@@ -26,9 +26,9 @@ class Destination extends BasicDestination
     private ?array $airlines;
     private ?array $travels;
 
-    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null, array $hotels = null, array $airlines = null, array $travels = null, string $primary_type = null, string $secondary_type = null)
+    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null, array $hotels = null, array $airlines = null, array $travels = null, string $primary_type = null, string $secondary_type = null, int $purchased = null)
     {
-        parent::__construct($id, $name, $description, $images, $cover, $continent, $primary_type, $secondary_type);
+        parent::__construct($id, $name, $description, $images, $cover, $continent, $primary_type, $secondary_type, $purchased);
         $this->state = $state;
         $this->activities = $activities;
         $this->hotels = $hotels;
