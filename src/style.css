@@ -1091,7 +1091,7 @@ footer div {
 ==========================================
 */
 #photos {
-   display: flex;
+    display: flex;
     align-items: stretch;
     flex-direction: row;
     row-gap: 2.5em;
@@ -1390,6 +1390,10 @@ footer div {
     background-color: var(--onPrimaryContainer);
     color: var(--onPrimary);
     font-weight: bolder;
+}
+
+#all-destination a{
+    text-align: center;
 }
 
 /*
