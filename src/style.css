@@ -1091,10 +1091,14 @@ footer div {
 ==========================================
 */
 #photos {
-    display: flex;
-    background: none;
-    margin: auto;
-    width: 80%;
+   display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    row-gap: 2.5em;
+    column-gap: 2em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
 }
 
 #photos img {
