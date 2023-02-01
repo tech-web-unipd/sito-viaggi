@@ -8,7 +8,7 @@ use utilities\DatabaseLayer;
 require_once 'Destination.php';
 require_once 'BasicDestination.php';
 
-// Thanks, PHP, for no enum
+
 abstract class DestinationType {
     const sea = "sea";
     const city = "city";
@@ -39,6 +39,20 @@ class DestinationService
     static public function  getAllDestinations(DatabaseLayer $db, string $load_type = "complete"): array {
         $destinations = [];
         $result = $db->executeStatement("SELECT * FROM destination");
+
+        if($load_type === "complete") {
+            return self::createDestinationFromQuery($result, $db, $destinations);
+        } elseif ($load_type === "basic") {
+            return self::createBasicDestinationFromQuery($result, $db, $destinations);
+        } else {
+            throw new Exception("Invalid load type");
+        }
+    }
+
+    static public function getDestinationsByNumOfPurchase(DatabaseLayer $db, string $load_type = "complete", int $limit = 10): array
+    {
+        $destinations = array();
+        $result = $db->executeStatement("SELECT * FROM destination ORDER BY purchased DESC LIMIT $limit");
 
         if($load_type === "complete") {
             return self::createDestinationFromQuery($result, $db, $destinations);

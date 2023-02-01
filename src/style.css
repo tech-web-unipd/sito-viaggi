@@ -25,6 +25,8 @@
     --headerHeight: 7%;
     --logoFilter: invert(97%) sepia(100%) saturate(0%) hue-rotate(34deg) brightness(101%) contrast(102%);;
     --positiveOutcome: green;
+    --normalFont: 'Work Sans', sans-serif;
+    --rankFont: 'Alfa Slab One', 'Work Sans', sans-serif;
 }
 
 .dark-theme {
@@ -51,7 +53,7 @@
 }
 
 * {
-    font-family: 'Work Sans', sans-serif;
+    font-family: var(--normalFont);
 }
 
 .noselect {
@@ -203,7 +205,7 @@ body {
 .container {
     padding: 1.2em 2em;
     height: initial;
-    margin: 0 8em 2em;
+    margin: 0 4em 2em;
     border-radius: var(--cards-border-radius);
 }
 
@@ -471,6 +473,14 @@ main > h1 {
 ============ CLICKABLE CARDS =============
 ==========================================
 */
+.card {
+    position: relative;
+    overflow: hidden;
+    width: inherit;
+    border-radius: var(--cards-border-radius);
+    box-shadow: 0.2em 0.2em 0.6em var(--shadow);
+    margin-bottom: 1em;
+}
 
 .card-link {
     color: inherit;
@@ -534,10 +544,6 @@ td:not(tr:last-child > td) {
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 35%;
-    border-radius: var(--cards-border-radius);
-    box-shadow: 0.2em 0.2em 0.6em var(--shadow);
-    overflow: hidden;
-    margin-bottom: 1em;
 }
 
 .full-picture-card img {
@@ -549,8 +555,8 @@ td:not(tr:last-child > td) {
     position: absolute;
     left: 5%;
     top: 20%;
-    color: white;
     z-index: 2;
+    color: white;
 }
 
 .gradient-background {
@@ -561,6 +567,45 @@ td:not(tr:last-child > td) {
     left: 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     z-index: 1;
+}
+
+#rank-container {
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+}
+
+#rank-title {
+    font-size: 3em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.rank {
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    position: absolute;
+    color: var(--onPrimaryContainer);
+    top: -0.4em;
+    left: -0.75em;
+    z-index: 3;
+    font-size: 4em;
+    font-family: var(--rankFont);
+}
+
+.ranked-card:last-child .rank {
+    left: -1.2em;
+}
+
+.ranked-card:first-child {
+    flex-basis: 98%;
+    max-width: 750px;
+}
+
+.ranked-card:nth-child(2), .ranked-card:nth-child(3) {
+    flex-basis: 40%;
+    max-width: 550px;
 }
 
 /*

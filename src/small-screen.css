@@ -26,8 +26,16 @@ body {
     flex-basis: 80%;
 }
 
-.wrap-cards-collection {
-    gap: 0;
+.rank {
+    font-size: 2.8em;
+}
+
+.ranked-card:first-child {
+    flex-basis: 90%;
+}
+
+.ranked-card:nth-child(2), .ranked-card:nth-child(3) {
+    flex-basis: 85%;
 }
 
 /*

@@ -4,7 +4,11 @@ namespace pages;
 use components\FieldNotLoaded;
 use DestinationService;
 use DestinationType;
+use utilities\ComponentNotFound;
 use utilities\Template;
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require_once "lib/Template.php";
 require_once "lib/DatabaseLayer.php";
@@ -18,43 +22,53 @@ if($status == PHP_SESSION_NONE){
     session_start();
 }
 
-function createDestinationCollections($destinations): string
+function createDestinationCollections($destinations, bool $ranked_cards = false): string
 {
+    if(!$ranked_cards) {
+        $template_path = "templates/cards/destination-card.html";
+    }
+    else {
+        $template_path = "templates/cards/ranked-card.html";
+    }
     $cards = "";
+    $counter = 0;
     foreach ($destinations as $destination) {
-        $card_template = new Template("templates/cards/destination-card.html");
+        $counter++;
+        $card_template = new Template($template_path);
         $secondary_type = "";
         try {
             $secondary_type = $destination->getSecondaryType();
         } catch (FieldNotLoaded $e) {
             $secondary_type = "";
         }
-        $cards .= $card_template->build(array(
-            "cover" => $destination->getCover()->build(),
-            "id" => $destination->getId(),
-            "title" => $destination->getName(),
-            "primaryType" => $destination->getPrimaryType(),
-            "secondaryType" => $secondary_type,
-            "continent" => $destination->getContinent(),
-        ));
+
+        $card_template->replaceComponent("cover", $destination->getCover()->build());
+        $card_template->replaceComponent("id", $destination->getId());
+        $card_template->replaceComponent("title", $destination->getName());
+        $card_template->replaceComponent("primaryType", $destination->getPrimaryType());
+        $card_template->replaceComponent("secondaryType", $secondary_type);
+        $card_template->replaceComponent("continent", $destination->getContinent());
+        try {
+            $card_template->replaceComponent("rank", $counter);
+        } catch  (ComponentNotFound $e) {
+            if ($ranked_cards) {
+                throw $e;
+            }
+        }
+
+        $cards .= $card_template->build();
     }
     return $cards;
 }
 
-$sea_destinations = DestinationService::getDestinationsByType($db, DestinationType::sea, "basic");
-$city_destinations = DestinationService::getDestinationsByType($db, DestinationType::city, "basic");
-$safari_destinations = DestinationService::getDestinationsByType($db, DestinationType::safari, "basic");
+$top_ten_destinations = DestinationService::getDestinationsByNumOfPurchase($db, "basic", 10);
 $index_template = new Template("templates/index.html");
 
-$sea_destinations_cards = createDestinationCollections($sea_destinations);
-$city_destinations_cards = createDestinationCollections($city_destinations);
-$safari_destinations_cards = createDestinationCollections($safari_destinations);
+$top_ten_destinations_cards = createDestinationCollections($top_ten_destinations, true);
 
 echo $index_template->build(array(
     "base" => BASE,
     "header" => buildHeader(),
     "footer" => buildFooter(),
-    "seaDestinations" => $sea_destinations_cards,
-    "cityDestinations" => $city_destinations_cards,
-    "safariDestinations" => $safari_destinations_cards,
+    "mostPurchased" => $top_ten_destinations_cards,
 ));
