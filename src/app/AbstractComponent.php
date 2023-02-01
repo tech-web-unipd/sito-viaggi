@@ -1,6 +1,9 @@
 <?php
 namespace components;
 use Exception;
+use utilities\DatabaseLayer;
+
+require_once "Image.php";
 
 class IdNotDefined extends Exception
 {
@@ -47,15 +50,15 @@ abstract class AbstractComponent
         $this->cover = $cover;
     }
 
-    public abstract function loadFromDatabase(\utilities\DatabaseLayer $db): void;
+    public abstract function loadFromDatabase(DatabaseLayer $db): void;
 
-    public abstract function insertIntoDatabase(\utilities\DatabaseLayer $db): void;
+    public abstract function insertIntoDatabase(DatabaseLayer $db): void;
 
     /**
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    protected function loadImages(\utilities\DatabaseLayer $db): void
+    public function loadImages(DatabaseLayer $db): void
     {
         if ($this->id === null) {
             throw new IdNotDefined();
@@ -75,7 +78,7 @@ abstract class AbstractComponent
      * @throws UndefinedField if there are on or more fields not defined
      * @throws Exception in case of errors with database communication
      */
-    protected function insertImagesIntoDatabase(\utilities\DatabaseLayer $db): void
+    protected function insertImagesIntoDatabase(DatabaseLayer $db): void
     {
         if (!($this->images == null)) {
             if ($this->id === null) {
@@ -94,6 +97,18 @@ abstract class AbstractComponent
     }
 
     /**
+     * @throws FieldNotLoaded if id value is null
+     */
+    public function getId(): string
+    {
+        if($this->id != null) {
+            return $this->id;
+        } else {
+            throw new FieldNotLoaded("id");
+        }
+    }
+
+    /**
      * @throws FieldNotLoaded if name value is null
      */
     public function getName(): string
@@ -103,6 +118,22 @@ abstract class AbstractComponent
         } else {
             throw new FieldNotLoaded('name');
         }
+    }
+
+    private function isThereSpan($string): bool {
+        $pattern_begin = "<span";
+        $pattern_end = "</span>";
+        $pattern = sprintf("~(%s)(.*)>(.*)(%s)~", $pattern_begin, $pattern_end);
+        return preg_match_all($pattern, $string);
+    }
+
+    public function getNameWithoutSpan(): string {
+        $name = $this->getName();
+        if($this->isThereSpan($name)) {
+            $name = str_replace("</span>", "", $name);
+            $name = preg_replace("~(<span)(.*)(>)~", "", $name);
+        }
+        return $name;
     }
 
     /**

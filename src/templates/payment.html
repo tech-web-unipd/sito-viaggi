@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Pagamento - GoTo
+        </title>
+        <meta name="description" content="In questa pagina puoi completare l'acquisto del pacchetto viaggio selezionato inserendo i dati della tua carta di credito.">
+        <meta name="keyword" content="Viaggi, Viaggiare, Vacanze, GoTo, Agenzia viaggi, Pagamento, Acquisto pacchetto viaggio"> 
+        <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="<component>base</component>">
+        <link rel="stylesheet" href="src/style.css" media="screen">
+        <link rel="icon" type="image/png" href="assets/icons/logo.png">
+        <link rel="stylesheet" href="src/print.css" media="print">
+        <link rel="stylesheet" href="src/small-screen.css" media="only screen and (max-width: 700px)">
+        <link rel="stylesheet" href="src/large-screen.css" media="only screen and (min-width: 1400px)">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+        <script src="src/index.js" defer></script>
+    </head>
+    <body>
+        
+        <component>header</component>
+
+        <nav id="breadcrumb" aria-label="percorso">
+            <p>
+                Ti trovi in: <a href="src/index.php">Home</a> >> <a href="src/destination.php?id=<component>destinationId</component>"><component>destinationName</component></a> >> <a href ="src/purchase_decision.php">Composizione pacchetto</a> >> Acquisto
+            </p>
+        </nav>
+
+        <main class="single-component-page">
+            <h1>Pagina dell'acquisto del pacchetto scelto</h1>
+            <section id="form-payment" class="container slide-right">
+                <form class="payment" onsubmit="return checkPaymentValue()" action="src/verify_payment.php" method="POST">
+                    <label for="name-payment">Nome<span>*</span>:</label><span><input id="name-payment" name="name-payment" maxlength="100" placeholder="Nome" required/></span>
+                    <label for="surname-payment">Cognome<span>*</span>: </label><span><input id="surname-payment" name="surname-payment" maxlength="100" placeholder="Cognome" required/></span>
+                    <label for="card-payment">Carta<span>*</span>: </label><span><input type="text" id="card-payment" name="card-payment" placeholder="Numero della carta" required/></span>
+                    <label for="cvc-payment">CVC<span>*</span>: </label><span><input type="text" id="cvc-payment" name="cvc-payment" placeholder="CVC della carta" required/></span>
+                    <label for="expiration-payment">Scadenza della carta<span>*</span>: </label><span><input type="month" id="expiration-payment" name="expiration-payment" placeholder="Scadenza della carta" required/></span>
+                    <input type="submit" name="submit" value="Acquista"/>
+                    <input type="reset" name="undo" value="Annulla"/>
+                </form>
+            </section>
+            <section class="total-price-payment tertiary-container container slide-up">
+                <p>Totale dell'importo dell'acquisto: <span id="price-total-payment"><component>price</component></span>€</p>
+            </section>
+        </main>
+            
+        
+        <component>footer</component>
+        
+    </body>
+</html>

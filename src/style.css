@@ -1,0 +1,1506 @@
+:root {
+    --carosuel-width: 90%;
+    --carousel-slide-height: 40em;
+    --cards-border-radius: 1.5em;
+    --cards-max-width: 40%;
+    --primary: #1a4fbe;
+    --onPrimary: #FFFFFF;
+    --primaryContainer: #DBE1FF;
+    --onPrimaryContainer: #00174D;
+    --secondary: #595E72;
+    --onSecondary: #FFFFFF;
+    --secondaryContainer: #DDE1F9;
+    --onSecondaryContainer: #161B2C;
+    --tertiary: #8F00E0;
+    --onTertiary: #FFFFFF;
+    --tertiaryContainer: #bbbaf9;
+    --onTertiaryContainer: #4e28a6;
+    --surface: #FEFBFF;
+    --onSurface: #1C1B1E;
+    --shadow: #494949;
+    --error: #BA1A1A;
+    --onError: #FFFFFF;
+    --errorContainer: #FFDAD6;
+    --onErrorContainer: #410002;
+    --headerHeight: 7%;
+    --logoFilter: invert(97%) sepia(100%) saturate(0%) hue-rotate(34deg) brightness(101%) contrast(102%);;
+    --positiveOutcome: green;
+    --normalFont: 'Work Sans', sans-serif;
+    --rankFont: 'Alfa Slab One', 'Work Sans', sans-serif;
+}
+
+.dark-theme {
+    --primary: #B5C4FF;
+    --onPrimary: #00297A;
+    --primaryContainer: #003DAB;
+    --onPrimaryContainer: #DBE1FF;
+    --secondary: #C1C5DD;
+    --onSecondary: #2B3042;
+    --secondaryContainer: #414659;
+    --onSecondaryContainer: #DDE1F9;
+    --tertiary: #732364;
+    --onTertiary: #b88fdf;
+    --tertiaryContainer:  #422740;
+    --onTertiaryContainer: #ffedfc;
+    --surface: #1B1B1F;
+    --onSurface: #E6E1E6;
+    --error: #FFB4AB;
+    --onError: #690005;
+    --errorContainer: #93000A;
+    --onErrorContainer: #FFB4AB;
+    --logoFilter: invert(14%) sepia(44%) saturate(5400%) hue-rotate(215deg) brightness(80%) contrast(105%);
+    --positiveOutcome: #74ff74;
+}
+
+* {
+    font-family: var(--normalFont);
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome and Opera */
+}
+
+body {
+    background-color: var(--surface);
+    color: var(--onSurface);
+    margin: 0 auto;
+    position: relative;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 500,
+            'GRAD' 0,
+            'opsz' 48
+}
+
+/*
+=======================================
+============= ANIMATIONS ==============
+=======================================
+*/
+
+.slide-right {
+    animation-name: slide-right;
+    animation-duration: 0.7s;
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.slide-left {
+    animation-name: slide-left;
+    animation-duration: 0.7s;
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.slide-up {
+    animation-name: slide-up;
+    animation-duration: 0.7s;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.slide-bottom {
+    animation-name: slide-bottom;
+    animation-duration: 0.7s;
+}
+
+@keyframes slide-bottom {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+/*
+=======================================
+============= CONTAINERS ==============
+=======================================
+*/
+
+.primary-container {
+    background-color: var(--primaryContainer);
+    color: var(--onPrimaryContainer);
+    border-color: var(--primary);
+}
+
+.primary-container form input[type=reset] {
+    background-color: var(--errorContainer);
+    color: var(--onErrorContainer);
+    border: 1px solid var(--onErrorContainer);
+}
+
+.primary-container form input[type=submit] {
+    background-color: var(--tertiaryContainer);
+    color: var(--onTertiaryContainer);
+    border: none;
+}
+
+.primary-container form input[type=submit], .primary-container form input[type=reset], .primary-container button {
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.secondary-container {
+    background-color: var(--secondaryContainer);
+    color: var(--onSecondaryContainer);
+    border-color: var(--secondary);
+}
+
+.secondary-container a {
+    color: var(--onSecondaryContainer);
+}
+
+.tertiary-container {
+    background-color: var(--tertiaryContainer);
+    color: var(--onTertiaryContainer);
+    border-color: var(--tertiary);
+}
+
+.tertiary-container a {
+    color: var(--onTertiaryContainer);
+}
+
+.tertiary-container a:hover {
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: 0.2s;
+}
+
+.container {
+    padding: 1.2em 2em;
+    height: initial;
+    margin: 0 4em 2em;
+    border-radius: var(--cards-border-radius);
+}
+
+/*
+========================================
+============= DESCRIPTION ==============
+========================================
+*/
+
+#description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#description .add-to-cart {
+    max-width: 60%;
+    margin-top: 3.5%;
+}
+
+#description h1 {
+    font-size: xx-large;
+    margin-top: 0.7em;
+    margin-bottom: 0;
+}
+
+#activities {
+    color: var(--onSurface);
+    margin: 0 1em;
+}
+
+/*
+=======================================
+================ MAIN =================
+=======================================
+*/
+
+main > h1 {
+    display: flex;
+    justify-content: center;
+}
+
+/*
+=======================================
+========= CONTAINER CAROUSEL ==========
+=======================================
+*/
+
+.airline-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.airline-info img {
+    width: 25%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+/*
+=======================================
+========= CONTAINER CAROUSEL ==========
+=======================================
+*/
+
+.container-carousel {
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.controls > .carousel-dots {
+    margin: auto;
+}
+
+.controls .prev, .controls .next {
+    width: 5%;
+    height: fit-content;
+    transition: 0.4s;
+}
+
+.controls .prev:hover, .controls .next:hover {
+    background-color: var(--onSecondaryContainer);
+    color: var(--secondaryContainer);
+}
+
+/*
+=======================================
+============== CAROUSEL ===============
+=======================================
+*/
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    transition: 0.6s ease;
+    cursor: pointer;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.carousel {
+    max-width: var(--carosuel-width);
+    position: relative;
+    margin: auto;
+}
+
+.gallery-slide {
+    display: none;
+}
+
+.gallery-slide img {
+    border-radius: 1.4em;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: var(--carousel-slide-height);
+}
+
+.hotel-slide {
+    display: none;
+}
+
+.hotel-link {
+    text-decoration: none;
+    text-align: center;
+    margin:1em auto;
+    padding: 1em;
+    display: block;
+    width: 35%;
+    background-color: var(--onPrimary);
+    color: var(--onPrimaryContainer);
+    border-radius: var(--cards-border-radius);
+}
+
+.hotel-link:hover {
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    font-weight: bolder;
+}
+
+.gallery-carousel > .prev, .gallery-carousel > .next {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.gallery-carousel > .prev {
+    left: 0.6em;
+}
+
+.gallery-carousel > .next {
+    right: 0.6em;
+}
+
+.gallery-carousel > .next:hover, .gallery-carousel > .prev:hover {
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.slide-number {
+    width: fit-content;
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 1em;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0.3);
+    border-radius: 10em;
+}
+
+.dot {
+    cursor: pointer;
+    height: 0.6em;
+    width: 0.6em;
+    margin: 0 0.2em;
+    background-color: var(--onSurface);
+    opacity: 0.3;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease, width 0.4s;
+}
+
+.active, .dot:hover {
+    width: 0.9em;
+    height: 0.9em;
+    background-color: var(--onSurface);
+    opacity: 0.7;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    text-align: center;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 0.6s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+#gallery {
+    margin-bottom: 1em;
+}
+
+/*
+=========================================
+=========== CARDS COLLECTORS ============
+=========================================
+*/
+
+
+.horizontal-cards-collection {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    gap: 2.5em;
+    flex-wrap: nowrap;
+    overflow: auto;
+    margin-bottom: 0.5em;
+}
+
+.wrap-cards-collection {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    row-gap: 2.5em;
+    column-gap: 2em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/*
+==========================================
+============ CLICKABLE CARDS =============
+==========================================
+*/
+.card {
+    position: relative;
+    overflow: hidden;
+    width: inherit;
+    border-radius: var(--cards-border-radius);
+    box-shadow: 0.2em 0.2em 0.6em var(--shadow);
+    margin-bottom: 1em;
+}
+
+.card-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/*
+==========================================
+============== PRICE TABLE ===============
+==========================================
+*/
+table {
+    width: 90%;
+    border-spacing: 0;
+    margin: auto;
+    text-align: center;
+    color: var(--onPrimaryContainer);
+}
+
+caption {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+td, th {
+    padding: 0.3em;
+}
+
+td:not(tr:last-child > td) {
+    border-bottom: 1px solid var(--onSecondaryContainer);
+}
+
+/*
+=========================================
+========== FULL PICTURE CARDS ===========
+=========================================
+*/
+.full-picture-card {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 35%;
+}
+
+.full-picture-card img {
+    position: relative;
+    z-index: 0;
+}
+
+.gradient-background h2 {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    z-index: 2;
+    color: white;
+}
+
+.gradient-background {
+    width: 100%;
+    height: 6em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+#rank-container {
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+}
+
+#rank-title {
+    font-size: 3em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.rank {
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    position: absolute;
+    color: var(--onPrimaryContainer);
+    top: -0.4em;
+    left: -0.75em;
+    z-index: 3;
+    font-size: 4em;
+    font-family: var(--rankFont);
+}
+
+.ranked-card:last-child .rank {
+    left: -1.2em;
+}
+
+.ranked-card:first-child {
+    flex-basis: 98%;
+    max-width: 750px;
+}
+
+.ranked-card:nth-child(2), .ranked-card:nth-child(3) {
+    flex-basis: 40%;
+    max-width: 550px;
+}
+
+/*
+=========================================
+============ ACTIVITY CARDS =============
+=========================================
+*/
+.activity-card {
+    position: relative;
+    width: var(--cards-max-width);
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--cards-border-radius);
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.activity-card h2, .activity-card p {
+    padding: 0 6.5%;
+}
+
+.activity-card p {
+    font-size: 1.4em;
+    align-self: flex-end;
+}
+
+.activity-card h2 {
+    transition: color 0.4s;
+}
+
+.activity-card:hover h2 {
+    color: var(--tertiary);
+}
+
+.activity-card img {
+    align-self: center;
+}
+
+/*
+==========================================
+============== ADD TO CART ===============
+==========================================
+*/
+
+.add-to-cart {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: large;
+    padding: 1em;
+    width: 90%;
+    align-self: center;
+    border-radius: var(--cards-border-radius);
+    margin-bottom: 0.7em;
+    background-color: orange;
+    border: 2.5px solid darkorange;
+    transition: background-color 0.4s ease;
+    position: relative;
+}
+
+.add-to-cart:hover {
+    background-color: darkorange;
+    font-weight: bold;
+}
+
+/*
+===========================================
+============= FILTER BUTTONS ==============
+===========================================
+*/
+
+.filters-container {
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+    row-gap: 0.5em;
+    flex-wrap: wrap;
+    margin-bottom: 2%;
+}
+
+.filters-container button {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1em;
+    border-radius: var(--cards-border-radius);
+    background-color: var(--surface);
+    color: var(--onSurface);
+    border: 2px solid var(--tertiary);
+    transition: background-color 0.4s ease;
+    min-height: 30px;
+    min-width: 30px;
+}
+
+.filters-container button:hover{
+    background-color: var(--secondaryContainer);
+}
+
+button.active-filter {
+    background-color: var(--tertiaryContainer);
+    color: var(--onTertiaryContainer);
+}
+
+#notFoundText {
+    display: none;
+}
+
+/*
+===========================================
+=============== SEARCH BAR ================
+===========================================
+*/
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    flex-basis: 70%;
+    border-radius: 20px;
+    border: 2px solid var(--tertiary);
+    padding-left: 2%;
+    min-height: 40px;
+    margin-bottom: 1em;
+    font-size: large;
+}
+
+.search-bar:focus {
+    outline: 2px solid var(--primary);
+    border: none;
+}
+
+.link-container {
+    text-align: center;
+    font-size: larger;
+}
+
+/*
+===========================================
+================= HEADER ==================
+===========================================
+*/
+
+header {
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: var(--headerHeight);
+    margin: 0 auto;
+    padding: 0 5%;
+    transition: all 0.35s ease;
+}
+
+header > * {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+header a {
+    color: var(--onPrimary);
+    text-decoration: none;
+    font-size: larger;
+}
+
+#header-logo {
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+    align-items: center;
+    margin: 0.5em 0;
+    font-weight: bold;
+    max-width: 15%;
+    row-gap: 0.3em;
+    flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 850px) {
+    #header-logo {
+        flex-wrap: wrap;
+    }
+
+    #header-logo img {
+        flex-basis: 60%;
+    }
+}
+
+#header-logo h1 {
+    flex-shrink: 1;
+}
+
+#header-logo img {
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    filter: var(--logoFilter);
+}
+
+#header-logo p {
+    margin: 0;
+}
+
+.menu {
+    position: relative;
+    top: 0;
+    padding: 0;
+}
+
+.menu-inner {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.menu-inner a {
+    display: block;
+    min-height: 35px;
+    line-height: 35px;
+    outline: 1px solid var(--primary);
+    border-radius: 15px;
+    padding: 0.5em;
+}
+
+.menu-inner a:hover {
+    text-shadow: 0.1em 0.1em 0.2em var(--shadow);
+}
+
+.menu-item a:visited {
+    display: block;
+    outline-color: var(--onPrimary);
+}
+
+.burger {
+    display: none;
+    visibility: hidden;
+}
+
+#theme-button {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    min-height: 35px;
+    min-width: 35px;
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    border: 2px solid var(--onPrimary);
+    line-height: 0;
+}
+
+#theme-button:hover {
+    font-weight: bold;
+    color: var(--onPrimaryContainer);
+    transition: 0.3s;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.6em;
+    margin-right: 2%;
+    flex-basis: 10%;
+}
+
+@media (max-width: 1000px) {
+    #header-surname {
+        display: none;
+    }
+}
+
+#access-button {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    line-height: 30px;
+    font-size: medium;
+    background-color: var(--onPrimary);
+    color: var(--primary);
+    border-radius: var(--cards-border-radius);
+    text-align: center;
+}
+
+#access-button:hover {
+    
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    font-weight: bold;
+}
+
+#personal-area-link {
+    text-decoration: underline;
+}
+
+/*
+===========================================
+=============== BREADCRUMB ================
+===========================================
+*/
+
+#breadcrumb {
+    margin: 0.5em 5em 1.2em 5em;
+    background-color: var(--secondaryContainer);
+    color: var(--onSecondaryContainer);
+    padding: 0.5em 1em;
+    border-radius: var(--cards-border-radius);
+}
+
+#breadcrumb p{
+    margin: 0;
+}
+
+#breadcrumb a {
+    color: var(--onSecondaryContainer);
+}
+
+/*
+===========================================
+========= HORIZONTAL SCROLL BAR ===========
+===========================================
+*/
+::-webkit-scrollbar{
+    width: 1.2em;
+    height: 1em;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.3em var(--secondary); 
+    background-color: #f2f2f2;
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-track:horizontal {
+    box-shadow: none;
+    background-color: #ffffff;
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: var(--primary); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--onPrimaryContainer); 
+}
+/*
+========================================
+============= ACCESS PAGE ==============
+========================================
+*/
+
+#access-page {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: 5% auto 20%;
+}
+
+.access-form label {
+    font-weight: bold;
+}
+
+#login-section, #registration-section, .access-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 0.6em;
+}
+
+#registration-section {
+    display: none;
+    max-width: 850px;
+}
+
+#registration-section form input, #modify-data form input {
+    width: 100%;
+}
+
+.user-data input, .user-data select, button.access-operation {
+    min-height: 30px;
+}
+
+button.access-operation {
+    background-color: var(--secondary);
+    color: var(--onSecondary);
+    border: none;
+}
+
+#access-page input[type=submit]:hover, button.access-operation:hover {
+    background-color: var(--tertiary);
+    color: var(--onTertiaryContainer);
+    font-weight: bold;
+}
+
+#username-text, #login-password, .access-form input {
+    padding: 0 0.5em;
+    font-size: 1em;
+    border-radius: var(--cards-border-radius);
+    border: 2px solid var(--tertiary);
+}
+
+#registration-section input[type=reset] {
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    border: none;
+}
+
+#registration-section input[type=reset]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
+}
+/*
+========================================
+============ PERSONAL AREA =============
+========================================
+*/
+
+.user-data div.tertiary-container {
+    margin-top: 1em;
+    text-align: center;
+    font-size: large;
+}
+
+.user-data h2 {
+    margin: 1em auto;
+    width: fit-content;
+}
+/*
+========================================
+================ FOOTER ================
+========================================
+*/
+.page-container {
+  position: relative;
+  min-height: 100%;
+}
+
+.content-wrap {
+  padding-bottom: 8em;   
+}
+
+footer {
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 8em;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.35s ease;
+}
+
+footer a {
+    color: var(--onPrimary);
+    text-decoration: none; 
+    font-size: larger;
+    border-bottom: 1px white;
+}
+
+footer img {
+    max-width: 2em;
+    filter: var(--logoFilter);
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin: auto;
+    padding: 0;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer div {
+    margin: auto;
+}
+
+#footer-logo {
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+    align-items: center;
+    margin: auto;
+    font-size: xx-large;
+    font-weight: bold;
+    max-width: 10em;
+    row-gap: 0.3em;
+    flex-wrap: wrap;
+    height: 2em;
+}
+
+
+.vertical-line{
+    border: 0.5px dashed var(--onPrimary);
+    height: 5em;
+    width: 0;
+}
+
+/*
+==========================================
+============== PHOTO AGENZIA =============
+==========================================
+*/
+#photos {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    row-gap: 2.5em;
+    column-gap: 2em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+#photos img {
+    max-height: 15em;
+    margin: 0 0.5em 1em 0;
+    border-radius: var(--cards-border-radius);
+}
+
+/*
+==========================================
+============== WHEN AGENZIA =============
+==========================================
+*/
+
+#when table {
+    width: 80%;
+    border-spacing: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#when tbody th {
+    text-align: right;
+    padding-right: 1em;
+    width: 5em;
+}
+
+/*
+==========================================
+================ ACTIVITY ================
+==========================================
+*/
+
+#gallery-activity {
+    margin-bottom: 2em;
+}
+
+#price-activity {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: var(--cards-border-radius);
+    padding: 0.5em;
+    width: 15%;
+    margin: 0 0 0 auto;
+    border: 2px solid var(--onPrimaryContainer);
+}
+
+/*
+==========================================
+=============== PURCHASE FORM ============
+==========================================
+*/
+.form-destination {
+    background-color: var(--tertiaryContainer);
+    color: var(--onPrimaryContainer);
+    border-radius: var(--cards-border-radius);
+    margin: auto;
+    width: 50%;
+    display: flex;
+    padding: 2em;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-destination form {
+    display: grid;
+}
+
+.form-destination fieldset {
+    border: none;
+    padding: 1em;
+    color: var(--onPrimaryContainer);
+}
+
+.form-destination input[type=radio], .form-destination input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    height: 1em;
+    margin: 0.8em 2em;
+    background-color: #eee;
+}
+
+.form-destination input[type=radio]:checked + label {
+    background-color: var(--tertiary);
+    color: white;
+}
+
+.form-destination input[type=checkbox]:checked + label {
+    background-color: var(--tertiary);
+    color: white;
+}
+
+.form-destination label {
+    border: 0.2em solid var(--tertiary);
+    border-radius: 3em;
+    padding: 0.5em 4em;
+    display: flex;
+}
+
+.form-destination input[type=submit] {
+    cursor: pointer;
+    font-size: large;
+    height: 3em;
+    width: 90%;
+    border-radius: var(--cards-border-radius);
+    margin: 1em auto;
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+    border: 2.5px solid darkorange;
+    position: relative;
+}
+
+.form-destination input[type=submit]:hover {
+    transition: 0.4s ease;
+    background-color: darkorange;
+    font-weight: bold;
+}
+.form-destination label:hover {
+     background-color: var(--tertiary);
+     color: white;
+}
+
+.form-destination label span {
+    display: contents;
+}
+
+.price-total {
+    margin: 2em auto;
+    width: 50%;
+}
+
+.price-total p {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.form-destination input[type=reset] {
+     cursor: pointer;
+    font-size: large;
+    height: 3em;
+    width: 90%;
+    border-radius: var(--cards-border-radius);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    border: none;
+    position: relative;
+}
+
+.form-destination input[type=reset]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
+}
+
+/*
+==========================================
+=============== FORM PAYMENT =============
+==========================================
+*/
+#form-payment {
+    display: flex;
+    margin: 0.5em auto;
+    padding: 1.5em;
+    background-color: var(--tertiaryContainer);
+    color: var(--onTertiaryContainer);
+    justify-content: center;
+    width: fit-content;
+}
+
+#form-payment label{
+    display: flex;
+    padding: 0.5em 0;
+}
+
+#form-payment input {
+    display: flex;
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: var(--cards-border-radius);
+    border: 2px solid var(--tertiary);
+}
+
+#form-payment input[type=submit] {
+     cursor: pointer;
+    font-size: large;
+    width: 90%;
+    border-radius: var(--cards-border-radius);
+    margin: 1em auto;
+    justify-content: center;
+    background-color: orange;
+    border: 2.5px solid darkorange;
+    position: relative;
+}
+
+#form-payment input[type=submit]:hover {
+    transition: 0.4s ease;
+    background-color: darkorange;
+    font-weight: bold;
+}
+
+#form-payment input[type=reset] {
+     cursor: pointer;
+    font-size: large;
+    width: 90%;
+    border-radius: var(--cards-border-radius);
+    margin: auto;
+    justify-content: center;
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    border: none;
+    position: relative;
+}
+
+#form-payment input[type=reset]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
+}
+
+.total-price-payment {
+    margin: 2em auto;
+    width: fit-content;
+    height: fit-content;
+}
+
+.total-price-payment p {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*
+==========================================
+================= OUTCOME ================
+==========================================
+*/
+
+.positive-outcome {
+    color: var(--positiveOutcome);
+}
+
+.negative-outcome {
+    color: var(--error);
+}
+
+/*
+==========================================
+=============== PURCHASE MADE ============
+==========================================
+*/
+.purchased {
+    list-style-type: none;
+}
+
+.purchased li {
+    margin-top: 1em;
+}
+
+#price-purchased {
+    font-size: larger;
+    font-weight: bold;
+    text-align: right;
+    color: var(--onPrimaryContainer);
+}
+
+#destination-purchased {
+    font-size: larger;
+    font-weight: bold;
+}
+.activities-purchased li {
+    list-style-type: none;
+}
+
+#destination-purchased a, .activities-purchased li a {
+    text-decoration: none;
+    padding: 0.2em 2em;
+    background-color: var(--onPrimary);
+    color: var(--onPrimaryContainer);
+    border-radius: var(--cards-border-radius);
+}
+
+#destination-purchased a:hover, .activities-purchased li a:hover {
+    background-color: var(--onPrimaryContainer);
+    color: var(--onPrimary);
+    font-weight: bolder;
+}
+
+#all-destination a{
+    text-align: center;
+}
+
+/*
+==========================================
+=============== ADMIN FORM ==============
+==========================================
+*/
+
+.centered-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 0.5em;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+h2[class=center] {
+    text-align: center;
+}
+
+.centered-form label {
+    font-weight: bold;
+    font-size: large;
+}
+
+.centered-form span, .centered-form input[type="submit"] {
+    width: 75%;
+    max-width: 500px;
+}
+
+.centered-form span:last-of-type {
+    margin-bottom: 0.6em;
+}
+
+.centered-form input, .centered-form select, #gender {
+    width: 100%;
+    min-height: 35px;
+    border-radius: var(--cards-border-radius);
+    border: 2px solid var(--primary);
+    padding: 0.5em;
+}
+
+.centered-form #gender {
+    width: 104%;
+    height: 3.5em;
+}
+
+section:first-child {
+    margin-top: 1em;
+}
+
+.centered-form input[type="submit"]:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
+    font-weight: bold;
+}
+
+.user-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}

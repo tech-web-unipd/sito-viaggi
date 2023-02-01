@@ -1,26 +1,39 @@
 <?php
 namespace components;
+use Date;
 use Exception;
+use utilities\DatabaseLayer;
+use utilities\WrongParamType;
+
+require_once 'AbstractComponent.php';
+require_once 'Activity.php';
+require_once 'Hotel.php';
+require_once 'Airline.php';
+require_once 'Travel.php';
+require_once 'Date.php';
+require_once 'BasicDestination.php';
 
 class DestinationNotFound extends Exception {
     public function __construct($id) {
         parent::__construct("Destination with id: $id not found");
     }
 }
-class Destination extends AbstractComponent
+class Destination extends BasicDestination
 {
-    private const IMAGE_TABLE = "image_destination";
-    private const IMAGE_FOREIGN_KEY = "destination";
-    private ?string $continent;
     private ?string $state;
     private ?array $activities;
+    private ?array $hotels;
+    private ?array $airlines;
+    private ?array $travels;
 
-    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null)
+    public function __construct(string $id = null, string $name = null, string $description = null, array $images = null, Image $cover = null, string $continent = null, string $state = null, array $activities = null, array $hotels = null, array $airlines = null, array $travels = null, string $primary_type = null, string $secondary_type = null, int $purchased = null)
     {
-        parent::__construct($id, $name, $description, $images, $cover);
-        $this->continent = $continent;
+        parent::__construct($id, $name, $description, $images, $cover, $continent, $primary_type, $secondary_type, $purchased);
         $this->state = $state;
         $this->activities = $activities;
+        $this->hotels = $hotels;
+        $this->airlines = $airlines;
+        $this->travels = $travels;
     }
 
     public function __toString()
@@ -32,12 +45,12 @@ class Destination extends AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception
      */
-    private function  loadActivities(\utilities\DatabaseLayer $db): void {
+    private function  loadActivities(DatabaseLayer $db): void {
         if ($this->id === null) {
             throw new IdNotDefined();
         }
 
-        $this->images = array();
+        $this->activities = array();
         $result = $db->executeStatement("SELECT activity FROM offers WHERE destination = ?", array($this->id));
 
         foreach ($result as $row) {
@@ -48,11 +61,67 @@ class Destination extends AbstractComponent
     }
 
     /**
+     * @throws IdNotDefined in case id value is null
+     * @throws WrongParamType if one of the statement's parameters is of a non-valid type
+     * @throws Exception in case of errors with database communication
+     */
+    private function loadHotels(DatabaseLayer $db): void {
+        if ($this->id === null) {
+            throw new IdNotDefined();
+        }
+
+        $this->hotels = array();
+        $result = $db->executeStatement("SELECT * FROM hotel WHERE destination = ?", array($this->id));
+
+        foreach ($result as $row) {
+            $hotel = new Hotel($row['id']);
+            $hotel->loadFromDatabase($db);
+            $this->hotels[] = $hotel;
+        }
+    }
+
+    /**
+     * @throws IdNotDefined in case id value is null
+     * @throws WrongParamType if one of the statement's parameters is of a non-valid type
+     * @throws Exception in case of errors with database communication
+     */
+    private function loadAirlines(DatabaseLayer $db) {
+        if ($this->id === null) {
+            throw new IdNotDefined();
+        }
+
+        $this->airlines = array();
+        $result = $db->executeStatement("SELECT * FROM flight WHERE destination = ?", array($this->id));
+
+        foreach ($result as $row) {
+            $airline = new Airline($row['airline']);
+            $airline->loadImages($db);
+            $this->airlines[] = $airline;
+        }
+    }
+
+    private function loadTravels(DatabaseLayer $db) {
+        if ($this->id === null) {
+            throw new IdNotDefined();
+        }
+
+        $this->travels = array();
+        $result = $db->executeStatement("SELECT * FROM travel WHERE destination = ? ORDER BY start_date", array($this->id));
+
+        foreach ($result as $row) {
+            $departure = new Date($row['start_date']);
+            $return = new Date($row['end_date']);
+            $travel = new Travel($row['destination'], $departure, $return, $row['price']);
+            $this->travels[] = $travel;
+        }
+    }
+
+    /**
      * @throws DestinationNotFound if the destination is not in the database
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    public function loadFromDatabase(\utilities\DatabaseLayer $db): void
+    public function loadFromDatabase(DatabaseLayer $db): void
     {
         if ($this->id != null) {
             $result = $db->executeStatement("SELECT * FROM destination WHERE id = ?", [$this->id]);
@@ -61,11 +130,11 @@ class Destination extends AbstractComponent
                 throw new DestinationNotFound($this->id);
             }
 
-            $this->name = $result[0]['name'];
-            $this->continent = $result[0]['continent'];
-            $this->state = $result[0]['state'];
-            $this->description = $result[0]['description'];
-            $this->loadImages($db);
+            parent::loadFromDatabase($db);
+            $this->loadActivities($db);
+            $this->loadHotels($db);
+            $this->loadAirlines($db);
+            $this->loadTravels($db);
         } else {
             throw new IdNotDefined();
         }
@@ -75,7 +144,7 @@ class Destination extends AbstractComponent
      * @throws UndefinedField if one or more fields are not defined
      * @throws Exception in case of errors with database communication
      */
-    public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
+    public function insertIntoDatabase(DatabaseLayer $db): void
     {
         if (!($this->name == null || $this->continent == null || $this->state == null || $this->description == null || $this->images == null)) {
             if ($this->id == null) {
@@ -90,17 +159,6 @@ class Destination extends AbstractComponent
         }
     }
 
-    /**
-     * @throws FieldNotLoaded if continent value is null
-     */
-    public function getContinent(): string
-    {
-        if ($this->continent != null) {
-            return $this->continent;
-        } else {
-            throw new FieldNotLoaded('continent');
-        }
-    }
 
     /**
      * @throws FieldNotLoaded if state value is null
@@ -122,6 +180,39 @@ class Destination extends AbstractComponent
             return $this->activities;
         } else {
             throw new FieldNotLoaded('activities');
+        }
+    }
+
+    /**
+     * @throws FieldNotLoaded if hotels value is null
+     */
+    public function getHotels(): array {
+        if ($this->hotels != null) {
+            return $this->hotels;
+        } else {
+            throw new FieldNotLoaded('hotels');
+        }
+    }
+
+    /**
+     * @throws FieldNotLoaded if airlines value is null
+     */
+    public function getAirlines(): array {
+        if ($this->airlines != null) {
+            return $this->airlines;
+        } else {
+            throw new FieldNotLoaded('airlines');
+        }
+    }
+
+    /**
+     * @throws FieldNotLoaded if airlines value is null
+     */
+    public function getTravels(): array {
+        if ($this->travels != null) {
+            return $this->travels;
+        } else {
+            throw new FieldNotLoaded('travels');
         }
     }
 }

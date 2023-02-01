@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    Admin dashboard - GoTo
+  </title>
+  <meta name="description" content="Aggiungi date e prezzi per nuovi viaggi">
+  <meta name="keywords" content="Viaggi, Viaggiare, Vacanze, GoTo, Agenzia viaggi, Relax, Turismo, Città, Mare, Safari, Escursioni, Trekking, Musei">
+  <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="<component>base</component>">
+  <link rel="stylesheet" href="src/style.css" media="screen">
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
+  <link rel="stylesheet" href="print.css" media="print">
+  <link rel="stylesheet" href="src/small-screen.css" media="only screen and (max-width: 700px)">
+  <link rel="stylesheet" href="src/large-screen.css" media="only screen and (min-width: 1400px)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+  <script src="src/index.js" defer></script>
+</head>
+<body>
+
+    <component>header</component>
+
+    <main>
+      <h1>Pannello d'amministrazione</h1>
+      <section class="primary-container container slide-right">
+        <h2 class="center">Aggiungi date e prezzi</h2>
+          <component>outcome</component>
+        <form class="centered-form" onsubmit="return checkTravelInsertion()" action="src/add-travel.php" method="POST">
+          <label for="destination">Scegli la destinazione</label>
+          <span>
+            <select id="destination" name="destination" required>
+              <component>destinationOptions</component>
+            </select>
+          </span>
+          <label for="departure-date">Scegli la data di partenza</label>
+          <span>
+            <input type="date" id="departure-date" name="departure-date" required/>
+          </span>
+          <label for="return-date">Scegli la data di ritorno</label>
+          <span>
+              <input type="date" id="return-date" name="return-date" required/>
+          </span>
+            <label for="price">Scegli il prezzo (€)</label>
+          <span>
+            <input type="number" id="price" name="price" placeholder="Prezzo (€)" required/>
+          </span>
+          <input type="submit" name="submit" value="Aggiungi viaggio"/>
+        </form>
+      </section>
+    </main>
+ 
+
+  <component>footer</component>
+
+</body>
+</html>

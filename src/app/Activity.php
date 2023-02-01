@@ -1,6 +1,10 @@
 <?php
 namespace components;
 use Exception;
+use utilities\DatabaseLayer;
+
+require_once "AbstractComponent.php";
+require_once "BasicDestination.php";
 
 class ActivityNotFound extends Exception
 {
@@ -16,9 +20,12 @@ class Activity extends AbstractComponent
     private const IMAGE_FOREIGN_KEY = "activity";
     private ?int $price;
 
-    public function __construct(string $id = null, string $name = null, int $price = null, string $description = null, array $images = null, Image $cover = null)
+    private ?array $destinations;
+
+    public function __construct(string $id = null, string $name = null, int $price = null, string $description = null, array $images = null, Image $cover = null, array $destinations = null)
     {
         $this->price = $price;
+        $this->destinations = $destinations;
         parent::__construct(self::IMAGE_TABLE, self::IMAGE_FOREIGN_KEY, $id, $name, $description, $images, $cover);
     }
 
@@ -32,7 +39,23 @@ class Activity extends AbstractComponent
      * @throws IdNotDefined if the id value is null
      * @throws Exception in case of errors with database communication
      */
-    public function loadFromDatabase(\utilities\DatabaseLayer $db): void
+
+     private function  loadDestination(DatabaseLayer $db): void {
+        if ($this->id === null) {
+            throw new IdNotDefined();
+        }
+
+        $this->destinations = array();
+        $result = $db->executeStatement("SELECT * FROM offers WHERE activity = ?", array($this->id));
+
+        foreach ($result as $row) {
+            $destination = new BasicDestination($row['destination']);
+            $destination->loadFromDatabase($db);
+            $this->destinations[] = $destination;
+        }
+    }
+
+    public function loadFromDatabase(DatabaseLayer $db): void
     {
         if ($this->id != null) {
             $result = $db->executeStatement("SELECT * FROM activity WHERE id = ?", [$this->id]);
@@ -45,6 +68,7 @@ class Activity extends AbstractComponent
             $this->price = $result[0]['price'];
             $this->description = $result[0]['description'];
             $this->loadImages($db);
+            $this->loadDestination($db);
         } else {
             throw new IdNotDefined();
         }
@@ -54,7 +78,7 @@ class Activity extends AbstractComponent
      * @throws UndefinedField if one or more fields are not defined
      * @throws Exception in case of errors with database communication
      */
-    public function insertIntoDatabase(\utilities\DatabaseLayer $db): void
+    public function insertIntoDatabase(DatabaseLayer $db): void
     {
         if (!($this->name == null || $this->price == null || $this->description == null || $this->images == null)) {
             if ($this->id == null) {
@@ -78,6 +102,13 @@ class Activity extends AbstractComponent
             return $this->price;
         } else {
             throw new FieldNotLoaded('price');
+        }
+    }
+    public function getDestinations(): array {
+        if ($this->destinations != null) {
+            return $this->destinations;
+        } else {
+            throw new FieldNotLoaded('activities');
         }
     }
 }

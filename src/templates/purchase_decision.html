@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+           Composizione pacchetto del viaggio <component>destinationName</component> - GoTo
+        </title>
+        <meta name="description" content="In questa pagina potrete acquistare il pacchetto viaggio selezionato e decidere le attività da svolgere, l'hotel in cui soggiornare e la compagnia aerea con cui volare.">
+        <meta name="keyword" content="Viaggi, Viaggiare, Vacanze, GoTo, pacchetto <component>destinationName</component>">
+        <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="<component>base</component>">
+        <link rel="stylesheet" href="src/style.css" media="screen">
+        <link rel="icon" type="image/png" href="assets/icons/logo.png">
+        <link rel="stylesheet" href="src/print.css" media="print">
+        <link rel="stylesheet" href="src/small-screen.css" media="only screen and (max-width: 700px)">
+        <link rel="stylesheet" href="src/large-screen.css" media="only screen and (min-width: 1400px)">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+        <script src="src/index.js" defer></script>
+    </head>
+    <body>
+        
+        <component>header</component>
+
+        <nav id="breadcrumb" aria-label="percorso">
+            <p>
+                Ti trovi in: <a href="src/index.php"><span lang="en">Home</span></a> >> <a href="src/destination.php?id=<component>destinationId</component>"><component>destinationName</component></a> >> Configurazione pacchetto
+            </p>
+        </nav>
+    
+        <main>
+            <h1>Pagina per la configurazione del tuo pacchetto viaggio per <component>destinationName</component></h1>
+            <section id="form" class="slide-right">
+                <component>form</component>
+            </section>    
+            <section class="price-total tertiary-container container slide-up">
+                <p>Totale dell'importo: <span id="total-price">0</span>€</p>
+            </section>
+        </main>
+        
+
+        <component>footer</component>
+        
+    </body>
+</html>
+

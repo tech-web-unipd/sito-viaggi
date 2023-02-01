@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Destinazioni - GoTo
+    </title>
+    <meta name="description" content="Tutti si meritano una pausa, scegli la destinazione che fa al caso tuo! Da un avventuroso safari ad un rilassante soggiorno in una località marittima, o magari una visita culturale in una città d'arte, esplora le nostre mete per trovare quella più adatta a te.">
+    <meta name="keyword" content="Viaggi, Viaggiare, Vacanze, GoTo, Agenzia viaggi, Relax, Turismo, Città, Mare, Safari, Escursioni, Trekking, Musei">
+    <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="<component>base</component>">
+    <link rel="stylesheet" href="src/style.css" media="screen">
+    <link rel="icon" type="image/png" href="assets/icons/logo.png">
+    <link rel="stylesheet" href="src/print.css" media="print">
+    <link rel="stylesheet" href="src/small-screen.css" media="only screen and (max-width: 700px)">
+    <link rel="stylesheet" href="src/large-screen.css" media="only screen and (min-width: 1400px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+    <script src="src/index.js" defer></script>
+</head>
+<body>
+    
+            <component>header</component>
+
+            <nav id="breadcrumb" aria-label="percorso">
+                <p>
+                    Ti trovi in: <a href="src/index.php">Home</a> >> Tutte le destinazioni
+                </p>
+            </nav>
+
+            <div class="search-bar-container">
+                <input aria-label="searchbar" type="text" class="search-bar" onkeyup="searchDestination()" placeholder="Cerca una destinazione...">
+            </div>
+
+            <div class="filters-container">
+                <button class="reset-btn active-filter" onclick="filterSelection('all')">Mostra tutto</button>
+                <button onclick="filterSelection('africa')">Africa</button>
+                <button onclick="filterSelection('north-america')">Nord America</button>
+                <button onclick="filterSelection('south-america')">Sud America</button>
+                <button onclick="filterSelection('asia')">Asia</button>
+                <button onclick="filterSelection('europe')">Europa</button>
+                <button onclick="filterSelection('oceania')">Oceania</button>
+                <button onclick="filterSelection('safari')">Safari</button>
+                <button onclick="filterSelection('sea')">Mare</button>
+                <button onclick="filterSelection('city')">Città</button>
+            </div>
+
+            <div id="filtered-container" class="primary-container container wrap-cards-collection">
+                <component>allDestinations</component>
+                <p id="notFoundText">Nessun risultato trovato.</p>
+            </div>
+        
+        <component>footer</component>
+    
+</body>
+</html>

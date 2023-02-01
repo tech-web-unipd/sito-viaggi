@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            <component>destinationNameNoSpan</component> - GoTo
+        </title>
+        <meta name="description" content="In questa pagina del nostro sito di viaggi troverai i dettagli riguardanti la meta che hai selezionato, immagini, curiosità, informazioni sull'hotel e molto altro."> 
+        <meta name="keyword" content="Viaggi, Viaggiare, Vacanze, GoTo, <component>destinationNameNoSpan</component>">
+        <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="<component>base</component>">
+        <link rel="stylesheet" href="src/style.css" media="screen">
+        <link rel="icon" type="image/png" href="assets/icons/logo.png">
+        <link rel="stylesheet" href="src/print.css" media="print">
+        <link rel="stylesheet" href="src/small-screen.css" media="only screen and (max-width: 700px)">
+        <link rel="stylesheet" href="src/large-screen.css" media="only screen and (min-width: 1400px)">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+        <script src="src/index.js" defer></script>
+    </head>
+    <body>
+        
+                <component>header</component>
+
+                <nav id="breadcrumb" aria-label="percorso">
+                    <p>
+                        Ti trovi in: <a href="src/index.php"><span lang="en">Home</span></a> >> <component>destinationName</component>
+                    </p>
+                </nav>
+                
+                <main class="single-component-page">
+                    <section class="slide-bottom" id="gallery">
+                        <component>carousel</component>
+                    </section>
+                    <section class="primary-container container slide-right" id="description">
+                        <h1><component>destinationName</component></h1>
+                        <div><component>description</component></div>
+                        <a class="add-to-cart" href="src/purchase_decision.php">Vai alla configurazione dell'acquisto</a>
+                    </section>
+                    <section class="secondary-container container slide-left" id="price">
+                        <component>priceTable</component>
+                    </section>
+                    <section class="secondary-container container slide-up" id="hotels">
+                        <h2>Alloggi disponibili</h2>
+                        <component>hotelCarousel</component>
+                    </section>
+                    <section class="secondary-container container slide-left" id="airlines">
+                        <h2>Compagnia aerea</h2>
+                        <component>airline</component>
+                    </section>
+                    <section class="slide-up" id="activities">
+                        <h2>Aggiungi le attività che preferisci al tuo viaggio</h2>
+                        <div  class="wrap-cards-collection">
+                            <component>activities</component>
+                        </div>
+                    </section>
+                </main>
+            
+            <component>footer</component>
+      
+    </body>
+</html>

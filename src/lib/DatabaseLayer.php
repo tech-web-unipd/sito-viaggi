@@ -78,11 +78,11 @@ class DatabaseLayer {
     /**
      * @param string $statement contains the SQL statement with 0 or more "?" placeholders for parameters
      * @param array $params contains the parameters to be bound to the statement
-     * @return array|bool containing the result rows of a query or true if the statement was executed successfully
+     * @return array containing the result rows of a query
      * @throws WrongParamType if one or more parameters are not of type int, float or string
      * @throws Exception in case of errors with database communication
      */
-    public function executeStatement(string $statement, array $params = array()): array | bool
+    public function executeStatement(string $statement, array $params = array())
     {
         $this->connection();
         $stmt = $this->db_connection->prepare($statement);

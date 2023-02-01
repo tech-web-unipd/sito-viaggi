@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <component>errorType</component> - GoTo
+    </title>
+    <meta name="author" content="Arianna DeLaurentis, Elena Fabris, Nicola Sinicato, Enrico Zangrando">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="<component>base</component>">
+    <link rel="icon" type="image/png" href="assets/icons/logo.png">
+    <link rel="stylesheet" href="src/style.css" media="screen">
+    <link rel="icon" type="image/png" href="assets/icons/logo.png">
+    <link rel="stylesheet" href="src/print.css" media="print">
+    <link rel="stylesheet" href="src/small-screen.css" media="only screen and (max-width: 700px)">
+    <link rel="stylesheet" href="src/large-screen.css" media="only screen and (min-width: 1400px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0"/>
+    <script src="src/index.js" defer></script>
+</head>
+<body>
+    <component>header</component>
+
+    <main>
+        <h1>Quello che cercavi non è stato trovato</h1>
+        <section class="container primary-container">
+            <h2>Risorsa non trovata</h2>
+            <p>Ci dispiace ma la risorsa alla quale stai cercando di accedere non è stata trovata.</p>
+            <p>Per risolvere il problema controlla che l'indirizzo sia corretto, se è corretto vuol dire che la risorsa potrebbe essere stata cancellata.</p>
+        </section>
+        <component>possibleActions</component>
+    </main>
+
+    <component>footer</component>
+</body>
+</html>
