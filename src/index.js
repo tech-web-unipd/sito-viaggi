@@ -261,6 +261,7 @@ let username_input = document.getElementById("username");
 
 if(repeated_password) {
     repeated_password.addEventListener("keyup", () => {
+        hideInputError(repeated_password);
         if(first_password.value !== repeated_password.value && first_password.value !== "") {
             showInputError(repeated_password, "Le password non corrispondono");
         } else {
