@@ -177,6 +177,11 @@ footer {
     margin: 0.5em auto;
 }
 
+
+#price-activity {
+    width: auto;
+}
+
 .form-destination input[type=radio], .form-destination input[type=checkbox] {
     margin: 3.5em 1.5em;
 }
