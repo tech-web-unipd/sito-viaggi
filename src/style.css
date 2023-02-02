@@ -1415,12 +1415,22 @@ footer div {
 #destination-purchased {
     font-size: larger;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4em;
 }
 .activities-purchased li {
     list-style-type: none;
 }
 
-#destination-purchased a, .activities-purchased li a {
+.activities-purchased li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#destination-purchased a, .activities-purchased li {
     text-decoration: none;
     padding: 0.2em 2em;
     background-color: var(--onPrimary);
@@ -1428,7 +1438,7 @@ footer div {
     border-radius: var(--cards-border-radius);
 }
 
-#destination-purchased a:hover, .activities-purchased li a:hover {
+#destination-purchased a:hover, .activities-purchased li:hover {
     background-color: var(--onPrimaryContainer);
     color: var(--onPrimary);
     font-weight: bolder;
