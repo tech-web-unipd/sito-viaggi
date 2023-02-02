@@ -67,8 +67,9 @@ abstract class AbstractComponent
         $results = $db->executeStatement("SELECT * FROM " . $this->image_table . " WHERE " . $this->image_foreign_key . " = ?", [$this->id]);
         foreach ($results as $row) {
             $image = new Image($row['path'], $row['alt'], $row['is_cover']);
-            $this->images[] = $image;
-            if ($image->is_cover) {
+            if (!$image->is_cover) {
+                $this->images[] = $image;
+            } else {
                 $this->cover = $image;
             }
         }
