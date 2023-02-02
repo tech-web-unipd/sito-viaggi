@@ -14,6 +14,39 @@ showSlides(slideIndex[2], 2);
 hideUnnecessaryControls(1);
 hideUnnecessaryControls(2);
 
+let next_image = document.getElementById("next-image");
+let prev_image = document.getElementById("prev-image");
+if(next_image && prev_image) {
+    next_image.addEventListener("click", () => {
+        plusSlides(1, 0);
+    });
+    prev_image.addEventListener("click", () => {
+        plusSlides(-1, 0);
+    });
+}
+
+let next_hotel = document.getElementById("next-hotel");
+let prev_hotel = document.getElementById("prev-hotel");
+if(next_hotel && prev_hotel) {
+    next_hotel.addEventListener("click", () => {
+        plusSlides(1, 1);
+    });
+    prev_hotel.addEventListener("click", () => {
+        plusSlides(-1, 1);
+    });
+}
+
+let next_airline = document.getElementById("next-airline");
+let prev_airline = document.getElementById("prev-airline");
+if(next_airline && prev_airline) {
+    next_airline.addEventListener("click", () => {
+        plusSlides(1, 2);
+    });
+    prev_airline.addEventListener("click", () => {
+        plusSlides(-1, 2);
+    });
+}
+
 function currentSlide(n, index) {
     showSlides(slideIndex[index] = n, index);
 }
