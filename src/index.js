@@ -446,6 +446,15 @@ function checkRegistrationForm() {
     return checkPasswords() && available_username;
 }
 
+let registration_form = document.getElementById("registration-form");
+if(registration_form) {
+    registration_form.addEventListener("submit", (e) => {
+        if(!checkRegistrationForm()) {
+            e.preventDefault();
+        }
+    })
+}
+
 function checkPasswords() {
     return matching_passwords;
 }

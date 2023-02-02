@@ -46,7 +46,7 @@
                         <section id="registration-section" class="primary-container container slide-right">
                             <h1>Crea account</h1>
                             <p>Registrati e crea il tuo account per iniziare a viaggiare per il mondo e prenotare tutte le avventure che desideri.</p>
-                            <form class="access-form centered-form" onsubmit="return checkRegistrationForm()" action="src/registration.php" method="POST">
+                            <form id="registration-form" class="access-form centered-form" action="src/registration.php" method="POST">
                                 <label for="name">Nome<span>*</span>:</label><span><input id="name" name="name" maxlength="100" placeholder="Nome" required/></span>
                                 <label for="surname">Cognome<span>*</span>: </label><span><input id="surname" name="surname" maxlength="100" placeholder="Cognome" required/></span>
                                 <label for="username">Username<span>*</span>:</label><span><input id="username" name="username" maxlength="50" placeholder="Username" required/></span>
