@@ -1378,7 +1378,7 @@ footer div {
     list-style-type: none;
 }
 
-#destination-purchased a, .activities-purchased li a {
+#destination-purchased a, .activities-purchased li {
     text-decoration: none;
     padding: 0.2em 2em;
     background-color: var(--onPrimary);
@@ -1386,7 +1386,7 @@ footer div {
     border-radius: var(--cards-border-radius);
 }
 
-#destination-purchased a:hover, .activities-purchased li a:hover {
+#destination-purchased a:hover, .activities-purchased li:hover {
     background-color: var(--onPrimaryContainer);
     color: var(--onPrimary);
     font-weight: bolder;

@@ -194,8 +194,12 @@ footer {
     position: absolute;
     cursor: pointer;
     height: 1em;
-    margin: 0.8em 2em;
+    margin: 2em;
     background-color: #eee;
+}
+
+.price-total {
+    margin: 2em auto;
 }
 
 .total-price-payment {
