@@ -487,9 +487,10 @@ function checkPaymentValue(){
     if(document.getElementById("name-payment")){  
         let name = document.getElementById("name-payment");
         hideInputError(name);
+        let name_value = name.value;
         let ok = true;
-        for(i=0; i < name.length && ok; i++){
-            var x = name.charCodeAt(i);
+        for(i=0; i < name_value.length && ok; i++){
+            var x = name_value.charCodeAt(i);
             if(x < 65 || x > 90 && x < 97|| x > 122)
                 ok = false;
         }
@@ -499,11 +500,12 @@ function checkPaymentValue(){
         }
     }
     if(document.getElementById("surname-payment")){
-        let surname = document.getElementById("surname-payment").toString();
+        let surname = document.getElementById("surname-payment");
         hideInputError(surname);
+        let surname_value = surname.value;
         let ok = true;
-        for(i=0; i < surname.length && ok; i++){
-            var x = surname.charCodeAt(i);
+        for(i=0; i < surname_value.length && ok; i++){
+            var x = surname_value.charCodeAt(i);
             if(x < 65 || x > 90 && x < 97|| x > 122)
                 ok = false;
         }
@@ -513,15 +515,16 @@ function checkPaymentValue(){
         }
     }
     if(document.getElementById("card-payment")){
-        let card = document.getElementById("card-payment").toString();
+        let card = document.getElementById("card-payment");
         hideInputError(card);
-        if(card.length != 16){
+        let card_value = card.value;
+        if(card_value.length != 16){
             notError = false;
             showInputError(card, "Inserire il numero del conto corrente composto da 16 cifre numeriche.");
         }else{
             let ok = true;
             for(i=0; i < 16 && ok; i++){
-                var x = card.charCodeAt(i);
+                var x = card_value.charCodeAt(i);
                 if(x < 48 || x > 57)
                     ok = false;
             }
@@ -532,15 +535,16 @@ function checkPaymentValue(){
         }
     }
     if(document.getElementById("cvc-payment")){
-        let cvc = document.getElementById("cvc-payment").toString();
+        let cvc = document.getElementById("cvc-payment");
         hideInputError(cvc);
-        if(cvc.length != 3){
+        let cvc_value = cvc.value;
+        if(cvc_value.length != 3){
             notError = false;
             showInputError(cvc, "Inserire il codice di sicurezza della carta (cvc) composto da 3 cifre numeriche.");
         }else{
             let ok = true;
             for(i=0; i < 3 && ok; i++){
-                var x = cvc.charCodeAt(i);
+                var x = cvc_value.charCodeAt(i);
                 if(x < 48 || x > 57)
                     ok = false;
             }
@@ -551,11 +555,12 @@ function checkPaymentValue(){
         }
     }
     if(document.getElementById("expiration-payment")){
-        let expiration = document.getElementById("expiration-payment").toString();
+        let expiration = document.getElementById("expiration-payment");
         hideInputError(expiration);
+        let expiration_value = expiration.value;
         let year = new Date().getFullYear();
         let month = new Date().getMonth();
-        let expiration_splitted = expiration.split("-");
+        let expiration_splitted = expiration_value.split("-");
         if(expiration_splitted[0] < year || expiration_splitted[0] == year && expiration_splitted[1] < (month+1)){
             notError = false;
             showInputError(expiration, "La data di scadenza della carta non è valida");
