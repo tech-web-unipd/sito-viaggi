@@ -196,6 +196,47 @@ function checkFilters(classes) {
     return needed_matches === 0;
 }
 
+let all_button = document.getElementById("all");
+if(all_button) all_button.addEventListener("click", function() {
+    filterSelection("all");
+});
+let africa_button = document.getElementById("africa");
+if(africa_button) africa_button.addEventListener("click", function() {
+    filterSelection("africa");
+});
+let north_america_button = document.getElementById("north-america");
+if(north_america_button) north_america_button.addEventListener("click", function() {
+    filterSelection("north-america");
+});
+let south_america_button = document.getElementById("south-america");
+if(south_america_button) south_america_button.addEventListener("click", function() {
+    filterSelection("south-america");
+});
+let asia_button = document.getElementById("asia");
+if(asia_button) asia_button.addEventListener("click", function() {
+    filterSelection("asia");
+});
+let europe_button = document.getElementById("europe");
+if(europe_button) europe_button.addEventListener("click", function() {
+    filterSelection("europe");
+});
+let oceania_button = document.getElementById("oceania");
+if(oceania_button) oceania_button.addEventListener("click", function() {
+    filterSelection("oceania");
+});
+let safari_button = document.getElementById("safari");
+if(safari_button) safari_button.addEventListener("click", function() {
+    filterSelection("safari");
+});
+let sea_button = document.getElementById("sea");
+if(sea_button) sea_button.addEventListener("click", function() {
+    filterSelection("sea");
+});
+let city_button = document.getElementById("city");
+if(city_button) city_button.addEventListener("click", function() {
+    filterSelection("city");
+});
+
 let filter_buttons = document.querySelectorAll(".filters-container button");
 for (let i = 0; i < filter_buttons.length; i++) {
     filter_buttons[i].addEventListener("click", function() {
