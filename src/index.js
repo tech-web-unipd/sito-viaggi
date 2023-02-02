@@ -337,6 +337,7 @@ if(repeated_password) {
     repeated_password.addEventListener("keyup", () => {
         hideInputError(repeated_password);
         if(first_password.value !== repeated_password.value && first_password.value !== "") {
+            matching_passwords = false;
             showInputError(repeated_password, "Le password non corrispondono");
         } else {
             hideInputError(repeated_password);
@@ -366,9 +367,24 @@ if(username_input) {
 }
 
 function checkPersonalDataForm() {
+    let passwords = true;
+    let username = available_username;
     if(first_password.value !== "") {
-        return checkPasswords() && available_username;
+        passwords = checkPasswords();
     }
+    if(username_input.value === "") {
+        username = true;
+    }
+    return passwords && username;
+}
+
+let personal_data_form = document.getElementById("personal-data-form");
+if(personal_data_form) {
+    personal_data_form.addEventListener("submit", (e) => {
+        if(!checkPersonalDataForm()) {
+            e.preventDefault();
+        }
+    })
 }
 
 function isUsernameAvailable(username) {
