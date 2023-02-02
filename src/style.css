@@ -1187,9 +1187,7 @@ footer div {
     text-align: center;
     border-radius: var(--cards-border-radius);
     padding: 0.5em;
-    width: 15%;
     margin: 0 0 0 auto;
-    border: 2px solid var(--onPrimaryContainer);
 }
 
 /*
