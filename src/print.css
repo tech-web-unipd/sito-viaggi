@@ -234,6 +234,17 @@ form input {
     margin-left: 1cm;
 }
 
+.airline-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.airline-info img {
+    width: 20%;
+}
+
 footer {
     display: none;
 }
