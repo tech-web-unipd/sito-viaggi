@@ -104,6 +104,7 @@ echo $purchase_template->build(array(
         "form" => $form,
         "footer" => buildFooter(),
         "destinationName" => $destination->getName(),
+        "destinationNameNoSpan" => $destination->getNameWithoutSpan(),
         "destinationId" => $destination->getId(),
     ));
 
