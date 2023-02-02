@@ -244,8 +244,7 @@ body {
 */
 
 main > h1 {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 /*

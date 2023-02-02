@@ -190,8 +190,11 @@ footer {
 }
 
 .form-destination label {
-    max-width: 40%;
     margin: auto;
+}
+
+.price-total {
+    margin: 1em auto;
 }
 
 .form-destination {
